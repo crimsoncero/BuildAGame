@@ -18,6 +18,16 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         ControlledSlot.SetVelocity(moveVec);
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            ChangeControlledUnit(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            ChangeControlledUnit(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            ChangeControlledUnit(2);
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+            ChangeControlledUnit(3);
+
     }
 
 
