@@ -1,28 +1,54 @@
-using Pathfinding;
+using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 public class HeroUnit : MonoBehaviour
 {
+    [field: SerializeField] public HeroData Data { get; private set; }
 
+
+    [Header("Components")]
     [SerializeField] private Rigidbody2D _rb2d;
-
     public PolygonCollider2D Collider;
     public PathfindingModule PathfindingModule;
+    [SerializeField] private float MaxAcceleration = -100f;
 
-    // Change into stat SO later
+    // STATS::
+    public int CurrentHealth { get; private set; }
 
-    /// <summary>
-    /// Speed in world units per seconds.
-    /// </summary>
-    [SerializeField] private float MaxSpeed = 2;
-    [SerializeField] private float MaxAcceleration = -10f;
+    // Stats computational properties (if complicated, use an intermediary method)
+    public int MaxHealth { get { return Data.BaseMaxHealth; } }
+    public float MaxSpeed { get { return Data.BaseMaxSpeed; } }
+    public int Power { get { return Data.BasePower; } }
+    public float AttackSpeed { get { return Data.BaseAttackSpeed; } }
+
+
+
 
     private void Awake()
     {
-        PathfindingModule.SetMaxSpeed(MaxSpeed * 2f);
-        PathfindingModule.SetMaxAcceleration(MaxAcceleration);
+        // Init the unit automatically if starting with data. (for testing mainly)
+        if (!Data.IsUnityNull())
+            Init(Data);
     }
 
+    public void Init(HeroData data)
+    {
+        if (data.IsUnityNull())
+            throw new ArgumentNullException("data", "Can't initilize a unit with null data");
+
+        Data = data;
+        gameObject.name = $"Hero - {Data.name}";
+
+        PathfindingModule.SetMaxSpeed(MaxSpeed);
+        PathfindingModule.SetMaxAcceleration(MaxAcceleration);
+
+    }
+
+
+
+
+    #region Control Methods
 
     /// <summary>
     /// Sets the velocity of the unit in the direction given using its speed.
@@ -37,4 +63,5 @@ public class HeroUnit : MonoBehaviour
         _rb2d.linearVelocity = MaxSpeed * direction;
     }
 
+    #endregion
 }

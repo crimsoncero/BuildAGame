@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6d8e060f3852a4fac40cfd477fe1e0, type: 3}
-  m_Name: WaveSO
+  m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
+  m_Name: Leonardo
   m_EditorClassIdentifier: 
-  EnemyList:
-  - Name: bob
-    SpawnChance: 50
-  - Name: patrick
-    SpawnChance: 50
-  _isValid: 1
+  <BaseMaxHealth>k__BackingField: 0
+  <BaseMaxSpeed>k__BackingField: 6
+  <BasePower>k__BackingField: 0
+  <BaseAttackSpeed>k__BackingField: 0

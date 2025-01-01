@@ -267,10 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951b8caf0d2bb8545aa0dbf4cab8e28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Data>k__BackingField: {fileID: 11400000, guid: 9b61c84f832dee941b41c15e6e8d78f9, type: 2}
   _rb2d: {fileID: 2676475354901530220}
   Collider: {fileID: 376959538570621193}
   PathfindingModule: {fileID: 2640097930759284790}
-  MaxSpeed: 5
   MaxAcceleration: -100
 --- !u!114 &2640097930759284790
 MonoBehaviour:
