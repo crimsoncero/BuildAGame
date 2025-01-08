@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6d8e060f3852a4fac40cfd477fe1e0, type: 3}
   m_Name: WaveSO
   m_EditorClassIdentifier: 
+  SpawnRate: 0
+  SpawnGroups: 0
+  GroupSize: 0
   EnemyList:
   - Name: bob
     SpawnChance: 50
