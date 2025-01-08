@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+
 public class GameManager : Singleton<GameManager>
 {
     public event Action OnGameStart;
@@ -12,6 +13,7 @@ public class GameManager : Singleton<GameManager>
     /// Perform an action when the timer ticks a second, use only when totally needed.
     /// </summary>
     public event Action<int> OnTimerTick;
+
 
     /// <summary>
     /// The in game time that has passed until now, counted in seconds.
@@ -64,4 +66,6 @@ public class GameManager : Singleton<GameManager>
         IsPaused = false;
         OnGameResumed?.Invoke();
     }
+
+
 }
