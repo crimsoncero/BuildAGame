@@ -32,13 +32,44 @@ public class PlayerController : Singleton<PlayerController>
 
     }
 
-
+    #region Player Input Methods
     public void OnMove(CallbackContext context)
     {
         Vector2 inputDirection = context.ReadValue<Vector2>();
         Vector3 moveVec = new Vector3(inputDirection.x, inputDirection.y, 0);
         ControlledSlot.SetVelocity(moveVec);
     }
+
+    public void OnInteract(CallbackContext context)
+    {
+        // Interact stuff.
+    }
+
+    public void OnPause(CallbackContext context)
+    {
+        if (context.started)
+        {
+            // TODO - Pause Game
+            Debug.Log("Paused");
+        }
+    }
+
+    public void OnDeviceLost()
+    {
+        // TODO - Pause Game
+        Debug.Log("Paused");
+
+    }
+
+    public void OnDeviceRegained()
+    {
+        // TODO - Resume game
+        Debug.Log("Resumed");
+    }
+
+    #endregion
+
+
 
     private void ChangeControlledUnit(int index)
     {
