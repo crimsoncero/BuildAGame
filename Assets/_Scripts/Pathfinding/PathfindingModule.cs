@@ -58,6 +58,17 @@ public class PathfindingModule : MonoBehaviour
         DestinationSetter.target = target;
     }
 
+    public void PausePathfinding()
+    {
+        AIPath.canMove = false;
+    }
+
+    public void ResumePathfinding()
+    {
+        AIPath.canMove = true;
+
+    }
+
     private void Enable()
     {
         AIPath.enabled = true;
@@ -71,4 +82,6 @@ public class PathfindingModule : MonoBehaviour
         DestinationSetter.enabled = false;
         Seeker.enabled = false;
     }
+
+    
 }

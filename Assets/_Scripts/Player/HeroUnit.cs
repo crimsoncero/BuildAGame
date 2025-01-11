@@ -24,8 +24,7 @@ public class HeroUnit : MonoBehaviour
 
 
 
-
-    private void Awake()
+    private void Start()
     {
         // Init the unit automatically if starting with data. (for testing mainly)
         if (!Data.IsUnityNull())
@@ -43,9 +42,16 @@ public class HeroUnit : MonoBehaviour
         PathfindingModule.SetMaxSpeed(MaxSpeed);
         PathfindingModule.SetMaxAcceleration(MaxAcceleration);
 
+
+
+        AddCallbacks();
     }
 
-
+    private void AddCallbacks()
+    {
+        GameManager.Instance.OnGamePaused += PauseHero;
+        GameManager.Instance.OnGameResumed += ResumeHero;
+    }
 
 
     #region Control Methods
@@ -62,6 +68,23 @@ public class HeroUnit : MonoBehaviour
         direction.Normalize();
         _rb2d.linearVelocity = MaxSpeed * direction;
     }
+
+    #endregion
+
+    #region Pause & Resume
+
+    private void PauseHero()
+    {
+        // Set speed to zero
+        _rb2d.linearVelocity = Vector2.zero;
+        PathfindingModule.PausePathfinding();
+    }
+
+    private void ResumeHero()
+    {
+        PathfindingModule.ResumePathfinding();
+    }
+
 
     #endregion
 }

@@ -20,22 +20,11 @@ public class PlayerController : Singleton<PlayerController>
         ChangeControlledUnit(0);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            ChangeControlledUnit(0);
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            ChangeControlledUnit(1);
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-            ChangeControlledUnit(2);
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-            ChangeControlledUnit(3);
-
-    }
-
     #region Player Input Methods
     public void OnMove(CallbackContext context)
     {
+        if (GameManager.Instance.IsPaused) return; // Cant move while paused;
+
         Vector2 inputDirection = context.ReadValue<Vector2>();
         Vector3 moveVec = new Vector3(inputDirection.x, inputDirection.y, 0);
         ControlledSlot.SetVelocity(moveVec);
@@ -43,34 +32,29 @@ public class PlayerController : Singleton<PlayerController>
 
     public void OnInteract(CallbackContext context)
     {
-        // Interact stuff.
+        if (GameManager.Instance.IsPaused) return; // Can't interact while paused.
+
+
+        // Interact with stuff.
     }
 
     public void OnPause(CallbackContext context)
     {
         if (context.started)
         {
-            // TODO - Pause Game
-            Debug.Log("Paused");
+            if(!GameManager.Instance.IsPaused)
+                GameManager.Instance.PauseGame();
+            else // TODO - Remove this later, only for debugging atm, exiting pause will be from the pause menu or after selecing an upgrade.
+                GameManager.Instance.ResumeGame();
         }
     }
 
     public void OnDeviceLost()
     {
-        // TODO - Pause Game
-        Debug.Log("Paused");
-
-    }
-
-    public void OnDeviceRegained()
-    {
-        // TODO - Resume game
-        Debug.Log("Resumed");
+        GameManager.Instance.PauseGame();
     }
 
     #endregion
-
-
 
     private void ChangeControlledUnit(int index)
     {

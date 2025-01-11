@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -13,6 +14,19 @@ public static class Helpers
     /// </code>
     /// </summary>
     public static void DestroyChildren(this Transform t) {
-        foreach (Transform child in t) Object.Destroy(child.gameObject);
+        foreach (Transform child in t) UnityEngine.Object.Destroy(child.gameObject);
+    }
+
+
+    /// <summary>
+    /// Formats the time given in seconds to an MM:SS string.
+    /// </summary>
+    /// <param name="time"> Time in seconds</param>
+    /// <returns>A string in an MM:SS format</returns>
+    public static string SecondsToMMSS(int time)
+    {
+        var span = TimeSpan.FromSeconds(time);
+        return string.Format("{0:00}:{1:00}", (int)span.TotalMinutes, span.Seconds);
+        
     }
 }

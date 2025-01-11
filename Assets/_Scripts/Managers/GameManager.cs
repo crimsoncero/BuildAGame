@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public event Action<int> OnTimerTick;
 
-
+   
     /// <summary>
     /// The in game time that has passed until now, counted in seconds.
     /// </summary>
@@ -25,21 +26,29 @@ public class GameManager : Singleton<GameManager>
     public bool IsPaused { get; private set; } = false;
 
 
+    // Debugging Buttons
+    [MMFInspectorButton("StartGame")]
+    [SerializeField] private bool _thing;
+
+
+
     private IEnumerator TickTimer()
     {
-        // Wait until the game is not paused. Timer doesn't advance in paused state.
-        yield return new WaitUntil(() => !IsPaused);
+        while (true)
+        {
+            // Wait until the game is not paused. Timer doesn't advance in paused state.
+            yield return new WaitUntil(() => !IsPaused);
 
-        yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1);
 
-        Timer++;
-
-        OnTimerTick?.Invoke(Timer);
+            Timer++;
+            OnTimerTick?.Invoke(Timer);
+        }
     } 
 
     public void StartGame()
     {
-        TickTimer();
+        StartCoroutine(TickTimer());
      
         OnGameStart?.Invoke();
     }
@@ -68,4 +77,5 @@ public class GameManager : Singleton<GameManager>
     }
 
 
+    
 }
