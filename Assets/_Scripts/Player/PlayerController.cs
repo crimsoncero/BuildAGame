@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.Cinemachine;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -8,6 +9,8 @@ public class PlayerController : Singleton<PlayerController>
     public List<UnitSlot> UnitSlots { get; private set; }
     private int _controlledSlotIndex = 0;
     public UnitSlot ControlledSlot { get { return UnitSlots[_controlledSlotIndex]; } }
+
+    [SerializeField] private CinemachineCamera _cinemachineCamera;
 
     private void Start()
     {
@@ -43,6 +46,7 @@ public class PlayerController : Singleton<PlayerController>
             if (i == index)
             {
                 UnitSlots[i].SetControl(true);
+                _cinemachineCamera.Follow = UnitSlots[i].Unit.transform;
             }
             else
             {
