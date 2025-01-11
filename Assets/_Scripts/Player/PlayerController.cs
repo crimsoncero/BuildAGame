@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Unity.Cinemachine;
+using static UnityEngine.InputSystem.InputAction;
+using UnityEngine.InputSystem;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -19,9 +21,6 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Update()
     {
-        Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        ControlledSlot.SetVelocity(moveVec);
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
             ChangeControlledUnit(0);
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -33,6 +32,13 @@ public class PlayerController : Singleton<PlayerController>
 
     }
 
+
+    public void OnMove(CallbackContext context)
+    {
+        Vector2 inputDirection = context.ReadValue<Vector2>();
+        Vector3 moveVec = new Vector3(inputDirection.x, inputDirection.y, 0);
+        ControlledSlot.SetVelocity(moveVec);
+    }
 
     private void ChangeControlledUnit(int index)
     {
