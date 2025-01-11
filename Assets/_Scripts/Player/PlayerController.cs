@@ -16,6 +16,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
+        // TODO - add creation of units.
         ChangeControlledUnit(0);
     }
 
