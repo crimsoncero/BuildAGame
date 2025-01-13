@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class LevelManager : Singleton<LevelManager>
 {
+
+    public LevelData Data { get; private set; }
+
     protected override void Awake()
     {
         base.Awake();
@@ -11,6 +14,12 @@ public class LevelManager : Singleton<LevelManager>
     private void OnDestroy()
     {
         RemoveEvents();
+    }
+
+    
+    public void Init(LevelData data)
+    {
+        Data = data;
     }
 
 

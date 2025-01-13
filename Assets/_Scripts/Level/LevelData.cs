@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LevelSO", menuName = "Scriptable Objects/Level/LevelSO")]
+[CreateAssetMenu(fileName = "LevelData", menuName = "Scriptable Objects/Level/LevelData")]
 
 
-public class LevelSO : ScriptableObject
+public class LevelData : ScriptableObject
 {
     [Serializable]
     public class WaveInfo
     {
-        public WaveSO Wave;
+        public WaveData Wave;
         [Tooltip("The duration of the wave in seconds.")]
         public int Duration;
     }

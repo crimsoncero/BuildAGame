@@ -5,13 +5,13 @@ using UnityEngine;
 
 
 
-[CreateAssetMenu(fileName = "WaveSO", menuName = "Scriptable Objects/Level/WaveSO")]
-public class WaveSO : ScriptableObject
+[CreateAssetMenu(fileName = "WaveData", menuName = "Scriptable Objects/Level/WaveData")]
+public class WaveData : ScriptableObject
 {
     [Serializable]
     public class EnemyInfo
     {
-        public string Name; // Change to the enemy SO
+        public EnemyData EnemyData; 
         public int SpawnChance;
     }
     [Header("Spawn Settings")]
