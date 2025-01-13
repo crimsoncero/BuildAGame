@@ -19,7 +19,7 @@ public class LevelData : ScriptableObject
     [Serializable]
     public class BossInfo
     {
-        public string Name; // Change with enemy SO
+        public EnemyData BossData; // Change with enemy SO
         [Tooltip("The spawn time of the boss in seconds.")]
         public int SpawnTime;
     }

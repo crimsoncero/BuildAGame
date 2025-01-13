@@ -16,7 +16,7 @@ public class WaveData : ScriptableObject
     }
     [Header("Spawn Settings")]
     [Tooltip("The cooldown in seconds between spawns")]
-    public int SpawnRate;
+    public int SpawnTime;
     [Tooltip("How many groups spawn together")]
     public int SpawnGroups;
     [Tooltip("The size of each spawn group")]
@@ -26,6 +26,14 @@ public class WaveData : ScriptableObject
     public List<EnemyInfo> EnemyList;
     // Check if the sum of the weights is 100, so the designer can be happy.
     [HideInInspector] public bool _isValid = false;
+
+
+
+    //public EnemyData GetRandomEnemy()
+    //{
+
+    //}
+
 
 
     private void OnValidate()

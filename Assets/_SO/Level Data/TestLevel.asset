@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b04998bea3e22ac43bc10715d897da58, type: 3}
-  m_Name: LevelSO
+  m_Name: TestLevel
   m_EditorClassIdentifier: 
   WaveList:
-  - Wave: {fileID: 11400000, guid: e498d46cc792a17419342a2879f1a88c, type: 2}
+  - Wave: {fileID: 11400000, guid: 26fc9815be2b92b428ad07c6a02eedcc, type: 2}
     Duration: 30
-  - Wave: {fileID: 11400000, guid: e498d46cc792a17419342a2879f1a88c, type: 2}
+  - Wave: {fileID: 11400000, guid: 2a6013de6a9d2da428f6f89bcac7137e, type: 2}
     Duration: 30
   BossList:
-  - Name: Dor Ben Dor
-    SpawnTime: 90
-  - Name: Lior
+  - BossData: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
     SpawnTime: 30
+  - BossData: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
+    SpawnTime: 63
