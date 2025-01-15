@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(WaveSO))]
+[CustomEditor(typeof(WaveData))]
 public class WaveSoEditor :Editor
 {
     SerializedProperty waveList;

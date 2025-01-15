@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+
+
+
+[CreateAssetMenu(fileName = "WaveData", menuName = "Scriptable Objects/Level/WaveData")]
+public class WaveData : ScriptableObject
+{
+    [Serializable]
+    public class EnemyInfo
+    {
+        public EnemyData EnemyData; 
+        public int SpawnChance;
+    }
+    [Header("Spawn Settings")]
+    [Tooltip("The cooldown in seconds between spawns")]
+    public int SpawnTime;
+    [Tooltip("How many groups spawn together")]
+    public int SpawnGroups;
+    [Tooltip("The size of each spawn group")]
+    public int GroupSize;
+
+
+    public List<EnemyInfo> EnemyList;
+    // Check if the sum of the weights is 100, so the designer can be happy.
+    [HideInInspector] public bool _isValid = false;
+
+
+
+    //public EnemyData GetRandomEnemy()
+    //{
+
+    //}
+
+
+
+    private void OnValidate()
+    {
+        int sumWeights = 0;
+
+        if (_isValid) { } // Remove warnings for not used;
+        foreach (EnemyInfo enemy in EnemyList)
+        {
+            sumWeights += enemy.SpawnChance;
+        }
+        if(sumWeights == 100)
+            _isValid = true;
+        else
+            _isValid = false;
+    }
+
+}
