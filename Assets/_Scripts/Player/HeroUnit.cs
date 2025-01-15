@@ -9,7 +9,6 @@ public class HeroUnit : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb2d;
-    public PolygonCollider2D Collider;
     public PathfindingModule PathfindingModule;
     [SerializeField] private float MaxAcceleration = -100f;
 
