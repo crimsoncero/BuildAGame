@@ -11,8 +11,8 @@ public class WaveData : ScriptableObject
     [Serializable]
     public class EnemyInfo
     {
-        public EnemyData EnemyData; 
-        public int SpawnChance;
+        public EnemyData Data; 
+        public int Count;
     }
     [Header("Spawn Settings")]
     [Tooltip("The cooldown in seconds between spawns")]
@@ -28,27 +28,49 @@ public class WaveData : ScriptableObject
     [HideInInspector] public bool _isValid = false;
 
 
+    /// <summary>
+    /// return a matrix of the groups to spawn in the current pulse.
+    /// </summary>
+    /// <returns></returns>
+    public List<EnemyData> GetSpawnGroup()
+    {
+        if (!IsDataValid())
+            throw new Exception("Total group size doesn't match the specified group size");
 
-    //public EnemyData GetRandomEnemy()
-    //{
 
-    //}
+       List<EnemyData> spawnGroup = new List<EnemyData>();
+
+       foreach(EnemyInfo enemy in EnemyList)
+       {
+           for(int k = 0; k < enemy.Count; k++)
+           {
+               spawnGroup.Add(enemy.Data);
+           }
+       }
+
+
+        return spawnGroup;
+    }
 
 
 
     private void OnValidate()
     {
-        int sumWeights = 0;
-
-        if (_isValid) { } // Remove warnings for not used;
-        foreach (EnemyInfo enemy in EnemyList)
-        {
-            sumWeights += enemy.SpawnChance;
-        }
-        if(sumWeights == 100)
-            _isValid = true;
-        else
-            _isValid = false;
+        _isValid = IsDataValid();
     }
 
+    private bool IsDataValid()
+    {
+        int enemyCount = 0;
+
+        foreach(EnemyInfo enemyInfo in EnemyList)
+        {
+            enemyCount += enemyInfo.Count;
+        }
+
+        if (enemyCount == GroupSize)
+            return true;
+        else
+            return false;
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     [field: Header("General")]
+    [field: SerializeField]
     public string Name { get; private set; }
 
 
@@ -14,4 +15,5 @@ public class EnemyData : ScriptableObject
     public float BaseMaxSpeed { get; private set; } = 4f;
     [field: SerializeField]
     public int BasePower { get; private set; }
+
 }
