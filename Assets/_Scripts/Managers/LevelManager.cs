@@ -7,6 +7,9 @@ using static WaveData;
 
 public class LevelManager : Singleton<LevelManager>
 {
+    [SerializeField] private EnemySpawner _enemySpawner;
+
+
 
     public LevelData Data { get; private set; }
 

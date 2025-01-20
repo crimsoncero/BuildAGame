@@ -7,11 +7,6 @@ public class TestingInit : MonoBehaviour
     private void Start()
     {
         LevelManager.Instance.Init(LevelData);
-
-
-
-
-
         GameManager.Instance.StartGame();
     }
 }

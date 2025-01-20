@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      i_chess_queen_0: 3086697328580011398
+      i_chess_queen_1: 2164929824628031935
+      i_chess_queen_2: -3913876559814964857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

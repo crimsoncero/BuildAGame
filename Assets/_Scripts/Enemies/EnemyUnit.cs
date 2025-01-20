@@ -1,7 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.Pool;
 
 public class EnemyUnit : MonoBehaviour
 {
@@ -10,9 +10,12 @@ public class EnemyUnit : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb2d;
-    public PolygonCollider2D Collider;
+    public CircleCollider2D Collider;
     public PathfindingModule PathfindingModule;
     [SerializeField] private float MaxAcceleration = -100f;
+
+    
+    private ObjectPool<EnemyUnit> _pool;
 
     // STATS::
     public int CurrentHealth { get; private set; }
@@ -23,26 +26,32 @@ public class EnemyUnit : MonoBehaviour
     public int Power { get { return Data.BasePower; } }
 
 
-    private void Awake()
-    {
-        // Init the unit automatically if starting with data. (for testing mainly)
-        if (!Data.IsUnityNull())
-            Init(Data);
-    }
+   
 
-    public void Init(EnemyData data)
+    public void Initialize(EnemyData data, Vector3 position, ObjectPool<EnemyUnit> pool)
     {
         if (data.IsUnityNull())
             throw new ArgumentNullException("data", "Can't initilize a unit with null data");
 
+        _pool = pool;
+
         Data = data;
         gameObject.name = $"Enemy - {Data.name}";
 
+        gameObject.transform.position = position;
+
         PathfindingModule.SetMaxSpeed(MaxSpeed);
         PathfindingModule.SetMaxAcceleration(MaxAcceleration);
-        
 
-        // Set target stuff
+
+
+        // Set Target
+        PathfindingModule.SetTarget(PlayerController.Instance.Heroes[0].transform);
     }
 
+
+    private void OnDisable()
+    {
+        _pool.Release(this);
+    }
 }
