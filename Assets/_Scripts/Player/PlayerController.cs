@@ -3,14 +3,17 @@ using UnityEngine;
 using Unity.Cinemachine;
 using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] private CinemachineCamera _cinemachineCamera;
     [SerializeField] private Transform _heroParent;
     [SerializeField] private HeroMover _heroMover;
-
+    [SerializeField] private PlayerInput _input;
     public List<HeroUnit> Heroes { get; private set; }
+
+    public Transform Center { get { return _heroMover.transform; } }
 
     private void Start()
     {
@@ -37,7 +40,7 @@ public class PlayerController : Singleton<PlayerController>
     #region Player Input Methods
     public void OnMove(CallbackContext context)
     {
-        if (GameManager.Instance.IsPaused) return; // Cant move while paused;
+    //    if (GameManager.Instance.IsPaused) return; // Cant move while paused;
 
         Vector2 moveVec = context.ReadValue<Vector2>();
         _heroMover.Move(moveVec);

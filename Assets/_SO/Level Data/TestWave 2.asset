@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: TestWave 2
   m_EditorClassIdentifier: 
   SpawnTime: 5
-  SpawnGroups: 5
-  GroupSize: 5
+  SpawnGroups: 3
+  GroupSize: 2
   EnemyList:
-  - EnemyData: {fileID: 11400000, guid: 675166ff7fa18c64caed9f20f69b8e5c, type: 2}
-    SpawnChance: 4
-  - EnemyData: {fileID: 11400000, guid: ecad87ab21e984b4aba068e579499542, type: 2}
-    SpawnChance: 1
-  _isValid: 0
+  - Data: {fileID: 11400000, guid: ecad87ab21e984b4aba068e579499542, type: 2}
+    Count: 2
+  _isValid: 1

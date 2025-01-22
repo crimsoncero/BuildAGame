@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Pool_System
+namespace PoolSystem
 {
     public abstract class ObjectPool<T> : MonoBehaviour where T : PoolGameObject
     {

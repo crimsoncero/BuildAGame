@@ -20,10 +20,13 @@ public class GameManager : Singleton<GameManager>
     /// The in game time that has passed until now, counted in seconds.
     /// </summary>
     public int Timer { get; private set; } = 0;
+    private float _timerSeconds;
+
     /// <summary>
     /// Is the game currently paused.
     /// </summary>
-    public bool IsPaused { get; private set; } = false;
+    public bool IsPaused { get; private set; } = true;
+    public bool IsGameActive { get; private set; } = false;
 
 
     // Debugging Buttons
@@ -31,25 +34,28 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private bool _thing;
 
 
-
-    private IEnumerator TickTimer()
+    private void Update()
     {
-        while (true)
+        if (!IsPaused && IsGameActive)
         {
-            // Wait until the game is not paused. Timer doesn't advance in paused state.
-            yield return new WaitUntil(() => !IsPaused);
-
-            yield return new WaitForSeconds(1);
-
-            Timer++;
-            OnTimerTick?.Invoke(Timer);
+            _timerSeconds += Time.deltaTime;
+            if(_timerSeconds > 1)
+            {
+                _timerSeconds -= 1;
+                Timer++;
+                OnTimerTick?.Invoke(Timer);
+            }
         }
-    } 
+    }
 
     public void StartGame()
     {
-        StartCoroutine(TickTimer());
-     
+        IsGameActive = true;
+        IsPaused = false;
+        Timer = 0;
+        _timerSeconds = 0;
+        OnTimerTick?.Invoke(Timer);
+
         OnGameStart?.Invoke();
     }
 

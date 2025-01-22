@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Pool_System
+namespace PoolSystem
 {
     public abstract class PoolGameObject : MonoBehaviour
     {
