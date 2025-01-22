@@ -610,7 +610,7 @@ MonoBehaviour:
     data_cachedStartup: 
     cacheStartup: 0
   showNavGraphs: 1
-  showUnwalkableNodes: 0
+  showUnwalkableNodes: 1
   debugMode: 0
   debugFloor: 0
   debugRoof: 1
@@ -811,6 +811,10 @@ PrefabInstance:
     - target: {fileID: 2640097930759284790, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
       propertyPath: _isEnabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114239332687128328, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
+      propertyPath: autoRepath.visualizeSensitivity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3809590289453371301, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
       propertyPath: m_Name
@@ -1847,6 +1851,10 @@ PrefabInstance:
       propertyPath: _isEnabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3114239332687128328, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
+      propertyPath: autoRepath.visualizeSensitivity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3809590289453371301, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
       propertyPath: m_Name
       value: Donatelo
@@ -1984,8 +1992,6 @@ MonoBehaviour:
   _spawnDonutArea:
     MinimumRadius: 35
     MaximumRadius: 50
-  _testData: {fileID: 11400000, guid: 675166ff7fa18c64caed9f20f69b8e5c, type: 2}
-  _testSpawnLocation: {x: 10, y: 10, z: 0}
 --- !u!1 &1643635339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,6 +2354,10 @@ PrefabInstance:
       propertyPath: _isEnabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3114239332687128328, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
+      propertyPath: autoRepath.visualizeSensitivity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3809590289453371301, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
       propertyPath: m_Name
       value: Raphael
@@ -2436,14 +2446,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 620981720114762553, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3114239332687128328, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
-      propertyPath: enableRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3114239332687128328, guid: 9109c204e385aa94db5880dfade49bff, type: 3}
-      propertyPath: autoRepath.visualizeSensitivity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3809590289453371301, guid: 9109c204e385aa94db5880dfade49bff, type: 3}

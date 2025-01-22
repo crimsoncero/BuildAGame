@@ -39,9 +39,6 @@ public class LevelManager : Singleton<LevelManager>
         _spawnTarget = 0;
         _waveChangeTarget = 0 + WaveList.Current.Duration;
         _bossTarget = 0 + BossList.Current.SpawnTime;
-
-        Debug.Log("Spawn Target" + _spawnTarget);
-        Debug.Log("Wave Change Target" + _waveChangeTarget);
     }
 
 

@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5507789287424229340}
-  - component: {fileID: 2407143088810822029}
+  - component: {fileID: 7378056784132296119}
   - component: {fileID: 1313759654901583066}
   - component: {fileID: 4452430546700873281}
   - component: {fileID: 1171083374919656187}
@@ -126,7 +126,7 @@ Transform:
   - {fileID: 5543899311571456588}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2407143088810822029
+--- !u!114 &7378056784132296119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +199,7 @@ MonoBehaviour:
     interval: 1
     sensitivity: 10
     maximumInterval: 2
-    visualizeSensitivity: 1
+    visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AIPath: {fileID: 4452430546700873281}
-  DestinationSetter: {fileID: 2407143088810822029}
+  DestinationSetter: {fileID: 7378056784132296119}
   Seeker: {fileID: 1313759654901583066}
   _isEnabled: 1
 --- !u!114 &1231239660535065941
