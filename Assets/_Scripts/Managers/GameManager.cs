@@ -28,12 +28,6 @@ public class GameManager : Singleton<GameManager>
     public bool IsPaused { get; private set; } = true;
     public bool IsGameActive { get; private set; } = false;
 
-
-    // Debugging Buttons
-    [MMFInspectorButton("StartGame")]
-    [SerializeField] private bool _thing;
-
-
     private void Update()
     {
         if (!IsPaused && IsGameActive)

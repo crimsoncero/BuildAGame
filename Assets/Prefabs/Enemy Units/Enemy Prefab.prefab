@@ -199,7 +199,7 @@ MonoBehaviour:
     interval: 1
     sensitivity: 10
     maximumInterval: 2
-    visualizeSensitivity: 0
+    visualizeSensitivity: 1
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
@@ -305,4 +305,3 @@ MonoBehaviour:
   _rb2d: {fileID: 1171083374919656187}
   Collider: {fileID: 1715906947323866173}
   PathfindingModule: {fileID: -7659341251869531652}
-  MaxAcceleration: -100

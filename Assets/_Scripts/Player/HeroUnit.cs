@@ -10,7 +10,6 @@ public class HeroUnit : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb2d;
     public PathfindingModule PathfindingModule;
-    [SerializeField] private float MaxAcceleration = -100f;
 
     // STATS::
     public int CurrentHealth { get; private set; }
@@ -39,7 +38,7 @@ public class HeroUnit : MonoBehaviour
         gameObject.name = $"Hero - {Data.name}";
 
         PathfindingModule.SetMaxSpeed(MaxSpeed);
-        PathfindingModule.SetMaxAcceleration(MaxAcceleration);
+        PathfindingModule.SetMaxAcceleration(1000);
 
 
 
