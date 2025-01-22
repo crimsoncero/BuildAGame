@@ -36,7 +36,7 @@ public class EnemyUnit : MonoBehaviour
         _pool = pool;
 
         Data = data;
-        gameObject.name = $"Enemy - {Data.name}";
+        gameObject.name = $"{Data.name}";
 
         gameObject.transform.position = position;
 
@@ -49,9 +49,36 @@ public class EnemyUnit : MonoBehaviour
         PathfindingModule.SetTarget(PlayerController.Instance.Heroes[0].transform);
     }
 
-
+    private void OnEnable()
+    {
+        GameManager.Instance.OnGamePaused += PauseEnemy;
+        GameManager.Instance.OnGameResumed += ResumeEnemy;
+    }
     private void OnDisable()
     {
-        _pool.Release(this);
+        if(GameManager.Instance != null)
+        {
+            GameManager.Instance.OnGamePaused -= PauseEnemy;
+            GameManager.Instance.OnGameResumed -= ResumeEnemy;
+        }
+       
+        _pool?.Release(this);
     }
+
+    #region Pause & Resume
+
+    private void PauseEnemy()
+    {
+        // Set speed to zero
+        _rb2d.linearVelocity = Vector2.zero;
+        PathfindingModule.PausePathfinding();
+    }
+
+    private void ResumeEnemy()
+    {
+        PathfindingModule.ResumePathfinding();
+    }
+
+
+    #endregion
 }

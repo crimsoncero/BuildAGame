@@ -13,6 +13,8 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private PlayerInput _input;
     public List<HeroUnit> Heroes { get; private set; }
 
+    public Transform Center { get { return _heroMover.transform; } }
+
     private void Start()
     {
         _cinemachineCamera.Follow = _heroMover.transform;

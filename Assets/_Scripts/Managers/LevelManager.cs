@@ -4,6 +4,7 @@ using UnityEngine;
 using static LevelData;
 using System.Linq;
 using static WaveData;
+using Unity.VisualScripting;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -20,11 +21,14 @@ public class LevelManager : Singleton<LevelManager>
 
     private List<EnemyData> _currentSpawnGroup;
 
-
-
+    private int _spawnTarget = 0;
+    private int _waveChangeTarget = 0;
+    private int _bossTarget = 0;
+    
     private void Start()
     {
         AddEvents();
+
     }
 
     public void Init(LevelData data)
@@ -32,19 +36,48 @@ public class LevelManager : Singleton<LevelManager>
         Data = data;
         SetLists();
         _currentSpawnGroup = WaveList.Current.Wave.GetSpawnGroup();
+        _spawnTarget = 0;
+        _waveChangeTarget = 0 + WaveList.Current.Duration;
+        _bossTarget = 0 + BossList.Current.SpawnTime;
 
-        string check = "";
-        foreach(EnemyData enemy in _currentSpawnGroup)
-        {
-            check += enemy.Name + ", ";
-        }
-        Debug.Log(check);
+        Debug.Log("Spawn Target" + _spawnTarget);
+        Debug.Log("Wave Change Target" + _waveChangeTarget);
     }
-
 
 
     private void CheckTimer(int time)
     {
+        // Change Wave
+        if(time == _waveChangeTarget)
+        {
+            WaveList.MoveNext();
+            if (WaveList.Current != null)
+            {
+                _currentSpawnGroup = WaveList.Current.Wave.GetSpawnGroup();
+                _spawnTarget = time;
+                _waveChangeTarget = time + WaveList.Current.Duration;
+            }
+            else
+            {
+                // if the wave is null, we stop spawning groups.
+                _spawnTarget = -1;
+            }
+        }
+
+        // Spawn Wave
+        if(time == _spawnTarget)
+        {
+            _enemySpawner.SpawnWave(_currentSpawnGroup, WaveList.Current.Wave.SpawnGroups);
+            _spawnTarget = time + WaveList.Current.Wave.SpawnTime;
+        }
+
+        // Spawn Boss
+        if(time == _bossTarget)
+        {
+            _enemySpawner.SpawnEnemy(BossList.Current.Data);
+            BossList.MoveNext();
+            _bossTarget = BossList.Current.SpawnTime;
+        }
 
     }
 
@@ -56,7 +89,6 @@ public class LevelManager : Singleton<LevelManager>
     {
         GameManager.Instance.OnTimerTick -= CheckTimer;
     }
-
 
     private void SetLists()
     {
