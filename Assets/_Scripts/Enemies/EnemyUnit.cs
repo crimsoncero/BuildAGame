@@ -12,7 +12,6 @@ public class EnemyUnit : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb2d;
     public CircleCollider2D Collider;
     public PathfindingModule PathfindingModule;
-    [SerializeField] private float MaxAcceleration = -100f;
 
     
     private ObjectPool<EnemyUnit> _pool;
@@ -41,12 +40,12 @@ public class EnemyUnit : MonoBehaviour
         gameObject.transform.position = position;
 
         PathfindingModule.SetMaxSpeed(MaxSpeed);
-        PathfindingModule.SetMaxAcceleration(MaxAcceleration);
+        PathfindingModule.SetMaxAcceleration(1000);
 
 
 
         // Set Target
-        PathfindingModule.SetTarget(PlayerController.Instance.Heroes[0].transform);
+        PathfindingModule.SetTarget(PlayerController.Instance.Center);
     }
 
     private void OnEnable()

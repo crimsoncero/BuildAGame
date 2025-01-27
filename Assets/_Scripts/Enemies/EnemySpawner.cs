@@ -27,8 +27,6 @@ public class EnemySpawner : Singleton<EnemySpawner>
     [SerializeField] private int _numberOfSectors;
     [SerializeField] private DonutParams _spawnDonutArea;
 
-    [SerializeField] private EnemyData _testData;
-    [SerializeField] private Vector3 _testSpawnLocation;
     public ObjectPool<EnemyUnit> Pool { get; private set; }
 
 
@@ -149,7 +147,12 @@ public class EnemySpawner : Singleton<EnemySpawner>
         // The check is an AND test, so the node must pass all checks.
         bool flag = true;
 
-        if (!node.Walkable)
+        // Not walkable
+        if (!node.Walkable) 
+            flag = false;
+
+        // Too close to screen
+        if (Vector3.Distance((Vector3)node.position, _centerPosition.position) < _spawnDonutArea.MinimumRadius)
             flag = false;
 
         return flag;
