@@ -72,6 +72,16 @@ public class PlayerController : Singleton<PlayerController>
 
     #endregion
 
-    
+    public bool DamageHero(Transform heroHit, int damage)
+    {
+        // Negetive Damage
+        if (damage < 0) return false;
+
+        HeroUnit hero = Heroes.Find((h) => h.gameObject == heroHit.gameObject);
+        if(hero == null) return false; // Didn't hit a hero.
+
+        hero.TakeDamage(damage);
+        return true;
+    }
 
 }

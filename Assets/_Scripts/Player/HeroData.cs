@@ -8,6 +8,7 @@ using UnityEngine;
 public class HeroData : ScriptableObject
 {
     [field:Header("General")]
+    [field: SerializeField]
     public string Name { get; private set; }
 
 
@@ -15,12 +16,18 @@ public class HeroData : ScriptableObject
     [field:SerializeField]
     public int BaseMaxHealth { get; private set; }
     [field: SerializeField]
-    public float BaseMaxSpeed { get; private set; } = 6f;
+    public float BaseMoveSpeed { get; private set; } = 6f;
     [field: SerializeField]
     public int BasePower { get; private set; }
     [field: SerializeField]
-    public float BaseAttackSpeed { get; private set; }
+    public float BaseSpeed { get; private set; }
+    [field: SerializeField]
+    public float BaseCooldown { get; private set; }
+    [field: SerializeField]
+    public int BaseRecovery { get; private set; }
 
-
+    [field: Header("Visuals")]
+    [field: SerializeField]
+    public Sprite Sprite { get; private set; }
 
 }
