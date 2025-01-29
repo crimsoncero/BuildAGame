@@ -63,6 +63,18 @@ namespace SeraphRandom
             return _currentItem;
         }
 
+        public List<T> GetCurrentBag()
+        {
+            List<T> val = new List<T>();
+
+            for(int i = 0; i <= _currentPosition; i++)
+            {
+                val.Add(_data[i]);
+            }
+
+            return val;
+        }
+
     }
 }
 
