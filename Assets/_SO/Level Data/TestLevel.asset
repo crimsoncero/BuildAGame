@@ -14,12 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveList:
   - Wave: {fileID: 11400000, guid: 26fc9815be2b92b428ad07c6a02eedcc, type: 2}
-    Duration: 6
-  - Wave: {fileID: 11400000, guid: 2a6013de6a9d2da428f6f89bcac7137e, type: 2}
-    Duration: 5
-  BossList:
-  - Data: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
-    SpawnTime: 3
-  - Data: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
-    SpawnTime: 7
+    Duration: 10000
+  BossList: []
   EventList: []

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: New Yorker
   <BaseMaxHealth>k__BackingField: 5
-  <BaseMaxSpeed>k__BackingField: 4
-  <BasePower>k__BackingField: 0
+  <BaseMoveSpeed>k__BackingField: 4
+  <BasePower>k__BackingField: 5
+  <BaseSpeed>k__BackingField: 1

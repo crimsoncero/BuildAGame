@@ -72,18 +72,15 @@ public class EnemyUnit : MonoBehaviour
             if(_attackCD <= 0f)
             {
                 _canAttack = true;
-                Debug.Log("Attack Reset");
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Enemy Collided");
         if (!_canAttack) return;
         if (PlayerController.Instance.DamageHero(collision.transform, Power))
         {
-            Debug.Log("Player Hit");
             _canAttack = false;
             _attackCD = Speed;
         }

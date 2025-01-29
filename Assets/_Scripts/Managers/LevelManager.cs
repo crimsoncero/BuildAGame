@@ -38,7 +38,10 @@ public class LevelManager : Singleton<LevelManager>
         _currentSpawnGroup = WaveList.Current.Wave.GetSpawnGroup();
         _spawnTarget = 0;
         _waveChangeTarget = 0 + WaveList.Current.Duration;
-        _bossTarget = 0 + BossList.Current.SpawnTime;
+        if (BossList != null)
+            _bossTarget = 0 + BossList.Current.SpawnTime;
+        else
+            _bossTarget = -1;
     }
 
 
@@ -93,8 +96,16 @@ public class LevelManager : Singleton<LevelManager>
 
         WaveList = Data.WaveList.GetEnumerator();
         WaveList.MoveNext();
-        BossList = Data.BossList.OrderBy((t) => t.SpawnTime).GetEnumerator();
-        BossList.MoveNext();
+        if(Data.BossList.Count > 0)
+        {
+            BossList = Data.BossList.OrderBy((t) => t.SpawnTime).GetEnumerator();
+            BossList.MoveNext();
+        }
+        else
+        {
+            BossList = null;
+        }
+       
         EventList = Data.EventList.OrderBy((t) => t.SpawnTime).GetEnumerator();
         EventList.MoveNext();
     }

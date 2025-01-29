@@ -15,6 +15,7 @@ public class EnemyData : ScriptableObject
     public float BaseMoveSpeed { get; private set; } = 4f;
     [field: SerializeField]
     public int BasePower { get; private set; }
+    [field: SerializeField]
     public float BaseSpeed { get; private set; }
 
 }
