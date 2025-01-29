@@ -8,17 +8,28 @@ public class HeroUnit : MonoBehaviour
 
 
     [Header("Components")]
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Rigidbody2D _rb2d;
     public PathfindingModule PathfindingModule;
 
     // STATS::
-    public int CurrentHealth { get; private set; }
+    private int _currentHealth;
+    public int CurrentHealth
+    {
+        get { return _currentHealth; }
+        set
+        {
+            _currentHealth = Math.Clamp(value, 0, MaxHealth);
+        }
+    }
 
     // Stats computational properties (if complicated, use an intermediary method)
     public int MaxHealth { get { return Data.BaseMaxHealth; } }
-    public float MaxSpeed { get { return Data.BaseMaxSpeed; } }
+    public float MoveSpeed { get { return Data.BaseMoveSpeed; } }
     public int Power { get { return Data.BasePower; } }
-    public float AttackSpeed { get { return Data.BaseAttackSpeed; } }
+    public float Speed { get { return Data.BaseSpeed; } }
+    public float Cooldown { get { return Data.BaseCooldown; } }
+    public int Recovery { get { return Data.BaseRecovery; } }
 
 
 
@@ -29,18 +40,29 @@ public class HeroUnit : MonoBehaviour
             Init(Data);
     }
 
+    private void Update()
+    {
+        // Flip sprite according to velocity X
+        if (PathfindingModule.AIPath.velocity.x < -1f)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else if (PathfindingModule.AIPath.velocity.x > 1f)
+        {
+            _spriteRenderer.flipX = false;
+        }
+    }
+
     public void Init(HeroData data)
     {
         if (data.IsUnityNull())
             throw new ArgumentNullException("data", "Can't initilize a unit with null data");
 
         Data = data;
-        gameObject.name = $"Hero - {Data.name}";
+        InitData();
 
-        PathfindingModule.SetMaxSpeed(MaxSpeed);
+        PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
-
-
 
         AddCallbacks();
     }
@@ -51,24 +73,20 @@ public class HeroUnit : MonoBehaviour
         GameManager.Instance.OnGameResumed += ResumeHero;
     }
 
-
-    #region Control Methods
-
-    /// <summary>
-    /// Sets the velocity of the unit in the direction given using its speed.
-    /// </summary>
-    /// <param name="direction"> The direction of the movement. </param>
-    public void SetVelocity(Vector2 direction)
+    private void InitData()
     {
-        if (PathfindingModule.IsEnabled)
-            throw new System.Exception("Unit can't be controlled, using pathfinder.");
-
-        direction.Normalize();
-        _rb2d.linearVelocity = MaxSpeed * direction;
+        gameObject.name = $"Hero - {Data.Name}";
+        _spriteRenderer.sprite = Data.Sprite;
+        CurrentHealth = MaxHealth;
     }
-
-    #endregion
-
+    public void TakeDamage(int damage)
+    {
+        CurrentHealth -= damage;
+        if (CurrentHealth <= 0)
+        {
+            Debug.Log($"{Data.Name} died");
+        }
+    }
     #region Pause & Resume
 
     private void PauseHero()
@@ -83,6 +101,10 @@ public class HeroUnit : MonoBehaviour
         PathfindingModule.ResumePathfinding();
     }
 
+   
+
 
     #endregion
+
+
 }

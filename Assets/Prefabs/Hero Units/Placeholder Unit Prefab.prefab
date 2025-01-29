@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 5546699830057789233}
   - component: {fileID: 2671949234948087404}
   - component: {fileID: 2640097930759284790}
+  - component: {fileID: 6249397962025085458}
   m_Layer: 7
   m_Name: Placeholder Unit Prefab
   m_TagString: Untagged
@@ -268,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 11400000, guid: 9b61c84f832dee941b41c15e6e8d78f9, type: 2}
+  _spriteRenderer: {fileID: 5102228263732703293}
   _rb2d: {fileID: 2676475354901530220}
   PathfindingModule: {fileID: 2640097930759284790}
 --- !u!114 &2640097930759284790
@@ -286,6 +288,43 @@ MonoBehaviour:
   DestinationSetter: {fileID: 2573699114096562341}
   Seeker: {fileID: 8899468407389470147}
   _isEnabled: 1
+--- !u!70 &6249397962025085458
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809590289453371301}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!1 &6728688903928914444
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,8 +401,8 @@ SpriteRenderer:
   m_SortingLayerID: 780417069
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
-  m_Color: {r: 0, g: 0.4446776, b: 1, a: 1}
+  m_Sprite: {fileID: -4942022713399006546, guid: f871ce399261f7b42b4ff7fc87519b33, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -6,13 +6,12 @@ using UnityEngine.Pool;
 public class EnemyUnit : MonoBehaviour
 {
     [field: SerializeField] public EnemyData Data { get; private set; }
-
-
+    
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb2d;
     public CircleCollider2D Collider;
     public PathfindingModule PathfindingModule;
-
+    
     
     private ObjectPool<EnemyUnit> _pool;
 
@@ -21,12 +20,12 @@ public class EnemyUnit : MonoBehaviour
 
     // Stats computational properties (if complicated, use an intermediary method)
     public int MaxHealth { get { return Data.BaseMaxHealth; } }
-    public float MaxSpeed { get { return Data.BaseMaxSpeed; } }
+    public float MoveSpeed { get { return Data.BaseMoveSpeed; } }
     public int Power { get { return Data.BasePower; } }
+    public float Speed { get { return Data.BaseSpeed; } }
 
-
-   
-
+    private bool _canAttack = true;
+    private float _attackCD = 0f;
     public void Initialize(EnemyData data, Vector3 position, ObjectPool<EnemyUnit> pool)
     {
         if (data.IsUnityNull())
@@ -38,8 +37,10 @@ public class EnemyUnit : MonoBehaviour
         gameObject.name = $"{Data.name}";
 
         gameObject.transform.position = position;
+        _canAttack = true;
+        _attackCD = 0f;
 
-        PathfindingModule.SetMaxSpeed(MaxSpeed);
+        PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
 
 
@@ -63,6 +64,32 @@ public class EnemyUnit : MonoBehaviour
        
         _pool?.Release(this);
     }
+    private void Update()
+    {
+        if (!_canAttack)
+        {
+            _attackCD -= Time.deltaTime;
+            if(_attackCD <= 0f)
+            {
+                _canAttack = true;
+                Debug.Log("Attack Reset");
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Enemy Collided");
+        if (!_canAttack) return;
+        if (PlayerController.Instance.DamageHero(collision.transform, Power))
+        {
+            Debug.Log("Player Hit");
+            _canAttack = false;
+            _attackCD = Speed;
+        }
+    }
+
+
 
     #region Pause & Resume
 
@@ -78,6 +105,7 @@ public class EnemyUnit : MonoBehaviour
         PathfindingModule.ResumePathfinding();
     }
 
+    
 
     #endregion
 }
