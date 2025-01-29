@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
-  m_Name: Leonardo
+  m_Name: Roll
   m_EditorClassIdentifier: 
-  <BaseMaxHealth>k__BackingField: 0
-  <BaseMaxSpeed>k__BackingField: 6
+  <Name>k__BackingField: Roll
+  <BaseMaxHealth>k__BackingField: 100
+  <BaseMoveSpeed>k__BackingField: 6
   <BasePower>k__BackingField: 0
-  <BaseAttackSpeed>k__BackingField: 0
+  <BaseSpeed>k__BackingField: 0
+  <BaseCooldown>k__BackingField: 0
+  <BaseRecovery>k__BackingField: 0
+  <Sprite>k__BackingField: {fileID: -2927662895061353274, guid: f871ce399261f7b42b4ff7fc87519b33, type: 3}

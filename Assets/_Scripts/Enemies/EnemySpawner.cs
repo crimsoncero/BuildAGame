@@ -61,7 +61,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
         EnemyUnit enemy = Pool.Get();
         enemy.Initialize(data, position, Pool);
     }
-    private void SpawnGroup(List<EnemyData> enemiesToSpawn, int sector)
+    private List<EnemyData> SpawnGroup(List<EnemyData> enemiesToSpawn, int sector)
     {
         ShuffleBag<EnemyData> enemyBag = new ShuffleBag<EnemyData>(enemiesToSpawn);
 
@@ -92,8 +92,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
             // Stop spawning if there are no more eligible nodes;
             if(frontier.Count <= 0)
             {
-                Debug.LogError("Could not spawn all enemies, not enough eligible nodes");
-                break;
+                // Return the list of enemies that could not spawn.
+                return enemyBag.GetCurrentBag();
             }
 
             // Get the node at the top of the queue, and add its neighbours to the queue.
@@ -110,10 +110,9 @@ public class EnemySpawner : Singleton<EnemySpawner>
             }
 
             SpawnEnemy(enemyBag.Pick(), (Vector3)currentNode.position);
-
         }
-
-
+        // Spawned all enemies
+        return null;
     }
 
     public void SpawnWave(List<EnemyData> spawnGroup, int numberOfGroups)
@@ -122,8 +121,12 @@ public class EnemySpawner : Singleton<EnemySpawner>
         
         for(int i = 0; i < numberOfGroups; i++)
         {
-            int sector = sectorBag.Pick();
-            SpawnGroup(spawnGroup, sector);
+            var enemeisToSpawn = spawnGroup;
+            while(enemeisToSpawn != null)
+            {
+                int sector = sectorBag.Pick();
+                enemeisToSpawn = SpawnGroup(enemeisToSpawn, sector);
+            }
         }
     }
 
