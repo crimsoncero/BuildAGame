@@ -24,8 +24,7 @@ public class EnemyUnit : MonoBehaviour
     public int Power { get { return Data.BasePower; } }
     public float Speed { get { return Data.BaseSpeed; } }
 
-    private bool _canAttack = true;
-    private float _attackCD = 0f;
+    private BoolTimer _canAttack;
     public void Initialize(EnemyData data, Vector3 position, ObjectPool<EnemyUnit> pool)
     {
         if (data.IsUnityNull())
@@ -37,8 +36,8 @@ public class EnemyUnit : MonoBehaviour
         gameObject.name = $"{Data.name}";
 
         gameObject.transform.position = position;
-        _canAttack = true;
-        _attackCD = 0f;
+
+        _canAttack = new BoolTimer(true, Speed);
 
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
@@ -66,23 +65,18 @@ public class EnemyUnit : MonoBehaviour
     }
     private void Update()
     {
-        if (!_canAttack)
+        if (!GameManager.Instance.IsPaused)
         {
-            _attackCD -= Time.deltaTime;
-            if(_attackCD <= 0f)
-            {
-                _canAttack = true;
-            }
+            _canAttack.UpdateTimer();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!_canAttack) return;
+        if (!_canAttack.Value) return;
         if (PlayerController.Instance.DamageHero(collision.transform, Power))
         {
-            _canAttack = false;
-            _attackCD = Speed;
+            _canAttack.SetTimer();
         }
     }
 
