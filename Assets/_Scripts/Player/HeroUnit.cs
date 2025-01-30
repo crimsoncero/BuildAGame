@@ -5,13 +5,15 @@ using MoreMountains.Tools;
 
 public class HeroUnit : MonoBehaviour
 {
+    public event Action OnHealthChanged;
+    
+    
     [field: SerializeField] public HeroData Data { get; private set; }
 
 
     [Header("Components")]
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Rigidbody2D _rb2d;
-    [SerializeField] private MMHealthBar _healthbar;
     public PathfindingModule PathfindingModule;
 
     // STATS::
@@ -22,7 +24,7 @@ public class HeroUnit : MonoBehaviour
         set
         {
             _currentHealth = Math.Clamp(value, 0, MaxHealth);
-            _healthbar.UpdateBar(CurrentHealth, 0, MaxHealth, true);
+            OnHealthChanged?.Invoke();
         }
     }
 
