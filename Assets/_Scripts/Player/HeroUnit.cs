@@ -15,6 +15,7 @@ public class HeroUnit : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb2d;
     public PathfindingModule PathfindingModule;
 
+
     // STATS::
     private int _currentHealth;
     public int CurrentHealth

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class XPGem : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     [field: SerializeField] public XPGemData Data {  get; private set; }
 

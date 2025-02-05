@@ -41,7 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Heroes
+  - name: Units
     uniqueID: 780417069
     locked: 0
   - name: UI

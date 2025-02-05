@@ -13,7 +13,7 @@ public class XPManager : Singleton<XPManager>
     // XP Gems
 
     [Header("XP Gem Creation Params")]
-    [SerializeField] private XPGem _gemPrefab;
+    [SerializeField] private Projectile _gemPrefab;
     [SerializeField] private Transform _gemParent;
     [SerializeField] private int _maxInstanceAmount = 500;
     [Space]
@@ -22,39 +22,37 @@ public class XPManager : Singleton<XPManager>
     [SerializeField] private XPGemData _uniqueGemData;
     [SerializeField] private XPGemData _epicGemData;
 
-    private ObjectPool<XPGem> _gemPool;
-    private XPGem _uniqueGem;
-    private int _storedXP;
+    private ObjectPool<Projectile> _gemPool;
+    private Projectile _uniqueGem = null;
+    private int _storedXP = 0;
 
     private void Start()
     {
-        _gemPool = new ObjectPool<XPGem>(CreateGem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, _maxInstanceAmount, _maxInstanceAmount);
+        _gemPool = new ObjectPool<Projectile>(CreateGem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, _maxInstanceAmount, _maxInstanceAmount);
         _gemPool.PreWarm(_maxInstanceAmount);
-        _uniqueGem = null;
-        _storedXP = 0;
     }
 
     #region Pool Methods
 
-    private XPGem CreateGem()
+    private Projectile CreateGem()
     {
-        XPGem gem = Instantiate(_gemPrefab, _gemParent);
+        Projectile gem = Instantiate(_gemPrefab, _gemParent);
 
         gem.gameObject.SetActive(false);
 
         return gem;
     }
 
-    private void OnTakeFromPool(XPGem gem)
+    private void OnTakeFromPool(Projectile gem)
     {
         gem.gameObject.SetActive(true);
     }
-    private void OnReturnedToPool(XPGem gem)
+    private void OnReturnedToPool(Projectile gem)
     {
         gem.gameObject.SetActive(false);
     }
 
-    private void OnDestroyPoolObject(XPGem gem)
+    private void OnDestroyPoolObject(Projectile gem)
     {
         Destroy(gem.gameObject);
     }
@@ -71,7 +69,7 @@ public class XPManager : Singleton<XPManager>
             // Check whether a unique gem needs to be spawned
             if (_uniqueGem == null)
             {
-                XPGem unique = _gemPool.Get();
+                Projectile unique = _gemPool.Get();
                 unique.Init(_uniqueGemData, position);
                 _uniqueGem = unique;
             }
@@ -100,7 +98,7 @@ public class XPManager : Singleton<XPManager>
                     return;
             }
 
-            XPGem gem = _gemPool.Get();
+            Projectile gem = _gemPool.Get();
             gem.Init(gemData, position);
         }
     }

@@ -1,5 +1,8 @@
 using UnityEngine;
 
+// BaseAbilitySO
+// AbilityInstance
+
 
 /// <summary>
 /// Read only base stats of the hero units.
@@ -11,6 +14,7 @@ public class HeroData : ScriptableObject
     [field: SerializeField]
     public string Name { get; private set; }
 
+   
 
     [field:Header("Base Stats")]
     [field:SerializeField]
