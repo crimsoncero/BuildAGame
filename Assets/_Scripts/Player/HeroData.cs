@@ -13,7 +13,8 @@ public class HeroData : ScriptableObject
     [field:Header("General")]
     [field: SerializeField]
     public string Name { get; private set; }
-
+    [field: SerializeField]
+    public BaseAbilityData AbilityData { get; private set; }
    
 
     [field:Header("Base Stats")]

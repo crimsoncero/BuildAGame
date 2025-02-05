@@ -8,13 +8,16 @@ public class HeroUnit : MonoBehaviour
     
     
     [field: SerializeField] public HeroData Data { get; private set; }
+     public BaseAbility Ability { get; private set; }
 
 
     [Header("Components")]
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Rigidbody2D _rb2d;
+    [SerializeField] private Transform _abilityChild;
     public PathfindingModule PathfindingModule;
 
+    private BaseAbility _ability;
 
     // STATS::
     private int _currentHealth;
@@ -65,6 +68,14 @@ public class HeroUnit : MonoBehaviour
 
         Data = data;
         InitData();
+
+        // Init ability component
+        if(Data.AbilityData != null)
+        {
+            _ability = Data.AbilityData.CreateAbilityComponent(_abilityChild);
+            _ability.Init(Data.AbilityData, this);
+        }
+        
 
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);

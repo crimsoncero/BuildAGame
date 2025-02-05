@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -54,5 +55,29 @@ public static class Helpers
         {
             pool.Release(entity);
         }
+    }
+
+    public static List<(Vector2 position, float angle)> GetEqualOrbitLocations(int entityCount, float radius)
+    {
+        var list = new List<(Vector2 position, float angle)>();
+
+        for (int i = 0; i < entityCount;i++)
+        {
+            float angle = (360f / entityCount) * i;
+
+            Vector2 position = new Vector2();
+            position.x = Mathf.Cos(angle * Mathf.Deg2Rad) * radius;
+            position.y = Mathf.Sin(angle * Mathf.Deg2Rad) * radius;
+
+            list.Add((position, angle));
+        }
+
+        return list;
+
+    }
+
+    public static bool Includes(this LayerMask mask, int layer)
+    {
+        return (mask.value & 1 << layer) > 0;
     }
 }

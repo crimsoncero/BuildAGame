@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Blues
+  <Name>k__BackingField: Rock
+  <AbilityData>k__BackingField: {fileID: 0}
   <BaseMaxHealth>k__BackingField: 100
   <BaseMoveSpeed>k__BackingField: 6
   <BasePower>k__BackingField: 0
   <BaseSpeed>k__BackingField: 0
   <BaseCooldown>k__BackingField: 0
   <BaseRecovery>k__BackingField: 0
-  <Sprite>k__BackingField: {fileID: -4942022713399006546, guid: f871ce399261f7b42b4ff7fc87519b33, type: 3}
+  <Sprite>k__BackingField: {fileID: -4633399141807359633, guid: f871ce399261f7b42b4ff7fc87519b33, type: 3}

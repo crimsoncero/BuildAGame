@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6d8e060f3852a4fac40cfd477fe1e0, type: 3}
   m_Name: TestWave
   m_EditorClassIdentifier: 
-  SpawnTime: 5
-  SpawnGroups: 1
-  GroupSize: 1
+  SpawnTime: 3
+  SpawnGroups: 2
+  GroupSize: 5
   EnemyList:
   - Data: {fileID: 11400000, guid: 675166ff7fa18c64caed9f20f69b8e5c, type: 2}
-    Count: 1
+    Count: 5
   _isValid: 1

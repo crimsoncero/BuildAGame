@@ -301,9 +301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 11400000, guid: 9b61c84f832dee941b41c15e6e8d78f9, type: 2}
-  <Ability>k__BackingField: {fileID: 0}
   _spriteRenderer: {fileID: 5102228263732703293}
   _rb2d: {fileID: 2676475354901530220}
+  _abilityChild: {fileID: 1443446417458796097}
   PathfindingModule: {fileID: 2640097930759284790}
 --- !u!114 &2640097930759284790
 MonoBehaviour:
