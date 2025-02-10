@@ -89,7 +89,6 @@ public class EnemyUnit : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (damage <= 0) return;
-        Debug.Log("Taking damage " + damage);
         CurrentHealth -= damage;
         if (CurrentHealth <= 0)
             KillUnit();
