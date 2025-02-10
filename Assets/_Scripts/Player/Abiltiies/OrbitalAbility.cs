@@ -3,19 +3,13 @@ using UnityEngine.Pool;
 
 public class OrbitalAbility : BaseAbility
 {
-
-
     private OrbitalAbilityData Data { get { return _baseData as OrbitalAbilityData; } }
     private ObjectPool<OrbitalProjectile> _pool;
 
     private BoolTimer _spawnTimer;
 
-    // Computational properties to adjust ability parameters depending on other factors than the base:
-    private int _damage { get { return Data.Damage; } }
-    private int _count { get { return Data.Count; } }
-    private float _cooldown { get { return Data.Cooldown; } }
-    private float _duration { get { return Data.Duration; } }
-    private float _spawnTime { get { return _cooldown + _duration; } }
+  
+    private float _spawnTime { get { return _cooldown + Data.Duration; } }
     public override void Init(BaseAbilityData data, HeroUnit hero)
     {
         base.Init(data, hero);
@@ -36,7 +30,7 @@ public class OrbitalAbility : BaseAbility
                 SpawnOrbitals();
             }
 
-            transform.Rotate(0,0, Data.Speed * Time.deltaTime);
+            transform.Rotate(0,0, _speed * Data.SpeedMultipliar * Time.deltaTime);
         }
        
     }
@@ -53,7 +47,7 @@ public class OrbitalAbility : BaseAbility
             Vector2 position = Vector2.zero;
             position.x = transform.position.x + pos.position.x;
             position.y = transform.position.y + pos.position.y;
-            orbital.Init(_pool, position, _duration, _damage);
+            orbital.Init(_pool, position, Data.Duration, _power);
         }
     }
 

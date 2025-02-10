@@ -34,11 +34,6 @@ public class HeroUnit : MonoBehaviour
     // Stats computational properties (if complicated, use an intermediary method)
     public int MaxHealth { get { return Data.BaseMaxHealth; } }
     public float MoveSpeed { get { return Data.BaseMoveSpeed; } }
-    public int Power { get { return Data.BasePower; } }
-    public float Speed { get { return Data.BaseSpeed; } }
-    public float Cooldown { get { return Data.BaseCooldown; } }
-    public int Recovery { get { return Data.BaseRecovery; } }
-
 
 
     private void Start()

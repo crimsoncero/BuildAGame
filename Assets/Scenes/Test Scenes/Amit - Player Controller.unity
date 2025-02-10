@@ -953,7 +953,7 @@ MonoBehaviour:
   _cinemachineCamera: {fileID: 867789253}
   _heroParent: {fileID: 115854896}
   _heroMover: {fileID: 1135316450}
-  _input: {fileID: 0}
+  _input: {fileID: 740804089}
 --- !u!4 &740804088
 Transform:
   m_ObjectHideFlags: 0

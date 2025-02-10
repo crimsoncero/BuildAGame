@@ -9,12 +9,6 @@ public class MissileAbility : BaseAbility
 
     private BoolTimer _castTimer;
 
-    // Computational properties to adjust ability parameters depending on other factors than the base:
-    private int _damage { get { return Data.Damage; } }
-    private int _count { get { return Data.Count; } }
-    private float _cooldown { get { return Data.Cooldown; } }
-    private float _speed { get { return Data.Cooldown; } }
-    private int _pierce { get { return Data.Pierce; } }
     public override void Init(BaseAbilityData data, HeroUnit hero)
     {
         base.Init(data, hero);
@@ -54,11 +48,12 @@ public class MissileAbility : BaseAbility
             targetPos.y += Random.Range(0, target.bounds.size.y);
 
             Vector2 direction = targetPos - (Vector2)transform.position;
-            Vector2 velocity = direction * _speed;
+            direction.Normalize();
+            Vector2 velocity = direction * _speed * Data.SpeedMultipliar;
 
             MissileProjectile projectile = _pool.Get();
 
-            projectile.Init(_pool, transform.position, _damage, _pierce, velocity);
+            projectile.Init(_pool, transform.position, _power, _pierce, velocity);
         }
         
     }

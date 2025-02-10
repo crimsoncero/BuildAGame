@@ -13,12 +13,20 @@ MonoBehaviour:
   m_Name: Missile
   m_EditorClassIdentifier: 
   <Name>k__BackingField: MissileTest
-  <Damage>k__BackingField: 10
+  <BaseStats>k__BackingField:
+    Power: 10
+    Count: 1
+    Speed: 1
+    Cooldown: 1
+    Pierce: 1
+  <LevelUpgrades>k__BackingField:
+  - Power: 5
+    Count: 0
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
   <Range>k__BackingField: 30
-  <Cooldown>k__BackingField: 0.5
-  <Speed>k__BackingField: 20
-  <Count>k__BackingField: 2
-  <Pierce>k__BackingField: 2
+  <SpeedMultipliar>k__BackingField: 12
   <EnemyLayer>k__BackingField:
     serializedVersion: 2
     m_Bits: 256
