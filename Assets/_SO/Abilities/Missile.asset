@@ -25,6 +25,11 @@ MonoBehaviour:
     Speed: 0
     Cooldown: 0
     Pierce: 0
+  - Power: 12
+    Count: 0
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
   <Range>k__BackingField: 30
   <SpeedMultipliar>k__BackingField: 12
   <EnemyLayer>k__BackingField:

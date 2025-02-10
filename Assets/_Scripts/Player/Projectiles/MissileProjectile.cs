@@ -17,9 +17,14 @@ public class MissileProjectile : BaseProjectile
         _pierce = pierce;
         _rb2d.linearVelocity = velocity;
 
-        float angle = Vector2.Angle(Vector2.right, velocity);
-        transform.rotation = Quaternion.Euler(0,0,angle);
-
+        //Vector2 fromVector = transform.position;
+        //fromVector.x = 0;
+        //fromVector.z = 0;
+        //Vector2 toPosition = 
+        //transform.LookAt(transform.position + (Vector3)velocity, Vector3.forward);
+        //float angle = Vector2.Angle(Vector2.right, velocity);
+        //transform.rotation = Quaternion.Euler(0,0,angle);
+        transform.right = (Vector3)velocity;
     }
 
     

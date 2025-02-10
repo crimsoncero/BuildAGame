@@ -27,6 +27,7 @@ public class MissileAbility : BaseAbility
             if (_castTimer.Value)
             {
                 Cast();
+                _castTimer.SetTimer(_cooldown);
             }
 
         }
@@ -35,7 +36,6 @@ public class MissileAbility : BaseAbility
 
     private void Cast()
     {
-        _castTimer.SetTimer(_cooldown);
 
         Collider2D target = FindClosestTarget();
         if (target == null) return; // No target found.
@@ -63,9 +63,10 @@ public class MissileAbility : BaseAbility
     {
         // Find targets
         ContactFilter2D filter = new ContactFilter2D();
+        filter.useTriggers = true;
         filter.SetLayerMask(Data.EnemyLayer);
         List<Collider2D> targets = new List<Collider2D>();
-
+        
         // Search half the range
         int targetCount = Physics2D.OverlapCircle(transform.position, Data.Range / 2, filter, targets);
         if (targetCount <= 0) // if didn't find any target, search the whole range.
@@ -78,6 +79,8 @@ public class MissileAbility : BaseAbility
 
         for(int i = 1; i < targets.Count; i++)
         {
+
+
             float newDistance = Vector2.Distance(targets[i].transform.position, transform.position);
             if(newDistance < closestDistance)
             {

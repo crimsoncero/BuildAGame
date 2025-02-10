@@ -98,6 +98,19 @@ public class HeroUnit : MonoBehaviour
             Debug.Log($"{Data.Name} died");
         }
     }
+
+    public void Heal(int healAmount, bool isPercentile = false)
+    {
+        if (healAmount <= 0) return;
+        if (isPercentile)
+        {
+            CurrentHealth += Mathf.CeilToInt((healAmount / 100f) * MaxHealth);
+        }
+        else
+        {
+            CurrentHealth += healAmount;
+        }
+    }
     #region Pause & Resume
 
     private void PauseHero()
