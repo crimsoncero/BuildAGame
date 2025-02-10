@@ -20,7 +20,7 @@ public class OrbitalAbility : BaseAbility
     {
         base.Init(data, hero);
         
-        _pool = new ObjectPool<OrbitalProjectile>(Createprojectile, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, true, Data.InitCount);
+        _pool = new ObjectPool<OrbitalProjectile>(Createprojectile, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, Data.InitCount, 50);
         _pool.PreWarm(Data.InitCount);
         _spawnTimer = new BoolTimer(false, _spawnTime);
         _spawnTimer.SetTimer(_spawnTime);
