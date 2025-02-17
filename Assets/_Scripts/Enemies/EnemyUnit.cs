@@ -97,6 +97,7 @@ public class EnemyUnit : MonoBehaviour
 
     public void KillUnit()
     {
+        XPManager.Instance.SpawnGem(Data.GemDropped, transform.position);
         gameObject.SetActive(false);
     }
 

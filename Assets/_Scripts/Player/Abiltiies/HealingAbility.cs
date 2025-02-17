@@ -45,7 +45,6 @@ public class HealingAbility : BaseAbility
             hero.Heal(_power, true);
         }
 
-        Debug.Log("Healing");
     }
 
 

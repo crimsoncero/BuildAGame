@@ -1,14 +1,18 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class XPManager : Singleton<XPManager>
 {
+    public event Action OnLevelUp;
+    
     // The type of gems in the game, spaced to allow more to be added if needed.
     public enum XPGemTypes { Common = 0, Rare = 25, Epic = 50, Unique = 99,}
 
     // XP Management
-
+    [Header("XP Data")]
+    [SerializeField] private XPData _xpData;
 
     // XP Gems
 
@@ -26,10 +30,28 @@ public class XPManager : Singleton<XPManager>
     private XPGem _uniqueGem = null;
     private int _storedXP = 0;
 
+    private int _currentXP = 0;
+    private int _targetXP = 0;
+    private int _currentLevel = 1;
+    
     private void Start()
     {
         _gemPool = new ObjectPool<XPGem>(CreateGem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, _maxInstanceAmount, _maxInstanceAmount);
         _gemPool.PreWarm(_maxInstanceAmount);
+        _targetXP = _xpData.BaseXpToLevelUp;
+    }
+
+    private void Update()
+    {
+        if (!GameManager.Instance.IsPaused)
+        {
+            if (_currentXP >= _targetXP)
+            {
+                _currentLevel++;
+                _targetXP += _xpData.CalculateXpNeededToLevelUp(_currentLevel);
+                OnLevelUp?.Invoke();
+            }
+        }
     }
 
     #region Pool Methods
@@ -63,16 +85,16 @@ public class XPManager : Singleton<XPManager>
         // Check if max capacity reached (minus one because the unique gem is also part of the max capacity)
         if(_gemPool.CountActive >= _maxInstanceAmount - 1)
         {
-            // Don't spawn the gem, rather add its xp equivelent to the storage.
-            _storedXP += GemToXP(gemType);
+            // Don't spawn the gem, rather add its xp equivalent to the storage.
+            _storedXP += _xpData.GetGemXpAmount(gemType);
 
             // Check whether a unique gem needs to be spawned
-            if (_uniqueGem == null)
-            {
-                XPGem unique = _gemPool.Get();
-                unique.Init(_uniqueGemData, position);
-                _uniqueGem = unique;
-            }
+            if (_uniqueGem != null)
+                return;
+
+            XPGem unique = _gemPool.Get();
+            unique.Init(_uniqueGemData, position, _gemPool);
+            _uniqueGem = unique;
         }
         else
         {
@@ -99,12 +121,20 @@ public class XPManager : Singleton<XPManager>
             }
 
             XPGem gem = _gemPool.Get();
-            gem.Init(gemData, position);
+            gem.Init(gemData, position, _gemPool);
         }
     }
 
-    public int GemToXP (XPGemTypes gemType)
+    public void AddXp(XPGemTypes gemType)
     {
-        throw new NotImplementedException();
+        if (gemType == XPGemTypes.Epic)
+            _currentXP += _storedXP;
+        else
+            _currentXP += _xpData.GetGemXpAmount(gemType);
+    }
+
+    private void OnGUI()
+    {
+        GUI.TextArea(new Rect(Screen.width - 400, 10, 300, 300), $"Current XP: {_currentXP}\n Target XP: {_targetXP}\n Current Level: {_currentLevel}" );
     }
 }

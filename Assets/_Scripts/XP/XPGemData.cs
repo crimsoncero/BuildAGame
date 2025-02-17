@@ -6,7 +6,7 @@ public class XPGemData : ScriptableObject
 {
     [Header("Parameters")]
     [field: SerializeField] public XPGemTypes Type { get; private set; }
-
+    
     //[Header("Visuals")]
 
 }

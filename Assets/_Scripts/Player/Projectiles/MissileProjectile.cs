@@ -35,7 +35,6 @@ public class MissileProjectile : BaseProjectile
         if (enemyHit.IsUnityNull()) return;
 
         enemyHit.TakeDamage(_damage);
-        Debug.Log("Missile hit");
         if (_pierce > 0)
             _pierce--;
         else

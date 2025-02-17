@@ -17,5 +17,7 @@ public class EnemyData : ScriptableObject
     public int BasePower { get; private set; }
     [field: SerializeField]
     public float BaseSpeed { get; private set; }
+    [field: SerializeField]
+    public XPManager.XPGemTypes GemDropped { get; private set; }
 
 }
