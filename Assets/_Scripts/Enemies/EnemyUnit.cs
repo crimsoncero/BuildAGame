@@ -6,13 +6,12 @@ using UnityEngine.Pool;
 public class EnemyUnit : MonoBehaviour
 {
     [field: SerializeField] public EnemyData Data { get; private set; }
-
-
+    
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb2d;
     public CircleCollider2D Collider;
     public PathfindingModule PathfindingModule;
-
+    
     
     private ObjectPool<EnemyUnit> _pool;
 
@@ -21,12 +20,11 @@ public class EnemyUnit : MonoBehaviour
 
     // Stats computational properties (if complicated, use an intermediary method)
     public int MaxHealth { get { return Data.BaseMaxHealth; } }
-    public float MaxSpeed { get { return Data.BaseMaxSpeed; } }
+    public float MoveSpeed { get { return Data.BaseMoveSpeed; } }
     public int Power { get { return Data.BasePower; } }
+    public float Speed { get { return Data.BaseSpeed; } }
 
-
-   
-
+    private BoolTimer _canAttack;
     public void Initialize(EnemyData data, Vector3 position, ObjectPool<EnemyUnit> pool)
     {
         if (data.IsUnityNull())
@@ -39,7 +37,9 @@ public class EnemyUnit : MonoBehaviour
 
         gameObject.transform.position = position;
 
-        PathfindingModule.SetMaxSpeed(MaxSpeed);
+        _canAttack = new BoolTimer(true, Speed);
+
+        PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
 
 
@@ -63,6 +63,24 @@ public class EnemyUnit : MonoBehaviour
        
         _pool?.Release(this);
     }
+    private void Update()
+    {
+        if (!GameManager.Instance.IsPaused)
+        {
+            _canAttack.UpdateTimer();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!_canAttack.Value) return;
+        if (PlayerController.Instance.DamageHero(collision.transform, Power))
+        {
+            _canAttack.SetTimer();
+        }
+    }
+
+
 
     #region Pause & Resume
 
@@ -78,6 +96,7 @@ public class EnemyUnit : MonoBehaviour
         PathfindingModule.ResumePathfinding();
     }
 
+    
 
     #endregion
 }

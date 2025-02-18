@@ -12,8 +12,10 @@ public class EnemyData : ScriptableObject
     [field: SerializeField]
     public int BaseMaxHealth { get; private set; }
     [field: SerializeField]
-    public float BaseMaxSpeed { get; private set; } = 4f;
+    public float BaseMoveSpeed { get; private set; } = 4f;
     [field: SerializeField]
     public int BasePower { get; private set; }
+    [field: SerializeField]
+    public float BaseSpeed { get; private set; }
 
 }
