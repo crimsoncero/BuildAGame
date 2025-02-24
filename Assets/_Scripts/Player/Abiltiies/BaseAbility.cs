@@ -1,4 +1,5 @@
 using UnityEngine;
+using static BaseAbilityData;
 
 public class BaseAbility : MonoBehaviour
 {
@@ -16,10 +17,26 @@ public class BaseAbility : MonoBehaviour
     protected float _cooldown { get { return _abilityStats.Cooldown; } }
     protected int _pierce { get { return _abilityStats.Pierce; } }
 
+    public int MaxLevel { get { return _baseData.LevelUpgrades.Count + 1; } }
+
     public virtual void Init(BaseAbilityData data, HeroUnit hero)
     {
         _baseData = data;
         _heroUnit = hero;
         CurrentLevel = 1;
+    }
+
+    public void LevelUp()
+    {
+        if (CurrentLevel >= MaxLevel) return;
+
+        CurrentLevel++;
+    }
+    public Stats GetNextLevelStats()
+    {
+        if(CurrentLevel == 0)
+            return _baseData.BaseStats;
+
+        return _baseData.LevelUpgrades[CurrentLevel - 1];
     }
 }

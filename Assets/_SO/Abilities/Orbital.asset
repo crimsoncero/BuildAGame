@@ -14,17 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Orbital
   <BaseStats>k__BackingField:
+    Description: Don't show me
     Power: 20
     Count: 4
     Speed: 2
     Cooldown: 1
     Pierce: 0
-  <LevelUpgrades>k__BackingField:
-  - Power: 10
-    Count: 0
-    Speed: 0
-    Cooldown: 0
-    Pierce: 0
+  <LevelUpgrades>k__BackingField: []
   <Duration>k__BackingField: 1
   <Radius>k__BackingField: 5
   <SpeedMultipliar>k__BackingField: -50

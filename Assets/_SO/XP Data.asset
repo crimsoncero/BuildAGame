@@ -16,6 +16,6 @@ MonoBehaviour:
   <RareGemMultiplier>k__BackingField: 5
   <EpicGemMultiplier>k__BackingField: 5
   <BaseXpToLevelUp>k__BackingField: 1000
-  <MaxLevelMultiplier>k__BackingField: 2
+  <MaxLevelMultiplier>k__BackingField: 10
   <EasingFactor>k__BackingField: 1
   <MaxLevelScaled>k__BackingField: 100

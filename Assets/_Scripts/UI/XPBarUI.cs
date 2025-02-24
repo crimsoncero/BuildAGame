@@ -16,7 +16,6 @@ public class XPBarUI : MonoBehaviour
         if(XPManager.Instance != null)
         {
             val = XPManager.Instance.CurrentXP01;
-            Debug.Log(val);
         }
 
         _xpBar.UpdateBar01(val);

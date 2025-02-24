@@ -14,18 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: MissileTest
   <BaseStats>k__BackingField:
+    Description: random missile text
     Power: 10
     Count: 1
     Speed: 1
     Cooldown: 1
     Pierce: 1
   <LevelUpgrades>k__BackingField:
-  - Power: 5
+  - Description: test 1 Missile
+    Power: 5
     Count: 0
     Speed: 0
     Cooldown: 0
     Pierce: 0
-  - Power: 12
+  - Description: test 2 missile
+    Power: 12
     Count: 0
     Speed: 0
     Cooldown: 0

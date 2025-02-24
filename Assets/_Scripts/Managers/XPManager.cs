@@ -27,6 +27,9 @@ public class XPManager : Singleton<XPManager>
     [SerializeField] private XPGemData _uniqueGemData;
     [SerializeField] private XPGemData _epicGemData;
 
+    [Header("Debug")]
+    [SerializeField] private bool _debugXP;
+
     private ObjectPool<XPGem> _gemPool;
     private XPGem _uniqueGem = null;
     private int _storedXP = 0;
@@ -145,6 +148,9 @@ public class XPManager : Singleton<XPManager>
 
     private void OnGUI()
     {
-        GUI.TextArea(new Rect(Screen.width - 400, 10, 300, 300), $"Current XP: {_currentXP}\n Target XP: {_targetXP}\n Current Level: {_currentLevel}" );
+        if (_debugXP)
+        {
+            GUI.TextArea(new Rect(Screen.width - 400, 10, 300, 300), $"Current XP: {_currentXP}\n Target XP: {_targetXP}\n Current Level: {_currentLevel}");
+        }
     }
 }

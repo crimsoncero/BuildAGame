@@ -8,7 +8,6 @@ public class HeroUnit : MonoBehaviour
     
     
     [field: SerializeField] public HeroData Data { get; private set; }
-     public BaseAbility Ability { get; private set; }
 
 
     [Header("Components")]
@@ -18,7 +17,8 @@ public class HeroUnit : MonoBehaviour
     public PathfindingModule PathfindingModule;
 
     private BaseAbility _ability;
-
+    public BaseAbility Ability { get => _ability; private set => _ability = value; }
+    
     // STATS::
     private int _currentHealth;
     public int CurrentHealth
@@ -41,6 +41,8 @@ public class HeroUnit : MonoBehaviour
         // Init the unit automatically if starting with data. (for testing mainly)
         if (!Data.IsUnityNull())
             Init(Data);
+
+        PlayerController.Instance.RegisterHero(this);
     }
 
     private void Update()
@@ -67,8 +69,8 @@ public class HeroUnit : MonoBehaviour
         // Init ability component
         if(Data.AbilityData != null)
         {
-            _ability = Data.AbilityData.CreateAbilityComponent(_abilityChild);
-            _ability.Init(Data.AbilityData, this);
+            Ability = Data.AbilityData.CreateAbilityComponent(_abilityChild);
+            Ability.Init(Data.AbilityData, this);
         }
         
 

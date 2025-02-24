@@ -7,6 +7,7 @@ public abstract class BaseAbilityData : ScriptableObject
     [Serializable]
     public struct Stats
     {
+        public string Description;
         public int Power;
         public int Count;
         public float Speed;
@@ -39,5 +40,7 @@ public abstract class BaseAbilityData : ScriptableObject
 
         return stats;
     }
+
+    
     public abstract BaseAbility CreateAbilityComponent(Transform abilityObject);
 }
