@@ -6,6 +6,7 @@ using UnityEngine.Pool;
 public class XPManager : Singleton<XPManager>
 {
     public event Action OnLevelUp;
+    public event Action OnXPChanged;
     
     // The type of gems in the game, spaced to allow more to be added if needed.
     public enum XPGemTypes { Common = 0, Rare = 25, Epic = 50, Unique = 99,}
@@ -33,12 +34,16 @@ public class XPManager : Singleton<XPManager>
     private int _currentXP = 0;
     private int _targetXP = 0;
     private int _currentLevel = 1;
-    
+    private int _levelStart = 0;
+
+    public float CurrentXP01 { get { return Mathf.InverseLerp(_levelStart, _targetXP, _currentXP); } }
+
     private void Start()
     {
         _gemPool = new ObjectPool<XPGem>(CreateGem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, _maxInstanceAmount, _maxInstanceAmount);
         _gemPool.PreWarm(_maxInstanceAmount);
         _targetXP = _xpData.BaseXpToLevelUp;
+        OnXPChanged?.Invoke();
     }
 
     private void Update()
@@ -48,8 +53,10 @@ public class XPManager : Singleton<XPManager>
             if (_currentXP >= _targetXP)
             {
                 _currentLevel++;
+                _levelStart = _targetXP;
                 _targetXP += _xpData.CalculateXpNeededToLevelUp(_currentLevel);
                 OnLevelUp?.Invoke();
+                OnXPChanged?.Invoke();
             }
         }
     }
@@ -125,12 +132,15 @@ public class XPManager : Singleton<XPManager>
         }
     }
 
+    
     public void AddXp(XPGemTypes gemType)
     {
         if (gemType == XPGemTypes.Epic)
             _currentXP += _storedXP;
         else
             _currentXP += _xpData.GetGemXpAmount(gemType);
+
+        OnXPChanged?.Invoke();
     }
 
     private void OnGUI()
