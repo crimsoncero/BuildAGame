@@ -13,8 +13,12 @@ public class HeroUnit : MonoBehaviour
     [Header("Components")]
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Rigidbody2D _rb2d;
+    [SerializeField] private Transform _abilityChild;
     public PathfindingModule PathfindingModule;
 
+    private BaseAbility _ability;
+    public BaseAbility Ability { get => _ability; private set => _ability = value; }
+    
     // STATS::
     private int _currentHealth;
     public int CurrentHealth
@@ -30,11 +34,6 @@ public class HeroUnit : MonoBehaviour
     // Stats computational properties (if complicated, use an intermediary method)
     public int MaxHealth { get { return Data.BaseMaxHealth; } }
     public float MoveSpeed { get { return Data.BaseMoveSpeed; } }
-    public int Power { get { return Data.BasePower; } }
-    public float Speed { get { return Data.BaseSpeed; } }
-    public float Cooldown { get { return Data.BaseCooldown; } }
-    public int Recovery { get { return Data.BaseRecovery; } }
-
 
 
     private void Start()
@@ -42,6 +41,8 @@ public class HeroUnit : MonoBehaviour
         // Init the unit automatically if starting with data. (for testing mainly)
         if (!Data.IsUnityNull())
             Init(Data);
+
+        PlayerController.Instance.RegisterHero(this);
     }
 
     private void Update()
@@ -64,6 +65,14 @@ public class HeroUnit : MonoBehaviour
 
         Data = data;
         InitData();
+
+        // Init ability component
+        if(Data.AbilityData != null)
+        {
+            Ability = Data.AbilityData.CreateAbilityComponent(_abilityChild);
+            Ability.Init(Data.AbilityData, this);
+        }
+        
 
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
@@ -89,6 +98,19 @@ public class HeroUnit : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             Debug.Log($"{Data.Name} died");
+        }
+    }
+
+    public void Heal(int healAmount, bool isPercentile = false)
+    {
+        if (healAmount <= 0) return;
+        if (isPercentile)
+        {
+            CurrentHealth += Mathf.CeilToInt((healAmount / 100f) * MaxHealth);
+        }
+        else
+        {
+            CurrentHealth += healAmount;
         }
     }
     #region Pause & Resume

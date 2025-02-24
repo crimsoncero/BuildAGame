@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New Yorker
   m_EditorClassIdentifier: 
   <Name>k__BackingField: New Yorker
-  <BaseMaxHealth>k__BackingField: 5
+  <BaseMaxHealth>k__BackingField: 50
   <BaseMoveSpeed>k__BackingField: 4
-  <BasePower>k__BackingField: 5
+  <BasePower>k__BackingField: 20
   <BaseSpeed>k__BackingField: 1

@@ -4,6 +4,7 @@ using Unity.Cinemachine;
 using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
 using UnityEngine.InputSystem;
+using SeraphRandom;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -11,9 +12,13 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private Transform _heroParent;
     [SerializeField] private HeroMover _heroMover;
     [SerializeField] private PlayerInput _input;
-    public List<HeroUnit> Heroes { get; private set; }
 
+    [Header("Upgrades Data")]
+    [SerializeField] private int _numberOfUpgrades = 3;
+    
+    public List<HeroUnit> Heroes { get; private set; }
     public Transform Center { get { return _heroMover.transform; } }
+    public Dictionary<int, BaseAbility> AbilitiesDict { get; private set; }
 
     private void Start()
     {
@@ -25,18 +30,22 @@ public class PlayerController : Singleton<PlayerController>
     {
         // TODO - create the heroes using the data of which heroes selected and the stats.
 
-        // Temporarily gets the heroes in the hero group
 
-        Heroes = _heroParent.GetComponentsInChildren<HeroUnit>().ToList();
-        
-        foreach(HeroUnit hero in Heroes)
-        {
-            hero.PathfindingModule.SetTarget(_heroMover.transform);
-        }
-
+       
     }
 
+    public void RegisterHero(HeroUnit hero)
+    {
+        if (Heroes == null)
+            Heroes = new List<HeroUnit>();
+        if (AbilitiesDict == null)
+            AbilitiesDict = new Dictionary<int, BaseAbility>();
 
+
+        Heroes.Add(hero);
+        hero.PathfindingModule.SetTarget(_heroMover.transform);
+        AbilitiesDict.Add(AbilitiesDict.Count, hero.Ability);
+    }
     #region Player Input Methods
     public void OnMove(CallbackContext context)
     {
@@ -84,4 +93,28 @@ public class PlayerController : Singleton<PlayerController>
         return true;
     }
 
+    public List<(int key, BaseAbilityData.Stats upgradeInfo)> GetUpgradesToShow()
+    {
+        var infoList = new List<(int key, BaseAbilityData.Stats upgradeInfo)>();
+        var d = AbilitiesDict.Where((t) => t.Value.CurrentLevel < t.Value.MaxLevel);
+        
+        Dictionary<int, BaseAbility> upgradableDict = new Dictionary<int, BaseAbility>();
+        
+        foreach(var p in d)
+        {
+            upgradableDict.Add(p.Key, p.Value);
+        }
+
+        ShuffleBag<int> bag = new ShuffleBag<int>(upgradableDict.Keys.ToList());
+
+        int numOfUpgrades = Mathf.Min(_numberOfUpgrades, upgradableDict.Count);
+        for(int i = 0; i < numOfUpgrades; i++)
+        {
+            int x = bag.Pick();
+            BaseAbilityData.Stats upgradeInfo = upgradableDict[x].GetNextLevelStats();
+            infoList.Add((x, upgradeInfo));
+        }
+
+        return infoList;
+    }
 }
