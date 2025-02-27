@@ -13,8 +13,10 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private HeroMover _heroMover;
     [SerializeField] private PlayerInput _input;
 
-    [Header("Upgrades Data")]
+    [Header("Data")]
     [SerializeField] private int _numberOfUpgrades = 3;
+
+    [field: SerializeField] public float TimeToRespawn { get; private set; } = 2f;
     
     public List<HeroUnit> Heroes { get; private set; }
     public Transform Center { get { return _heroMover.transform; } }

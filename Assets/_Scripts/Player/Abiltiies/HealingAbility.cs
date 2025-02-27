@@ -20,6 +20,7 @@ public class HealingAbility : BaseAbility
 
     private void Update()
     {
+        if (_heroUnit.IsDead) return;
         if (!GameManager.Instance.IsPaused)
         {
             _castTimer.UpdateTimer();

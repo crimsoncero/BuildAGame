@@ -304,6 +304,10 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 5102228263732703293}
   _rb2d: {fileID: 2676475354901530220}
   _abilityChild: {fileID: 1443446417458796097}
+  _visuals: {fileID: 207979922632058588}
+  _colliders:
+  - {fileID: 5546699830057789233}
+  - {fileID: 6249397962025085458}
   PathfindingModule: {fileID: 2640097930759284790}
 --- !u!114 &2640097930759284790
 MonoBehaviour:

@@ -701,6 +701,7 @@ MonoBehaviour:
   _heroMover: {fileID: 1135316450}
   _input: {fileID: 740804089}
   _numberOfUpgrades: 3
+  <TimeToRespawn>k__BackingField: 10
 --- !u!4 &740804088
 Transform:
   m_ObjectHideFlags: 0
