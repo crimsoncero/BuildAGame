@@ -6,7 +6,8 @@ using System.Collections.Generic;
 public class HeroUnit : MonoBehaviour
 {
     public event Action OnHealthChanged;
-    
+    public event Action OnDeath;
+    public event Action OnRevive;
     
     [field: SerializeField] public HeroData Data { get; private set; }
 
@@ -149,9 +150,14 @@ public class HeroUnit : MonoBehaviour
         IsDead = isDead;
         foreach (var col in _colliders)
         {
-            col.enabled = false;
+            col.enabled = !isDead;
         }
         _visuals.gameObject.SetActive(!isDead);
+        
+        if(isDead)
+            OnDeath?.Invoke();
+        else
+            OnRevive?.Invoke();
     }
     
     #region Pause & Resume
