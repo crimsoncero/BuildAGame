@@ -21,7 +21,7 @@ public class PlayerController : Singleton<PlayerController>
     public List<HeroUnit> Heroes { get; private set; }
     public Transform Center { get { return _heroMover.transform; } }
     public Dictionary<int, BaseAbility> AbilitiesDict { get; private set; }
-
+    
     private void Start()
     {
         _cinemachineCamera.Follow = _heroMover.transform;
@@ -42,11 +42,11 @@ public class PlayerController : Singleton<PlayerController>
             Heroes = new List<HeroUnit>();
         if (AbilitiesDict == null)
             AbilitiesDict = new Dictionary<int, BaseAbility>();
-
-
+        
         Heroes.Add(hero);
         hero.PathfindingModule.SetTarget(_heroMover.transform);
         AbilitiesDict.Add(AbilitiesDict.Count, hero.Ability);
+        UIManager.Instance.AddHeroFrame(hero);
     }
     #region Player Input Methods
     public void OnMove(CallbackContext context)

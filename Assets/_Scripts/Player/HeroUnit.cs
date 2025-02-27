@@ -143,7 +143,7 @@ public class HeroUnit : MonoBehaviour
             CurrentHealth += healAmount;
         }
     }
-
+    
     private void SetDeath(bool isDead)
     {
         IsDead = isDead;
@@ -153,6 +153,7 @@ public class HeroUnit : MonoBehaviour
         }
         _visuals.gameObject.SetActive(!isDead);
     }
+    
     #region Pause & Resume
 
     private void PauseHero()
