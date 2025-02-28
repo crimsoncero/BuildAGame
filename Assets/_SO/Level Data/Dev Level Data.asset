@@ -17,3 +17,4 @@ MonoBehaviour:
     Duration: 10000
   BossList: []
   EventList: []
+  BGM: {fileID: 11400000, guid: fff9fc3542e8caa429331f981e3a31e3, type: 2}

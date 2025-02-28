@@ -16,15 +16,11 @@ public class MissileProjectile : BaseProjectile
         _damage = damage;
         _pierce = pierce;
         _rb2d.linearVelocity = velocity;
-
-        //Vector2 fromVector = transform.position;
-        //fromVector.x = 0;
-        //fromVector.z = 0;
-        //Vector2 toPosition = 
-        //transform.LookAt(transform.position + (Vector3)velocity, Vector3.forward);
-        //float angle = Vector2.Angle(Vector2.right, velocity);
-        //transform.rotation = Quaternion.Euler(0,0,angle);
+        
         transform.right = (Vector3)velocity;
+
+        GameManager.Instance.OnGamePaused += PauseProjectile;
+        GameManager.Instance.OnGameResumed += ResumeProjectile;
     }
 
     
@@ -38,8 +34,21 @@ public class MissileProjectile : BaseProjectile
         if (_pierce > 0)
             _pierce--;
         else
+        {
+            GameManager.Instance.OnGamePaused -= PauseProjectile;
+            GameManager.Instance.OnGameResumed -= ResumeProjectile;
             _pool.Release(this);
-
+        }
         
+    }
+    
+    private void PauseProjectile()
+    {
+        _rb2d.simulated = false;
+    }
+
+    private void ResumeProjectile()
+    {
+        _rb2d.simulated = true;
     }
 }

@@ -107,12 +107,14 @@ public class EnemyUnit : MonoBehaviour
     {
         // Set speed to zero
         _rb2d.linearVelocity = Vector2.zero;
+        _rb2d.simulated = false;
         PathfindingModule.PausePathfinding();
     }
 
     private void ResumeEnemy()
     {
         PathfindingModule.ResumePathfinding();
+        _rb2d.simulated = true;
     }
 
     
