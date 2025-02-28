@@ -22,6 +22,7 @@ public class OrbitalAbility : BaseAbility
 
     private void Update()
     {
+        if (_heroUnit.IsDead) return;
         if (!GameManager.Instance.IsPaused)
         {
             _spawnTimer.UpdateTimer();

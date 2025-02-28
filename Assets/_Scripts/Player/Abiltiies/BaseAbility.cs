@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using static BaseAbilityData;
 
 public class BaseAbility : MonoBehaviour
 {
+    public event Action OnLevelUp;
+    
     public int CurrentLevel { get; private set; }
     
     protected BaseAbilityData _baseData;
@@ -24,13 +27,14 @@ public class BaseAbility : MonoBehaviour
         _baseData = data;
         _heroUnit = hero;
         CurrentLevel = 1;
+
     }
 
     public void LevelUp()
     {
         if (CurrentLevel >= MaxLevel) return;
-
         CurrentLevel++;
+        OnLevelUp?.Invoke();
     }
     public Stats GetNextLevelStats()
     {
