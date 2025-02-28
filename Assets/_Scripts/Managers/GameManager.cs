@@ -50,8 +50,8 @@ public class GameManager : Singleton<GameManager>
         IsPaused = false;
         Timer = 0;
         _timerSeconds = 0;
+        
         OnTimerTick?.Invoke(Timer);
-
         OnGameStart?.Invoke();
     }
 

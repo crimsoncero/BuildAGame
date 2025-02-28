@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static LevelData;
 using System.Linq;
+using MoreMountains.Tools;
 using static WaveData;
 using Unity.VisualScripting;
 
@@ -11,8 +12,8 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private EnemySpawner _enemySpawner;
 
 
-
-    public LevelData Data { get; private set; }
+    
+    [field: SerializeField] public LevelData Data { get; private set; }
 
     // Using IEnumerator to keep track of the current item in the list without a need for an indexer.SS
     public IEnumerator<WaveInfo> WaveList { get; private set; }
@@ -42,6 +43,11 @@ public class LevelManager : Singleton<LevelManager>
             _bossTarget = 0 + BossList.Current.SpawnTime;
         else
             _bossTarget = -1;
+    }
+
+    public void Init()
+    {
+        Init(Data);
     }
 
 
@@ -84,6 +90,7 @@ public class LevelManager : Singleton<LevelManager>
     private void AddEvents()
     {
         GameManager.Instance.OnTimerTick += CheckTimer;
+        GameManager.Instance.OnGameStart += StartBGM;
     }
     private void RemoveEvents()
     {
@@ -108,5 +115,10 @@ public class LevelManager : Singleton<LevelManager>
        
         EventList = Data.EventList.OrderBy((t) => t.SpawnTime).GetEnumerator();
         EventList.MoveNext();
+    }
+
+    private void StartBGM()
+    {
+        MMPlaylistPlayEvent.Trigger(0);
     }
 }
