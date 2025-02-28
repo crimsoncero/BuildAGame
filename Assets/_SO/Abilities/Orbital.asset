@@ -14,13 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Orbital
   <BaseStats>k__BackingField:
-    Description: Don't show me
+    Description: Base Orbital stats
     Power: 20
-    Count: 4
+    Count: 3
     Speed: 2
     Cooldown: 1
     Pierce: 0
-  <LevelUpgrades>k__BackingField: []
+  <LevelUpgrades>k__BackingField:
+  - Description: lvl 1 Orbital stats
+    Power: 20
+    Count: 3
+    Speed: 3
+    Cooldown: 1
+    Pierce: 0
+  - Description: lvl 2 Orbital stats
+    Power: 20
+    Count: 4
+    Speed: 3
+    Cooldown: 1
+    Pierce: 0
+  - Description: lvl 3 Orbital stats
+    Power: 20
+    Count: 4
+    Speed: 3
+    Cooldown: 0.6
+    Pierce: 0
+  - Description: lvl 4 Orbital stats
+    Power: 20
+    Count: 5
+    Speed: 3
+    Cooldown: 0.6
+    Pierce: 0
   <Duration>k__BackingField: 1
   <Radius>k__BackingField: 5
   <SpeedMultipliar>k__BackingField: -50

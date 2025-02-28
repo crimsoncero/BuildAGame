@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Ninja
   <BaseMaxHealth>k__BackingField: 5
-  <BaseMaxSpeed>k__BackingField: 4
+  <BaseMoveSpeed>k__BackingField: 3
   <BasePower>k__BackingField: 0
+  <BaseSpeed>k__BackingField: 0
+  <GemDropped>k__BackingField: 0
+  <Sprite>k__BackingField: {fileID: -7447190747043010810, guid: 654aaed5892df434ea2de828926901e9, type: 3}

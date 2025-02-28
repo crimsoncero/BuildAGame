@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Rock
+  <Name>k__BackingField: Becky
   <AbilityData>k__BackingField: {fileID: 11400000, guid: c22397bd11a090b44b66294ecf5d27aa, type: 2}
-  <BaseMaxHealth>k__BackingField: 100
+  <BaseMaxHealth>k__BackingField: 90
   <BaseMoveSpeed>k__BackingField: 6
-  <BasePower>k__BackingField: 0
-  <BaseSpeed>k__BackingField: 0
-  <BaseCooldown>k__BackingField: 0
-  <BaseRecovery>k__BackingField: 0
   <Sprite>k__BackingField: {fileID: -4633399141807359633, guid: f871ce399261f7b42b4ff7fc87519b33, type: 3}
