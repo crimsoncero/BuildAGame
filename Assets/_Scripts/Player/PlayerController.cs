@@ -44,6 +44,7 @@ public class PlayerController : Singleton<PlayerController>
             AbilitiesDict = new Dictionary<int, BaseAbility>();
         
         Heroes.Add(hero);
+        hero.OnDeath += CheckGameOver;
         hero.PathfindingModule.SetTarget(_heroMover.transform);
         AbilitiesDict.Add(AbilitiesDict.Count, hero.Ability);
         UIManager.Instance.AddHeroFrame(hero);
@@ -118,5 +119,20 @@ public class PlayerController : Singleton<PlayerController>
         }
 
         return infoList;
+    }
+
+    private void CheckGameOver()
+    {
+        bool allDead = true;
+        foreach (var hero in Heroes)
+        {
+            if (!hero.IsDead)
+                allDead = false;
+        }
+
+        if (allDead)
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 }

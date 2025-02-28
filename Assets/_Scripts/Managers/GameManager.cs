@@ -79,5 +79,9 @@ public class GameManager : Singleton<GameManager>
         OnGameResumed?.Invoke();
     }
 
+    public void GameOver()
+    {
+        PauseGame();
+    }
     
 }
