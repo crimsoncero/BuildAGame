@@ -13,38 +13,15 @@ MonoBehaviour:
   m_Name: Missile
   m_EditorClassIdentifier: 
   <Name>k__BackingField: MissileTest
+  <Icon>k__BackingField: {fileID: 0}
   <BaseStats>k__BackingField:
-    Description: Base Missile stats
+    Description: random missile text
     Power: 10
     Count: 1
     Speed: 1
     Cooldown: 1
     Pierce: 1
-  <LevelUpgrades>k__BackingField:
-  - Description: lvl 1 Missile stats
-    Power: 15
-    Count: 1
-    Speed: 1
-    Cooldown: 1
-    Pierce: 1
-  - Description: lvl 2 Missile stats
-    Power: 15
-    Count: 1
-    Speed: 1
-    Cooldown: 0.8
-    Pierce: 0
-  - Description: lvl 3 Missile stats
-    Power: 15
-    Count: 1
-    Speed: 1
-    Cooldown: 0.8
-    Pierce: 0
-  - Description: lvl 4 Missile stats
-    Power: 15
-    Count: 2
-    Speed: 1
-    Cooldown: 0.8
-    Pierce: 0
+  <LevelUpgrades>k__BackingField: []
   <Range>k__BackingField: 30
   <SpeedMultipliar>k__BackingField: 12
   <EnemyLayer>k__BackingField:

@@ -8,6 +8,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private HeroFrame _heroFramePrefab;
     [SerializeField] private Transform _heroFrameContainter;
     [SerializeField] private TMP_Text _timer;
+    [SerializeField] private UpgradeMenu _upgradeMenu;
 
     private void Start()
     {
@@ -23,5 +24,10 @@ public class UIManager : Singleton<UIManager>
     private void UpdateTimer(int time)
     {
         _timer.text = Helpers.SecondsToMMSS(time);
+    }
+
+    public void OpenUpgradeMenu()
+    {
+        _upgradeMenu.ShowUpgradePanel();
     }
 }

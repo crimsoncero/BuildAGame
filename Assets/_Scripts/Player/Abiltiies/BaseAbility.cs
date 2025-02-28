@@ -21,7 +21,7 @@ public class BaseAbility : MonoBehaviour
     protected int _pierce { get { return _abilityStats.Pierce; } }
 
     public int MaxLevel { get { return _baseData.LevelUpgrades.Count + 1; } }
-
+    public BaseAbilityData BaseData { get { return _baseData; } }
     public virtual void Init(BaseAbilityData data, HeroUnit hero)
     {
         _baseData = data;
