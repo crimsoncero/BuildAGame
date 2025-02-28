@@ -85,7 +85,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public bool DamageHero(Transform heroHit, int damage)
     {
-        // Negetive Damage
+        // Negative Damage
         if (damage < 0) return false;
 
         HeroUnit hero = Heroes.Find((h) => h.gameObject == heroHit.gameObject);
