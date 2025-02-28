@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
   m_Name: Blues
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Blues
+  <Name>k__BackingField: Al (gorithem)
   <AbilityData>k__BackingField: {fileID: 11400000, guid: ba95683e5a402b54b94b3456dde0ead9, type: 2}
   <BaseMaxHealth>k__BackingField: 100
   <BaseMoveSpeed>k__BackingField: 6
-  <BasePower>k__BackingField: 0
-  <BaseSpeed>k__BackingField: 0
-  <BaseCooldown>k__BackingField: 0
-  <BaseRecovery>k__BackingField: 0
   <Sprite>k__BackingField: {fileID: -4942022713399006546, guid: f871ce399261f7b42b4ff7fc87519b33, type: 3}
