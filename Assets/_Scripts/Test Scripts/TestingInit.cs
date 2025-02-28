@@ -6,14 +6,7 @@ public class TestingInit : MonoBehaviour
     public LevelData LevelData;
 
  
-    private void TestUpgrade()
-    {
-        var test = PlayerController.Instance.GetUpgradesToShow();
-        foreach (var t in test)
-        {
-            Debug.Log(t.upgradeInfo.Description);
-        }
-    }
+   
 
     private void StartGame()
     {

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Healing Test
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Healing Test
+  <Icon>k__BackingField: {fileID: 0}
   <BaseStats>k__BackingField:
     Description: A Healing ability
     Power: 20
@@ -20,10 +21,4 @@ MonoBehaviour:
     Speed: 0
     Cooldown: 5
     Pierce: 0
-  <LevelUpgrades>k__BackingField:
-  - Description: Healing first upgrade
-    Power: 0
-    Count: 0
-    Speed: 0
-    Cooldown: 0
-    Pierce: 0
+  <LevelUpgrades>k__BackingField: []
