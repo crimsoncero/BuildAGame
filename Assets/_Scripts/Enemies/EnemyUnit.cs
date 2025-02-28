@@ -10,6 +10,7 @@ public class EnemyUnit : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb2d;
     [SerializeField] private LayerMask _attackableLayers;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     public CircleCollider2D Collider;
     public PathfindingModule PathfindingModule;
     
@@ -40,11 +41,12 @@ public class EnemyUnit : MonoBehaviour
 
         CurrentHealth = MaxHealth;
         _canAttack = new BoolTimer(true, Speed);
-
+        _spriteRenderer.sprite = Data.Sprite;
+        
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
-
-
+        
+        
 
         // Set Target
         PathfindingModule.SetTarget(PlayerController.Instance.Center);
