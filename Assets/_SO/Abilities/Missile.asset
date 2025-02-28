@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb648a2af8e1e746937ed6bc34bb6e4, type: 3}
+  m_Name: Missile
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: MissileTest
+  <BaseStats>k__BackingField:
+    Description: random missile text
+    Power: 10
+    Count: 1
+    Speed: 1
+    Cooldown: 1
+    Pierce: 1
+  <LevelUpgrades>k__BackingField:
+  - Description: test 1 Missile
+    Power: 5
+    Count: 0
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
+  - Description: test 2 missile
+    Power: 12
+    Count: 0
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
+  <Range>k__BackingField: 30
+  <SpeedMultipliar>k__BackingField: 12
+  <EnemyLayer>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 256
+  <ProjectilePrefab>k__BackingField: {fileID: 4155261564181183575, guid: b8496741fdc90ac43b98dc7818889e33, type: 3}
+  <InitCount>k__BackingField: 50

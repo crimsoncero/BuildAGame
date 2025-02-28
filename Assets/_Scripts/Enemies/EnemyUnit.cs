@@ -9,6 +9,7 @@ public class EnemyUnit : MonoBehaviour
     
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb2d;
+    [SerializeField] private LayerMask _attackableLayers;
     public CircleCollider2D Collider;
     public PathfindingModule PathfindingModule;
     
@@ -37,6 +38,7 @@ public class EnemyUnit : MonoBehaviour
 
         gameObject.transform.position = position;
 
+        CurrentHealth = MaxHealth;
         _canAttack = new BoolTimer(true, Speed);
 
         PathfindingModule.SetMaxSpeed(MoveSpeed);
@@ -74,13 +76,30 @@ public class EnemyUnit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!_canAttack.Value) return;
-        if (PlayerController.Instance.DamageHero(collision.transform, Power))
+        if (_attackableLayers.Includes(collision.gameObject.layer))
         {
-            _canAttack.SetTimer();
+            if (PlayerController.Instance.DamageHero(collision.transform, Power))
+            {
+                _canAttack.SetTimer();
+            }
         }
+       
     }
 
+    public void TakeDamage(int damage)
+    {
+        if (damage <= 0) return;
+        CurrentHealth -= damage;
+        if (CurrentHealth <= 0)
+            KillUnit();
+            
+    }
 
+    public void KillUnit()
+    {
+        XPManager.Instance.SpawnGem(Data.GemDropped, transform.position);
+        gameObject.SetActive(false);
+    }
 
     #region Pause & Resume
 

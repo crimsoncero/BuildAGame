@@ -1,11 +1,13 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class HeroUnit : MonoBehaviour
 {
     public event Action OnHealthChanged;
-    
+    public event Action OnDeath;
+    public event Action OnRevive;
     
     [field: SerializeField] public HeroData Data { get; private set; }
 
@@ -13,8 +15,14 @@ public class HeroUnit : MonoBehaviour
     [Header("Components")]
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Rigidbody2D _rb2d;
+    [SerializeField] private Transform _abilityChild;
+    [SerializeField] private Transform _visuals;
+    [SerializeField] private List<Collider2D> _colliders;
     public PathfindingModule PathfindingModule;
 
+    private BaseAbility _ability;
+    public BaseAbility Ability { get => _ability; private set => _ability = value; }
+    
     // STATS::
     private int _currentHealth;
     public int CurrentHealth
@@ -30,22 +38,45 @@ public class HeroUnit : MonoBehaviour
     // Stats computational properties (if complicated, use an intermediary method)
     public int MaxHealth { get { return Data.BaseMaxHealth; } }
     public float MoveSpeed { get { return Data.BaseMoveSpeed; } }
-    public int Power { get { return Data.BasePower; } }
-    public float Speed { get { return Data.BaseSpeed; } }
-    public float Cooldown { get { return Data.BaseCooldown; } }
-    public int Recovery { get { return Data.BaseRecovery; } }
+    public bool IsDead { get; private set; } = false;
 
-
-
+    private float _respawnHealth = 0;
     private void Start()
     {
         // Init the unit automatically if starting with data. (for testing mainly)
         if (!Data.IsUnityNull())
             Init(Data);
+
+        PlayerController.Instance.RegisterHero(this);
     }
 
     private void Update()
     {
+        if (GameManager.Instance.IsPaused) return;
+        
+        // General Update stuff
+        
+        // When dead update stuff
+        if (IsDead)
+        {
+            _respawnHealth += (MaxHealth / PlayerController.Instance.TimeToRespawn) * Time.deltaTime;
+            if (_respawnHealth >= 1f)
+            {
+                var hpToAdd = Mathf.FloorToInt(_respawnHealth);
+                _respawnHealth -= hpToAdd;
+                CurrentHealth += hpToAdd;
+            }
+
+            if (CurrentHealth >= MaxHealth)
+            {
+                SetDeath(false);
+            }
+           
+            return;
+        }
+        
+        // When alive update stuff
+        
         // Flip sprite according to velocity X
         if (PathfindingModule.AIPath.velocity.x < -1f)
         {
@@ -64,6 +95,14 @@ public class HeroUnit : MonoBehaviour
 
         Data = data;
         InitData();
+
+        // Init ability component
+        if(Data.AbilityData != null)
+        {
+            Ability = Data.AbilityData.CreateAbilityComponent(_abilityChild);
+            Ability.Init(Data.AbilityData, this);
+        }
+        
 
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
@@ -88,9 +127,39 @@ public class HeroUnit : MonoBehaviour
         CurrentHealth -= damage;
         if (CurrentHealth <= 0)
         {
+            SetDeath(true);
             Debug.Log($"{Data.Name} died");
         }
     }
+
+    public void Heal(int healAmount, bool isPercentile = false)
+    {
+        if (healAmount <= 0) return;
+        if (isPercentile)
+        {
+            CurrentHealth += Mathf.CeilToInt((healAmount / 100f) * MaxHealth);
+        }
+        else
+        {
+            CurrentHealth += healAmount;
+        }
+    }
+    
+    private void SetDeath(bool isDead)
+    {
+        IsDead = isDead;
+        foreach (var col in _colliders)
+        {
+            col.enabled = !isDead;
+        }
+        _visuals.gameObject.SetActive(!isDead);
+        
+        if(isDead)
+            OnDeath?.Invoke();
+        else
+            OnRevive?.Invoke();
+    }
+    
     #region Pause & Resume
 
     private void PauseHero()

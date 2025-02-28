@@ -24,6 +24,7 @@ namespace SeraphRandom
         public ShuffleBag(List<T> data)
         {
             _data = data;
+            _currentPosition = Size - 1;
         }
 
         /// <summary>

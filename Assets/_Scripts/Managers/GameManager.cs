@@ -44,6 +44,8 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        XPManager.Instance.OnLevelUp += PauseGame;
+        
         IsGameActive = true;
         IsPaused = false;
         Timer = 0;
@@ -56,6 +58,7 @@ public class GameManager : Singleton<GameManager>
     public void EndGame()
     {
         OnGameEnd?.Invoke();
+        XPManager.Instance.OnLevelUp -= PauseGame;
     }
 
     /// <summary>
@@ -75,7 +78,6 @@ public class GameManager : Singleton<GameManager>
         IsPaused = false;
         OnGameResumed?.Invoke();
     }
-
 
     
 }
