@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
-  m_Name: Blues
+  m_Name: Al
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Al (gorithem)
+  <Name>k__BackingField: Al
   <AbilityData>k__BackingField: {fileID: 11400000, guid: ba95683e5a402b54b94b3456dde0ead9, type: 2}
   <BaseMaxHealth>k__BackingField: 100
   <BaseMoveSpeed>k__BackingField: 6
