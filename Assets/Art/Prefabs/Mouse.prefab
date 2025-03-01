@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5360018352730171283}
   - component: {fileID: 1834831229821767507}
+  - component: {fileID: 4781653893272327657}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: Untagged
@@ -57,6 +58,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &4781653893272327657
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2306008689901371199}
+  m_Enabled: 1
+  m_SortingLayerID: 780417069
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &2713145538392035654
 GameObject:
   m_ObjectHideFlags: 0

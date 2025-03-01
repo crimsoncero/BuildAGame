@@ -16,7 +16,6 @@ public class MissileProjectile : BaseProjectile
         _damage = damage;
         _pierce = pierce;
         _rb2d.linearVelocity = velocity;
-        
         transform.right = (Vector3)velocity;
 
         GameManager.Instance.OnGamePaused += PauseProjectile;
