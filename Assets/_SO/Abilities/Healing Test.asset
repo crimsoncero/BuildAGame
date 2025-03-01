@@ -46,3 +46,4 @@ MonoBehaviour:
     Speed: 0
     Cooldown: 3
     Pierce: 0
+  <VFX>k__BackingField: {fileID: 7920440466125361460, guid: 326d58875e1f86d4e94f1bb523015843, type: 3}
