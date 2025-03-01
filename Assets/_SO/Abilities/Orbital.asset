@@ -13,41 +13,41 @@ MonoBehaviour:
   m_Name: Orbital
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Orbital
-  <Icon>k__BackingField: {fileID: 945880233462451947, guid: 696e665b19ddfa94c912f45a78a64b16, type: 3}
+  <Icon>k__BackingField: {fileID: 0}
   <BaseStats>k__BackingField:
     Description: Base Orbital stats
-    Power: 20
-    Count: 3
+    Power: 2
+    Count: 2
     Speed: 2
     Cooldown: 1
     Pierce: 0
   <LevelUpgrades>k__BackingField:
   - Description: lvl 1 Orbital stats
-    Power: 20
-    Count: 3
-    Speed: 3
-    Cooldown: 1
+    Power: 0
+    Count: 1
+    Speed: 1
+    Cooldown: -0.2
     Pierce: 0
   - Description: lvl 2 Orbital stats
-    Power: 20
-    Count: 4
-    Speed: 3
-    Cooldown: 1
+    Power: 0
+    Count: 1
+    Speed: 1
+    Cooldown: -0.2
     Pierce: 0
   - Description: lvl 3 Orbital stats
-    Power: 20
-    Count: 4
-    Speed: 3
-    Cooldown: 0.6
+    Power: 0
+    Count: 1
+    Speed: 1
+    Cooldown: -0.2
     Pierce: 0
   - Description: lvl 4 Orbital stats
-    Power: 20
-    Count: 5
-    Speed: 3
-    Cooldown: 0.6
+    Power: 0
+    Count: 1
+    Speed: 1
+    Cooldown: -0.2
     Pierce: 0
   <Duration>k__BackingField: 1
-  <Radius>k__BackingField: 5
+  <Radius>k__BackingField: 4
   <SpeedMultipliar>k__BackingField: -50
   <ProjectilePrefab>k__BackingField: {fileID: 9189736898793131427, guid: 00d94391a53a1424dbe2ee69230282dd, type: 3}
   <InitCount>k__BackingField: 6

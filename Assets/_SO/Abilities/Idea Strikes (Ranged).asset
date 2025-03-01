@@ -10,43 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fb648a2af8e1e746937ed6bc34bb6e4, type: 3}
-  m_Name: Missile
+  m_Name: Idea Strikes (Ranged)
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: MissileTest
-  <Icon>k__BackingField: {fileID: 636872743481278038, guid: b34c23e88d47d624cb5634033872a8cc, type: 3}
+  <Name>k__BackingField: Idea Strikes
+  <Icon>k__BackingField: {fileID: 0}
   <BaseStats>k__BackingField:
     Description: Base Missile stats
-    Power: 10
+    Power: 3
     Count: 1
     Speed: 1
-    Cooldown: 1
+    Cooldown: 0.8
     Pierce: 1
   <LevelUpgrades>k__BackingField:
   - Description: lvl 1 Missile stats
-    Power: 15
-    Count: 1
+    Power: 1
+    Count: 0
     Speed: 1
-    Cooldown: 1
-    Pierce: 1
-  - Description: lvl 2 Missile stats
-    Power: 15
-    Count: 1
-    Speed: 1
-    Cooldown: 0.8
+    Cooldown: -0.2
     Pierce: 0
+  - Description: lvl 2 Missile stats
+    Power: 1
+    Count: 0
+    Speed: 0
+    Cooldown: -0.2
+    Pierce: 1
   - Description: lvl 3 Missile stats
-    Power: 15
-    Count: 1
+    Power: 1
+    Count: 0
     Speed: 1
-    Cooldown: 0.8
+    Cooldown: -0.2
     Pierce: 0
   - Description: lvl 4 Missile stats
-    Power: 15
-    Count: 2
+    Power: 1
+    Count: 0
     Speed: 1
-    Cooldown: 0.8
-    Pierce: 0
-  <Range>k__BackingField: 30
+    Cooldown: -0.1
+    Pierce: 1
+  <Range>k__BackingField: 29
   <SpeedMultipliar>k__BackingField: 12
   <EnemyLayer>k__BackingField:
     serializedVersion: 2
