@@ -8,7 +8,7 @@ public class HealingAbility : BaseAbility
     private List<HeroUnit> _heroes;
 
     private BoolTimer _castTimer;
-
+    private HealVFX _vfx;
 
     public override void Init(BaseAbilityData data, HeroUnit hero)
     {
@@ -16,6 +16,8 @@ public class HealingAbility : BaseAbility
 
         _castTimer = new BoolTimer(false, _cooldown);
         _castTimer.SetTimer(_cooldown);
+        _vfx = Instantiate(Data.VFX, transform);
+        _vfx.Stop();
     }
 
     private void Update()
@@ -45,10 +47,7 @@ public class HealingAbility : BaseAbility
         {
             hero.Heal(_power, true);
         }
-
+        
+        _vfx.Play();
     }
-
-
-   
-
 }
