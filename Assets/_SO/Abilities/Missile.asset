@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Missile
   m_EditorClassIdentifier: 
   <Name>k__BackingField: MissileTest
+  <Icon>k__BackingField: {fileID: 636872743481278038, guid: b34c23e88d47d624cb5634033872a8cc, type: 3}
   <BaseStats>k__BackingField:
     Description: Base Missile stats
     Power: 10
