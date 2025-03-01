@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Common Gem Data
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 0
-  <Sprite>k__BackingField: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: ee3399716a09ea541830fc17da29ea63, type: 3}

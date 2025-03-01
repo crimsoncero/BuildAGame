@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Rare Gem Data
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 25
-  <Sprite>k__BackingField: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: d8a03c9419bf89d4f9187d7001b49be8, type: 3}

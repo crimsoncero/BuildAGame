@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Healing Test
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Healing Test
+  <Icon>k__BackingField: {fileID: -9123998315749463643, guid: 44bd08dd673ad7a4da2bf202b1e529bb, type: 3}
   <BaseStats>k__BackingField:
     Description: A Healing ability
     Power: 1
