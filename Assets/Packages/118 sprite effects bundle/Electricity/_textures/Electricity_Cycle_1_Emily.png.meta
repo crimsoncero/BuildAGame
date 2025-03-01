@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 03463a6fe4d5f6146b02b23e4274dea9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7075538535010322100
+    second: Electricity_Cycle_1_Emily_0
+  - first:
+      213: -1112099025513107368
+    second: Electricity_Cycle_1_Emily_1
+  - first:
+      213: 3776972745503588310
+    second: Electricity_Cycle_1_Emily_2
+  - first:
+      213: -3179959594679452326
+    second: Electricity_Cycle_1_Emily_3
+  - first:
+      213: 8259171255145335564
+    second: Electricity_Cycle_1_Emily_4
+  - first:
+      213: 9104521404939190168
+    second: Electricity_Cycle_1_Emily_5
+  - first:
+      213: -5808014181707701553
+    second: Electricity_Cycle_1_Emily_6
+  - first:
+      213: -3814714852449625141
+    second: Electricity_Cycle_1_Emily_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Electricity_Cycle_1_Emily_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 570
+        width: 512
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c493f12b033aecd90800000000000000
+      internalID: -7075538535010322100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity_Cycle_1_Emily_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 570
+        width: 512
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850bb3514d70190f0800000000000000
+      internalID: -1112099025513107368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity_Cycle_1_Emily_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 570
+        width: 512
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfb21663b08a6430800000000000000
+      internalID: 3776972745503588310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity_Cycle_1_Emily_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 570
+        width: 512
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d3907c8938ed3d0800000000000000
+      internalID: -3179959594679452326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity_Cycle_1_Emily_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 512
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b0e026f787e9270800000000000000
+      internalID: 8259171255145335564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity_Cycle_1_Emily_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 58
+        width: 512
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f375fdaf1c95e70800000000000000
+      internalID: 9104521404939190168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity_Cycle_1_Emily_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 58
+        width: 512
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc2a1e8bfd9c56fa0800000000000000
+      internalID: -5808014181707701553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electricity_Cycle_1_Emily_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 58
+        width: 512
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb555c8d096f0bc0800000000000000
+      internalID: -3814714852449625141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Electricity_Cycle_1_Emily_0: -7075538535010322100
+      Electricity_Cycle_1_Emily_1: -1112099025513107368
+      Electricity_Cycle_1_Emily_2: 3776972745503588310
+      Electricity_Cycle_1_Emily_3: -3179959594679452326
+      Electricity_Cycle_1_Emily_4: 8259171255145335564
+      Electricity_Cycle_1_Emily_5: 9104521404939190168
+      Electricity_Cycle_1_Emily_6: -5808014181707701553
+      Electricity_Cycle_1_Emily_7: -3814714852449625141
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

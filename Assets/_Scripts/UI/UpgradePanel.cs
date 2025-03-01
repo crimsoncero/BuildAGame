@@ -15,7 +15,7 @@ public class UpgradePanel : MonoBehaviour
         _ability = ability;
         _upgradeMenu = upgradeMenu;
         _abilityIcon.sprite = ability.BaseData.Icon;
-        _nameText.text = _ability.BaseData.Name;
+        _nameText.text = _ability.BaseData.Name + " Lv. " + (_ability.CurrentLevel + 1);
         _upgradeText.text = _ability.GetNextLevelStats().Description;
 
     }
