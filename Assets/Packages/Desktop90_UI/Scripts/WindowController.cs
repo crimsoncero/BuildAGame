@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using MoreMountains.Tools;
 using UnityEngine;
 
 namespace float_oat.Desktop90
@@ -57,7 +58,8 @@ namespace float_oat.Desktop90
         {
             if (OnCloseAudioClip != null && AudioSource != null)
             {
-                AudioSource.PlayOneShot(OnCloseAudioClip);
+                MMSoundManagerSoundPlayEvent.Trigger(OnCloseAudioClip, MMSoundManager.MMSoundManagerTracks.UI,
+                    this.transform.position);
             }
 
             if (CanvasGroup != null && EnableFadeInAndFadeOutAnimation && FadeOutTime > 0f)
@@ -96,7 +98,7 @@ namespace float_oat.Desktop90
 
             if (OnOpenAudioClip != null && AudioSource != null)
             {
-                AudioSource.PlayOneShot(OnOpenAudioClip);
+                MMSoundManagerSoundPlayEvent.Trigger(OnOpenAudioClip, MMSoundManager.MMSoundManagerTracks.UI, this.transform.position);
             }
 
             BringToFront();

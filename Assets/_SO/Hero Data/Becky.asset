@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
-  m_Name: Roll
+  m_Name: Becky
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Eddie
-  <AbilityData>k__BackingField: {fileID: 11400000, guid: 4ca95a98ebd15c6438741cc033609feb, type: 2}
-  <BaseMaxHealth>k__BackingField: 80
+  <Name>k__BackingField: Becky
+  <AbilityData>k__BackingField: {fileID: 11400000, guid: c22397bd11a090b44b66294ecf5d27aa, type: 2}
+  <BaseMaxHealth>k__BackingField: 90
   <BaseMoveSpeed>k__BackingField: 6
-  <Sprite>k__BackingField: {fileID: -2927662895061353274, guid: f871ce399261f7b42b4ff7fc87519b33, type: 3}
+  <Sprite>k__BackingField: {fileID: -4633399141807359633, guid: f871ce399261f7b42b4ff7fc87519b33, type: 3}

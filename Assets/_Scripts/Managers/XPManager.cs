@@ -65,7 +65,8 @@ public class XPManager : Singleton<XPManager>
             // Cheat codes
             if (Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.U))
             {
-                _currentXP += _targetXP - _currentLevel + 100;
+                _currentLevel++;
+                OnLevelUp?.Invoke();
             }
         }
 
