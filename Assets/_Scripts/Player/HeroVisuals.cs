@@ -18,6 +18,7 @@ public class HeroVisuals : MonoBehaviour
     private void Update()
     {
         HandleDirection();
+        SetSpeed();
     }
 
     private void HandleDirection()
@@ -34,5 +35,17 @@ public class HeroVisuals : MonoBehaviour
 
         transform.localScale = scale;
 
+    }
+
+    private void SetSpeed()
+    {
+        if (_hero.PathfindingModule.AIPath.velocity.magnitude > 0.1f)
+        {
+            _animator.speed = 1;
+        }
+        else
+        {
+            _animator.speed = 0;
+        }
     }
 }
