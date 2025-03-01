@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681b718b3191c0346bc40e9fdcf5e42b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 1114146304121261364}
   _heroLayer:
     serializedVersion: 2
     m_Bits: 128
-  <Data>k__BackingField: {fileID: 0}
 --- !u!58 &7092061986949205684
 CircleCollider2D:
   m_ObjectHideFlags: 0

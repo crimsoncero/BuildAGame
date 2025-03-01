@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Emily_Logos_SpriteSheet_0: -4665160678986982896
+      Emily_Logos_SpriteSheet_1: 4299263042137452300
+      Emily_Logos_SpriteSheet_10: 8460010721133884972
+      Emily_Logos_SpriteSheet_11: -66968200642474533
+      Emily_Logos_SpriteSheet_2: 300881842957179597
+      Emily_Logos_SpriteSheet_3: -4283545557133769042
+      Emily_Logos_SpriteSheet_4: -8663076464798343928
+      Emily_Logos_SpriteSheet_5: -8184262453715977194
+      Emily_Logos_SpriteSheet_6: 6191680305136149682
+      Emily_Logos_SpriteSheet_7: -3680098705308636229
+      Emily_Logos_SpriteSheet_8: 3380953687014314508
+      Emily_Logos_SpriteSheet_9: -3444148963237275456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
