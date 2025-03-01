@@ -117,6 +117,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -309,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Magic_Sphere_Emily_0: -3346448277960245870
+      Magic_Sphere_Emily_1: 4682274708368150668
+      Magic_Sphere_Emily_2: -5767143228561126268
+      Magic_Sphere_Emily_3: 546964930549049416
+      Magic_Sphere_Emily_4: 906060675014801206
+      Magic_Sphere_Emily_5: -4469078234025612411
+      Magic_Sphere_Emily_6: 7196292624090098070
+      Magic_Sphere_Emily_7: 1996328966611371731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

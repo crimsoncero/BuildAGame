@@ -184,6 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6100590623029376328}
   - component: {fileID: 2097337590922129354}
+  - component: {fileID: 1405342045252058720}
   m_Layer: 0
   m_Name: Coffee
   m_TagString: Untagged
@@ -231,6 +232,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &1405342045252058720
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3804255074524221296}
+  m_Enabled: 1
+  m_SortingLayerID: 780417069
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &7262940954440373325
 GameObject:
   m_ObjectHideFlags: 0

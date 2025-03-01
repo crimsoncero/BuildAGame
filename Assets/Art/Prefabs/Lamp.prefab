@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 716459713390911466}
   - component: {fileID: 1187020286621519832}
+  - component: {fileID: -3295261458315153544}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -57,6 +58,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &-3295261458315153544
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516387426381982689}
+  m_Enabled: 1
+  m_SortingLayerID: 780417069
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &3855858518551167535
 GameObject:
   m_ObjectHideFlags: 0
