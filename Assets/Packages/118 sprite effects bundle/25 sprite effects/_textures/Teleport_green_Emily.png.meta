@@ -180,6 +180,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -834,7 +847,36 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Teleport_green_Emily_0: 8218977166548728458
+      Teleport_green_Emily_1: 2895420597151105731
+      Teleport_green_Emily_10: -6693913335217644880
+      Teleport_green_Emily_11: 684949373928001582
+      Teleport_green_Emily_12: 266990407992161377
+      Teleport_green_Emily_13: -515355880160569302
+      Teleport_green_Emily_14: 6292075525171740955
+      Teleport_green_Emily_15: 4379161060901780576
+      Teleport_green_Emily_16: 1637466297529330149
+      Teleport_green_Emily_17: -6757390945077423146
+      Teleport_green_Emily_18: -7379195942780551651
+      Teleport_green_Emily_19: 6466750345809628290
+      Teleport_green_Emily_2: -632652463705639334
+      Teleport_green_Emily_20: 6629839051268874334
+      Teleport_green_Emily_21: 8823899656095840045
+      Teleport_green_Emily_22: 2307163135216592847
+      Teleport_green_Emily_23: -2195074382310232327
+      Teleport_green_Emily_24: 1921699889648049266
+      Teleport_green_Emily_25: 3287263993131635502
+      Teleport_green_Emily_26: -7551728173419198674
+      Teleport_green_Emily_27: -6590567924606176611
+      Teleport_green_Emily_28: 649090832533891094
+      Teleport_green_Emily_3: 7880063925207063845
+      Teleport_green_Emily_4: 3633468929350460339
+      Teleport_green_Emily_5: -1238859516127175493
+      Teleport_green_Emily_6: -6529310304136709342
+      Teleport_green_Emily_7: -5876619381426298380
+      Teleport_green_Emily_8: 4647202413216498865
+      Teleport_green_Emily_9: 1644351699622134479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
