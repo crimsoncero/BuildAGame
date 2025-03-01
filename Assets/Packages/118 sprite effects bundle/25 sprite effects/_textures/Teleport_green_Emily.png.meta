@@ -1,0 +1,842 @@
+fileFormatVersion: 2
+guid: 338a61731c8e3424eb48ad67d3ee67df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8218977166548728458
+    second: Teleport_green_Emily_0
+  - first:
+      213: 2895420597151105731
+    second: Teleport_green_Emily_1
+  - first:
+      213: -632652463705639334
+    second: Teleport_green_Emily_2
+  - first:
+      213: 7880063925207063845
+    second: Teleport_green_Emily_3
+  - first:
+      213: 3633468929350460339
+    second: Teleport_green_Emily_4
+  - first:
+      213: -1238859516127175493
+    second: Teleport_green_Emily_5
+  - first:
+      213: -6529310304136709342
+    second: Teleport_green_Emily_6
+  - first:
+      213: -5876619381426298380
+    second: Teleport_green_Emily_7
+  - first:
+      213: 4647202413216498865
+    second: Teleport_green_Emily_8
+  - first:
+      213: 1644351699622134479
+    second: Teleport_green_Emily_9
+  - first:
+      213: -6693913335217644880
+    second: Teleport_green_Emily_10
+  - first:
+      213: 684949373928001582
+    second: Teleport_green_Emily_11
+  - first:
+      213: 266990407992161377
+    second: Teleport_green_Emily_12
+  - first:
+      213: -515355880160569302
+    second: Teleport_green_Emily_13
+  - first:
+      213: 6292075525171740955
+    second: Teleport_green_Emily_14
+  - first:
+      213: 4379161060901780576
+    second: Teleport_green_Emily_15
+  - first:
+      213: 1637466297529330149
+    second: Teleport_green_Emily_16
+  - first:
+      213: -6757390945077423146
+    second: Teleport_green_Emily_17
+  - first:
+      213: -7379195942780551651
+    second: Teleport_green_Emily_18
+  - first:
+      213: 6466750345809628290
+    second: Teleport_green_Emily_19
+  - first:
+      213: 6629839051268874334
+    second: Teleport_green_Emily_20
+  - first:
+      213: 8823899656095840045
+    second: Teleport_green_Emily_21
+  - first:
+      213: 2307163135216592847
+    second: Teleport_green_Emily_22
+  - first:
+      213: -2195074382310232327
+    second: Teleport_green_Emily_23
+  - first:
+      213: 1921699889648049266
+    second: Teleport_green_Emily_24
+  - first:
+      213: 3287263993131635502
+    second: Teleport_green_Emily_25
+  - first:
+      213: -7551728173419198674
+    second: Teleport_green_Emily_26
+  - first:
+      213: -6590567924606176611
+    second: Teleport_green_Emily_27
+  - first:
+      213: 649090832533891094
+    second: Teleport_green_Emily_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Teleport_green_Emily_0
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 1693
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8afe2ddf2caf0270800000000000000
+      internalID: 8218977166548728458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_1
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 1684
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c28a8841b99e2820800000000000000
+      internalID: 2895420597151105731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_2
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 1649
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56bc8aafed5837f0800000000000000
+      internalID: -632652463705639334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_3
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1535
+        width: 322
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d565db36c9b5d60800000000000000
+      internalID: 7880063925207063845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_4
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1545
+        width: 130
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b36a548dbcac6230800000000000000
+      internalID: 3633468929350460339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_5
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 1539
+        width: 169
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc90a675dfaecee0800000000000000
+      internalID: -1238859516127175493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_6
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 1535
+        width: 289
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b32a54fda3365a0800000000000000
+      internalID: -6529310304136709342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_7
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 1515
+        width: 29
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1e8e9eecd027ea0800000000000000
+      internalID: -5876619381426298380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_8
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 1449
+        width: 35
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b48b1f09fd2e7040800000000000000
+      internalID: 4647202413216498865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_9
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1344
+        width: 7
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc289cd9829e1d610800000000000000
+      internalID: 1644351699622134479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_10
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1372
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba1a1999417a13a0800000000000000
+      internalID: -6693913335217644880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_11
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 1271
+        width: 37
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e20da1a93dd618900800000000000000
+      internalID: 684949373928001582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_12
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1210
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1643fca8c5a84b300800000000000000
+      internalID: 266990407992161377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_13
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 1166
+        width: 6
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28de16be8619d8f0800000000000000
+      internalID: -515355880160569302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_14
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1187
+        width: 19
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b118ac17a51f15750800000000000000
+      internalID: 6292075525171740955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_15
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1174
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06cf54978c7e5cc30800000000000000
+      internalID: 4379161060901780576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_16
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 1166
+        width: 22
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e9e8e30ce279b610800000000000000
+      internalID: 1637466297529330149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_17
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 1155
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d31836dcbce832a0800000000000000
+      internalID: -6757390945077423146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_18
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1024
+        width: 344
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ebf8ef264d79990800000000000000
+      internalID: -7379195942780551651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_19
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1029
+        width: 341
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c0e1d5d238eb950800000000000000
+      internalID: 6466750345809628290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_20
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 1029
+        width: 337
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e50e4e0ad7be10c50800000000000000
+      internalID: 6629839051268874334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_21
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1027
+        width: 298
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27b8477cf9c47a70800000000000000
+      internalID: 8823899656095840045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_22
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 915
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc72679c5a0b40020800000000000000
+      internalID: 2307163135216592847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_23
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 868
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fea6d2ba778981e0800000000000000
+      internalID: -2195074382310232327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_24
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 783
+        width: 7
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c11673edf3baa10800000000000000
+      internalID: 1921699889648049266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_25
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 606
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e231b816f25be9d20800000000000000
+      internalID: 3287263993131635502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_26
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 513
+        width: 181
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e270a0fac3fd23790800000000000000
+      internalID: -7551728173419198674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_27
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 557
+        width: 75
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d92f3c114699984a0800000000000000
+      internalID: -6590567924606176611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teleport_green_Emily_28
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 564
+        width: 75
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61825245ca8020900800000000000000
+      internalID: 649090832533891094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
