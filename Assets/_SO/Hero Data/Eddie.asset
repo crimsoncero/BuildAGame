@@ -16,4 +16,5 @@ MonoBehaviour:
   <AbilityData>k__BackingField: {fileID: 11400000, guid: 4ca95a98ebd15c6438741cc033609feb, type: 2}
   <BaseMaxHealth>k__BackingField: 80
   <BaseMoveSpeed>k__BackingField: 6
-  <Sprite>k__BackingField: {fileID: -2927662895061353274, guid: f871ce399261f7b42b4ff7fc87519b33, type: 3}
+  <VisualsPrefab>k__BackingField: {fileID: -6670949450126340177, guid: 4c89f1edf07fb3345937ab2dc9016f17, type: 3}
+  <CharacterSprite>k__BackingField: {fileID: -2096504589705292234, guid: c2ef0862d9d98124d8f9246f108774cd, type: 3}

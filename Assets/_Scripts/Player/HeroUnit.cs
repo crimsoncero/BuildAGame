@@ -13,16 +13,15 @@ public class HeroUnit : MonoBehaviour
 
 
     [Header("Components")]
-    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Rigidbody2D _rb2d;
     [SerializeField] private Transform _abilityChild;
-    [SerializeField] private Transform _visuals;
     [SerializeField] private List<Collider2D> _colliders;
     public PathfindingModule PathfindingModule;
 
+    [SerializeField] private HeroVisuals _visuals;
     private BaseAbility _ability;
     public BaseAbility Ability { get => _ability; private set => _ability = value; }
-    
+    public Rigidbody2D Rigidbody { get => _rb2d;}
     // STATS::
     private int _currentHealth;
     public int CurrentHealth
@@ -46,8 +45,8 @@ public class HeroUnit : MonoBehaviour
         // Init the unit automatically if starting with data. (for testing mainly)
         if (!Data.IsUnityNull())
             Init(Data);
-
-        PlayerController.Instance.RegisterHero(this);
+        
+        
     }
 
     private void Update()
@@ -75,17 +74,6 @@ public class HeroUnit : MonoBehaviour
             return;
         }
         
-        // When alive update stuff
-        
-        // Flip sprite according to velocity X
-        if (PathfindingModule.AIPath.velocity.x < -1f)
-        {
-            _spriteRenderer.flipX = true;
-        }
-        else if (PathfindingModule.AIPath.velocity.x > 1f)
-        {
-            _spriteRenderer.flipX = false;
-        }
     }
 
     public void Init(HeroData data)
@@ -94,8 +82,10 @@ public class HeroUnit : MonoBehaviour
             throw new ArgumentNullException("data", "Can't initilize a unit with null data");
 
         Data = data;
-        InitData();
-
+        gameObject.name = $"Hero - {Data.Name}";
+        CurrentHealth = MaxHealth;
+        _visuals.Initialize(this);
+        
         // Init ability component
         if(Data.AbilityData != null)
         {
@@ -103,10 +93,10 @@ public class HeroUnit : MonoBehaviour
             Ability.Init(Data.AbilityData, this);
         }
         
-
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
-
+        PlayerController.Instance.RegisterHero(this);
+        
         AddCallbacks();
     }
 
@@ -116,12 +106,7 @@ public class HeroUnit : MonoBehaviour
         GameManager.Instance.OnGameResumed += ResumeHero;
     }
 
-    private void InitData()
-    {
-        gameObject.name = $"Hero - {Data.Name}";
-        _spriteRenderer.sprite = Data.Sprite;
-        CurrentHealth = MaxHealth;
-    }
+    
     public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
