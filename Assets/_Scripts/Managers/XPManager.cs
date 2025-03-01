@@ -61,7 +61,16 @@ public class XPManager : Singleton<XPManager>
                 OnLevelUp?.Invoke();
                 OnXPChanged?.Invoke();
             }
+            
+            // Cheat codes
+            if (Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.U))
+            {
+                _currentXP += _targetXP - _currentLevel + 100;
+            }
         }
+
+
+      
     }
 
     #region Pool Methods

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba35f2c959ab334cbd9d6a88976665f, type: 3}
   m_Name: New Yorker
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: New Yorker
-  <BaseMaxHealth>k__BackingField: 50
-  <BaseMoveSpeed>k__BackingField: 4
-  <BasePower>k__BackingField: 20
+  <Name>k__BackingField: Common Bug
+  <BaseMaxHealth>k__BackingField: 10
+  <BaseMoveSpeed>k__BackingField: 3
+  <BasePower>k__BackingField: 5
   <BaseSpeed>k__BackingField: 1
+  <GemDropped>k__BackingField: 0
+  <Sprite>k__BackingField: {fileID: -1731037661818844545, guid: 1c1f8505355005241ac68ef16f1417f0, type: 3}

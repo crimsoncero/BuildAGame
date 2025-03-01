@@ -15,15 +15,33 @@ MonoBehaviour:
   <Name>k__BackingField: Healing Test
   <BaseStats>k__BackingField:
     Description: A Healing ability
-    Power: 20
+    Power: 1
     Count: 0
     Speed: 0
     Cooldown: 5
     Pierce: 0
   <LevelUpgrades>k__BackingField:
-  - Description: Healing first upgrade
-    Power: 0
+  - Description: lvl 1 Healing  upgrade
+    Power: 3
     Count: 0
     Speed: 0
-    Cooldown: 0
+    Cooldown: 5
+    Pierce: 0
+  - Description: lvl 2 Healing  upgrade
+    Power: 5
+    Count: 0
+    Speed: 0
+    Cooldown: 5
+    Pierce: 0
+  - Description: lvl 3 Healing  upgrade
+    Power: 5
+    Count: 0
+    Speed: 0
+    Cooldown: 4
+    Pierce: 0
+  - Description: lvl 4 Healing  upgrade
+    Power: 5
+    Count: 0
+    Speed: 0
+    Cooldown: 3
     Pierce: 0

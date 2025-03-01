@@ -22,6 +22,8 @@ public class PlayerController : Singleton<PlayerController>
     public Transform Center { get { return _heroMover.transform; } }
     public Dictionary<int, BaseAbility> AbilitiesDict { get; private set; }
     
+    public bool IsFullyUpgraded { get; private set; }
+    
     private void Start()
     {
         _cinemachineCamera.Follow = _heroMover.transform;
@@ -96,9 +98,9 @@ public class PlayerController : Singleton<PlayerController>
         return true;
     }
 
-    public List<(int key, BaseAbilityData.Stats upgradeInfo)> GetUpgradesToShow()
+    public List<BaseAbility> GetUpgradesToShow()
     {
-        var infoList = new List<(int key, BaseAbilityData.Stats upgradeInfo)>();
+        var infoList = new List<BaseAbility>();
         var d = AbilitiesDict.Where((t) => t.Value.CurrentLevel < t.Value.MaxLevel);
         
         Dictionary<int, BaseAbility> upgradableDict = new Dictionary<int, BaseAbility>();
@@ -114,10 +116,15 @@ public class PlayerController : Singleton<PlayerController>
         for(int i = 0; i < numOfUpgrades; i++)
         {
             int x = bag.Pick();
-            BaseAbilityData.Stats upgradeInfo = upgradableDict[x].GetNextLevelStats();
-            infoList.Add((x, upgradeInfo));
+            BaseAbility abilityData = upgradableDict[x];
+            infoList.Add(abilityData);
         }
 
+        if (numOfUpgrades <= 1)
+        {
+            IsFullyUpgraded = true;
+        }
+        
         return infoList;
     }
 

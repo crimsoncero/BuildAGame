@@ -44,7 +44,7 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
-        XPManager.Instance.OnLevelUp += PauseGame;
+        XPManager.Instance.OnLevelUp += LevelUp;
         
         IsGameActive = true;
         IsPaused = false;
@@ -58,7 +58,7 @@ public class GameManager : Singleton<GameManager>
     public void EndGame()
     {
         OnGameEnd?.Invoke();
-        XPManager.Instance.OnLevelUp -= PauseGame;
+        XPManager.Instance.OnLevelUp -= LevelUp;
     }
 
     /// <summary>
@@ -83,5 +83,15 @@ public class GameManager : Singleton<GameManager>
     {
         PauseGame();
     }
-    
+
+    private void LevelUp()
+    {
+        if (PlayerController.Instance.IsFullyUpgraded)
+        {
+            return;
+        }
+
+        PauseGame();
+        UIManager.Instance.OpenUpgradeMenu();;
+    }
 }

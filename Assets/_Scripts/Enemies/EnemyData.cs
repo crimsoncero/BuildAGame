@@ -19,5 +19,9 @@ public class EnemyData : ScriptableObject
     public float BaseSpeed { get; private set; }
     [field: SerializeField]
     public XPManager.XPGemTypes GemDropped { get; private set; }
+    
+    [field: Header("Visuals")]
+    [field: SerializeField]
+    public Sprite Sprite { get; private set; }
 
 }

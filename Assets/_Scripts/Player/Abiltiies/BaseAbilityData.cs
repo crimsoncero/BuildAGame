@@ -23,8 +23,9 @@ public abstract class BaseAbilityData : ScriptableObject
             Pierce += added.Pierce;
         }
     }
-
+    
     [field: SerializeField] public string Name { get; private set; }
+    [field: SerializeField] public Sprite Icon { get; private set; }
     [field: SerializeField] public Stats BaseStats { get; private set; }
     [field: SerializeField] public List<Stats> LevelUpgrades { get; private set; }
 
