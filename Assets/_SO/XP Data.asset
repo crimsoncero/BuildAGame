@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39321c455aba27e4998267ced9300f83, type: 3}
   m_Name: XP Data
   m_EditorClassIdentifier: 
-  <BaseGemAmount>k__BackingField: 20
+  <BaseGemAmount>k__BackingField: 12
   <RareGemMultiplier>k__BackingField: 5
   <EpicGemMultiplier>k__BackingField: 5
   <BaseXpToLevelUp>k__BackingField: 1000

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aba35f2c959ab334cbd9d6a88976665f, type: 3}
-  m_Name: New Yorker
+  m_Name: Common Bug
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Common Bug
-  <BaseMaxHealth>k__BackingField: 10
-  <BaseMoveSpeed>k__BackingField: 3
-  <BasePower>k__BackingField: 5
+  <BaseMaxHealth>k__BackingField: 20
+  <BaseMoveSpeed>k__BackingField: 1.5
+  <BasePower>k__BackingField: 8
   <BaseSpeed>k__BackingField: 1
   <GemDropped>k__BackingField: 0
-  <Sprite>k__BackingField: {fileID: -1731037661818844545, guid: 1c1f8505355005241ac68ef16f1417f0, type: 3}
+  <Sprite>k__BackingField: {fileID: -6557416383428193117, guid: 98987945cdb95b04fbdc77bc1b2f4513, type: 3}
