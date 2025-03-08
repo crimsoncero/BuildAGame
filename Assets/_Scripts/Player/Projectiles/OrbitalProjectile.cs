@@ -35,7 +35,7 @@ public class OrbitalProjectile : BaseProjectile
         EnemyUnit enemyHit = collision.gameObject.GetComponent<EnemyUnit>();
         if (enemyHit.IsUnityNull()) return;
 
-        enemyHit.TakeDamage(_damage);
+        enemyHit.TakeDamage(_damage, transform.position);
       
     }
 }
