@@ -42,3 +42,4 @@ MonoBehaviour:
     SpawnTime: 60
   EventList: []
   BGM: {fileID: 11400000, guid: fff9fc3542e8caa429331f981e3a31e3, type: 2}
+  UnitMaterial: {fileID: 2100000, guid: d232d0aad69aa054cb77675894dc31b8, type: 2}

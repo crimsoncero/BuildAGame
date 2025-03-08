@@ -23,5 +23,7 @@ public class EnemyData : ScriptableObject
     [field: Header("Visuals")]
     [field: SerializeField]
     public Sprite Sprite { get; private set; }
+    [field: SerializeField]
+    public bool IsBoss { get; private set; }
 
 }

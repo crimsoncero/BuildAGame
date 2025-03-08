@@ -19,3 +19,4 @@ MonoBehaviour:
   <BaseSpeed>k__BackingField: 1
   <GemDropped>k__BackingField: 25
   <Sprite>k__BackingField: {fileID: -7447190747043010810, guid: 654aaed5892df434ea2de828926901e9, type: 3}
+  <IsBoss>k__BackingField: 1

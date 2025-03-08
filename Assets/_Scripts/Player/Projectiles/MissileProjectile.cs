@@ -29,7 +29,7 @@ public class MissileProjectile : BaseProjectile
         EnemyUnit enemyHit = collision.gameObject.GetComponent<EnemyUnit>();
         if (enemyHit.IsUnityNull()) return;
 
-        enemyHit.TakeDamage(_damage);
+        enemyHit.TakeDamage(_damage, transform.position);
         if (_pierce > 0)
             _pierce--;
         else

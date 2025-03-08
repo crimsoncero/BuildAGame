@@ -1,10 +1,13 @@
 using System;
+using System.Collections;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class EnemyUnit : MonoBehaviour
 {
+    private static readonly int DestroyPropID = Shader.PropertyToID("_Destroy");
     [field: SerializeField] public EnemyData Data { get; private set; }
     
     [Header("Components")]
@@ -15,8 +18,9 @@ public class EnemyUnit : MonoBehaviour
     public PathfindingModule PathfindingModule;
     
     
+    
     private ObjectPool<EnemyUnit> _pool;
-
+    
     // STATS::
     public int CurrentHealth { get; private set; }
 
@@ -25,24 +29,41 @@ public class EnemyUnit : MonoBehaviour
     public float MoveSpeed { get { return Data.BaseMoveSpeed; } }
     public int Power { get { return Data.BasePower; } }
     public float Speed { get { return Data.BaseSpeed; } }
-
+    
     private BoolTimer _canAttack;
+    private bool _isDead = false;
+    private void Start()
+    {
+        _spriteRenderer.material = new Material(LevelManager.Instance.Data.UnitMaterial);
+    }
+
     public void Initialize(EnemyData data, Vector3 position, ObjectPool<EnemyUnit> pool)
     {
         if (data.IsUnityNull())
             throw new ArgumentNullException("data", "Can't initilize a unit with null data");
 
         _pool = pool;
-
+        _isDead = false;
         Data = data;
         gameObject.name = $"{Data.name}";
-
+        
         gameObject.transform.position = position;
 
         CurrentHealth = MaxHealth;
         _canAttack = new BoolTimer(true, Speed);
         _spriteRenderer.sprite = Data.Sprite;
         
+        _spriteRenderer.material.SetFloat(DestroyPropID, 1f);
+        
+        if (data.IsBoss)
+        {
+            transform.localScale = Vector3.one * 3;
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
+        }
+        PathfindingModule.ResumePathfinding();
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
         
@@ -88,10 +109,14 @@ public class EnemyUnit : MonoBehaviour
        
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Vector3 position)
     {
+        // Handle damage
         if (damage <= 0) return;
         CurrentHealth -= damage;
+        
+        
+        // Check for dying
         if (CurrentHealth <= 0)
             KillUnit();
             
@@ -99,9 +124,16 @@ public class EnemyUnit : MonoBehaviour
 
     public void KillUnit()
     {
+        if(_isDead) return;
+        _isDead = true;
+        float deathTime = 0.5f;
         XPManager.Instance.SpawnGem(Data.GemDropped, transform.position);
-        gameObject.SetActive(false);
+        // PathfindingModule.PausePathfinding();
+        // _rb2d.simulated = false;
+        _spriteRenderer.material.DOFloat(0, DestroyPropID, deathTime).OnComplete(() =>  gameObject.SetActive(false));      
     }
+
+    
 
     #region Pause & Resume
 
