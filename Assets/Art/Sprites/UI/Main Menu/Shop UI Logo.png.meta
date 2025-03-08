@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0611b1f5c12ff1c47b6cf63af419f2b3
+guid: f5e00f532c442ac4e8172d6f7020ade6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2095831585288928225
-    second: Play icon_0
+      213: 7324103794758597784
+    second: Shop UI Logo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Play icon_0
+      name: Shop UI Logo_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
+        y: 6
+        width: 98
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f144fc1074c1ae2e0800000000000000
-      internalID: -2095831585288928225
+      spriteID: 89c3da8b89174a560800000000000000
+      internalID: 7324103794758597784
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Play icon_0: -2095831585288928225
+      Shop UI Logo_0: 7324103794758597784
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
