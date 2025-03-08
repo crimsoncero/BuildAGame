@@ -119,6 +119,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private void StartBGM()
     {
+        
         MMPlaylistPlayEvent.Trigger(0);
     }
 }
