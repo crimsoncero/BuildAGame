@@ -15,35 +15,59 @@ MonoBehaviour:
   <Name>k__BackingField: 'Hot Fix '
   <Icon>k__BackingField: {fileID: -9123998315749463643, guid: 44bd08dd673ad7a4da2bf202b1e529bb, type: 3}
   <BaseStats>k__BackingField:
-    Description: A Healing ability
+    Description: Healing ability
     Power: 1
     Count: 0
     Speed: 0
     Cooldown: 5
     Pierce: 0
   <LevelUpgrades>k__BackingField:
-  - Description: +Heal
-    Power: 2
+  - Description: Heal goes up by 1%
+    Power: 1
     Count: 0
     Speed: 0
     Cooldown: 0
     Pierce: 0
-  - Description: -Cooldown
+  - Description: Cooldown goes down by 1s
     Power: 0
     Count: 0
     Speed: 0
     Cooldown: -1
     Pierce: 0
-  - Description: +Heal
+  - Description: Heal goes up by 2%
     Power: 2
     Count: 0
     Speed: 0
     Cooldown: 0
     Pierce: 0
-  - Description: +Heal -Cooldown
-    Power: 5
+  - Description: Heal goes up by 3%
+    Power: 3
+    Count: 0
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
+  - Description: Heal goes up by 3%
+    Power: 3
+    Count: 0
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
+  - Description: Heal goes up by 1%
+    Power: 1
+    Count: 0
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
+  - Description: Cooldown goes down by 1s
+    Power: 0
     Count: 0
     Speed: 0
     Cooldown: -1
+    Pierce: 0
+  - Description: Heal goes up to 50% but cool down is 45s
+    Power: 44
+    Count: 0
+    Speed: 0
+    Cooldown: 42
     Pierce: 0
   <VFX>k__BackingField: {fileID: 7920440466125361460, guid: 326d58875e1f86d4e94f1bb523015843, type: 3}

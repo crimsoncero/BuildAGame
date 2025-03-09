@@ -22,28 +22,53 @@ MonoBehaviour:
     Cooldown: 1
     Pierce: 0
   <LevelUpgrades>k__BackingField:
-  - Description: +Power +Count +Speed -Cooldown
-    Power: 1
+  - Description: Adds 1 Projectile
+    Power: 0
     Count: 1
-    Speed: 1
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
+  - Description: Decreases cooldown by 20%
+    Power: 0
+    Count: 0
+    Speed: 0
     Cooldown: -0.2
     Pierce: 0
-  - Description: +Power +Count +Speed -Cooldown
-    Power: 1
+  - Description: Adds 1 projectile
+    Power: 0
     Count: 1
-    Speed: 1
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
+  - Description: Decreases cooldown by 20%
+    Power: 0
+    Count: 0
+    Speed: 0
     Cooldown: -0.2
     Pierce: 0
-  - Description: +Power +Count +Speed -Cooldown
+  - Description: Adds power by 10
     Power: 1
+    Count: 0
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
+  - Description: adds 1 projectile
+    Power: 0
     Count: 1
-    Speed: 1
+    Speed: 0
+    Cooldown: 0
+    Pierce: 0
+  - Description: Add 1 Projectile and add 30% speed
+    Power: 0
+    Count: 1
+    Speed: 0
     Cooldown: -0.2
     Pierce: 0
-  - Description: +Power +Count +Speed -Cooldown
+  - Description: Adds 10 power, 2 projectile,  significantly decreases cooldown and
+      increases speed
     Power: 1
-    Count: 1
-    Speed: 1
+    Count: 2
+    Speed: 4
     Cooldown: -0.2
     Pierce: 0
   <Duration>k__BackingField: 3
