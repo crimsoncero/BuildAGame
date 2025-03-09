@@ -110,10 +110,10 @@ public class HeroUnit : MonoBehaviour
     public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
+        _visuals.OnHit();
         if (CurrentHealth <= 0)
         {
             SetDeath(true);
-            Debug.Log($"{Data.Name} died");
         }
     }
 

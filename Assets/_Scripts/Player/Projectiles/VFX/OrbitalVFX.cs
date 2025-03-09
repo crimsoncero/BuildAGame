@@ -1,5 +1,9 @@
+using System;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class OrbitalVFX : MonoBehaviour, Pausable
 {
@@ -14,10 +18,13 @@ public class OrbitalVFX : MonoBehaviour, Pausable
     public void Pause()
     {
         _particleSystem.Pause();
+
     }
 
     public void Resume()
     {
         _particleSystem.Play();
     }
+
+  
 }

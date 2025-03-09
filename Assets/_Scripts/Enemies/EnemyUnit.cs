@@ -14,6 +14,7 @@ public class EnemyUnit : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb2d;
     [SerializeField] private LayerMask _attackableLayers;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private EnemyVisuals _visuals;
     public CircleCollider2D Collider;
     public PathfindingModule PathfindingModule;
     
@@ -67,7 +68,7 @@ public class EnemyUnit : MonoBehaviour
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
         
-        
+        _visuals.Initialize(this);
 
         // Set Target
         PathfindingModule.SetTarget(PlayerController.Instance.Center);
@@ -114,7 +115,7 @@ public class EnemyUnit : MonoBehaviour
         // Handle damage
         if (damage <= 0) return;
         CurrentHealth -= damage;
-        
+        _visuals.OnHit();
         
         // Check for dying
         if (CurrentHealth <= 0)

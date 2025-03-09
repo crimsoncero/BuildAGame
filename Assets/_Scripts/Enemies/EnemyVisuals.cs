@@ -1,17 +1,15 @@
-using System;
 using UnityEngine;
 
-public class HeroVisuals : MonoBehaviour
+public class EnemyVisuals : MonoBehaviour
 {
     private static readonly int GetHit = Animator.StringToHash("GetHit");
     [SerializeField] private Animator _animator;
     
-    private HeroUnit _hero;
+    private EnemyUnit _enemy;
     private Vector3 _position;
-    public void Initialize(HeroUnit hero)
+    public void Initialize(EnemyUnit enemy)
     {
-        _hero = hero;
-        _animator = Instantiate(_hero.Data.VisualsPrefab, transform);
+        _enemy = enemy;
         _animator.speed = 0;
         _position = transform.position;
     }
@@ -25,11 +23,11 @@ public class HeroVisuals : MonoBehaviour
     private void HandleDirection()
     {
         var scale = transform.localScale;
-        if (_hero.PathfindingModule.AIPath.velocity.x > 0.5f)
+        if (_enemy.PathfindingModule.AIPath.velocity.x > 0.5f)
         {
             scale.x = 1;
         }
-        else if (_hero.PathfindingModule.AIPath.velocity.x < 0.5f)
+        else if (_enemy.PathfindingModule.AIPath.velocity.x < 0.5f)
         {
             scale.x = -1;
         }
@@ -40,7 +38,7 @@ public class HeroVisuals : MonoBehaviour
 
     private void SetSpeed()
     {
-        if (_hero.PathfindingModule.AIPath.velocity.magnitude > 0.1f)
+        if (_enemy.PathfindingModule.AIPath.velocity.magnitude > 0.1f)
         {
             _animator.speed = 1;
         }

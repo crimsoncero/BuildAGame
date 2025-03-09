@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test Scenes/Basic Enemy Pathfinding.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Test Scenes/Amit - Player Controller.unity
+    guid: 1fe5a41cc51395c448779c959d06b200
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e67f3c964ace40a40a401e57cd1bce6a, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

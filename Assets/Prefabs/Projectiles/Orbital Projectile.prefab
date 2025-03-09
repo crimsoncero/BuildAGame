@@ -256,6 +256,7 @@ MonoBehaviour:
   - {fileID: 8460010721133884972, guid: 7b97c926ce42b3b44abe7ef7fd7621da, type: 3}
   - {fileID: -66968200642474533, guid: 7b97c926ce42b3b44abe7ef7fd7621da, type: 3}
   _spriteRenderer: {fileID: 7934374610256711206}
+  _player: {fileID: 0}
 --- !u!1001 &225393466218166225
 PrefabInstance:
   m_ObjectHideFlags: 0

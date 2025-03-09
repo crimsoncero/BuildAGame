@@ -12,6 +12,8 @@ public class OrbitalAbilityData : BaseAbilityData
     [field: Header("Pooling")]
     [field: SerializeField] public OrbitalProjectile ProjectilePrefab {  get; private set; }
     [field: SerializeField] public int InitCount {  get; private set; }
+    
+   
 
 
     public override BaseAbility CreateAbilityComponent(Transform abilityObject)

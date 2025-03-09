@@ -2,6 +2,7 @@ using MoreMountains.Feedbacks;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : Singleton<GameManager>
@@ -55,12 +56,6 @@ public class GameManager : Singleton<GameManager>
         OnGameStart?.Invoke();
     }
 
-    public void EndGame()
-    {
-        OnGameEnd?.Invoke();
-        XPManager.Instance.OnLevelUp -= LevelUp;
-    }
-
     /// <summary>
     /// Pause all the stuff in the game (projectiles, movement, animation, EVERYTHING)
     /// </summary>
@@ -82,6 +77,9 @@ public class GameManager : Singleton<GameManager>
     public void GameOver()
     {
         PauseGame();
+        OnGameEnd?.Invoke();
+        XPManager.Instance.OnLevelUp -= LevelUp;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void LevelUp()

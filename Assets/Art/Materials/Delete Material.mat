@@ -42,6 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Destroy: 1
+    - _Size_Increase: 1.2
     m_Colors:
     - _Bounds: {r: 0.1, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []

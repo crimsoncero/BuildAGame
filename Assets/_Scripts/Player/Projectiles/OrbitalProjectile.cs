@@ -7,6 +7,7 @@ public class OrbitalProjectile : BaseProjectile
     private float _lifeTime;
     private int _damage;
     private ObjectPool<OrbitalProjectile> _pool;
+    
 
     public void Init(ObjectPool<OrbitalProjectile> pool, Vector3 position, float lifeTime, int damage)
     {
