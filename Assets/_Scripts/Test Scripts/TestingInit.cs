@@ -27,5 +27,8 @@ public class TestingInit : MonoBehaviour
         _mainmenu.gameObject.SetActive(true);
     }
 
-    
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
