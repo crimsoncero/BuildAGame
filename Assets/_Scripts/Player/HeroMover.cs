@@ -16,7 +16,21 @@ public class HeroMover : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
-       
+        // Handle Reversing Directions
+        Vector2 centerDirection = (Vector2)transform.position - PlayerController.Instance.CenterPosition;
+        if (Mathf.Sign(centerDirection.x) != Mathf.Sign(direction.x))
+        {
+            var vector3 = transform.position;
+            vector3.x -= centerDirection.x * 1f;
+            transform.position = vector3;
+        }
+        if (Mathf.Sign(centerDirection.y) != Mathf.Sign(direction.y))
+        {
+            var vector3 = transform.position;
+            vector3.y -= centerDirection.y * 1f;
+            transform.position = vector3;
+        }
+        
         inputVelocity = direction * Speed;
      
     }

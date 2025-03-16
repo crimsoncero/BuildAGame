@@ -5,30 +5,18 @@ using UnityEngine;
 public class TestingInit : MonoBehaviour
 {
     public LevelData LevelData;
-    [SerializeField] private Canvas _mainmenu;
-    [SerializeField] private MMSMPlaylist _playlist;
-
-   
 
     public void StartGame()
     {
         LevelManager.Instance.Init(LevelData);
         GameManager.Instance.StartGame();
-        CloseMenu();
     }
 
-    public void CloseMenu()
+    private void OnGUI()
     {
-        _mainmenu.gameObject.SetActive(false);
-    }
-
-    public void OpenMenu()
-    {
-        _mainmenu.gameObject.SetActive(true);
-    }
-
-    public void ExitGame()
-    {
-        Application.Quit();
+        if (GUI.Button(new Rect(10, 10, 100, 30), "Start Game"))
+        {
+            StartGame();
+        }
     }
 }
