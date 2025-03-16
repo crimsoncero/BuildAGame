@@ -128,9 +128,15 @@ public class PlayerController : Singleton<PlayerController>
             infoList.Add(abilityData);
         }
 
-        if (numOfUpgrades <= 1)
+        // Check if it's the final upgrade
+        if (numOfUpgrades == 1 && infoList[0].CurrentLevel + 1 == infoList[0].MaxLevel)
         {
             IsFullyUpgraded = true;
+        }
+        
+        if (numOfUpgrades < 1)
+        {
+            throw new Exception("No upgrades available and not marked Fully Upgraded");
         }
         
         return infoList;
@@ -169,6 +175,7 @@ public class PlayerController : Singleton<PlayerController>
         
     }
 
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;

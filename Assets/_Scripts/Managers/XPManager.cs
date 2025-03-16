@@ -62,12 +62,6 @@ public class XPManager : Singleton<XPManager>
                 OnXPChanged?.Invoke();
             }
             
-            // Cheat codes
-            if (Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.U))
-            {
-                _currentLevel++;
-                OnLevelUp?.Invoke();
-            }
         }
 
 
@@ -100,6 +94,7 @@ public class XPManager : Singleton<XPManager>
     }
     #endregion
 
+    
     public void SpawnGem(XPGemTypes gemType, Vector3 position)
     {
         // Check if max capacity reached (minus one because the unique gem is also part of the max capacity)
@@ -155,7 +150,7 @@ public class XPManager : Singleton<XPManager>
 
         OnXPChanged?.Invoke();
     }
-
+    
     private void OnGUI()
     {
         if (_debugXP)
