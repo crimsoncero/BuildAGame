@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Cinemachine;
@@ -23,11 +24,18 @@ public class PlayerController : Singleton<PlayerController>
     public Dictionary<int, BaseAbility> AbilitiesDict { get; private set; }
     
     public bool IsFullyUpgraded { get; private set; }
+    public Vector2 CenterPosition { get; private set; } = Vector2.zero;
+    
     
     private void Start()
     {
         _cinemachineCamera.Follow = _heroMover.transform;
         InitHeroes(); // Move this to game manager when init creates heroes.
+    }
+
+    private void Update()
+    {
+        CalculateCenterPosition();
     }
 
     public void InitHeroes()
@@ -141,5 +149,29 @@ public class PlayerController : Singleton<PlayerController>
         {
             GameManager.Instance.GameOver();
         }
+    }
+
+    private void CalculateCenterPosition()
+    {
+        float sumX = 0;
+        float sumY = 0;
+
+        foreach (var hero in Heroes)
+        {
+            sumX += hero.transform.position.x;
+            sumY += hero.transform.position.y;
+        }
+
+        var v = CenterPosition;
+        v.x = sumX / Heroes.Count;
+        v.y = sumY / Heroes.Count;
+        CenterPosition = v;
+        
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(CenterPosition, 0.2f);
     }
 }
