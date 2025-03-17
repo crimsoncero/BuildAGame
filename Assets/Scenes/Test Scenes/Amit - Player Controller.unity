@@ -2064,6 +2064,7 @@ MonoBehaviour:
   _spawnDonutArea:
     MinimumRadius: 35
     MaximumRadius: 50
+  _maximumConcurrentEnemies: 300
 --- !u!114 &1617649882
 MonoBehaviour:
   m_ObjectHideFlags: 0

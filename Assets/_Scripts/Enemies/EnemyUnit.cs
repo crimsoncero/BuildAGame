@@ -7,13 +7,12 @@ using UnityEngine.Pool;
 
 public class EnemyUnit : MonoBehaviour
 {
-    private static readonly int DestroyPropID = Shader.PropertyToID("_Destroy");
+    
     [field: SerializeField] public EnemyData Data { get; private set; }
     
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb2d;
     [SerializeField] private LayerMask _attackableLayers;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private EnemyVisuals _visuals;
     public CircleCollider2D Collider;
     public PathfindingModule PathfindingModule;
@@ -33,10 +32,6 @@ public class EnemyUnit : MonoBehaviour
     
     private BoolTimer _canAttack;
     private bool _isDead = false;
-    private void Start()
-    {
-        _spriteRenderer.material = new Material(LevelManager.Instance.Data.UnitMaterial);
-    }
 
     public void Initialize(EnemyData data, Vector3 position, ObjectPool<EnemyUnit> pool)
     {
@@ -52,9 +47,9 @@ public class EnemyUnit : MonoBehaviour
 
         CurrentHealth = MaxHealth;
         _canAttack = new BoolTimer(true, Speed);
-        _spriteRenderer.sprite = Data.Sprite;
+       
         
-        _spriteRenderer.material.SetFloat(DestroyPropID, 1f);
+        
         
         if (data.IsBoss)
         {
@@ -127,11 +122,9 @@ public class EnemyUnit : MonoBehaviour
     {
         if(_isDead) return;
         _isDead = true;
-        float deathTime = 0.5f;
         XPManager.Instance.SpawnGem(Data.GemDropped, transform.position);
-        // PathfindingModule.PausePathfinding();
-        // _rb2d.simulated = false;
-        _spriteRenderer.material.DOFloat(0, DestroyPropID, deathTime).OnComplete(() =>  gameObject.SetActive(false));      
+        _visuals.OnDeath();
+        
     }
 
     

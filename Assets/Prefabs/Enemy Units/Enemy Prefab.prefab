@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5543899311571456588}
   - component: {fileID: 7978169066431040830}
-  - component: {fileID: 7079386444732531411}
   - component: {fileID: 2129609854122782698}
   m_Layer: 8
   m_Name: Visuals
@@ -89,28 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7079386444732531411
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2569935867873966925}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1ee1ee512a415d841a3529573f5d5cba, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2129609854122782698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718c033d2b471304abb48dcc4d3ff46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 7079386444732531411}
+  _deathDuration: 0.5
+  _hitDuration: 0.2
+  _walkAnimSpeed: 0.4
+  _verticalScaleChange: 0.8
+  _spriteRenderer: {fileID: 7978169066431040830}
 --- !u!1 &4290991442421826110
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +325,6 @@ MonoBehaviour:
   _attackableLayers:
     serializedVersion: 2
     m_Bits: 128
-  _spriteRenderer: {fileID: 7978169066431040830}
   _visuals: {fileID: 2129609854122782698}
   Collider: {fileID: 1715906947323866173}
   PathfindingModule: {fileID: -7659341251869531652}
