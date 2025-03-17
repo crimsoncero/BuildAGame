@@ -26,6 +26,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
     [Range(2,12)]
     [SerializeField] private int _numberOfSectors;
     [SerializeField] private DonutParams _spawnDonutArea;
+    [SerializeField] private int _maximumConcurrentEnemies = 300;
 
     public ObjectPool<EnemyUnit> Pool { get; private set; }
 
@@ -117,6 +118,9 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
     public void SpawnWave(List<EnemyData> spawnGroup, int numberOfGroups)
     {
+        // Don't spawn a wave if already reached max enemy count;
+        if (Pool.CountActive >= _maximumConcurrentEnemies) return;
+        
         ShuffleBag<int> sectorBag = new ShuffleBag<int>(Enumerable.Range(0, _numberOfSectors - 1).ToList());
         
         for(int i = 0; i < numberOfGroups; i++)
