@@ -23,7 +23,7 @@ public class PathfindingModule : MonoBehaviour
                 Disable();
         }
     }
-
+    
 
     /// <summary>
     /// Sets the max speed of the pathfinding unit.

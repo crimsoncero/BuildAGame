@@ -47,6 +47,9 @@ TagManager:
   - name: Units
     uniqueID: 780417069
     locked: 0
+  - name: Pickups
+    uniqueID: 2139459009
+    locked: 0
   - name: Projectiles
     uniqueID: 1726225367
     locked: 0

@@ -18,5 +18,10 @@ public class TestingInit : MonoBehaviour
         {
             StartGame();
         }
+
+        if (GUI.Button(new Rect(10, 50, 100, 30), "Collect All Gems"))
+        {
+            XPManager.Instance.AbsorbAllGems();
+        }
     }
 }
