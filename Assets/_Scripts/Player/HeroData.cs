@@ -27,6 +27,9 @@ public class HeroData : ScriptableObject
     [field: SerializeField]
     public Animator VisualsPrefab { get; private set; }
     [field: SerializeField]
+    public Material MaterialPrefab  { get; private set; }
+    [field: SerializeField]
     public Sprite CharacterSprite { get; private set; }
+   
 
 }

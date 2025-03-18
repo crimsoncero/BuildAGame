@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -9,25 +11,39 @@ public class OrbitalAbility : BaseAbility
     private ObjectPool<OrbitalProjectile> _pool;
 
     private BoolTimer _spawnTimer;
+    private BoolTimer _isNotActive;
 
-  
+    private List<OrbitalProjectile> _projectileList;
     private float _spawnTime { get { return _cooldown + Data.Duration; } }
     public override void Init(BaseAbilityData data, HeroUnit hero)
     {
         base.Init(data, hero);
-        
-        _pool = new ObjectPool<OrbitalProjectile>(Createprojectile, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, Data.InitCount, 50);
+        _projectileList = new List<OrbitalProjectile>();
+        _pool = new ObjectPool<OrbitalProjectile>(CreateProjectile, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, Data.InitCount, 50);
         _pool.PreWarm(Data.InitCount);
         _spawnTimer = new BoolTimer(false, _spawnTime);
         _spawnTimer.SetTimer(_spawnTime);
     }
 
+   
+
     private void Update()
     {
-        if (_heroUnit.IsDead) return;
+        if (_heroUnit.IsDead)
+        {
+            // Removes the projectiles if the player is still alive.
+            if (!_isNotActive.Value)
+            {
+                foreach(OrbitalProjectile projectile in _projectileList.Where((p) => p.IsActive))
+                    projectile.ReleaseOrbital();
+            }
+            
+            return;
+        }
         if (!GameManager.Instance.IsPaused)
         {
             _spawnTimer.UpdateTimer();
+            _isNotActive.UpdateTimer();
             if (_spawnTimer.Value)
             {
                 SpawnOrbitals();
@@ -41,6 +57,8 @@ public class OrbitalAbility : BaseAbility
     private void SpawnOrbitals()
     {
         _spawnTimer.SetTimer(_spawnTime);
+        _isNotActive.SetTimer(Data.Duration);
+        
         var posList = Helpers.GetEqualOrbitLocations(_count, Data.Radius);
 
         foreach(var pos in posList)
@@ -56,12 +74,13 @@ public class OrbitalAbility : BaseAbility
    
     #region Pool Methods
 
-    private OrbitalProjectile Createprojectile()
+    private OrbitalProjectile CreateProjectile()
     {
         OrbitalProjectile projectile = Instantiate(Data.ProjectilePrefab, transform);
-
+        
         projectile.gameObject.SetActive(false);
-
+        _projectileList.Add(projectile);
+        
         return projectile;
     }
 
@@ -76,6 +95,7 @@ public class OrbitalAbility : BaseAbility
 
     private void OnDestroyPoolObject(OrbitalProjectile projectile)
     {
+        _projectileList.Remove(projectile);
         Destroy(projectile.gameObject);
     }
     #endregion

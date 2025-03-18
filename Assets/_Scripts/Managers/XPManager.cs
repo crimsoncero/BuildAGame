@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -31,6 +33,7 @@ public class XPManager : Singleton<XPManager>
     [SerializeField] private bool _debugXP;
 
     private ObjectPool<XPGem> _gemPool;
+    private List<XPGem> _gemList = new List<XPGem>();
     private XPGem _uniqueGem = null;
     private int _storedXP = 0;
 
@@ -63,9 +66,6 @@ public class XPManager : Singleton<XPManager>
             }
             
         }
-
-
-      
     }
 
     #region Pool Methods
@@ -73,7 +73,7 @@ public class XPManager : Singleton<XPManager>
     private XPGem CreateGem()
     {
         XPGem gem = Instantiate(_gemPrefab, _gemParent);
-
+        _gemList.Add(gem);
         gem.gameObject.SetActive(false);
 
         return gem;
@@ -85,6 +85,7 @@ public class XPManager : Singleton<XPManager>
     }
     private void OnReturnedToPool(XPGem gem)
     {
+        if (gem.IsUnityNull()) return;
         gem.gameObject.SetActive(false);
     }
 
@@ -140,7 +141,11 @@ public class XPManager : Singleton<XPManager>
         }
     }
 
-    
+    public void AbsorbAllGems()
+    {
+        foreach (XPGem gem in _gemList.Where((g) => g.gameObject.activeSelf))
+            gem.AbsorbGem();
+    }
     public void AddXp(XPGemTypes gemType)
     {
         if (gemType == XPGemTypes.Epic)

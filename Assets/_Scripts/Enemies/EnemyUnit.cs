@@ -17,7 +17,9 @@ public class EnemyUnit : MonoBehaviour
     public CircleCollider2D Collider;
     public PathfindingModule PathfindingModule;
     
-    
+    [Header("Properties")]
+    [SerializeField] private float _knockbackForce = 1f;
+    [SerializeField] private float _knockbackDurationPerForce = 0.2f;
     
     private ObjectPool<EnemyUnit> _pool;
     
@@ -32,6 +34,9 @@ public class EnemyUnit : MonoBehaviour
     
     private BoolTimer _canAttack;
     private bool _isDead = false;
+    
+    private Tween _knockbackTween;
+
 
     public void Initialize(EnemyData data, Vector3 position, ObjectPool<EnemyUnit> pool)
     {
@@ -92,7 +97,7 @@ public class EnemyUnit : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (!_canAttack.Value) return;
         if (_attackableLayers.Includes(collision.gameObject.layer))
@@ -105,12 +110,15 @@ public class EnemyUnit : MonoBehaviour
        
     }
 
-    public void TakeDamage(int damage, Vector3 position)
+    public void TakeDamage(int damage, Vector2 hitDireciton, bool isKnockback = false)
     {
         // Handle damage
         if (damage <= 0) return;
         CurrentHealth -= damage;
         _visuals.OnHit();
+
+        if (isKnockback)
+            Knockback(hitDireciton, _knockbackForce);
         
         // Check for dying
         if (CurrentHealth <= 0)
@@ -118,6 +126,19 @@ public class EnemyUnit : MonoBehaviour
             
     }
 
+    private void Knockback(Vector2 direction, float force)
+    {
+        PathfindingModule.PausePathfinding();
+        Vector2 endDestination = (Vector2)transform.position + direction.normalized * force;
+        
+        if(_knockbackTween.IsActive())
+            _knockbackTween.Kill();
+        
+        _knockbackTween = _rb2d.DOMove(endDestination, _knockbackDurationPerForce * _knockbackForce).SetEase(Ease.OutSine)
+            .OnComplete(() => PathfindingModule.ResumePathfinding());
+        
+    }
+    
     public void KillUnit()
     {
         if(_isDead) return;

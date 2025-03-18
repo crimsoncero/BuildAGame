@@ -142,6 +142,24 @@ public class PlayerController : Singleton<PlayerController>
         return infoList;
     }
 
+    public HeroUnit GetClosestHero(Vector3 position)
+    {
+        HeroUnit closestHero = null;
+        var closestDistance = Mathf.Infinity;
+
+        foreach (var hero in Heroes)
+        {
+            var distance = Vector3.Distance(hero.transform.position, position);
+            if (distance < closestDistance)
+            {
+                closestHero = hero;
+                closestDistance = distance;
+            }
+        }
+        
+        return closestHero;
+    }
+    
     private void CheckGameOver()
     {
         bool allDead = true;

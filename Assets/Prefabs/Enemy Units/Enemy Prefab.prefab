@@ -220,7 +220,7 @@ MonoBehaviour:
     maximumInterval: 2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
+  maxAcceleration: 1000
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
@@ -328,6 +328,8 @@ MonoBehaviour:
   _visuals: {fileID: 2129609854122782698}
   Collider: {fileID: 1715906947323866173}
   PathfindingModule: {fileID: -7659341251869531652}
+  _knockbackForce: 0.5
+  _knockbackDurationPerForce: 0.1
 --- !u!70 &4443091632531839529
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
