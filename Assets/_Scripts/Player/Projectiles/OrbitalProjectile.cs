@@ -4,9 +4,12 @@ using UnityEngine.Pool;
 
 public class OrbitalProjectile : BaseProjectile
 {
+    public bool IsActive { get; private set; } = false;
+    
     private float _lifeTime;
     private int _damage;
     private ObjectPool<OrbitalProjectile> _pool;
+    
     
 
     public void Init(ObjectPool<OrbitalProjectile> pool, Vector3 position, float lifeTime, int damage)
@@ -15,6 +18,7 @@ public class OrbitalProjectile : BaseProjectile
         transform.position = position;
         _lifeTime = lifeTime;
         _damage = damage;
+        IsActive = true;
     }
 
     private void Update()
@@ -25,12 +29,18 @@ public class OrbitalProjectile : BaseProjectile
                 _lifeTime -= Time.deltaTime;
             else
             {
-                _pool.Release(this);
+                ReleaseOrbital();
             }
         }
         
     }
 
+    public void ReleaseOrbital()
+    {
+        IsActive = false;
+        _pool.Release(this);
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         EnemyUnit enemyHit = collision.gameObject.GetComponent<EnemyUnit>();
@@ -39,4 +49,6 @@ public class OrbitalProjectile : BaseProjectile
         enemyHit.TakeDamage(_damage, transform.position);
       
     }
+    
+    
 }

@@ -92,7 +92,7 @@ public class EnemyUnit : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (!_canAttack.Value) return;
         if (_attackableLayers.Includes(collision.gameObject.layer))
