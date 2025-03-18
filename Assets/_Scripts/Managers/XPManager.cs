@@ -81,6 +81,7 @@ public class XPManager : Singleton<XPManager>
 
     private void OnTakeFromPool(XPGem gem)
     {
+        if (gem.IsUnityNull()) return;
         gem.gameObject.SetActive(true);
     }
     private void OnReturnedToPool(XPGem gem)
