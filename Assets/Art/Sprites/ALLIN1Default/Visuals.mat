@@ -7,15 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BG Code
+  m_Name: Visuals
   m_Shader: {fileID: 4800000, guid: 6eb86e4931b506a408fd1477edec61ea, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - GLOWTEX_ON
-  - RIM_ON
-  - TEXTURESCROLL_ON
-  - TWISTUV_ON
+  - GLOW_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -97,7 +94,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.17
+    - _Alpha: 1
     - _AlphaCutoffValue: 0.25
     - _AlphaFadeAmount: -0.1
     - _AlphaFadePow: 1
@@ -134,7 +131,7 @@ Material:
     - _FadeScrollYSpeed: 0
     - _FadeTransition: 0.075
     - _Glow: 0
-    - _GlowGlobal: 16.39
+    - _GlowGlobal: 1.5
     - _HandDrawnAmount: 10
     - _HandDrawnSpeed: 5
     - _HsvBright: 1
@@ -152,11 +149,11 @@ Material:
     - _RandomSh3Mult: 1
     - _RenderingMode: 0
     - _RimAddAmount: 1
-    - _RimBias: 0.17
-    - _RimErodesAlpha: 2
-    - _RimIntensity: 8
-    - _RimPower: 20
-    - _RimScale: 0
+    - _RimBias: 0
+    - _RimErodesAlpha: 0
+    - _RimIntensity: 1
+    - _RimPower: 5
+    - _RimScale: 1
     - _RoundWaveSpeed: 2
     - _RoundWaveStrength: 0.7
     - _ScreenUvSh2DistScale: 1
@@ -207,11 +204,11 @@ Material:
     - _ShapeYSpeed: 0
     - _SoftFactor: 0.5
     - _SrcMode: 5
-    - _TextureScrollXSpeed: 0.07
-    - _TextureScrollYSpeed: 0.02
+    - _TextureScrollXSpeed: 1
+    - _TextureScrollYSpeed: 0
     - _TimingSeed: 0
     - _TrailWidthPower: 1
-    - _TwistUvAmount: 0.07
+    - _TwistUvAmount: 1
     - _TwistUvPosX: 0.5
     - _TwistUvPosY: 0.5
     - _TwistUvRadius: 0.75
@@ -237,7 +234,7 @@ Material:
     - _FrontFaceTint: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.04226374, g: 0.4339623, b: 0.015557078, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _Shape2Color: {r: 1, g: 1, b: 1, a: 1}
     - _Shape3Color: {r: 1, g: 1, b: 1, a: 1}
     - _ShapeColor: {r: 1, g: 1, b: 1, a: 1}
