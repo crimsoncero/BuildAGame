@@ -137,7 +137,15 @@ public class HeroUnit : MonoBehaviour
         {
             col.enabled = !isDead;
         }
-        _visuals.gameObject.SetActive(!isDead);
+
+        if (isDead)
+        {
+            _visuals.OnDeath();
+        }
+        else
+        {
+            _visuals.OnRevive();
+        }
         
         if(isDead)
             OnDeath?.Invoke();
