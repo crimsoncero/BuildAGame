@@ -46,7 +46,7 @@ Material:
     - _Size_Increase: 1.2
     m_Colors:
     - _Bounds: {r: 0.1, g: 2, b: 0, a: 0}
-    - _DamageColor: {r: 5.992158, g: 0, b: 0, a: 1}
+    - _DamageColor: {r: 2.0000005, g: 2.0000005, b: 2.0000005, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4240875037003665026
