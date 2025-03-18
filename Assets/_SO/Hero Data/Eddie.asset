@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Eddie
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Eddie
+  <Role>k__BackingField: 3
   <AbilityData>k__BackingField: {fileID: 11400000, guid: 4ca95a98ebd15c6438741cc033609feb, type: 2}
   <BaseMaxHealth>k__BackingField: 80
   <BaseMoveSpeed>k__BackingField: 6

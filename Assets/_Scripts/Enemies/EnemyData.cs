@@ -6,6 +6,7 @@ public class EnemyData : ScriptableObject
     [field: Header("General")]
     [field: SerializeField]
     public string Name { get; private set; }
+    [SerializeField] private float _powerLevel;
 
 
     [field: Header("Base Stats")]
@@ -19,6 +20,7 @@ public class EnemyData : ScriptableObject
     public float BaseSpeed { get; private set; }
     [field: SerializeField]
     public XPManager.XPGemTypes GemDropped { get; private set; }
+
     
     [field: Header("Visuals")]
     [field: SerializeField]
