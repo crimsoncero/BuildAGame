@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04998bea3e22ac43bc10715d897da58, type: 3}
   m_Name: Dev Level Data
   m_EditorClassIdentifier: 
+  Name: Unity Scene
+  Duration: 180
   WaveList:
   - Wave: {fileID: 11400000, guid: 26fc9815be2b92b428ad07c6a02eedcc, type: 2}
     Duration: 90
@@ -36,7 +38,7 @@ MonoBehaviour:
   - Wave: {fileID: 11400000, guid: 7b4a149b3d21ee64ba1428160314e65f, type: 2}
     Duration: 10
   - Wave: {fileID: 11400000, guid: 8b90ffaa3bae27d4e80a017097d4da80, type: 2}
-    Duration: 10
+    Duration: 2147483647
   BossList:
   - Data: {fileID: 11400000, guid: ecad87ab21e984b4aba068e579499542, type: 2}
     SpawnTime: 270

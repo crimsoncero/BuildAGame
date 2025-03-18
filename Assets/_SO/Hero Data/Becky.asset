@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Becky
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Becky
+  <Role>k__BackingField: 1
   <AbilityData>k__BackingField: {fileID: 11400000, guid: c22397bd11a090b44b66294ecf5d27aa, type: 2}
   <BaseMaxHealth>k__BackingField: 90
   <BaseMoveSpeed>k__BackingField: 6

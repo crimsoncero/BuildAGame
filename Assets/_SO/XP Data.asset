@@ -18,4 +18,4 @@ MonoBehaviour:
   <BaseXpToLevelUp>k__BackingField: 1000
   <MaxLevelMultiplier>k__BackingField: 10
   <EasingFactor>k__BackingField: 1
-  <MaxLevelScaled>k__BackingField: 100
+  <MaxLevelScaled>k__BackingField: 15

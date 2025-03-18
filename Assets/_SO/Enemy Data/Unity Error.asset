@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Unity Error
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Unity Error
+  _powerLevel: 3
   <BaseMaxHealth>k__BackingField: 2000
   <BaseMoveSpeed>k__BackingField: 3
   <BasePower>k__BackingField: 30

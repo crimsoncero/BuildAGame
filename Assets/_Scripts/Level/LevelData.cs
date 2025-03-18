@@ -1,7 +1,5 @@
-using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 
@@ -33,6 +31,11 @@ public class LevelData : ScriptableObject
         [Tooltip("The spawn time of the event in seconds.")]
         public int SpawnTime;
     }
+
+    [Header("General")] 
+    public string Name;
+    public int Duration;
+    
     [Header("Enemies")]
     public List<WaveInfo> WaveList;
     public List<BossInfo> BossList;

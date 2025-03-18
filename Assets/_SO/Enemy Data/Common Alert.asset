@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Common Alert
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Common Alert
+  _powerLevel: 1
   <BaseMaxHealth>k__BackingField: 10
   <BaseMoveSpeed>k__BackingField: 3
   <BasePower>k__BackingField: 5
   <BaseSpeed>k__BackingField: 1
   <GemDropped>k__BackingField: 0
   <Sprite>k__BackingField: {fileID: -1731037661818844545, guid: 1c1f8505355005241ac68ef16f1417f0, type: 3}
+  <IsBoss>k__BackingField: 0
