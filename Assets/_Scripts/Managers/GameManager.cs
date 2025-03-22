@@ -1,6 +1,7 @@
 using MoreMountains.Feedbacks;
 using System;
 using System.Collections;
+using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,9 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public event Action<int> OnTimerTick;
 
-   
+   [SerializeField] private SceneTransitionManager _sceneTransitionManager;
+    
+    
     /// <summary>
     /// The in game time that has passed until now, counted in seconds.
     /// </summary>
@@ -79,7 +82,9 @@ public class GameManager : Singleton<GameManager>
         PauseGame();
         OnGameEnd?.Invoke();
         XPManager.Instance.OnLevelUp -= LevelUp;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        MMPlaylistStopEvent.Trigger(0);
+        UIManager.Instance.OpenEndScreen();
     }
 
     private void LevelUp()
@@ -91,5 +96,18 @@ public class GameManager : Singleton<GameManager>
 
         PauseGame();
         UIManager.Instance.OpenUpgradeMenu();;
+    }
+
+    public void LoadMenu()
+    {
+        _sceneTransitionManager.LoadScene(LevelSceneEnum.Menu);
+    }
+
+    private void OnGUI()
+    {
+        if (GUI.Button(new Rect(10, 10, 100, 30), "Game Over"))
+        {
+            GameOver();
+        }
     }
 }

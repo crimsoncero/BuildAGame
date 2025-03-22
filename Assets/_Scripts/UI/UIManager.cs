@@ -9,6 +9,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Transform _heroFrameContainter;
     [SerializeField] private TMP_Text _timer;
     [SerializeField] private UpgradeMenu _upgradeMenu;
+    [SerializeField] private GameObject _endScreen;
 
     private void Start()
     {
@@ -29,5 +30,10 @@ public class UIManager : Singleton<UIManager>
     public void OpenUpgradeMenu()
     {
         _upgradeMenu.ShowUpgradePanel();
+    }
+
+    public void OpenEndScreen()
+    {
+        _endScreen.SetActive(true);
     }
 }

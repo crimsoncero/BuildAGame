@@ -35,17 +35,17 @@ namespace float_oat.Desktop90
 
         void Update()
         {
-            if (Canvas.enabled)
-            {
-                // close the menu when clicked away from the menu and the button
-                if (Input.GetMouseButtonDown(0) &&
-                    RectTransformUtility.RectangleContainsScreenPoint(MenuRectTransform, Input.mousePosition) == false &&
-                    RectTransformUtility.RectangleContainsScreenPoint(ActionMenuButtonRectTransform, Input.mousePosition) == false
-                )
-                {
-                    Hide();
-                }
-            }
+            // if (Canvas.enabled)
+            // {
+            //     // close the menu when clicked away from the menu and the button
+            //     if (Input.GetMouseButtonDown(0) &&
+            //         RectTransformUtility.RectangleContainsScreenPoint(MenuRectTransform, Input.mousePosition) == false &&
+            //         RectTransformUtility.RectangleContainsScreenPoint(ActionMenuButtonRectTransform, Input.mousePosition) == false
+            //     )
+            //     {
+            //         Hide();
+            //     }
+            // }
         }
 
         /// <summary>
