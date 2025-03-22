@@ -81,17 +81,27 @@ public class XPManager : Singleton<XPManager>
 
     private void OnTakeFromPool(XPGem gem)
     {
-        if (gem.IsUnityNull()) return;
+        if (gem.IsUnityNull())
+        {
+            Debug.LogError("Gem is null at take from pool");
+            return;
+        }
+        
         gem.gameObject.SetActive(true);
     }
     private void OnReturnedToPool(XPGem gem)
     {
-        if (gem.IsUnityNull()) return;
+        if (gem.IsUnityNull())
+        {
+            Debug.LogError("Gem is null at return to pool");
+            return;
+        }
         gem.gameObject.SetActive(false);
     }
 
     private void OnDestroyPoolObject(XPGem gem)
     {
+        _gemList.Remove(gem);
         Destroy(gem.gameObject);
     }
     #endregion

@@ -11,7 +11,6 @@ public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] private EnemySpawner _enemySpawner;
 
-
     
     [field: SerializeField] public LevelData Data { get; private set; }
 
