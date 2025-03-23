@@ -2769,6 +2769,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2222424782891891244, guid: 686b1ba7473f1da4abb1bd3b847c3982, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cd7072337f1596143aa3e9af2a74960d, type: 3}
     - target: {fileID: 6178740330354053492, guid: 686b1ba7473f1da4abb1bd3b847c3982, type: 3}
       propertyPath: Use24HourTime
       value: 1
@@ -3034,10 +3038,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9553073a47cab4b4b93b68617e8e05d5, type: 3}
-    m_FontSize: 28
+    m_Font: {fileID: 12800000, guid: cd7072337f1596143aa3e9af2a74960d, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 52
     m_Alignment: 3
