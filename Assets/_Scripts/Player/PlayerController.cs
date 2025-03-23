@@ -82,7 +82,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             if(!GameManager.Instance.IsPaused)
                 GameManager.Instance.PauseGame();
-            else // TODO - Remove this later, only for debugging atm, exiting pause will be from the pause menu or after selecing an upgrade.
+            else // TODO - Remove this later, only for debugging atm, exiting pause will be from the pause menu or after selecting an upgrade.
                 GameManager.Instance.ResumeGame();
         }
     }

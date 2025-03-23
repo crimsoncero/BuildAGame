@@ -1,10 +1,7 @@
 using System;
-using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public enum LevelSceneEnum
 {
@@ -13,9 +10,9 @@ public enum LevelSceneEnum
 }
 public class SceneTransitionManager : MonoBehaviour
 {
-    [Header("Scenes")]
-    [SerializeField] private SceneAsset _menuLevelScene;
-    [SerializeField] private SceneAsset _devLevelScene;
+    public const string MainMenuScene = "Start";
+    public const string DevLevelScene = "Dev Level";
+    
     [SerializeField] private MMAdditiveSceneLoadingManagerSettings _settings;
     
     public void LoadScene(LevelSceneEnum scene)
@@ -27,9 +24,9 @@ public class SceneTransitionManager : MonoBehaviour
         switch(scene)
         {
             case LevelSceneEnum.Dev:
-                return _devLevelScene.name;
+                return DevLevelScene;
             case LevelSceneEnum.Menu:
-                return _menuLevelScene.name;
+                return MainMenuScene;
             default:
                 throw new ArgumentOutOfRangeException(nameof(scene), scene, null);
         }

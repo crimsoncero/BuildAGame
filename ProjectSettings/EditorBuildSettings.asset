@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 1e945a9ff1b67474696921e255e8f5d9
   - enabled: 1
-    path: Assets/Scenes/Dev Level Scene.unity
+    path: Assets/Scenes/Dev Level.unity
     guid: 941e0b61a02c4c34cb16efe192599250
   - enabled: 1
     path: Assets/Packages/Feel/MMTools/Core/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreenFastFade.unity

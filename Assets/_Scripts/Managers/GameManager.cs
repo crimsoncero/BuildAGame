@@ -54,7 +54,8 @@ public class GameManager : Singleton<GameManager>
         IsPaused = false;
         Timer = 0;
         _timerSeconds = 0;
-        
+        Cursor.visible = false;
+
         OnTimerTick?.Invoke(Timer);
         OnGameStart?.Invoke();
     }
@@ -65,6 +66,7 @@ public class GameManager : Singleton<GameManager>
     public void PauseGame()
     {
         IsPaused = true;
+        Cursor.visible = true;
         OnGamePaused?.Invoke();
     }
 
@@ -74,6 +76,7 @@ public class GameManager : Singleton<GameManager>
     public void ResumeGame()
     {
         IsPaused = false;
+        Cursor.visible = false;
         OnGameResumed?.Invoke();
     }
 
