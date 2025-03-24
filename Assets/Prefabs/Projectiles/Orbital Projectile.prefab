@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23c9aa2421eb6342bb1f0691b87703b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfx: {fileID: 6868050359910077317}
 --- !u!58 &3901661996081069025
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -188,10 +189,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1726225367
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 4299263042137452300, guid: 7b97c926ce42b3b44abe7ef7fd7621da, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -256,7 +257,6 @@ MonoBehaviour:
   - {fileID: 8460010721133884972, guid: 7b97c926ce42b3b44abe7ef7fd7621da, type: 3}
   - {fileID: -66968200642474533, guid: 7b97c926ce42b3b44abe7ef7fd7621da, type: 3}
   _spriteRenderer: {fileID: 7934374610256711206}
-  _player: {fileID: 0}
 --- !u!1001 &225393466218166225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6661093504666543191, guid: 2f6b4a8a112597d489704c32c210a5e4, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6661093504666543191, guid: 2f6b4a8a112597d489704c32c210a5e4, type: 3}
       propertyPath: m_SortingLayerID

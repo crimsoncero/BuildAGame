@@ -63,8 +63,18 @@ public class GameManager : Singleton<GameManager>
     /// <summary>
     /// Pause all the stuff in the game (projectiles, movement, animation, EVERYTHING)
     /// </summary>
-    public void PauseGame()
+    public void PauseGame(bool isPlayerPause = false)
     {
+        if (isPlayerPause)
+        {
+            UIManager.Instance.OpenPauseMenu();
+        }
+        else
+        {
+            
+        }
+        
+        
         IsPaused = true;
         Cursor.visible = true;
         OnGamePaused?.Invoke();
