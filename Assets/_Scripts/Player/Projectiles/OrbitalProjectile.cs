@@ -4,6 +4,8 @@ using UnityEngine.Pool;
 
 public class OrbitalProjectile : BaseProjectile
 {
+    
+    [SerializeField] private ParticleSystem _vfx;
     public bool IsActive { get; private set; } = false;
     
     private float _lifeTime;
@@ -19,6 +21,9 @@ public class OrbitalProjectile : BaseProjectile
         _lifeTime = lifeTime;
         _damage = damage;
         IsActive = true;
+        
+        GameManager.Instance.OnGamePaused += OnPause;
+        GameManager.Instance.OnGameResumed += OnResume;
     }
 
     private void Update()
@@ -50,6 +55,15 @@ public class OrbitalProjectile : BaseProjectile
         enemyHit.TakeDamage(_damage, dir, true);
       
     }
-    
+
+    private void OnPause()
+    {
+        _vfx.Pause();
+    }
+
+    private void OnResume()
+    {
+        _vfx.Play();
+    }
     
 }

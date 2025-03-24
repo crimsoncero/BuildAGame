@@ -54,7 +54,8 @@ public class GameManager : Singleton<GameManager>
         IsPaused = false;
         Timer = 0;
         _timerSeconds = 0;
-        
+        Cursor.visible = false;
+
         OnTimerTick?.Invoke(Timer);
         OnGameStart?.Invoke();
     }
@@ -62,9 +63,20 @@ public class GameManager : Singleton<GameManager>
     /// <summary>
     /// Pause all the stuff in the game (projectiles, movement, animation, EVERYTHING)
     /// </summary>
-    public void PauseGame()
+    public void PauseGame(bool isPlayerPause = false)
     {
+        if (isPlayerPause)
+        {
+            UIManager.Instance.OpenPauseMenu();
+        }
+        else
+        {
+            
+        }
+        
+        
         IsPaused = true;
+        Cursor.visible = true;
         OnGamePaused?.Invoke();
     }
 
@@ -74,6 +86,7 @@ public class GameManager : Singleton<GameManager>
     public void ResumeGame()
     {
         IsPaused = false;
+        Cursor.visible = false;
         OnGameResumed?.Invoke();
     }
 

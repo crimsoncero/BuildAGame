@@ -59,6 +59,7 @@ public class PlayerController : Singleton<PlayerController>
         AbilitiesDict.Add(AbilitiesDict.Count, hero.Ability);
         UIManager.Instance.AddHeroFrame(hero);
     }
+    
     #region Player Input Methods
     public void OnMove(CallbackContext context)
     {
@@ -81,15 +82,13 @@ public class PlayerController : Singleton<PlayerController>
         if (context.started)
         {
             if(!GameManager.Instance.IsPaused)
-                GameManager.Instance.PauseGame();
-            else // TODO - Remove this later, only for debugging atm, exiting pause will be from the pause menu or after selecing an upgrade.
-                GameManager.Instance.ResumeGame();
+                GameManager.Instance.PauseGame(true);
         }
     }
 
     public void OnDeviceLost()
     {
-        GameManager.Instance.PauseGame();
+        GameManager.Instance.PauseGame(true);
     }
 
     #endregion
