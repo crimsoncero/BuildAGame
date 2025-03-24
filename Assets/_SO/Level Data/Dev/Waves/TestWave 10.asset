@@ -16,8 +16,8 @@ MonoBehaviour:
   SpawnGroups: 9
   GroupSize: 23
   EnemyList:
-  - Data: {fileID: 11400000, guid: 675166ff7fa18c64caed9f20f69b8e5c, type: 2}
+  - Data: {fileID: 11400000, guid: 4b9c26f582f16374e9caba47c5ce058e, type: 2}
     Count: 15
-  - Data: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
+  - Data: {fileID: 11400000, guid: 7ea33dd2e67f1ea4eade7b561ec423d1, type: 2}
     Count: 8
   _isValid: 1
