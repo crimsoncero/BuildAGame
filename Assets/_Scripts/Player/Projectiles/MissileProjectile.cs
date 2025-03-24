@@ -8,7 +8,7 @@ public class MissileProjectile : BaseProjectile
     private int _pierce;
     private ObjectPool<MissileProjectile> _pool;
     [SerializeField] private Rigidbody2D _rb2d;
-
+    [SerializeField] private ParticleSystem _vfx;
     public void Init(ObjectPool<MissileProjectile> pool, Vector3 position, int damage, int pierce, Vector2 velocity)
     {
         _pool = pool;
@@ -45,11 +45,13 @@ public class MissileProjectile : BaseProjectile
     
     private void PauseProjectile()
     {
+        _vfx.Pause();
         _rb2d.simulated = false;
     }
 
     private void ResumeProjectile()
     {
+        _vfx.Play();
         _rb2d.simulated = true;
     }
 }

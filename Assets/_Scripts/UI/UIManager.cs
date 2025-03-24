@@ -10,7 +10,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TMP_Text _timer;
     [SerializeField] private UpgradeMenu _upgradeMenu;
     [SerializeField] private GameObject _endScreen;
-
+    [SerializeField] private PauseMenu _pauseMenu;
     private void Start()
     {
         GameManager.Instance.OnTimerTick += UpdateTimer;
@@ -35,5 +35,10 @@ public class UIManager : Singleton<UIManager>
     public void OpenEndScreen()
     {
         _endScreen.SetActive(true);
+    }
+
+    public void OpenPauseMenu()
+    {
+        _pauseMenu.Open();
     }
 }
