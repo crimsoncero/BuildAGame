@@ -22,8 +22,8 @@ MonoBehaviour:
     Cooldown: 5
     Pierce: 0
   <LevelUpgrades>k__BackingField:
-  - Description: Heal goes up by 1%
-    Power: 1
+  - Description: Heal goes up by 5%
+    Power: 5
     Count: 0
     Speed: 0
     Cooldown: 0
@@ -65,9 +65,9 @@ MonoBehaviour:
     Cooldown: -1
     Pierce: 0
   - Description: Heal goes up to 50% but cool down is 45s
-    Power: 44
+    Power: 35
     Count: 0
     Speed: 0
-    Cooldown: 42
+    Cooldown: 43
     Pierce: 0
   <VFX>k__BackingField: {fileID: 7920440466125361460, guid: 326d58875e1f86d4e94f1bb523015843, type: 3}

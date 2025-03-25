@@ -116,11 +116,5 @@ public class GameManager : Singleton<GameManager>
         _sceneTransitionManager.LoadScene(LevelSceneEnum.Menu);
     }
 
-    private void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 100, 30), "Game Over"))
-        {
-            GameOver();
-        }
-    }
+   
 }

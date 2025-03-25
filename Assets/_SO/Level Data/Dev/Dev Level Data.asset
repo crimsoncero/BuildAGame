@@ -16,32 +16,36 @@ MonoBehaviour:
   Duration: 180
   WaveList:
   - Wave: {fileID: 11400000, guid: 26fc9815be2b92b428ad07c6a02eedcc, type: 2}
-    Duration: 90
+    Duration: 15
   - Wave: {fileID: 11400000, guid: 2a6013de6a9d2da428f6f89bcac7137e, type: 2}
-    Duration: 120
+    Duration: 15
   - Wave: {fileID: 11400000, guid: 7f3ec0461c5835548879bc881d3ae063, type: 2}
-    Duration: 90
+    Duration: 15
   - Wave: {fileID: 11400000, guid: 9238a41ac193f2d4ea4570b775357aad, type: 2}
-    Duration: 90
+    Duration: 15
   - Wave: {fileID: 11400000, guid: da642646c06ef27429b832df99db3061, type: 2}
-    Duration: 120
+    Duration: 15
   - Wave: {fileID: 11400000, guid: b0ef161e91df0984ebaac17c13509a71, type: 2}
-    Duration: 120
+    Duration: 15
   - Wave: {fileID: 11400000, guid: 44cd8c126232d00439d0c883d98219a0, type: 2}
-    Duration: 60
+    Duration: 15
   - Wave: {fileID: 11400000, guid: 6668d6fb21121224cb29feacabf49b87, type: 2}
-    Duration: 120
+    Duration: 15
   - Wave: {fileID: 11400000, guid: 4e1227bd676ec5d439404a491c8f8bcd, type: 2}
-    Duration: 90
+    Duration: 15
   - Wave: {fileID: 11400000, guid: 5389a545c6797c949b9cdafee28be804, type: 2}
-    Duration: 90
+    Duration: 15
   - Wave: {fileID: 11400000, guid: 7b4a149b3d21ee64ba1428160314e65f, type: 2}
-    Duration: 10
+    Duration: 15
   - Wave: {fileID: 11400000, guid: 8b90ffaa3bae27d4e80a017097d4da80, type: 2}
+    Duration: 15
+  - Wave: {fileID: 11400000, guid: 7b61c9885b472d94880f07a82ab5c8d3, type: 2}
     Duration: 2147483647
   BossList:
   - Data: {fileID: 11400000, guid: ecad87ab21e984b4aba068e579499542, type: 2}
-    SpawnTime: 270
+    SpawnTime: 60
+  - Data: {fileID: 11400000, guid: 49789722d5acafd4f877915fc447d2f1, type: 2}
+    SpawnTime: 182
   EventList: []
   BGM: {fileID: 11400000, guid: fff9fc3542e8caa429331f981e3a31e3, type: 2}
   UnitMaterial: {fileID: 2100000, guid: d232d0aad69aa054cb77675894dc31b8, type: 2}
