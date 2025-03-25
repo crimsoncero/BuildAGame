@@ -22,19 +22,19 @@ MonoBehaviour:
     Cooldown: 0.8
     Pierce: 0
   <LevelUpgrades>k__BackingField:
-  - Description: Cooldown is now faster
+  - Description: Adds 1 Projectile
     Power: 0
-    Count: 0
+    Count: 1
     Speed: 0
-    Cooldown: -0.2
+    Cooldown: 0
     Pierce: 0
-  - Description: Base damage is now up by 10
+  - Description: Base damage is up by 10
     Power: 1
     Count: 0
     Speed: 0
     Cooldown: 0
     Pierce: 0
-  - Description: Projectiles now Pierce 1 enemy
+  - Description: Projectiles now pierce 1 enemy
     Power: 0
     Count: 0
     Speed: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     Power: 0
     Count: 0
     Speed: 2
-    Cooldown: 0
+    Cooldown: -0.5
     Pierce: 0
   - Description: Base damage is now up by 20
     Power: 2

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aba35f2c959ab334cbd9d6a88976665f, type: 3}
-  m_Name: Unity Error
+  m_Name: Garbage Collector
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Unity Error
-  _powerLevel: 3
-  <BaseMaxHealth>k__BackingField: 2000
-  <BaseMoveSpeed>k__BackingField: 3
-  <BasePower>k__BackingField: 50
-  <BaseSpeed>k__BackingField: 1
+  <Name>k__BackingField: Garbage Collector
+  _powerLevel: 1000
+  <BaseMaxHealth>k__BackingField: 2147483647
+  <BaseMoveSpeed>k__BackingField: 300
+  <BasePower>k__BackingField: 1000
+  <BaseSpeed>k__BackingField: 0.5
   <GemDropped>k__BackingField: 25
   <Sprite>k__BackingField: {fileID: -7447190747043010810, guid: 654aaed5892df434ea2de828926901e9, type: 3}
   <IsBoss>k__BackingField: 1
