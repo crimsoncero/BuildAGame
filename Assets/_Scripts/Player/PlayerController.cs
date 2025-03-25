@@ -6,6 +6,7 @@ using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
 using UnityEngine.InputSystem;
 using SeraphRandom;
+using SeraphUtil;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -26,6 +27,7 @@ public class PlayerController : Singleton<PlayerController>
     public bool IsFullyUpgraded { get; private set; }
     public Vector2 CenterPosition { get; private set; } = Vector2.zero;
     
+    public StatInt Speed { get; private set; }
     
     private void Start()
     {
