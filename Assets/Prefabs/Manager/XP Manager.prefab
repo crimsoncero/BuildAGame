@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1817107263449158511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7120650741019215494}
+  - component: {fileID: 6938414974823572709}
+  m_Layer: 0
+  m_Name: XP Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7120650741019215494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817107263449158511}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6938414974823572709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817107263449158511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a0736d93f80dd46ace3cb6f86d545c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xpData: {fileID: 11400000, guid: 5d7af9e17a0a1ba43843ff9d111e0956, type: 2}
+  _gemPrefab: {fileID: 4225169876534369980, guid: b0351f00d74be9441a83e4ccb1e18ea5, type: 3}
+  _gemParent: {fileID: 7120650741019215494}
+  _maxInstanceAmount: 500
+  _commonGemData: {fileID: 11400000, guid: c68ccd5baa504b34c884cafc2995febd, type: 2}
+  _rareGemData: {fileID: 11400000, guid: d999044e42a377e44a4d2da508216bef, type: 2}
+  _uniqueGemData: {fileID: 11400000, guid: 74ac09a0130c6cb4fb9f0c701d013b3c, type: 2}
+  _epicGemData: {fileID: 11400000, guid: ea1be89df9ecc554f9a117415b0fab4b, type: 2}
+  _debugXP: 0

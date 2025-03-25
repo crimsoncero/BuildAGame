@@ -27,12 +27,11 @@ public class PlayerController : Singleton<PlayerController>
     public bool IsFullyUpgraded { get; private set; }
     public Vector2 CenterPosition { get; private set; } = Vector2.zero;
     
-    public StatInt Speed { get; private set; }
-    
     private void Start()
     {
         _cinemachineCamera.Follow = _heroMover.transform;
         InitHeroes(); // Move this to game manager when init creates heroes.
+        
     }
 
     private void Update()
