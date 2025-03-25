@@ -33,13 +33,10 @@ namespace SeraphUtil
         /// </summary>
         public T Final { get { return CalculateFinal(); } }
         
-        
-        
         protected Stat(T baseValue)
         {
             Base = baseValue;
         }
-
 
         /// <summary>
         /// Calculates the stat after adding a certain value, and then doing all the transformations.
