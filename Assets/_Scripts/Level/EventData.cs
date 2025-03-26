@@ -1,7 +1,12 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EventData", menuName = "Scriptable Objects/Level/EventData")]
-public class EventData : ScriptableObject
+
+public abstract class EventData : ScriptableObject
 {
-    
+    [field: SerializeField] public string Name { get; private set; }
+
+
+    public abstract void Play();
 }
+
+

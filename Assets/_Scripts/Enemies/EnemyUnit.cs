@@ -34,10 +34,12 @@ public class EnemyUnit : MonoBehaviour
     
     private BoolTimer _canAttack;
     private bool _isDead = false;
-    
     private Tween _knockbackTween;
-
-
+    
+    public bool IsAlive
+    {
+        get { return !_isDead; }
+    }
     public void Initialize(EnemyData data, Vector3 position, ObjectPool<EnemyUnit> pool)
     {
         if (data.IsUnityNull())
@@ -139,11 +141,14 @@ public class EnemyUnit : MonoBehaviour
         
     }
     
-    public void KillUnit()
+    public void KillUnit(bool spawnGem = true)
     {
         if(_isDead) return;
         _isDead = true;
-        XPManager.Instance.SpawnGem(Data.GemDropped, transform.position);
+        
+        if (spawnGem)
+            XPManager.Instance.SpawnGem(Data.GemDropped, transform.position);
+        
         _visuals.OnDeath();
         
     }
