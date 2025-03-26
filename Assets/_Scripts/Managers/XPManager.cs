@@ -83,7 +83,6 @@ public class XPManager : Singleton<XPManager>
     {
         if (gem.IsUnityNull())
         {
-            Debug.LogError("Gem is null at take from pool");
             return;
         }
         
@@ -93,7 +92,6 @@ public class XPManager : Singleton<XPManager>
     {
         if (gem.IsUnityNull())
         {
-            Debug.LogError("Gem is null at return to pool");
             return;
         }
         gem.gameObject.SetActive(false);

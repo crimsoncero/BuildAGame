@@ -130,6 +130,8 @@ public class EnemyUnit : MonoBehaviour
 
     private void Knockback(Vector2 direction, float force)
     {
+        if (Data.ImmuneToKnockback) return;
+        
         PathfindingModule.PausePathfinding();
         Vector2 endDestination = (Vector2)transform.position + direction.normalized * force;
         
