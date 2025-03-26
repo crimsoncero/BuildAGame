@@ -15,10 +15,13 @@ public class MainMenuManager : MonoBehaviour
         _windows = new List<WindowController>();
         _windows.Add(_characterSelect);
         
+    }
+
+    public void Initialize()
+    {
         MMPlaylistStopEvent.Trigger(0);
         MMPlaylistPlayEvent.Trigger(0);
     }
-
     public void OpenCharacterSelect()
     {
         CloseAllWindows();

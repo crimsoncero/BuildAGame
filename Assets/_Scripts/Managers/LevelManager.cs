@@ -24,6 +24,7 @@ public class LevelManager : Singleton<LevelManager>
     private int _spawnTarget = 0;
     private int _waveChangeTarget = 0;
     private int _bossTarget = 0;
+    private int _eventTarget = 0;
     
     private void Start()
     {
@@ -42,6 +43,11 @@ public class LevelManager : Singleton<LevelManager>
             _bossTarget = 0 + BossList.Current.SpawnTime;
         else
             _bossTarget = -1;
+        
+        if (EventList != null)
+            _eventTarget = 0 + EventList.Current.SpawnTime;
+        else
+            _eventTarget = -1;
     }
 
     public void Init()
@@ -83,6 +89,14 @@ public class LevelManager : Singleton<LevelManager>
             BossList.MoveNext();
             _bossTarget = BossList.Current.SpawnTime;
         }
+        
+        // Play Event
+        if(time == _eventTarget)
+        {
+            EventList.Current.Data.Play();
+            EventList.MoveNext();
+            _eventTarget = EventList.Current.SpawnTime;
+        }
 
     }
 
@@ -111,9 +125,16 @@ public class LevelManager : Singleton<LevelManager>
         {
             BossList = null;
         }
-       
-        EventList = Data.EventList.OrderBy((t) => t.SpawnTime).GetEnumerator();
-        EventList.MoveNext();
+
+        if (Data.EventList.Count > 0)
+        {
+            EventList = Data.EventList.OrderBy((t) => t.SpawnTime).GetEnumerator();
+            EventList.MoveNext();
+        }
+        else
+        {
+            EventList = null;
+        }
     }
 
     private void StartBGM()

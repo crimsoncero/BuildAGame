@@ -27,13 +27,12 @@ public class EnemySpawner : Singleton<EnemySpawner>
     [SerializeField] private int _numberOfSectors;
     [SerializeField] private DonutParams _spawnDonutArea;
     [SerializeField] private int _maximumConcurrentEnemies = 300;
+    private Transform _centerPosition;
 
     public ObjectPool<EnemyUnit> Pool { get; private set; }
 
-
-    private Transform _centerPosition;
-
-
+    private List<EnemyUnit> _enemyInstanceList = new List<EnemyUnit>();
+    public List<EnemyUnit> EnemyList { get { return _enemyInstanceList.Where((e)=> e.IsAlive).ToList(); } }    
     private void Start()
     {
         _centerPosition = PlayerController.Instance.Center;
@@ -198,7 +197,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
         EnemyUnit enemy = Instantiate(_enemyPrefab, _poolParent);
 
         enemy.gameObject.SetActive(false);
-
+        _enemyInstanceList.Add(enemy);
         return enemy;
     }
 
@@ -213,6 +212,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
     private void OnDestroyPoolObject(EnemyUnit enemy)
     {
+        _enemyInstanceList.Remove(enemy);
         Destroy(enemy.gameObject);
     }
 
