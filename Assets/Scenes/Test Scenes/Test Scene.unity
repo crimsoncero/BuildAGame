@@ -119,6 +119,141 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &194323882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194323885}
+  - component: {fileID: 194323884}
+  - component: {fileID: 194323883}
+  m_Layer: 0
+  m_Name: Chain Lightning VFX (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!73398921 &194323883
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194323882}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1726225367
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+--- !u!2083052967 &194323884
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194323882}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 5294bf0cb893d324495587cbf710b287, type: 3}
+  m_InitialEventName: OnPlay
+  m_InitialEventNameOverriden: 0
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 0.5
+        m_Name: Duration
+        m_Overridden: 1
+      - m_Value: 7
+        m_Name: Length
+        m_Overridden: 1
+      - m_Value: 2
+        m_Name: Width
+        m_Overridden: 1
+      - m_Value: 0.13
+        m_Name: Impact Delay
+        m_Overridden: 1
+      - m_Value: 0.25
+        m_Name: Sequence Delay
+        m_Overridden: 1
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array: []
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array:
+      - m_Value: 1
+        m_Name: Sequence Number
+        m_Overridden: 1
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array:
+      - m_Value: 0
+        m_Name: Is First
+        m_Overridden: 1
+--- !u!4 &194323885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194323882}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.99535966, w: -0.09622456}
+  m_LocalPosition: {x: -2.96, y: 7.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 191.044}
 --- !u!1 &269937968
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,13 +339,13 @@ VisualEffect:
       - m_Value: 7
         m_Name: Length
         m_Overridden: 1
-      - m_Value: 3
+      - m_Value: 2
         m_Name: Width
         m_Overridden: 1
       - m_Value: 0.13
         m_Name: Impact Delay
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 0.25
         m_Name: Sequence Delay
         m_Overridden: 1
     m_Vector2f:
@@ -396,13 +531,13 @@ VisualEffect:
       - m_Value: 10
         m_Name: Length
         m_Overridden: 1
-      - m_Value: 3
+      - m_Value: 2
         m_Name: Width
         m_Overridden: 1
       - m_Value: 0.13
         m_Name: Impact Delay
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 0.25
         m_Name: Sequence Delay
         m_Overridden: 1
     m_Vector2f:
@@ -591,7 +726,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 716459713390911466, guid: 7ad2e912c73fa4446bd12b89ea34ece8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.45
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: 716459713390911466, guid: 7ad2e912c73fa4446bd12b89ea34ece8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1007,13 +1142,13 @@ VisualEffect:
       - m_Value: 3
         m_Name: Length
         m_Overridden: 1
-      - m_Value: 3
+      - m_Value: 2
         m_Name: Width
         m_Overridden: 1
       - m_Value: 0.13
         m_Name: Impact Delay
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 0.25
         m_Name: Sequence Delay
         m_Overridden: 1
     m_Vector2f:
@@ -1066,6 +1201,7 @@ SceneRoots:
   - {fileID: 845056097}
   - {fileID: 732168757}
   - {fileID: 269937971}
+  - {fileID: 194323885}
   - {fileID: 2066401232}
   - {fileID: 1164721723}
   - {fileID: 1290775605}
