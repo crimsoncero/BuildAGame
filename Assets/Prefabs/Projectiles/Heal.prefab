@@ -4952,6 +4952,8 @@ MonoBehaviour:
   _healingEffects:
   - {fileID: 3450012420667162948}
   - {fileID: 9094249087784871832}
+  _isPlayingPaused: 0
+  _onHealEffect: {fileID: 6528871523664606457, guid: 3412ef53132132145ae6f8a5ace13377, type: 3}
 --- !u!1 &5953221248817355478
 GameObject:
   m_ObjectHideFlags: 0
@@ -9751,7 +9753,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1726225367
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0

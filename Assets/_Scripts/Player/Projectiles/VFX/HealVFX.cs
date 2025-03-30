@@ -7,11 +7,13 @@ public class HealVFX : MonoBehaviour
 {
     [SerializeField] private List<ParticleSystem> _healingEffects;
     [SerializeField] private bool _isPlayingPaused;
-
+    
     private void Start()
     {
         GameManager.Instance.OnGamePaused += OnPause;
         GameManager.Instance.OnGameResumed += OnResume;
+        
+        
     }
 
     public void Play()

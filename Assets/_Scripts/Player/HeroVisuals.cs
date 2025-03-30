@@ -9,7 +9,6 @@ public class HeroVisuals : MonoBehaviour
     private static readonly int DamagePropID = Shader.PropertyToID("_DamageSlider");
     
     [SerializeField] private Animator _animator;
-    
     [Header("Tween Settings")]
     [SerializeField] private float _deathDuration = 0.5f;
     [SerializeField] private float _hitDuration = 0.2f;

@@ -7,17 +7,17 @@ namespace SeraphUtil
     /// <summary>
     /// A wrapper class for a stat, allowing the subscription of additive and multiplicative methods to the stat. Performing additive transformations before multiplicative.
     /// </summary>
-    public abstract class Stat<T> 
+    public abstract class Stat<TValue, TEntity> 
     {
         /// <summary>
         /// A delegate to a method that takes a ref of the current value, and transforms it additively (+/-) or multiplicatively (*/%).
         /// </summary>
-        public delegate void TransformerDelegate(ref T value);
+        public delegate void TransformerDelegate(ref TValue value, TEntity entity);
 
         /// <summary>
         /// The base value of the stat before transformations.
         /// </summary>
-        public T Base { get; set; }
+        public TValue Base { get; set; }
         
         /// <summary>
         /// Subscribe methods that will transform the stat additively (+/-)
@@ -28,12 +28,8 @@ namespace SeraphUtil
         /// </summary>
         public TransformerDelegate Multiplicative { get; set; }
 
-        /// <summary>
-        /// The final value of the stat after all the transformations.
-        /// </summary>
-        public T Final { get { return CalculateFinal(); } }
         
-        protected Stat(T baseValue)
+        protected Stat(TValue baseValue)
         {
             Base = baseValue;
         }
@@ -41,29 +37,37 @@ namespace SeraphUtil
         /// <summary>
         /// Calculates the stat after adding a certain value, and then doing all the transformations.
         /// </summary>
+        /// <param name="entity"> the entity that uses the stat </param>
         /// <param name="addedValue"> the amount to add to the base value.</param>
         /// <returns></returns>
-        public T FinalWithAdditive(T addedValue)
+        public TValue FinalWithAdditive(TEntity entity, TValue addedValue)
         {
-            return CalculateFinal(addedValue);
+            return CalculateFinal(entity, addedValue);
         }
-        
-        private T CalculateFinal(T addedValue = default(T))
+
+        /// <summary>
+        /// The final value of the stat after all the transformations.
+        /// </summary>
+        public TValue Final(TEntity entity)
+        {
+            return CalculateFinal(entity);
+        }
+        private TValue CalculateFinal(TEntity entity, TValue addedValue = default(TValue))
         {
             var final = Add(Base, addedValue);
-            Additive?.Invoke(ref final);
-            Multiplicative?.Invoke(ref final);
+            Additive?.Invoke(ref final, entity);
+            Multiplicative?.Invoke(ref final, entity);
             return final;
         }
 
-        protected abstract T Add(T x, T y);
+        protected abstract TValue Add(TValue x, TValue y);
 
     }
     
     /// <summary>
     /// A wrapper class for an integer stat, allowing the subscription of additive and multiplicative methods to the stat. Performing additive transformations before multiplicative.
     /// </summary>
-    public class StatInt : Stat<int> 
+    public class StatInt<T> : Stat<int, T> 
     {
         public StatInt(int baseValue) : base(baseValue)
         {
@@ -78,7 +82,7 @@ namespace SeraphUtil
     /// <summary>
     /// A wrapper class for a float stat, allowing the subscription of additive and multiplicative methods to the stat. Performing additive transformations before multiplicative.
     /// </summary>
-    public class StatFloat : Stat<float> 
+    public class StatFloat<T> : Stat<float,T> 
     {
         public StatFloat(float baseValue) : base(baseValue)
         {
