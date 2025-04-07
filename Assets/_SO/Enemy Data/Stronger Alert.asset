@@ -19,6 +19,7 @@ MonoBehaviour:
   <BasePower>k__BackingField: 7
   <BaseSpeed>k__BackingField: 2
   <GemDropped>k__BackingField: 0
+  <Prefab>k__BackingField: {fileID: 1231239660535065941, guid: 90590a9224c3c664994c621b883c1a19, type: 3}
   <ImmuneToKnockback>k__BackingField: 0
   <Sprite>k__BackingField: {fileID: -1731037661818844545, guid: 1c1f8505355005241ac68ef16f1417f0, type: 3}
   <IsBoss>k__BackingField: 0

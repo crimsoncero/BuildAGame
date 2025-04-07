@@ -1,9 +1,7 @@
-using MoreMountains.Feedbacks;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 public class GameManager : Singleton<GameManager>
@@ -32,20 +30,26 @@ public class GameManager : Singleton<GameManager>
     public bool IsPaused { get; private set; } = true;
     public bool IsGameActive { get; private set; } = false;
 
+    
+    private List<IPausable> _pausablesList = new List<IPausable>();
+    
+    
     private void Update()
     {
-        if (!IsPaused && IsGameActive)
-        {
-            _timerSeconds += Time.deltaTime;
-            if(_timerSeconds > 1)
-            {
-                _timerSeconds -= 1;
-                Timer++;
-                OnTimerTick?.Invoke(Timer);
-            }
-        }
+        UpdateTimer();
     }
 
+    public void RegisterPausable(IPausable obj)
+    {
+        if (_pausablesList.Contains(obj))
+            return;
+        _pausablesList.Add(obj);
+    }
+
+    public void UnregisterPausable(IPausable obj)
+    {
+        _pausablesList.Remove(obj);
+    }
     public void StartGame()
     {
         XPManager.Instance.OnLevelUp += LevelUp;
@@ -65,6 +69,9 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void PauseGame(bool isPlayerPause = false)
     {
+        // Already Paused or game not active
+        if (IsPaused && !IsGameActive) return;
+        
         if (isPlayerPause)
         {
             UIManager.Instance.OpenPauseMenu();
@@ -77,7 +84,16 @@ public class GameManager : Singleton<GameManager>
         
         IsPaused = true;
         Cursor.visible = true;
+        
         OnGamePaused?.Invoke();
+        // Pause all pausables and remove those that are null.
+        for (int i = 0; i < _pausablesList.Count; i++)
+        {
+            if(_pausablesList[i] == null)
+                _pausablesList.RemoveAt(i);
+            else
+                _pausablesList[i].Pause();
+        }
     }
 
     /// <summary>
@@ -85,9 +101,21 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void ResumeGame()
     {
+        // Already resumed or game not active
+        if (!IsPaused || !IsGameActive) return;
+        
         IsPaused = false;
         Cursor.visible = false;
+        
         OnGameResumed?.Invoke();
+        // Pause all pausables and remove those that are null.
+        for (int i = 0; i < _pausablesList.Count; i++)
+        {
+            if(_pausablesList[i] == null)
+                _pausablesList.RemoveAt(i);
+            else
+                _pausablesList[i].Resume();
+        }
     }
 
     public void GameOver()
@@ -111,6 +139,20 @@ public class GameManager : Singleton<GameManager>
         UIManager.Instance.OpenUpgradeMenu();;
     }
 
+
+    private void UpdateTimer()
+    {
+        if (!IsPaused && IsGameActive)
+        {
+            _timerSeconds += Time.deltaTime;
+            if(_timerSeconds > 1)
+            {
+                _timerSeconds -= 1;
+                Timer++;
+                OnTimerTick?.Invoke(Timer);
+            }
+        }
+    }
     public void LoadMenu()
     {
         _sceneTransitionManager.LoadScene(LevelSceneEnum.Menu);

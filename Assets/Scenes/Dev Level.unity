@@ -1490,6 +1490,10 @@ PrefabInstance:
       propertyPath: _poolParent
       value: 
       objectReference: {fileID: 559445598}
+    - target: {fileID: 6199971027194212136, guid: 0716910ec7b119c42b0d1784c37f1dc5, type: 3}
+      propertyPath: _poolOptions
+      value: 
+      objectReference: {fileID: 11400000, guid: 2934a4e1e9f0f6e4bb9bb8c6043d4963, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

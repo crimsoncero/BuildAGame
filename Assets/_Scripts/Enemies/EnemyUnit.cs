@@ -1,11 +1,11 @@
 using System;
-using System.Collections;
 using DG.Tweening;
+using SeraphUtil.ObjectPool;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Pool;
+using IPoolable = SeraphUtil.ObjectPool.IPoolable;
 
-public class EnemyUnit : MonoBehaviour
+public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
 {
     
     [field: SerializeField] public EnemyData Data { get; private set; }
@@ -21,7 +21,7 @@ public class EnemyUnit : MonoBehaviour
     [SerializeField] private float _knockbackForce = 1f;
     [SerializeField] private float _knockbackDurationPerForce = 0.2f;
     
-    private ObjectPool<EnemyUnit> _pool;
+    private MultiPool<EnemyUnit> _pool;
     
     // STATS::
     public int CurrentHealth { get; private set; }
@@ -40,7 +40,7 @@ public class EnemyUnit : MonoBehaviour
     {
         get { return !_isDead; }
     }
-    public void Initialize(EnemyData data, Vector3 position, ObjectPool<EnemyUnit> pool)
+    public void Initialize(EnemyData data, Vector3 position, MultiPool<EnemyUnit> pool)
     {
         if (data.IsUnityNull())
             throw new ArgumentNullException("data", "Can't initilize a unit with null data");
@@ -71,25 +71,17 @@ public class EnemyUnit : MonoBehaviour
         PathfindingModule.SetMaxAcceleration(1000);
         
         _visuals.Initialize(this);
-
+        
         // Set Target
         PathfindingModule.SetTarget(PlayerController.Instance.Center);
+        
+        gameObject.SetActive(true);
     }
 
-    private void OnEnable()
-    {
-        GameManager.Instance.OnGamePaused += PauseEnemy;
-        GameManager.Instance.OnGameResumed += ResumeEnemy;
-    }
+    
     private void OnDisable()
     {
-        if(GameManager.Instance != null)
-        {
-            GameManager.Instance.OnGamePaused -= PauseEnemy;
-            GameManager.Instance.OnGameResumed -= ResumeEnemy;
-        }
-       
-        _pool?.Release(this);
+        _pool?.Return(Data.Prefab,this);
     }
     private void Update()
     {
@@ -155,11 +147,17 @@ public class EnemyUnit : MonoBehaviour
         
     }
 
-    
+    public void OnTakeFromPool()
+    {
+        GameManager.Instance.RegisterPausable(this);
+    }
 
-    #region Pause & Resume
+    public void OnReturnToPool()
+    {
+        GameManager.Instance?.UnregisterPausable(this);
+    }
 
-    private void PauseEnemy()
+    public void Pause()
     {
         // Set speed to zero
         _rb2d.linearVelocity = Vector2.zero;
@@ -167,13 +165,9 @@ public class EnemyUnit : MonoBehaviour
         PathfindingModule.PausePathfinding();
     }
 
-    private void ResumeEnemy()
+    public void Resume()
     {
         PathfindingModule.ResumePathfinding();
         _rb2d.simulated = true;
     }
-
-    
-
-    #endregion
 }
