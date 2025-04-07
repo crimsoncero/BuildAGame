@@ -55,9 +55,15 @@ namespace SeraphUtil.ObjectPool
         }
         
         public Transform Container { get; }
-
+        
+        
+        // Debug Tracking
+        private bool _debug;
+        
+        
         public MultiPool(List<T> prefabs, Transform container, uint initialCount = 10, bool initPoolNow = true)
         {
+            _debug = false;
             _objectPoolDict = new Dictionary<T, ObjectPool<T>>();
             Container = container;
             
@@ -69,12 +75,15 @@ namespace SeraphUtil.ObjectPool
                 
                 var pool = new ObjectPool<T>(prefab, poolContainer.transform, initialCount, initPoolNow);
                 _objectPoolDict.Add(prefab, pool);
+                
+                
             }
             
         }
         
         public MultiPool(List<T> prefabs, List<uint> initialCounts, Transform container, bool initPoolNow = true)
         {
+            _debug = false;
             _objectPoolDict = new Dictionary<T, ObjectPool<T>>();
             Container = container;
             
@@ -98,12 +107,15 @@ namespace SeraphUtil.ObjectPool
 
         public MultiPool(MultiPoolOptions<T> options, Transform container)
         {
+            _debug = options.Debug;
+                        
             List<T> prefabs = options.PoolList.Select(o => o.Prefab).ToList();
             List<uint> initialCounts = options.PoolList.Select(o => o.InitialCount).ToList();
            
             _objectPoolDict = new Dictionary<T, ObjectPool<T>>();
             Container = container;
 
+            
             for (int i = 0; i < prefabs.Count; i++)
             {
                 T prefab = prefabs[i];
@@ -114,11 +126,12 @@ namespace SeraphUtil.ObjectPool
                 poolContainer.name = prefab.name;
                 
                 if (i < initialCounts.Count)
-                    pool = new ObjectPool<T>(prefab, poolContainer.transform, initialCounts[i], options.InitPoolNow);
+                    pool = new ObjectPool<T>(prefab, poolContainer.transform, initialCounts[i], options.InitPoolNow, _debug);
                 else
-                    pool = new ObjectPool<T>(prefab, poolContainer.transform, initPoolNow: options.InitPoolNow);
+                    pool = new ObjectPool<T>(prefab, poolContainer.transform, initPoolNow: options.InitPoolNow, debug: _debug);
                 
                 _objectPoolDict.Add(prefab, pool);
+                
             }
         }
         
@@ -147,13 +160,13 @@ namespace SeraphUtil.ObjectPool
             if (!_objectPoolDict.ContainsKey(prefabKey))
             {
                 #if UNITY_EDITOR
-                Debug.LogWarning($"The prefab {prefabKey.name} has not been given as one of the Multi Pool prefabs. A temporary pool was made, make sure to set up the prefabs properlly!");           
+                Debug.LogWarning($"The prefab {prefabKey.name} has not been given as one of the Multi Pool prefabs. A temporary pool was made, make sure to set up the prefabs properly!");           
                 GameObject poolContainer = new GameObject();
                 poolContainer.transform.SetParent(Container);
                 poolContainer.name = prefabKey.name;
                 _objectPoolDict.Add(prefabKey, new ObjectPool<T>(prefabKey, Container));
                 #else
-                Debug.LogError($"The prefab {prefabkKey.name} has not been givenn as one of the Multi Pool prefabs.");
+                Debug.LogError($"The prefab {prefabkKey.name} has not been given as one of the Multi Pool prefabs.");
                 return;
                 #endif
             }
@@ -168,9 +181,22 @@ namespace SeraphUtil.ObjectPool
 
             _objectPoolDict[prefabKey].Return(obj);
         }
-        
 
 
-
+        public void LogPools()
+        {
+            if (!_debug) return;
+            string log = "Multi Pool Log:\n";
+            foreach (var pool in _objectPoolDict)
+            {
+                ObjectPool<T>.DebugData data = pool.Value.GetDebugData();
+                log += $"The {pool.Key.name} Pool:\n";
+                log += $"Total Created: {data.TotalCreated}\n";
+                log += $"Runtime Created: {data.RuntimeCreated}\n";
+                log += $"Objects Taken: {data.TotalTaken}\n";
+                log += $"Objects Returned: {data.TotalReturned}\n\n";
+            }
+            Debug.Log(log);
+        }
     }
 }

@@ -17,5 +17,8 @@ namespace SeraphUtil.ObjectPool
         public List<PoolOptions> PoolList { get; protected set; }
         [field: SerializeField]
         public bool InitPoolNow { get; protected set; } = true;
+        [field: SerializeField]
+        public bool Debug { get; protected set; } = false;
+
     }
 }

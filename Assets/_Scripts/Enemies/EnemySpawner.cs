@@ -169,7 +169,10 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
     #endregion
 
-   
+    private void OnDisable()
+    {
+        Pool.LogPools();
+    }
 
     private void OnDrawGizmosSelected()
     {
