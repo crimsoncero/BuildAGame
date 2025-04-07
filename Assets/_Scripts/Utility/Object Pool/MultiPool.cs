@@ -142,8 +142,21 @@ namespace SeraphUtil.ObjectPool
         
         public T Take(T prefabKey)
         {
+            // In case the prefab doesn't exist in the keys, create a new pool for this prefab, with a small initial size.
+            // This is mainly for user-friendliness, but it will log a warning to let the user know they need to implement the prefab in the multipool setup.
             if (!_objectPoolDict.ContainsKey(prefabKey))
-                throw new ArgumentNullException();
+            {
+                #if UNITY_EDITOR
+                Debug.LogWarning($"The prefab {prefabKey.name} has not been given as one of the Multi Pool prefabs. A temporary pool was made, make sure to set up the prefabs properlly!");           
+                GameObject poolContainer = new GameObject();
+                poolContainer.transform.SetParent(Container);
+                poolContainer.name = prefabKey.name;
+                _objectPoolDict.Add(prefabKey, new ObjectPool<T>(prefabKey, Container));
+                #else
+                Debug.LogError($"The prefab {prefabkKey.name} has not been givenn as one of the Multi Pool prefabs.");
+                return;
+                #endif
+            }
 
             return _objectPoolDict[prefabKey].Take();
         }
@@ -155,7 +168,6 @@ namespace SeraphUtil.ObjectPool
 
             _objectPoolDict[prefabKey].Return(obj);
         }
-        
         
 
 
