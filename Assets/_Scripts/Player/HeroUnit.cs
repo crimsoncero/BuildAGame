@@ -40,14 +40,6 @@ public class HeroUnit : MonoBehaviour
     public bool IsDead { get; private set; } = false;
 
     private float _respawnHealth = 0;
-    private void Start()
-    {
-        // Init the unit automatically if starting with data. (for testing mainly)
-        if (!Data.IsUnityNull())
-            Init(Data);
-        
-        
-    }
 
     private void Update()
     {
@@ -58,7 +50,7 @@ public class HeroUnit : MonoBehaviour
         // When dead update stuff
         if (IsDead)
         {
-            _respawnHealth += (MaxHealth / PlayerController.Instance.TimeToRespawn) * Time.deltaTime;
+            _respawnHealth += (MaxHealth / HeroManager.Instance.Stats.RespawnTime.Final(this)) * Time.deltaTime;
             if (_respawnHealth >= 1f)
             {
                 var hpToAdd = Mathf.FloorToInt(_respawnHealth);
@@ -95,7 +87,7 @@ public class HeroUnit : MonoBehaviour
         
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
-        PlayerController.Instance.RegisterHero(this);
+        HeroManager.Instance.RegisterHero(this);
         
         AddCallbacks();
     }

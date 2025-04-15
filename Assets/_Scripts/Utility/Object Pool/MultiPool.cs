@@ -108,7 +108,10 @@ namespace SeraphUtil.ObjectPool
         public MultiPool(MultiPoolOptions<T> options, Transform container)
         {
             _debug = options.Debug;
-                        
+            if (_debug)
+                Application.quitting += LogPools;
+            
+            
             List<T> prefabs = options.PoolList.Select(o => o.Prefab).ToList();
             List<uint> initialCounts = options.PoolList.Select(o => o.InitialCount).ToList();
            

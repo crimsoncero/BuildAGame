@@ -73,7 +73,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
         _visuals.Initialize(this);
         
         // Set Target
-        PathfindingModule.SetTarget(PlayerController.Instance.Center);
+        PathfindingModule.SetTarget(HeroManager.Instance.Center);
         
         gameObject.SetActive(true);
     }
@@ -96,7 +96,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
         if (!_canAttack.Value) return;
         if (_attackableLayers.Includes(collision.gameObject.layer))
         {
-            if (PlayerController.Instance.DamageHero(collision.transform, Power))
+            if (HeroManager.Instance.DamageHero(collision.transform, Power))
             {
                 _canAttack.SetTimer();
             }

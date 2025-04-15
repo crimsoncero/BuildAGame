@@ -40,7 +40,7 @@ public class HealingAbility : BaseAbility
     {
         if(_heroes == null)
         {
-            _heroes = PlayerController.Instance.Heroes;
+            _heroes = HeroManager.Instance.Heroes;
         }
 
         foreach (var hero in _heroes)

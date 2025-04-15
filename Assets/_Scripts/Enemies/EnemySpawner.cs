@@ -37,7 +37,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
     public void InitializeSpawner(MultiPoolOptions<EnemyUnit> poolOptions)
     {
         _poolOptions = poolOptions;
-        _centerPosition = PlayerController.Instance.Center;
+        _centerPosition = HeroManager.Instance.Center;
         Pool = new MultiPool<EnemyUnit>(poolOptions, _poolParent);
     }
     
@@ -171,7 +171,6 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
     private void OnDisable()
     {
-        Pool.LogPools();
     }
 
     private void OnDrawGizmosSelected()

@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class HeroMover : MonoBehaviour
+public class HeroMover : MonoBehaviour, IPausable
 {
-    [field:SerializeField]
-    public float Speed { get; private set; } = 6;
+    [field: SerializeField]
+    private float Speed
+    {
+        get { return HeroManager.Instance.Stats.MovementSpeed.Final(HeroManager.Instance.Heroes[0]); }
+    }
 
     [SerializeField] private float _flipTolerance = 0.1f;
     [SerializeField] private float _flipAhead = 0.1f;
@@ -13,7 +16,7 @@ public class HeroMover : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.OnGamePaused += PauseMover;
+        GameManager.Instance.RegisterPausable(this);
     }
 
     public void Move(Vector2 direction)
@@ -23,16 +26,11 @@ public class HeroMover : MonoBehaviour
         inputVelocity = direction * Speed;
      
     }
-    public void SetSpeed(float speed)
-    {
-        Speed = speed;
-    }
-
     private void HandleDirectionChange(Vector2 direction)
     {
         if (direction == Vector2.zero) return;
         
-        Vector2 centerPos = PlayerController.Instance.CenterPosition;
+        Vector2 centerPos = HeroManager.Instance.CenterPosition;
         Vector2 centerVec = (Vector2)transform.position - centerPos;
 
         
@@ -67,12 +65,6 @@ public class HeroMover : MonoBehaviour
 
     #region Pause & Resume
 
-    private void PauseMover()
-    {
-        // Set speed to zero
-        _rb2d.linearVelocity = Vector2.zero;
-    }
-
     private void Update()
     {
         if (_rb2d != null)
@@ -80,6 +72,13 @@ public class HeroMover : MonoBehaviour
             _rb2d.linearVelocity = GameManager.Instance.IsPaused ? Vector2.zero : inputVelocity;
         }
     }
+    public void Pause()
+    {
+        _rb2d.linearVelocity = Vector2.zero;
+    }
 
+    public void Resume()
+    {
+    }
     #endregion
 }

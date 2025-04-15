@@ -16,8 +16,9 @@ public class GameManager : Singleton<GameManager>
     public event Action<int> OnTimerTick;
 
    [SerializeField] private SceneTransitionManager _sceneTransitionManager;
-    
-    
+
+    [field: SerializeField] public LevelInitData InitData { get; private set; }
+
     /// <summary>
     /// The in game time that has passed until now, counted in seconds.
     /// </summary>
@@ -32,8 +33,9 @@ public class GameManager : Singleton<GameManager>
 
     
     private List<IPausable> _pausablesList = new List<IPausable>();
-    
-    
+
+   
+
     private void Update()
     {
         UpdateTimer();
@@ -130,7 +132,7 @@ public class GameManager : Singleton<GameManager>
 
     private void LevelUp()
     {
-        if (PlayerController.Instance.IsFullyUpgraded)
+        if (HeroManager.Instance.IsFullyUpgraded)
         {
             return;
         }
