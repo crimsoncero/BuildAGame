@@ -34,10 +34,14 @@ public abstract class BaseAbilityData : ScriptableObject
 
     public AbilityStats GetCurrentStats(int level)
     {
+        // Non Additive
+        // return level == 0 ? BaseAbilityStats : LevelUpgrades[level];
+        
+        // Additive Stats
         AbilityStats stats = GetStatsZero();
         stats.Add(BaseAbilityStats);
         
-        for(int i = 0; i < level - 1; i++)
+        for(int i = 0; i < level; i++)
         {
             stats.Add(LevelUpgrades[i]);
         }

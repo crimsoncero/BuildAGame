@@ -89,6 +89,8 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
         {
             _canAttack.UpdateTimer();
         }
+        
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)

@@ -121,6 +121,8 @@ public class HeroManager : Singleton<HeroManager>
 
         foreach (var hero in Heroes)
         {
+            if (hero.IsDead) continue;
+            
             var distance = Vector3.Distance(hero.transform.position, position);
             if (distance < closestDistance)
             {

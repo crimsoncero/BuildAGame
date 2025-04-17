@@ -119,9 +119,9 @@ GameObject:
   - component: {fileID: 4452430546700873281}
   - component: {fileID: 1171083374919656187}
   - component: {fileID: 1715906947323866173}
-  - component: {fileID: -7659341251869531652}
   - component: {fileID: 1231239660535065941}
   - component: {fileID: 4443091632531839529}
+  - component: {fileID: -3330681497531167361}
   m_Layer: 8
   m_Name: Enemy Prefab
   m_TagString: Untagged
@@ -225,7 +225,7 @@ MonoBehaviour:
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
   endReachedDistance: 0.2
-  alwaysDrawGizmos: 0
+  alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
@@ -292,22 +292,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &-7659341251869531652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4290991442421826110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d1447ad4d08bcd41b512835dafd7d04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AIPath: {fileID: 4452430546700873281}
-  DestinationSetter: {fileID: 7378056784132296119}
-  Seeker: {fileID: 1313759654901583066}
-  _isEnabled: 1
 --- !u!114 &1231239660535065941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +311,7 @@ MonoBehaviour:
     m_Bits: 128
   _visuals: {fileID: 2129609854122782698}
   Collider: {fileID: 1715906947323866173}
-  PathfindingModule: {fileID: -7659341251869531652}
+  PathfindingModule: {fileID: -3330681497531167361}
   _knockbackForce: 0.5
   _knockbackDurationPerForce: 0.1
 --- !u!70 &4443091632531839529
@@ -367,3 +351,32 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.12856019}
   m_Size: {x: 1.2401978, y: 1.2571204}
   m_Direction: 0
+--- !u!114 &-3330681497531167361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4290991442421826110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b40409a19131d543a3c098828b79ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AIPath: {fileID: 4452430546700873281}
+  DestinationSetter: {fileID: 7378056784132296119}
+  Seeker: {fileID: 1313759654901583066}
+  _isEnabled: 0
+  _distanceToTrack: 5
+  _closeRangeRepathPolicy:
+    mode: 2
+    interval: 0.5
+    sensitivity: 10
+    maximumInterval: 1
+    visualizeSensitivity: 1
+  _farRangeRepathPolicy:
+    mode: 1
+    interval: 1
+    sensitivity: 10
+    maximumInterval: 2
+    visualizeSensitivity: 1

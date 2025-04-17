@@ -53,7 +53,7 @@ public class PathfindingModule : MonoBehaviour
     /// Sets the target of the pathfinding unit.
     /// </summary>
     /// <param name="target"></param>
-    public void SetTarget(Transform target)
+    public virtual void SetTarget(Transform target)
     {
         DestinationSetter.target = target;
     }
@@ -66,7 +66,6 @@ public class PathfindingModule : MonoBehaviour
     public void ResumePathfinding()
     {
         AIPath.canMove = true;
-
     }
 
     private void Enable()
