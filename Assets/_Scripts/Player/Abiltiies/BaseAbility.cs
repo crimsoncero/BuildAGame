@@ -24,27 +24,27 @@ public abstract class BaseAbility : MonoBehaviour
 
     protected int _power
     {
-        get { return _abilityStats.Power; }
+        get { return HeroManager.Stats.Power.FinalWithAdditive(_heroUnit,_abilityStats.Power); }
     }
 
     protected int _count
     {
-        get { return _abilityStats.Count; }
+        get { return HeroManager.Stats.Count.FinalWithAdditive(_heroUnit,_abilityStats.Count); }
     }
 
     protected float _speed
     {
-        get { return _abilityStats.Speed; }
+        get { return HeroManager.Stats.Speed.FinalWithAdditive(_heroUnit, _abilityStats.Speed); }
     }
 
     protected float _cooldown
     {
-        get { return _abilityStats.Cooldown; }
+        get { return HeroManager.Stats.Cooldown.FinalWithAdditive(_heroUnit, _abilityStats.Cooldown); }
     }
 
     protected int _pierce
     {
-        get { return _abilityStats.Pierce; }
+        get { return HeroManager.Stats.Pierce.FinalWithAdditive(_heroUnit,_abilityStats.Pierce); }
     }
 
     public int MaxLevel
