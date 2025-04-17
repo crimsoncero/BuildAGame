@@ -17,7 +17,7 @@ public abstract class BaseAbility : MonoBehaviour
         get { return _heroUnit.Data; }
     }
 
-    protected BaseAbilityData.Stats _abilityStats
+    protected Stats _abilityStats
     {
         get { return _baseData.GetCurrentStats(CurrentLevel); }
     }
