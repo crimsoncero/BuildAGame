@@ -32,8 +32,6 @@ public class HeroData : ScriptableObject
     [field:Header("Base Stats")]
     [field:SerializeField]
     public int BaseMaxHealth { get; private set; }
-    [field: SerializeField]
-    public float BaseMoveSpeed { get; private set; } = 6f;
 
     [field: Header("Visuals")]
     [field: SerializeField]

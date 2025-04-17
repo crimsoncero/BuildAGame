@@ -7,6 +7,12 @@ using UnityEngine;
 
 public class HeroManager : Singleton<HeroManager>
 {
+    public static HeroStats Stats
+    {
+        get { return Instance._stats; }
+    }
+    
+    
     [Header("Hero Spawn")]
     [SerializeField] private HeroUnit _heroPrefab;
     [SerializeField] private float _spawnDistance = 1f;
@@ -23,7 +29,7 @@ public class HeroManager : Singleton<HeroManager>
     
     
     // Stats
-    public HeroStats Stats { get; private set; }    
+    private HeroStats _stats;  
     
     
     
@@ -37,7 +43,7 @@ public class HeroManager : Singleton<HeroManager>
     private void Start()
     {
         _cinemachineCamera.Follow = _heroMover.transform;
-        Stats = new HeroStats(_heroBaseStats);
+        _stats = new HeroStats(_heroBaseStats);
         SpawnHeroes();
     }
 

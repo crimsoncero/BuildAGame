@@ -7,6 +7,7 @@ public class TestingInit : MonoBehaviour
 {
     public LevelData LevelData;
 
+    
     private void Start()
     {
         StartGame();

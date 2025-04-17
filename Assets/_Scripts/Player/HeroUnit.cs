@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-public class HeroUnit : MonoBehaviour
+public class HeroUnit : MonoBehaviour, IPausable
 {
     public event Action OnHealthChanged;
     public event Action OnDeath;
@@ -35,10 +35,9 @@ public class HeroUnit : MonoBehaviour
     }
 
     // Stats computational properties (if complicated, use an intermediary method)
-    public int MaxHealth { get { return Data.BaseMaxHealth; } }
-    public float MoveSpeed { get { return Data.BaseMoveSpeed; } }
+    public int MaxHealth { get { return HeroManager.Stats.MaxHealth.FinalWithAdditive(this, Data.BaseMaxHealth); } }
     public bool IsDead { get; private set; } = false;
-
+    private float MovementSpeed { get { return HeroManager.Stats.MovementSpeed.Final(this); } }
     private float _respawnHealth = 0;
 
     private void Update()
@@ -47,10 +46,13 @@ public class HeroUnit : MonoBehaviour
         
         // General Update stuff
         
+        PathfindingModule.SetMaxSpeed(MovementSpeed);
+        
+        
         // When dead update stuff
         if (IsDead)
         {
-            _respawnHealth += (MaxHealth / HeroManager.Instance.Stats.RespawnTime.Final(this)) * Time.deltaTime;
+            _respawnHealth += (MaxHealth / HeroManager.Stats.RespawnTime.Final(this)) * Time.deltaTime;
             if (_respawnHealth >= 1f)
             {
                 var hpToAdd = Mathf.FloorToInt(_respawnHealth);
@@ -85,17 +87,12 @@ public class HeroUnit : MonoBehaviour
             Ability.Init(Data.AbilityData, this);
         }
         
-        PathfindingModule.SetMaxSpeed(MoveSpeed);
+        PathfindingModule.SetMaxSpeed(MovementSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
         HeroManager.Instance.RegisterHero(this);
         
-        AddCallbacks();
-    }
-
-    private void AddCallbacks()
-    {
-        GameManager.Instance.OnGamePaused += PauseHero;
-        GameManager.Instance.OnGameResumed += ResumeHero;
+        GameManager.Instance.RegisterPausable(this);
+            
     }
 
     
@@ -145,24 +142,15 @@ public class HeroUnit : MonoBehaviour
             OnRevive?.Invoke();
     }
     
-    #region Pause & Resume
-
-    private void PauseHero()
+    
+    public void Pause()
     {
         // Set speed to zero
         _rb2d.linearVelocity = Vector2.zero;
-        PathfindingModule.PausePathfinding();
-    }
+        PathfindingModule.PausePathfinding();    }
 
-    private void ResumeHero()
+    public void Resume()
     {
         PathfindingModule.ResumePathfinding();
     }
-
-   
-
-
-    #endregion
-
-
 }

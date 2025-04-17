@@ -79,6 +79,7 @@ public abstract class BaseAbility : MonoBehaviour
 
         return _baseData.LevelUpgrades[CurrentLevel - 1];
     }
+    
 }
 
    

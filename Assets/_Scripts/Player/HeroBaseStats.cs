@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "Hero Base Stats", menuName = "Scriptable Objects/Hero Base Stats")]
 public class HeroBaseStats : ScriptableObject
 {
     [SerializeField] public int MaxHealth = 0;
-    [SerializeField] public int Damage = 0;
+    [FormerlySerializedAs("Damage")] [SerializeField] public int Power = 0;
     [SerializeField] public int Count = 0;
     [SerializeField] public float Speed = 0;
     [SerializeField] public float Cooldown = 0;

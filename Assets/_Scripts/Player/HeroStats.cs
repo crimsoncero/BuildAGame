@@ -4,7 +4,7 @@ using SeraphUtil;
 public class HeroStats
 {
     public StatInt<HeroUnit> MaxHealth { get; private set; }
-    public StatInt<HeroUnit> Damage { get; private set; }
+    public StatInt<HeroUnit> Power { get; private set; }
     public StatInt<HeroUnit> Count { get; private set; }
     public StatFloat<HeroUnit> Speed { get; private set; }
     public StatFloat<HeroUnit> Cooldown { get; private set; }
@@ -17,7 +17,7 @@ public class HeroStats
     public HeroStats(HeroBaseStats baseStats)
     {
         MaxHealth = new StatInt<HeroUnit>(baseStats.MaxHealth);
-        Damage = new StatInt<HeroUnit>(baseStats.Damage);
+        Power = new StatInt<HeroUnit>(baseStats.Power);
         Count = new StatInt<HeroUnit>(baseStats.Count);
         Speed = new StatFloat<HeroUnit>(baseStats.Speed);
         Cooldown = new StatFloat<HeroUnit>(baseStats.Cooldown);

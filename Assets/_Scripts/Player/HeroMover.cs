@@ -5,7 +5,7 @@ public class HeroMover : MonoBehaviour, IPausable
     [field: SerializeField]
     private float Speed
     {
-        get { return HeroManager.Instance.Stats.MovementSpeed.Final(HeroManager.Instance.Heroes[0]); }
+        get { return HeroManager.Stats.MovementSpeed.Final(HeroManager.Instance.Heroes[0]); }
     }
 
     [SerializeField] private float _flipTolerance = 0.1f;
@@ -63,8 +63,6 @@ public class HeroMover : MonoBehaviour, IPausable
         Gizmos.DrawWireSphere(transform.position, 0.2f);
     }
 
-    #region Pause & Resume
-
     private void Update()
     {
         if (_rb2d != null)
@@ -80,5 +78,4 @@ public class HeroMover : MonoBehaviour, IPausable
     public void Resume()
     {
     }
-    #endregion
 }
