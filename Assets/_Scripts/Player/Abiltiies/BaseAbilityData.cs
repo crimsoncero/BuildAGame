@@ -27,8 +27,8 @@ public abstract class BaseAbilityData : ScriptableObject
     
     [field: SerializeField] public string Name { get; private set; }
     [field: SerializeField] public Sprite Icon { get; private set; }
-    [field: SerializeField] public AbilityStats BaseAbilityStats { get; private set; }
-    [field: SerializeField] public List<AbilityStats> LevelUpgrades { get; private set; }
+    public virtual AbilityStats BaseAbilityStats { get; }
+    public virtual List<AbilityStats> LevelUpgrades { get; }
 
     public int MaxLevel { get { return LevelUpgrades.Count + 1; } }
 

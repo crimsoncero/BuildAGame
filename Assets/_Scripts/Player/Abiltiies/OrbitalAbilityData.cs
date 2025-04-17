@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -22,11 +23,22 @@ public class OrbitalAbilityData : BaseAbilityData
             }
         }
     }
-    
-    
+
+    [field: Header("Orbital Stats")] 
+    [SerializeField] protected OrbitalStats _baseStats;
+    [SerializeField] protected List<OrbitalStats> _levelUpgrades;
+
+    public override AbilityStats BaseAbilityStats
+    {
+        get {return _baseStats;}
+    }
+
+    public override List<AbilityStats> LevelUpgrades
+    {
+        get {return new List<AbilityStats>(_levelUpgrades);}
+    }
+
     [field: Header("Behavior Stats")]
-    [field: SerializeField] public float Duration {  get; private set; }
-    [field: SerializeField] public float Radius {  get; private set; }
     [field: SerializeField] public float SpeedMultipliar {  get; private set; }
     
     [field: Header("Pooling")]
