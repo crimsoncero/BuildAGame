@@ -13,9 +13,9 @@ public class OrbitalAbility : BaseAbility
 
     private BoolTimer _spawnTimer;
     private BoolTimer _isNotActive;
-
+    
     private List<OrbitalProjectile> _projectileList;
-    private float _spawnTime { get { return _cooldown + Data.Duration; } }
+    private float _spawnTime { get { return Cooldown + Data.Duration; } }
     public override void Init(BaseAbilityData data, HeroUnit hero)
     {
         base.Init(data, hero);
@@ -48,7 +48,7 @@ public class OrbitalAbility : BaseAbility
                 SpawnOrbitals();
             }
 
-            transform.Rotate(0,0, _speed * Data.SpeedMultipliar * Time.deltaTime);
+            transform.Rotate(0,0, Speed * Data.SpeedMultipliar * Time.deltaTime);
         }
        
     }
@@ -58,7 +58,7 @@ public class OrbitalAbility : BaseAbility
         _spawnTimer.SetTimer(_spawnTime);
         _isNotActive.SetTimer(Data.Duration);
         
-        var posList = Helpers.GetEqualOrbitLocations(_count, Data.Radius);
+        var posList = Helpers.GetEqualOrbitLocations(Count, Data.Radius);
 
         foreach(var pos in posList)
         {
@@ -66,7 +66,7 @@ public class OrbitalAbility : BaseAbility
             Vector2 position = Vector2.zero;
             position.x = transform.position.x + pos.position.x;
             position.y = transform.position.y + pos.position.y;
-            orbital.Init(_pool, position, Data.Duration, _power);
+            orbital.Init(_pool, position, Data.Duration, Power);
         }
     }
 

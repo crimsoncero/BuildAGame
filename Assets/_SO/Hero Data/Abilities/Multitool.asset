@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Multitool
   <Icon>k__BackingField: {fileID: 945880233462451947, guid: 696e665b19ddfa94c912f45a78a64b16, type: 3}
-  <BaseStats>k__BackingField:
-    Description: Base Orbital stats
+  <BaseAbilityStats>k__BackingField:
+    Description: 
     Power: 2
     Count: 2
     Speed: 2

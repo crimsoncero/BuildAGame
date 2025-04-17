@@ -14,8 +14,8 @@ public class HealingAbility : BaseAbility
     {
         base.Init(data, hero);
 
-        _castTimer = new BoolTimer(false, _cooldown);
-        _castTimer.SetTimer(_cooldown);
+        _castTimer = new BoolTimer(false, Cooldown);
+        _castTimer.SetTimer(Cooldown);
         _vfx = Instantiate(Data.VFX, transform);
         _vfx.Stop();
     }
@@ -45,7 +45,7 @@ public class HealingAbility : BaseAbility
 
         foreach (var hero in _heroes)
         {
-            hero.Heal(_power, true);
+            hero.Heal(Power, true);
         }
         
         _vfx.Play();

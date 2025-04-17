@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: 'Hot Fix '
   <Icon>k__BackingField: {fileID: -9123998315749463643, guid: 44bd08dd673ad7a4da2bf202b1e529bb, type: 3}
-  <BaseStats>k__BackingField:
-    Description: Healing ability
+  <BaseAbilityStats>k__BackingField:
+    Description: Healing Ability
     Power: 1
     Count: 0
     Speed: 0

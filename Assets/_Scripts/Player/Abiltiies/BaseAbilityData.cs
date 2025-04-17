@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class BaseAbilityData : ScriptableObject
 {
     [Serializable]
-    public struct Stats
+    public class AbilityStats
     {
         public string Description;
         public int Power;
@@ -14,7 +14,7 @@ public abstract class BaseAbilityData : ScriptableObject
         public float Cooldown;
         public int Pierce;
 
-        public void Add(Stats added)
+        public virtual void Add(AbilityStats added)
         {
             Power += added.Power;
             Count += added.Count;
@@ -22,18 +22,21 @@ public abstract class BaseAbilityData : ScriptableObject
             Cooldown += added.Cooldown;
             Pierce += added.Pierce;
         }
+
     }
     
     [field: SerializeField] public string Name { get; private set; }
     [field: SerializeField] public Sprite Icon { get; private set; }
-    [field: SerializeField] public Stats BaseStats { get; private set; }
-    [field: SerializeField] public List<Stats> LevelUpgrades { get; private set; }
+    [field: SerializeField] public AbilityStats BaseAbilityStats { get; private set; }
+    [field: SerializeField] public List<AbilityStats> LevelUpgrades { get; private set; }
 
     public int MaxLevel { get { return LevelUpgrades.Count + 1; } }
 
-    public Stats GetCurrentStats(int level)
+    public AbilityStats GetCurrentStats(int level)
     {
-        Stats stats = BaseStats;
+        AbilityStats stats = GetStatsZero();
+        stats.Add(BaseAbilityStats);
+        
         for(int i = 0; i < level - 1; i++)
         {
             stats.Add(LevelUpgrades[i]);
@@ -42,6 +45,9 @@ public abstract class BaseAbilityData : ScriptableObject
         return stats;
     }
 
-    
+    protected virtual AbilityStats GetStatsZero()
+    { 
+        return new AbilityStats();
+    }
     public abstract BaseAbility CreateAbilityComponent(Transform abilityObject);
 }

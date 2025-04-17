@@ -1,9 +1,29 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Orbital Data", menuName = "Scriptable Objects/Abilities/Orbital Data")]
 public class OrbitalAbilityData : BaseAbilityData
 {
+
+    [Serializable]
+    public class OrbitalStats : AbilityStats
+    {
+        public float Duration;
+        public float Radius;
+
+        public override void Add(AbilityStats added)
+        {
+            base.Add(added);
+            if (added is OrbitalStats oAdded)
+            {
+                Duration += oAdded.Duration;
+                Radius += oAdded.Radius;
+            }
+        }
+    }
+    
+    
     [field: Header("Behavior Stats")]
     [field: SerializeField] public float Duration {  get; private set; }
     [field: SerializeField] public float Radius {  get; private set; }
@@ -12,9 +32,12 @@ public class OrbitalAbilityData : BaseAbilityData
     [field: Header("Pooling")]
     [field: SerializeField] public OrbitalProjectile ProjectilePrefab {  get; private set; }
     [field: SerializeField] public int InitCount {  get; private set; }
-    
-   
 
+
+    protected override AbilityStats GetStatsZero()
+    {
+        return new OrbitalStats();
+    }
 
     public override BaseAbility CreateAbilityComponent(Transform abilityObject)
     {
