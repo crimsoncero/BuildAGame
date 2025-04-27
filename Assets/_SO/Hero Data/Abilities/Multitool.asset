@@ -25,15 +25,13 @@ MonoBehaviour:
     Radius: 4
   _levelUpgrades:
   - Description: 
-    Power: 0
-    Count: 2
-    Speed: 0
-    Cooldown: 0
+    Power: 2
+    Count: 4
+    Speed: 2
+    Cooldown: 1
     Pierce: 0
     Duration: 2
-    Radius: 3
-  <Duration>k__BackingField: 3
-  <Radius>k__BackingField: 4
+    Radius: 6
   <SpeedMultipliar>k__BackingField: -50
   <ProjectilePrefab>k__BackingField: {fileID: 9189736898793131427, guid: 00d94391a53a1424dbe2ee69230282dd, type: 3}
   <InitCount>k__BackingField: 6

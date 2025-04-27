@@ -35,18 +35,18 @@ public abstract class BaseAbilityData : ScriptableObject
     public AbilityStats GetCurrentStats(int level)
     {
         // Non Additive
-        // return level == 0 ? BaseAbilityStats : LevelUpgrades[level];
+        return level == 0 ? BaseAbilityStats : LevelUpgrades[level - 1];
         
         // Additive Stats
-        AbilityStats stats = GetStatsZero();
-        stats.Add(BaseAbilityStats);
-        
-        for(int i = 0; i < level; i++)
-        {
-            stats.Add(LevelUpgrades[i]);
-        }
-
-        return stats;
+        // AbilityStats stats = GetStatsZero();
+        // stats.Add(BaseAbilityStats);
+        //
+        // for(int i = 0; i < level; i++)
+        // {
+        //     stats.Add(LevelUpgrades[i]);
+        // }
+        //
+        // return stats;
     }
 
     protected virtual AbilityStats GetStatsZero()
