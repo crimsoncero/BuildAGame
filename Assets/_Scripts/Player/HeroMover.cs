@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class HeroMover : MonoBehaviour, IPausable
 {
-    [field: SerializeField]
     private float Speed
     {
         get { return HeroManager.Stats.MovementSpeed.Final(HeroManager.Instance.Heroes[0]); }

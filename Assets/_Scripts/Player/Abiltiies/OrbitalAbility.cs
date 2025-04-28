@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using MoreMountains.Tools;
-using Unity.VisualScripting;
+using SeraphUtil.ObjectPool;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class OrbitalAbility : BaseAbility
 {
@@ -14,7 +10,6 @@ public class OrbitalAbility : BaseAbility
     private BoolTimer _spawnTimer;
     private BoolTimer _isNotActive;
     
-    private List<OrbitalProjectile> _projectileList;
     
     private OrbitalAbilityData.OrbitalStats Stats
     {
@@ -24,9 +19,7 @@ public class OrbitalAbility : BaseAbility
     public override void Init(BaseAbilityData data, HeroUnit hero)
     {
         base.Init(data, hero);
-        _projectileList = new List<OrbitalProjectile>();
-        _pool = new ObjectPool<OrbitalProjectile>(CreateProjectile, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, Data.InitCount, 50);
-        _pool.PreWarm(Data.InitCount);
+        _pool = new ObjectPool<OrbitalProjectile>(Data.ProjectilePrefab, transform, (uint)Data.InitCount);
         _spawnTimer = new BoolTimer(false, _spawnTime);
         _spawnTimer.SetTimer(_spawnTime);
     }
@@ -38,7 +31,7 @@ public class OrbitalAbility : BaseAbility
             // Removes the projectiles if the player is still alive.
             if (!_isNotActive.Value)
             {
-                foreach(OrbitalProjectile projectile in _projectileList.Where((p) => p.IsActive))
+                foreach(OrbitalProjectile projectile in _pool.ActiveList.Where((p) => p.IsActive))
                     projectile.ReleaseOrbital();
             }
             
@@ -53,7 +46,7 @@ public class OrbitalAbility : BaseAbility
                 SpawnOrbitals();
             }
 
-            transform.Rotate(0,0, Speed * Data.SpeedMultipliar * Time.deltaTime);
+            transform.Rotate(0,0, Speed * Data.SpeedMultiplier * Time.deltaTime);
         }
        
     }
@@ -67,42 +60,17 @@ public class OrbitalAbility : BaseAbility
 
         foreach(var pos in posList)
         {
-            var orbital = _pool.Get();
+            var orbital = _pool.Take();
             Vector2 position = Vector2.zero;
             position.x = transform.position.x + pos.position.x;
             position.y = transform.position.y + pos.position.y;
             orbital.Init(_pool, position, Stats.Duration, Power);
+            orbital.gameObject.SetActive(true);
         }
     }
 
    
-    #region Pool Methods
-
-    private OrbitalProjectile CreateProjectile()
-    {
-        OrbitalProjectile projectile = Instantiate(Data.ProjectilePrefab, transform);
-        
-        projectile.gameObject.SetActive(false);
-        _projectileList.Add(projectile);
-        
-        return projectile;
-    }
-
-    private void OnTakeFromPool(OrbitalProjectile projectile)
-    {
-        projectile.gameObject.SetActive(true);
-    }
-    private void OnReturnedToPool(OrbitalProjectile projectile)
-    {
-        projectile.gameObject.SetActive(false);
-    }
-
-    private void OnDestroyPoolObject(OrbitalProjectile projectile)
-    {
-        _projectileList.Remove(projectile);
-        Destroy(projectile.gameObject);
-    }
-    #endregion
+   
     
     
 }

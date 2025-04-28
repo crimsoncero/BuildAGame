@@ -24,7 +24,7 @@ public abstract class BaseAbility : MonoBehaviour
 
     protected int Power
     {
-        get { return HeroManager.Stats.Power.FinalWithAdditive(_heroUnit,AbilityStats.Power); }
+        get { return HeroManager.Stats.Power.FinalWithAdditive(_heroUnit,AbilityStats.Power00); }
     }
 
     protected int Count
@@ -34,7 +34,7 @@ public abstract class BaseAbility : MonoBehaviour
 
     protected float Speed
     {
-        get { return HeroManager.Stats.Speed.FinalWithAdditive(_heroUnit, AbilityStats.Speed); }
+        get { return HeroManager.Stats.Speed.FinalWithAdditive(_heroUnit, AbilityStats.Speed00); }
     }
 
     protected float Cooldown

@@ -12,6 +12,7 @@ public class OrbitalAbilityData : BaseAbilityData
     {
         public float Duration;
         public float Radius;
+        public bool IsRing;
 
         public override void Add(AbilityStats added)
         {
@@ -20,6 +21,7 @@ public class OrbitalAbilityData : BaseAbilityData
             {
                 Duration += oAdded.Duration;
                 Radius += oAdded.Radius;
+                IsRing = oAdded.IsRing;
             }
         }
     }
@@ -39,7 +41,7 @@ public class OrbitalAbilityData : BaseAbilityData
     }
 
     [field: Header("Behavior Stats")]
-    [field: SerializeField] public float SpeedMultipliar {  get; private set; }
+    [field: SerializeField] public float SpeedMultiplier {  get; private set; }
     
     [field: Header("Pooling")]
     [field: SerializeField] public OrbitalProjectile ProjectilePrefab {  get; private set; }

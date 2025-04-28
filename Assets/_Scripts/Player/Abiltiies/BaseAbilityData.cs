@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public abstract class BaseAbilityData : ScriptableObject
 {
@@ -8,17 +9,17 @@ public abstract class BaseAbilityData : ScriptableObject
     public class AbilityStats
     {
         public string Description;
-        public int Power;
+        [FormerlySerializedAs("Power")] public int Power00;
         public int Count;
-        public float Speed;
+        [FormerlySerializedAs("Speed")] public int Speed00;
         public float Cooldown;
         public int Pierce;
 
         public virtual void Add(AbilityStats added)
         {
-            Power += added.Power;
+            Power00 += added.Power00;
             Count += added.Count;
-            Speed += added.Speed;
+            Speed00 += added.Speed00;
             Cooldown += added.Cooldown;
             Pierce += added.Pierce;
         }
