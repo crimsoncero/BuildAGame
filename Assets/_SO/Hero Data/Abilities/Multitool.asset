@@ -16,9 +16,9 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 945880233462451947, guid: 696e665b19ddfa94c912f45a78a64b16, type: 3}
   _baseStats:
     Description: 
-    Power: 10
+    Power00: 10
     Count: 2
-    Speed: 10
+    Speed00: 10
     Cooldown: 1
     Pierce: 0
     Duration: 3
@@ -26,9 +26,9 @@ MonoBehaviour:
     IsRing: 0
   _levelUpgrades:
   - Description: 
-    Power: 10
+    Power00: 10
     Count: 4
-    Speed: 10
+    Speed00: 10
     Cooldown: 1
     Pierce: 0
     Duration: 2

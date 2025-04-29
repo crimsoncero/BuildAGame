@@ -9,9 +9,9 @@ public abstract class BaseAbilityData : ScriptableObject
     public class AbilityStats
     {
         public string Description;
-        [FormerlySerializedAs("Power")] public int Power00;
+        [Min(10), FormerlySerializedAs("Power")] public int Power00;
         public int Count;
-        [FormerlySerializedAs("Speed")] public int Speed00;
+        [Min(10), FormerlySerializedAs("Speed")] public int Speed00;
         public float Cooldown;
         public int Pierce;
 
@@ -35,10 +35,10 @@ public abstract class BaseAbilityData : ScriptableObject
 
     public AbilityStats GetCurrentStats(int level)
     {
-        // Non Additive
+        // Non Additive Method
         return level == 0 ? BaseAbilityStats : LevelUpgrades[level - 1];
         
-        // Additive Stats
+        // Additive Method - Not in use
         // AbilityStats stats = GetStatsZero();
         // stats.Add(BaseAbilityStats);
         //
