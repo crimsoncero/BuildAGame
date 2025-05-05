@@ -23,17 +23,18 @@ MonoBehaviour:
     Pierce: 0
     Duration: 3
     Radius: 4
-    IsRing: 0
+    IsRing: 1
   _levelUpgrades:
   - Description: 
     Power00: 10
-    Count: 4
+    Count: 2
     Speed00: 10
     Cooldown: 1
     Pierce: 0
     Duration: 2
     Radius: 6
-    IsRing: 0
+    IsRing: 1
   <SpeedMultiplier>k__BackingField: 12
   <ProjectilePrefab>k__BackingField: {fileID: 9189736898793131427, guid: 00d94391a53a1424dbe2ee69230282dd, type: 3}
+  <RingPrefab>k__BackingField: {fileID: 251143481160343601, guid: 55c230cc7d2ccf343ba5ecd0c7c2fbe9, type: 3}
   <InitCount>k__BackingField: 10

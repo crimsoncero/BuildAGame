@@ -6,11 +6,11 @@ public class OrbitalAbility : BaseAbility
 {
     private OrbitalAbilityData Data { get { return _baseData as OrbitalAbilityData; } }
     private ObjectPool<OrbitalProjectile> _pool;
-
+    
     private BoolTimer _spawnTimer;
     private BoolTimer _isNotActive;
-    
-    
+
+    private OrbitalRing _ringObject; 
     private OrbitalAbilityData.OrbitalStats Stats
     {
         get { return AbilityStats as OrbitalAbilityData.OrbitalStats; }
@@ -22,6 +22,7 @@ public class OrbitalAbility : BaseAbility
         _pool = new ObjectPool<OrbitalProjectile>(Data.ProjectilePrefab, transform, (uint)Data.InitCount);
         _spawnTimer = new BoolTimer(false, _spawnTime);
         _spawnTimer.SetTimer(_spawnTime);
+        _ringObject = Instantiate(Data.RingPrefab, transform, false);
     }
 
     private void Update()
@@ -43,7 +44,14 @@ public class OrbitalAbility : BaseAbility
             _isNotActive.UpdateTimer();
             if (_spawnTimer.Value)
             {
-                SpawnOrbitals();
+                if (Stats.IsRing)
+                {
+                    SpawnRing();
+                }
+                else
+                {
+                    SpawnOrbitals();
+                }
             }
 
             transform.Rotate(0,0, Speed * Data.SpeedMultiplier * Time.deltaTime);
@@ -51,6 +59,15 @@ public class OrbitalAbility : BaseAbility
        
     }
 
+    private void SpawnRing()
+    {
+        _spawnTimer.SetTimer(_spawnTime);
+        _isNotActive.SetTimer(Stats.Duration);
+
+        float tickRate = (360f / (Speed * Data.SpeedMultiplier)) / Count;
+        _ringObject.Initialize(Power, Stats.Duration, tickRate, Stats.Radius);
+        
+    }
     private void SpawnOrbitals()
     {
         _spawnTimer.SetTimer(_spawnTime);

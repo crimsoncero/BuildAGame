@@ -45,6 +45,7 @@ public class OrbitalAbilityData : BaseAbilityData
     
     [field: Header("Pooling")]
     [field: SerializeField] public OrbitalProjectile ProjectilePrefab {  get; private set; }
+    [field: SerializeField] public OrbitalRing RingPrefab {  get; private set; }
     [field: SerializeField] public int InitCount {  get; private set; }
 
 
