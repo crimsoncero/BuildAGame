@@ -26,8 +26,6 @@ public class OrbitalRing : MonoBehaviour, IPausable
         _timeToNextTick = 0;
         gameObject.SetActive(true);
         
-        Debug.Log(tickRate);
-        
         
     }
 
