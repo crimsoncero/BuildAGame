@@ -23,7 +23,7 @@ MonoBehaviour:
     Pierce: 0
     Duration: 3
     Radius: 4
-    IsRing: 1
+    IsRing: 0
   _levelUpgrades:
   - Description: 
     Power00: 10

@@ -169,8 +169,8 @@ namespace SeraphUtil.ObjectPool
                 poolContainer.name = prefabKey.name;
                 _objectPoolDict.Add(prefabKey, new ObjectPool<T>(prefabKey, Container));
                 #else
-                Debug.LogError($"The prefab {prefabkKey.name} has not been given as one of the Multi Pool prefabs.");
-                return;
+                Debug.LogError($"The prefab {prefabKey.name} has not been given as one of the Multi Pool prefabs.");
+                return null;
                 #endif
             }
 

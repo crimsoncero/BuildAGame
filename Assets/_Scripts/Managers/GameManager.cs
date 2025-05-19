@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 using MoreMountains.Tools;
+using UnityEditor;
 using UnityEngine;
 
 
 public class GameManager : Singleton<GameManager>
 {
+    private static string LEVEL_INIT_DATA_PATH = "Assets/_SO/DO NOT TOUCH/Level Init Data.asset";
+
+    
     public event Action OnGameStart;
     public event Action OnGameEnd;
     public event Action OnGamePaused;
@@ -34,8 +38,6 @@ public class GameManager : Singleton<GameManager>
     
     private List<IPausable> _pausablesList = new List<IPausable>();
 
-   
-
     private void Update()
     {
         UpdateTimer();
@@ -54,6 +56,8 @@ public class GameManager : Singleton<GameManager>
     }
     public void StartGame()
     {
+        LevelManager.Instance.Init(InitData.LevelData);
+        
         XPManager.Instance.OnLevelUp += LevelUp;
         
         IsGameActive = true;
@@ -159,5 +163,6 @@ public class GameManager : Singleton<GameManager>
     {
         _sceneTransitionManager.LoadScene(LevelSceneEnum.Menu);
     }
+
     
 }

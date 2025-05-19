@@ -23,6 +23,8 @@ public class HeroData : ScriptableObject
     [field:Header("General")]
     [field: SerializeField]
     public string Name { get; private set; }
+    [field:SerializeField][TextArea]
+    public string Description { get; private set; }
     [field: SerializeField]
     public RoleEnum Role { get; private set; }
     [field: SerializeField]

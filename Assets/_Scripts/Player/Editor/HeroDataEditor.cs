@@ -7,6 +7,7 @@ using UnityEngine;
 public class HeroDataEditor : Editor
 {
     private SerializedProperty _name;
+    private SerializedProperty _description;
     private SerializedProperty _role;
     private SerializedProperty _ability;
     private SerializedProperty _baseHealth;
@@ -17,6 +18,7 @@ public class HeroDataEditor : Editor
     private void OnEnable()
     {
         _name = serializedObject.FindProperty("<Name>k__BackingField");
+        _description = serializedObject.FindProperty("<Description>k__BackingField");
         _role = serializedObject.FindProperty("<Role>k__BackingField");
         _ability = serializedObject.FindProperty("<AbilityData>k__BackingField");
         _baseHealth = serializedObject.FindProperty("<BaseMaxHealth>k__BackingField");
@@ -29,6 +31,7 @@ public class HeroDataEditor : Editor
     {
         serializedObject.Update();
         EditorGUILayout.PropertyField(_name);
+        EditorGUILayout.PropertyField(_description);
         EditorGUILayout.PropertyField(_role);
         EditorGUILayout.PropertyField(_ability);
         EditorGUILayout.PropertyField(_baseHealth);

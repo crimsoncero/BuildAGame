@@ -8,7 +8,7 @@ public abstract class BaseAbilityData : ScriptableObject
     [Serializable]
     public class AbilityStats
     {
-        public string Description;
+        [TextArea]public string Description;
         [Min(10), FormerlySerializedAs("Power")] public int Power00;
         public int Count;
         [Min(10), FormerlySerializedAs("Speed")] public int Speed00;
