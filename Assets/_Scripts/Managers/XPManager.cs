@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SeraphUtil.ObjectPool;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class XPManager : Singleton<XPManager>
 {
@@ -33,7 +33,6 @@ public class XPManager : Singleton<XPManager>
     [SerializeField] private bool _debugXP;
 
     private ObjectPool<XPGem> _gemPool;
-    private List<XPGem> _gemList = new List<XPGem>();
     private XPGem _uniqueGem = null;
     private int _storedXP = 0;
 
@@ -46,8 +45,7 @@ public class XPManager : Singleton<XPManager>
 
     private void Start()
     {
-        _gemPool = new ObjectPool<XPGem>(CreateGem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, _maxInstanceAmount, _maxInstanceAmount);
-        _gemPool.PreWarm(_maxInstanceAmount);
+        _gemPool = new ObjectPool<XPGem>(_gemPrefab, _gemParent, (uint)_maxInstanceAmount, true);
         _targetXP = _xpData.BaseXpToLevelUp;
         OnXPChanged?.Invoke();
     }
@@ -67,48 +65,11 @@ public class XPManager : Singleton<XPManager>
             
         }
     }
-
-    #region Pool Methods
-
-    private XPGem CreateGem()
-    {
-        XPGem gem = Instantiate(_gemPrefab, _gemParent);
-        _gemList.Add(gem);
-        gem.gameObject.SetActive(false);
-
-        return gem;
-    }
-
-    private void OnTakeFromPool(XPGem gem)
-    {
-        if (gem.IsUnityNull())
-        {
-            return;
-        }
-        
-        gem.gameObject.SetActive(true);
-    }
-    private void OnReturnedToPool(XPGem gem)
-    {
-        if (gem.IsUnityNull())
-        {
-            return;
-        }
-        gem.gameObject.SetActive(false);
-    }
-
-    private void OnDestroyPoolObject(XPGem gem)
-    {
-        _gemList.Remove(gem);
-        Destroy(gem.gameObject);
-    }
-    #endregion
-
     
     public void SpawnGem(XPGemTypes gemType, Vector3 position)
     {
         // Check if max capacity reached (minus one because the unique gem is also part of the max capacity)
-        if(_gemPool.CountActive >= _maxInstanceAmount - 1)
+        if(_gemPool.ActiveCount >= _maxInstanceAmount - 1)
         {
             // Don't spawn the gem, rather add its xp equivalent to the storage.
             _storedXP += _xpData.GetGemXpAmount(gemType);
@@ -116,8 +77,8 @@ public class XPManager : Singleton<XPManager>
             // Check whether a unique gem needs to be spawned
             if (_uniqueGem != null)
                 return;
-
-            XPGem unique = _gemPool.Get();
+            
+            XPGem unique = _gemPool.Take();
             unique.Init(_uniqueGemData, position, _gemPool);
             _uniqueGem = unique;
         }
@@ -145,14 +106,14 @@ public class XPManager : Singleton<XPManager>
                     return;
             }
 
-            XPGem gem = _gemPool.Get();
+            XPGem gem = _gemPool.Take();
             gem.Init(gemData, position, _gemPool);
         }
     }
 
     public void AbsorbAllGems()
     {
-        foreach (XPGem gem in _gemList.Where((g) => g.gameObject.activeSelf))
+        foreach (XPGem gem in _gemPool.TotalList.Where((g) => g.gameObject.activeSelf))
             gem.AbsorbGem();
     }
     public void AddXp(XPGemTypes gemType)

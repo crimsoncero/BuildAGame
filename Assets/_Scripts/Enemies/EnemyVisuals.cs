@@ -72,7 +72,7 @@ public class EnemyVisuals : MonoBehaviour
     {
         GameManager.Instance.OnGamePaused -= OnPause;
         GameManager.Instance.OnGameResumed -= OnResume;
-
+        _enemy.SpawnGem();
         _enemy.gameObject.SetActive(false);
     }
     private void WalkAnimation(bool isWalking)

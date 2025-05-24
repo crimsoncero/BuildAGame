@@ -1698,6 +1698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XP Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6938414974823572709, guid: 054fc4a79b97e41498efa58164061e57, type: 3}
+      propertyPath: _maxInstanceAmount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7120650741019215494, guid: 054fc4a79b97e41498efa58164061e57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
