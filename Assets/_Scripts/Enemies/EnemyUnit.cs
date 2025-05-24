@@ -20,6 +20,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
     [Header("Properties")]
     [SerializeField] private float _knockbackForce = 1f;
     [SerializeField] private float _knockbackDurationPerForce = 0.2f;
+    [SerializeField] private int _lifeTime = 100;
     
     private MultiPool<EnemyUnit> _pool;
     
@@ -35,6 +36,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
     private BoolTimer _canAttack;
     private bool _isDead = false;
     private Tween _knockbackTween;
+    private float _lifeTimeCounter = 0;
     
     public bool IsAlive
     {
@@ -54,18 +56,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
 
         CurrentHealth = MaxHealth;
         _canAttack = new BoolTimer(true, Speed);
-       
-        
-        
-        
-        if (data.IsBoss)
-        {
-            transform.localScale = Vector3.one * 3;
-        }
-        else
-        {
-            transform.localScale = Vector3.one;
-        }
+
         PathfindingModule.ResumePathfinding();
         PathfindingModule.SetMaxSpeed(MoveSpeed);
         PathfindingModule.SetMaxAcceleration(1000);
@@ -88,11 +79,32 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
         if (!GameManager.Instance.IsPaused)
         {
             _canAttack.UpdateTimer();
+            
+            UpdateLifeTime();
         }
         
         
     }
 
+    private void UpdateLifeTime()
+    {
+        // Bosses exists indefinitely
+        if (Data.IsBoss) return; 
+        
+        _lifeTimeCounter += Time.deltaTime;
+        if (_lifeTimeCounter >= 1f)
+        {
+            _lifeTimeCounter -= 1f;
+            _lifeTime -= 1;
+        }
+            
+        // Destroy unit if it existed too long and not in camera.
+        if (_lifeTime <= 0 && !_visuals.SpriteRenderer.isVisible)
+        {
+            KillUnit(false);
+        }
+    }
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (!_canAttack.Value) return;

@@ -26,6 +26,7 @@ public class EnemyVisuals : MonoBehaviour
     private Tweener _walkTween;    
     private Tweener _deathTween;
 
+    public SpriteRenderer SpriteRenderer => _spriteRenderer;
    
 
     private void Start()
