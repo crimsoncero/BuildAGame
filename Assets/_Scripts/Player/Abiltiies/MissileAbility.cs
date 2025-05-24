@@ -15,8 +15,8 @@ public class MissileAbility : BaseAbility
 
         _pool = new ObjectPool<MissileProjectile>(Createprojectile, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, Data.InitCount);
         _pool.PreWarm(Data.InitCount);
-        _castTimer = new BoolTimer(false, _cooldown);
-        _castTimer.SetTimer(_cooldown);
+        _castTimer = new BoolTimer(false, Cooldown);
+        _castTimer.SetTimer(Cooldown);
     }
 
     private void Update()
@@ -28,7 +28,7 @@ public class MissileAbility : BaseAbility
             if (_castTimer.Value)
             {
                 Cast();
-                _castTimer.SetTimer(_cooldown);
+                _castTimer.SetTimer(Cooldown);
             }
 
         }
@@ -41,7 +41,7 @@ public class MissileAbility : BaseAbility
         Collider2D target = FindClosestTarget();
         if (target == null) return; // No target found.
         
-        for(int i = 0; i < _count; i++)
+        for(int i = 0; i < Count; i++)
         {
             Vector2 targetPos = Vector2.zero;
             targetPos.x = target.bounds.center.x;
@@ -50,11 +50,11 @@ public class MissileAbility : BaseAbility
 
             Vector2 direction = targetPos - (Vector2)transform.position;
             direction.Normalize();
-            Vector2 velocity = direction * _speed * Data.SpeedMultipliar;
+            Vector2 velocity = direction * Speed * Data.SpeedMultipliar;
 
             MissileProjectile projectile = _pool.Get();
 
-            projectile.Init(_pool, transform.position, _power, _pierce, velocity);
+            projectile.Init(_pool, transform.position, Power, Pierce, velocity);
         }
         
     }

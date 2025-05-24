@@ -6,7 +6,7 @@ public abstract class BaseAbility : MonoBehaviour
 {
     public event Action OnLevelUp;
 
-    public int CurrentLevel { get; private set; }
+    public int CurrentLevel { get; private set; } = -1;
 
     protected BaseAbilityData _baseData;
     protected HeroUnit _heroUnit;
@@ -17,39 +17,39 @@ public abstract class BaseAbility : MonoBehaviour
         get { return _heroUnit.Data; }
     }
 
-    protected BaseAbilityData.Stats _abilityStats
+    protected AbilityStats AbilityStats
     {
         get { return _baseData.GetCurrentStats(CurrentLevel); }
     }
 
-    protected int _power
+    protected int Power
     {
-        get { return _abilityStats.Power; }
+        get { return HeroManager.Stats.Power.FinalWithAdditive(_heroUnit,AbilityStats.Power00); }
     }
 
-    protected int _count
+    protected int Count
     {
-        get { return _abilityStats.Count; }
+        get { return HeroManager.Stats.Count.FinalWithAdditive(_heroUnit,AbilityStats.Count); }
     }
 
-    protected float _speed
+    protected float Speed
     {
-        get { return _abilityStats.Speed; }
+        get { return HeroManager.Stats.Speed.FinalWithAdditive(_heroUnit, AbilityStats.Speed00); }
     }
 
-    protected float _cooldown
+    protected float Cooldown
     {
-        get { return _abilityStats.Cooldown; }
+        get { return HeroManager.Stats.Cooldown.FinalWithAdditive(_heroUnit, AbilityStats.Cooldown); }
     }
 
-    protected int _pierce
+    protected int Pierce
     {
-        get { return _abilityStats.Pierce; }
+        get { return HeroManager.Stats.Pierce.FinalWithAdditive(_heroUnit,AbilityStats.Pierce); }
     }
 
     public int MaxLevel
     {
-        get { return _baseData.LevelUpgrades.Count + 1; }
+        get { return _baseData.LevelUpgrades.Count; }
     }
 
     public BaseAbilityData BaseData
@@ -61,7 +61,7 @@ public abstract class BaseAbility : MonoBehaviour
     {
         _baseData = data;
         _heroUnit = hero;
-        CurrentLevel = 1;
+        CurrentLevel = 0;
 
     }
 
@@ -72,13 +72,14 @@ public abstract class BaseAbility : MonoBehaviour
         OnLevelUp?.Invoke();
     }
 
-    public Stats GetNextLevelStats()
+    public AbilityStats GetNextLevelStats()
     {
-        if (CurrentLevel == 0)
-            return _baseData.BaseStats;
+        if (CurrentLevel < 0)
+            return _baseData.BaseAbilityStats;
 
-        return _baseData.LevelUpgrades[CurrentLevel - 1];
+        return _baseData.LevelUpgrades[CurrentLevel];
     }
+    
 }
 
    

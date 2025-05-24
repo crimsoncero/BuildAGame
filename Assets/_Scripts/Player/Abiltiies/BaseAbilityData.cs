@@ -1,47 +1,58 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public abstract class BaseAbilityData : ScriptableObject
 {
     [Serializable]
-    public struct Stats
+    public class AbilityStats
     {
-        public string Description;
-        public int Power;
+        [TextArea]public string Description;
+        [Min(10), FormerlySerializedAs("Power")] public int Power00;
         public int Count;
-        public float Speed;
+        [Min(10), FormerlySerializedAs("Speed")] public int Speed00;
         public float Cooldown;
         public int Pierce;
 
-        public void Add(Stats added)
+        public virtual void Add(AbilityStats added)
         {
-            Power += added.Power;
+            Power00 += added.Power00;
             Count += added.Count;
-            Speed += added.Speed;
+            Speed00 += added.Speed00;
             Cooldown += added.Cooldown;
             Pierce += added.Pierce;
         }
+
     }
     
     [field: SerializeField] public string Name { get; private set; }
     [field: SerializeField] public Sprite Icon { get; private set; }
-    [field: SerializeField] public Stats BaseStats { get; private set; }
-    [field: SerializeField] public List<Stats> LevelUpgrades { get; private set; }
+    public virtual AbilityStats BaseAbilityStats { get; }
+    public virtual List<AbilityStats> LevelUpgrades { get; }
 
     public int MaxLevel { get { return LevelUpgrades.Count + 1; } }
 
-    public Stats GetCurrentStats(int level)
+    public AbilityStats GetCurrentStats(int level)
     {
-        Stats stats = BaseStats;
-        for(int i = 0; i < level - 1; i++)
-        {
-            stats.Add(LevelUpgrades[i]);
-        }
-
-        return stats;
+        // Non Additive Method
+        return level == 0 ? BaseAbilityStats : LevelUpgrades[level - 1];
+        
+        // Additive Method - Not in use
+        // AbilityStats stats = GetStatsZero();
+        // stats.Add(BaseAbilityStats);
+        //
+        // for(int i = 0; i < level; i++)
+        // {
+        //     stats.Add(LevelUpgrades[i]);
+        // }
+        //
+        // return stats;
     }
 
-    
+    protected virtual AbilityStats GetStatsZero()
+    { 
+        return new AbilityStats();
+    }
     public abstract BaseAbility CreateAbilityComponent(Transform abilityObject);
 }

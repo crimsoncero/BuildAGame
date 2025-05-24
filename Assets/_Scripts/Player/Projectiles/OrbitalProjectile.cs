@@ -1,8 +1,9 @@
+using SeraphUtil.ObjectPool;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Pool;
+using IPoolable = SeraphUtil.ObjectPool.IPoolable;
 
-public class OrbitalProjectile : BaseProjectile
+public class OrbitalProjectile : BaseProjectile, IPoolable, IPausable
 {
     
     [SerializeField] private ParticleSystem _vfx;
@@ -22,8 +23,6 @@ public class OrbitalProjectile : BaseProjectile
         _damage = damage;
         IsActive = true;
         
-        GameManager.Instance.OnGamePaused += OnPause;
-        GameManager.Instance.OnGameResumed += OnResume;
     }
 
     private void Update()
@@ -43,7 +42,7 @@ public class OrbitalProjectile : BaseProjectile
     public void ReleaseOrbital()
     {
         IsActive = false;
-        _pool.Release(this);
+        _pool.Return(this);
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,19 +50,28 @@ public class OrbitalProjectile : BaseProjectile
         EnemyUnit enemyHit = collision.gameObject.GetComponent<EnemyUnit>();
         if (enemyHit.IsUnityNull()) return;
 
-        Vector2 dir = (Vector2)collision.transform.position - PlayerController.Instance.CenterPosition;
+        Vector2 dir = (Vector2)collision.transform.position - HeroManager.Instance.CenterPosition;
         enemyHit.TakeDamage(_damage, dir, true);
       
     }
 
-    private void OnPause()
+    public void Pause()
     {
         _vfx.Pause();
     }
 
-    private void OnResume()
+    public void Resume()
     {
         _vfx.Play();
     }
-    
+
+    public void OnTakeFromPool()
+    {
+        GameManager.Instance.RegisterPausable(this);
+    }
+
+    public void OnReturnToPool()
+    {
+        gameObject.SetActive(false);
+    }
 }

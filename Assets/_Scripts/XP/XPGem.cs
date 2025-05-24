@@ -46,7 +46,7 @@ public class XPGem : MonoBehaviour
 
     public void AbsorbGem()
     {
-        HeroUnit closestHero = PlayerController.Instance.GetClosestHero(transform.position);
+        HeroUnit closestHero = HeroManager.Instance.GetClosestHero(transform.position);
         if (!closestHero)
         {
             return;

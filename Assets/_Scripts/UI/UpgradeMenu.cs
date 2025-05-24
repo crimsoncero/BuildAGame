@@ -10,7 +10,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void ShowUpgradePanel()
     {
-        var upgradeList = PlayerController.Instance.GetUpgradesToShow();
+        var upgradeList = HeroManager.Instance.GetUpgradesToShow();
 
         for (int i = 0; i < upgradeList.Count; i++)
         {

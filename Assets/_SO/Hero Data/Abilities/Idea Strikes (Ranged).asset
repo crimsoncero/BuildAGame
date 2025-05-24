@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Idea Strikes
   <Icon>k__BackingField: {fileID: 636872743481278038, guid: b34c23e88d47d624cb5634033872a8cc, type: 3}
-  <BaseStats>k__BackingField:
-    Description: Base Missile stats
+  <BaseAbilityStats>k__BackingField:
+    Description: 
     Power: 3
     Count: 1
     Speed: 1

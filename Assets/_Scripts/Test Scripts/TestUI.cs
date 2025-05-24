@@ -14,6 +14,9 @@ public class TestUI : MonoBehaviour
         GameManager.Instance.OnTimerTick += UpdateTimerText;
         GameManager.Instance.OnGamePaused += OnPauseChange;
         GameManager.Instance.OnGameResumed += OnPauseChange;
+
+       
+
     }
 
     private void UpdateTimerText(int timer)

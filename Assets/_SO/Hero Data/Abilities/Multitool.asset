@@ -14,65 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Multitool
   <Icon>k__BackingField: {fileID: 945880233462451947, guid: 696e665b19ddfa94c912f45a78a64b16, type: 3}
-  <BaseStats>k__BackingField:
-    Description: Base Orbital stats
-    Power: 2
+  _baseStats:
+    Description: 
+    Power00: 10
     Count: 2
-    Speed: 2
+    Speed00: 10
     Cooldown: 1
     Pierce: 0
-  <LevelUpgrades>k__BackingField:
-  - Description: Adds 1 Projectile
-    Power: 0
-    Count: 1
-    Speed: 0
-    Cooldown: 0
-    Pierce: 0
-  - Description: Decreases cooldown by 20%
-    Power: 0
-    Count: 0
-    Speed: 0
-    Cooldown: -0.2
-    Pierce: 0
-  - Description: Adds 1 projectile
-    Power: 0
-    Count: 1
-    Speed: 0
-    Cooldown: 0
-    Pierce: 0
-  - Description: Decreases cooldown by 20%
-    Power: 0
-    Count: 0
-    Speed: 0
-    Cooldown: -0.2
-    Pierce: 0
-  - Description: Adds power by 10
-    Power: 1
-    Count: 0
-    Speed: 0
-    Cooldown: 0
-    Pierce: 0
-  - Description: adds 1 projectile
-    Power: 0
-    Count: 1
-    Speed: 0
-    Cooldown: 0
-    Pierce: 0
-  - Description: Add 1 Projectile and add 30% speed
-    Power: 0
-    Count: 1
-    Speed: 0
-    Cooldown: -0.2
-    Pierce: 0
-  - Description: Adds 10 power, 2 projectile,  significantly decreases cooldown and
-      increases speed
-    Power: 1
+    Duration: 3
+    Radius: 4
+    IsRing: 0
+  _levelUpgrades:
+  - Description: 
+    Power00: 10
     Count: 2
-    Speed: 4
-    Cooldown: -0.2
+    Speed00: 10
+    Cooldown: 1
     Pierce: 0
-  <Duration>k__BackingField: 3
-  <Radius>k__BackingField: 4
-  <SpeedMultipliar>k__BackingField: -50
+    Duration: 2
+    Radius: 6
+    IsRing: 1
+  <SpeedMultiplier>k__BackingField: 12
   <ProjectilePrefab>k__BackingField: {fileID: 9189736898793131427, guid: 00d94391a53a1424dbe2ee69230282dd, type: 3}
-  <InitCount>k__BackingField: 6
+  <RingPrefab>k__BackingField: {fileID: 251143481160343601, guid: 55c230cc7d2ccf343ba5ecd0c7c2fbe9, type: 3}
+  <InitCount>k__BackingField: 10

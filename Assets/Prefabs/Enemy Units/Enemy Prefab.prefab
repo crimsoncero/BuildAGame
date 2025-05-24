@@ -1,5 +1,73 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1606610260291724805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2995964389881224351}
+  - component: {fileID: 4436884646691260033}
+  m_Layer: 8
+  m_Name: Enemy Spacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2995964389881224351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606610260291724805}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5507789287424229340}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4436884646691260033
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606610260291724805}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1.2
 --- !u!1 &2569935867873966925
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,7 +150,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.28, y: 1.37}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -119,9 +187,9 @@ GameObject:
   - component: {fileID: 4452430546700873281}
   - component: {fileID: 1171083374919656187}
   - component: {fileID: 1715906947323866173}
-  - component: {fileID: -7659341251869531652}
   - component: {fileID: 1231239660535065941}
   - component: {fileID: 4443091632531839529}
+  - component: {fileID: -3330681497531167361}
   m_Layer: 8
   m_Name: Enemy Prefab
   m_TagString: Untagged
@@ -143,6 +211,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5543899311571456588}
+  - {fileID: 2995964389881224351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7378056784132296119
@@ -225,7 +294,7 @@ MonoBehaviour:
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
   endReachedDistance: 0.2
-  alwaysDrawGizmos: 0
+  alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
@@ -292,22 +361,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &-7659341251869531652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4290991442421826110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d1447ad4d08bcd41b512835dafd7d04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AIPath: {fileID: 4452430546700873281}
-  DestinationSetter: {fileID: 7378056784132296119}
-  Seeker: {fileID: 1313759654901583066}
-  _isEnabled: 1
 --- !u!114 &1231239660535065941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,9 +380,10 @@ MonoBehaviour:
     m_Bits: 128
   _visuals: {fileID: 2129609854122782698}
   Collider: {fileID: 1715906947323866173}
-  PathfindingModule: {fileID: -7659341251869531652}
+  PathfindingModule: {fileID: -3330681497531167361}
   _knockbackForce: 0.5
   _knockbackDurationPerForce: 0.1
+  _lifeTime: 100
 --- !u!70 &4443091632531839529
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -367,3 +421,32 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.12856019}
   m_Size: {x: 1.2401978, y: 1.2571204}
   m_Direction: 0
+--- !u!114 &-3330681497531167361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4290991442421826110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b40409a19131d543a3c098828b79ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AIPath: {fileID: 4452430546700873281}
+  DestinationSetter: {fileID: 7378056784132296119}
+  Seeker: {fileID: 1313759654901583066}
+  _isEnabled: 0
+  _distanceToTrack: 5
+  _closeRangeRepathPolicy:
+    mode: 2
+    interval: 0.5
+    sensitivity: 10
+    maximumInterval: 1
+    visualizeSensitivity: 1
+  _farRangeRepathPolicy:
+    mode: 1
+    interval: 1
+    sensitivity: 10
+    maximumInterval: 2
+    visualizeSensitivity: 1

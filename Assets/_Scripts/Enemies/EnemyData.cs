@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Scriptable Objects/EnemyData")]
 public class EnemyData : ScriptableObject
 {
@@ -21,6 +23,8 @@ public class EnemyData : ScriptableObject
     [field: SerializeField]
     public XPManager.XPGemTypes GemDropped { get; private set; }
         
+    [field: SerializeField] 
+    public EnemyUnit Prefab { get; private set; }
     [field: SerializeField]
     public bool ImmuneToKnockback { get; private set; }
     [field: Header("Visuals")]
@@ -29,4 +33,8 @@ public class EnemyData : ScriptableObject
     [field: SerializeField]
     public bool IsBoss { get; private set; }
 
+    
+
+    
+    
 }

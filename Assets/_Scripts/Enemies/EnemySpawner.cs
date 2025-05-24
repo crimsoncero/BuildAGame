@@ -1,11 +1,10 @@
-using MoreMountains.Tools;
 using Pathfinding;
 using SeraphRandom;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SeraphUtil.ObjectPool;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class EnemySpawner : Singleton<EnemySpawner>
 {
@@ -16,11 +15,9 @@ public class EnemySpawner : Singleton<EnemySpawner>
         public float MaximumRadius;
     }
 
-    [Header("Pool Settings")]
+    [Header("Pool Settings")] 
+    [SerializeField] private MultiPoolOptions<EnemyUnit> _poolOptions;
     [SerializeField] private Transform _poolParent;
-    [SerializeField] private EnemyUnit _enemyPrefab;
-    [SerializeField] private int _initSize = 5;
-    [SerializeField] private int _maxSize = 500;
 
     [Header("Spawn Settings")]
     [Range(2,12)]
@@ -29,17 +26,21 @@ public class EnemySpawner : Singleton<EnemySpawner>
     [SerializeField] private int _maximumConcurrentEnemies = 300;
     private Transform _centerPosition;
 
-    public ObjectPool<EnemyUnit> Pool { get; private set; }
-
-    private List<EnemyUnit> _enemyInstanceList = new List<EnemyUnit>();
-    public List<EnemyUnit> EnemyList { get { return _enemyInstanceList.Where((e)=> e.IsAlive).ToList(); } }    
+    private MultiPool<EnemyUnit> Pool { get; set; }
+    public List<EnemyUnit> EnemyList { get { return Pool.ActiveList.Where((e)=> e.IsAlive).ToList(); } }    
     private void Start()
     {
-        _centerPosition = PlayerController.Instance.Center;
-        Pool = new ObjectPool<EnemyUnit>(CreateEnemy, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, _initSize, _maxSize);
-        Pool.PreWarm(_initSize);
+        // TODO - start from GameManager
+        InitializeSpawner(_poolOptions);
     }
 
+    public void InitializeSpawner(MultiPoolOptions<EnemyUnit> poolOptions)
+    {
+        _poolOptions = poolOptions;
+        _centerPosition = HeroManager.Instance.Center;
+        Pool = new MultiPool<EnemyUnit>(poolOptions, _poolParent);
+    }
+    
     #region Spawn Methods
 
     /// <summary>
@@ -58,7 +59,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
     /// <param name="position"></param>
     public void SpawnEnemy(EnemyData data, Vector3 position)
     {
-        EnemyUnit enemy = Pool.Get();
+        EnemyUnit enemy = Pool.Take(data.Prefab);
         enemy.Initialize(data, position, Pool);
     }
     private List<EnemyData> SpawnGroup(List<EnemyData> enemiesToSpawn, int sector)
@@ -118,7 +119,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
     public void SpawnWave(List<EnemyData> spawnGroup, int numberOfGroups)
     {
         // Don't spawn a wave if already reached max enemy count;
-        if (Pool.CountActive >= _maximumConcurrentEnemies) return;
+        if (Pool.ActiveCount >= _maximumConcurrentEnemies) return;
         
         ShuffleBag<int> sectorBag = new ShuffleBag<int>(Enumerable.Range(0, _numberOfSectors - 1).ToList());
         
@@ -150,6 +151,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
     /// <returns></returns>
     private bool IsNodeEligible(GraphNode node)
     {
+        // ReSharper disable once ReplaceWithSingleAssignment.True
+
         // The check is an AND test, so the node must pass all checks.
         bool flag = true;
 
@@ -166,7 +169,9 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
     #endregion
 
-   
+    private void OnDisable()
+    {
+    }
 
     private void OnDrawGizmosSelected()
     {
@@ -188,35 +193,5 @@ public class EnemySpawner : Singleton<EnemySpawner>
         }
        
     }
-
-
-    #region Pool Methods
-
-    private EnemyUnit CreateEnemy()
-    {
-        EnemyUnit enemy = Instantiate(_enemyPrefab, _poolParent);
-
-        enemy.gameObject.SetActive(false);
-        _enemyInstanceList.Add(enemy);
-        return enemy;
-    }
-
-    private void OnTakeFromPool(EnemyUnit enemy)
-    {
-        enemy.gameObject.SetActive(true);
-    }
-    private void OnReturnedToPool(EnemyUnit enemy)
-    {
-        enemy.gameObject.SetActive(false);
-    }
-
-    private void OnDestroyPoolObject(EnemyUnit enemy)
-    {
-        _enemyInstanceList.Remove(enemy);
-        Destroy(enemy.gameObject);
-    }
-
-    #endregion
-
 }
 
