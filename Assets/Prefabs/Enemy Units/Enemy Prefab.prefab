@@ -383,7 +383,7 @@ MonoBehaviour:
   PathfindingModule: {fileID: -3330681497531167361}
   _knockbackForce: 0.5
   _knockbackDurationPerForce: 0.1
-  _lifeTime: 100
+  _lifeTime: 30
 --- !u!70 &4443091632531839529
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
