@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6d8e060f3852a4fac40cfd477fe1e0, type: 3}
   m_Name: TWave
   m_EditorClassIdentifier: 
-  SpawnTime: 10
+  SpawnTime: 5
   SpawnGroups: 10
   GroupSize: 2
   EnemyList:

@@ -16,16 +16,19 @@ public class LightningVFX : MonoBehaviour, IPausable, IPoolable
         GameManager.Instance.RegisterPausable(this);
     }
 
-    public void Initialize(Transform source, Transform target, int index, ObjectPool<LightningVFX> pool)
+    public void Initialize(Vector3 source, Vector3 target, int index, ObjectPool<LightningVFX> pool)
     {
         _pool = pool;
-
-        _lightningVFX.SetBool("Is First", index == 1);
+        _lightningVFX.Stop();
+        _lightningVFX.SetBool("Is First", index == 0);
         _lightningVFX.SetInt("Sequence Number", index);
 
         _lifeTimeDuration = _lightningVFX.GetFloat("Duration") * _lifeTimeMultiplier;
-        transform.position = source.position;
-        transform.LookAt(target);
+        
+        var distance = Vector3.Distance(source, target);
+        _lightningVFX.SetFloat("Length", distance);
+        transform.position = source;
+        transform.right = target - source;
         
         gameObject.SetActive(true);
         _lightningVFX.Play();

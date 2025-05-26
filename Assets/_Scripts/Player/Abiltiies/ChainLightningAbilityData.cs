@@ -35,11 +35,11 @@ public class ChainLightningAbilityData : BaseAbilityData
     }
     
     [field: Header("Behavior Stats")]
-    [field: SerializeField] public float MaxRange { get; private set; }
+    [field: SerializeField] public Vector2 TargetBox { get; private set; }
     [field: SerializeField] public LightningVFX LightningVFXPrefab { get; private set; }    
     [field: SerializeField] public int InitVFXCount { get; private set; }
     [field: SerializeField] public LayerMask EnemyLayer { get; private set; }
-
+    [field: SerializeField] public bool Debug { get; private set; }
     protected override AbilityStats GetStatsZero()
     {
         return new ChainLightningStats();

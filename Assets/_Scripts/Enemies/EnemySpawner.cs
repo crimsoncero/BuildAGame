@@ -40,6 +40,11 @@ public class EnemySpawner : Singleton<EnemySpawner>
         _centerPosition = HeroManager.Instance.Center;
         Pool = new MultiPool<EnemyUnit>(poolOptions, _poolParent);
     }
+
+    public EnemyUnit FindEnemy(Transform target)
+    {
+        return EnemyList.Find((t) => t.transform == target);
+    }
     
     #region Spawn Methods
 
