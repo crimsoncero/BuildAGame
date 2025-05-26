@@ -37,7 +37,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
     private bool _isDead = false;
     private Tween _knockbackTween;
     private float _lifeTimeCounter = 0;
-    
+    private bool _spawnGemOnDeath = true;
     public bool IsAlive
     {
         get { return !_isDead; }
@@ -117,7 +117,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
         }
        
     }
-
+    
     public void TakeDamage(int damage, Vector2 hitDireciton, bool isKnockback = false)
     {
         // Handle damage
@@ -153,14 +153,19 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
     {
         if(_isDead) return;
         _isDead = true;
-        
-        if (spawnGem)
-            XPManager.Instance.SpawnGem(Data.GemDropped, transform.position);
+
+        _spawnGemOnDeath = spawnGem;
         
         _visuals.OnDeath();
         
     }
 
+    public void SpawnGem()
+    {
+        if (_spawnGemOnDeath)
+            XPManager.Instance.SpawnGem(Data.GemDropped, transform.position);
+    }
+    
     public void OnTakeFromPool()
     {
         GameManager.Instance.RegisterPausable(this);

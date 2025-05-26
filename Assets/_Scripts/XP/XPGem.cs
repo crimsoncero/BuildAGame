@@ -1,9 +1,7 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Pool;
+using SeraphUtil.ObjectPool;
 
-public class XPGem : MonoBehaviour
+public class XPGem : MonoBehaviour, IPoolable
 {
     [Header("Components")]
     [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -22,7 +20,7 @@ public class XPGem : MonoBehaviour
     private bool _isAbsorbed = false;
     public void Init(XPGemData data, Vector3 position, ObjectPool<XPGem> pool, float pickupRange = 0f)
     {
-        if (this.IsUnityNull())
+        if (this == null)
         {
             Debug.LogError("Gem is null at init");
             return;
@@ -39,7 +37,7 @@ public class XPGem : MonoBehaviour
         _outerCollider.enabled = true;
         _isAbsorbed = false;
         _outerCollider.radius = pickupRange <= _basePickupRange ? _basePickupRange : pickupRange;
-
+        gameObject.SetActive(true);
         GameManager.Instance.OnGamePaused += OnPause;
         GameManager.Instance.OnGameResumed += OnResume;
     }
@@ -81,10 +79,18 @@ public class XPGem : MonoBehaviour
             GameManager.Instance.OnGameResumed -= OnResume;
             XPManager.Instance.AddXp(Data.Type);
             
-            _pool.Release(this);
+            _pool.Return(this);
         }
     }
-    
-    
-    
+
+
+    public void OnTakeFromPool()
+    {
+        
+    }
+
+    public void OnReturnToPool()
+    {
+        gameObject.SetActive(false);
+    }
 }

@@ -104,8 +104,8 @@ namespace SeraphUtil.ObjectPool
             obj.OnReturnToPool();
             var returnedObj = _activeObjects.Remove(obj);
             
-            if(!returnedObj)
-                throw new ArgumentNullException(nameof(obj), "Trying to remove an object that is not in the pool.");
+            // if(!returnedObj)
+            //     throw new ArgumentNullException(nameof(obj), "Trying to remove an object that is not in the pool.");
             
             _freeObjects.Enqueue(obj);
             
