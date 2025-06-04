@@ -42,7 +42,7 @@ public class XPManager : Singleton<XPManager>
     private int _levelStart = 0;
 
     public float CurrentXP01 { get { return Mathf.InverseLerp(_levelStart, _targetXP, _currentXP); } }
-
+    public int CurrentLevel => _currentLevel;
     private void Start()
     {
         _gemPool = new ObjectPool<XPGem>(_gemPrefab, _gemParent, (uint)_maxInstanceAmount, true);

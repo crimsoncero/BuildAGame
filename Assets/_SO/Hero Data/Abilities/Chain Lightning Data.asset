@@ -28,7 +28,7 @@ MonoBehaviour:
     Count: 2
     Speed00: 10
     Cooldown: 2
-    Pierce: 0
+    Pierce: 2
     Forks: 0
   <TargetBox>k__BackingField: {x: 53.5, y: 30}
   <LightningVFXPrefab>k__BackingField: {fileID: 4761536805520416798, guid: 1b4149e8c6f6f5348a633c6ff0202aa4, type: 3}
