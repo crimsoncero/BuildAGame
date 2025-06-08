@@ -574,9 +574,9 @@ MonoBehaviour:
   DebugActive: 0
   InScriptDrivenPause: 0
   FeedbacksList:
-  - rid: 5067820803461480526
   - rid: 5067820720456204363
   - rid: 5067820720456204366
+  - rid: 5067820803461480529
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   RestoreInitialValuesOnDisable: 0
@@ -788,13 +788,13 @@ MonoBehaviour:
         DebugActive: 0
         TargetCanvasGroup: {fileID: 0}
         ShouldBlockRaycasts: 1
-    - rid: 5067820803461480526
-      type: {class: MMF_SetActive, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
+    - rid: 5067820803461480529
+      type: {class: MMF_GraphicCrossFade, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
       data:
         Active: 1
-        UniqueID: 991780365
-        Label: Set Active
-        OriginalLabel: Set Active
+        UniqueID: -1473944929
+        Label: Graphic CrossFade
+        OriginalLabel: Graphic CrossFade
         ChannelMode: 0
         Channel: 0
         MMChannelDefinition: {fileID: 0}
@@ -862,20 +862,13 @@ MonoBehaviour:
           ButtonText: 
         Owner: {fileID: 7569480365334369864}
         DebugActive: 0
-        TargetGameObject: {fileID: 7265384232089797995}
-        ExtraTargetGameObjects: []
-        SetStateOnInit: 0
-        StateOnInit: 1
-        SetStateOnPlay: 1
-        StateOnPlay: 0
-        SetStateOnStop: 0
-        StateOnStop: 1
-        SetStateOnReset: 0
-        StateOnReset: 1
-        SetStateOnSkip: 0
-        StateOnSkip: 1
-        SetStateOnPlayerComplete: 0
-        StateOnPlayerComplete: 1
+        TargetGraphic: {fileID: 1586881000241523885}
+        Mode: 0
+        Duration: 0.2
+        TargetAlpha: 0.2
+        TargetColor: {r: 1, g: 0, b: 0, a: 1}
+        UseAlpha: 1
+        DisableOnStop: 0
 --- !u!1 &4509044641045988733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,4 +1011,3 @@ MonoBehaviour:
   _canvasGroup: {fileID: 2738500750432448206}
   _showFeedback: {fileID: 7569480365334369864}
   _hideFeedback: {fileID: 2579186465312171712}
-  <IsOpen>k__BackingField: 0

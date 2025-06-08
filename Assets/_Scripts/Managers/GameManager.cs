@@ -7,9 +7,6 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    private static string LEVEL_INIT_DATA_PATH = "Assets/_SO/DO NOT TOUCH/Level Init Data.asset";
-
-    
     public event Action OnGameStart;
     public event Action OnGameEnd;
     public event Action OnGamePaused;
@@ -35,7 +32,6 @@ public class GameManager : Singleton<GameManager>
     public bool IsPaused { get; private set; } = true;
     public bool IsGameActive { get; private set; } = false;
 
-    
     private List<IPausable> _pausablesList = new List<IPausable>();
 
     private void Update()
