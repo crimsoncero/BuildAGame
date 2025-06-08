@@ -1,13 +1,15 @@
 using System;
 using System.Collections.Generic;
 using float_oat.Desktop90;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class UpgradeMenu : MonoBehaviour
 {
     [SerializeField] private WindowController _windowController;
     [SerializeField] private List<UpgradePanel> _panelList;
-
+    [SerializeField] private MMF_Player _particlePlayer;
+    
     public void ShowUpgradePanel()
     {
         var upgradeList = HeroManager.Instance.GetUpgradesToShow();
@@ -19,6 +21,7 @@ public class UpgradeMenu : MonoBehaviour
         }
 
         _windowController.Open();
+        _particlePlayer.PlayFeedbacks();
     }
 
     public void OnUpgradeClick()

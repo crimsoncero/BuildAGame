@@ -1,3 +1,4 @@
+using System;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
@@ -7,15 +8,18 @@ public class WindowHandler : MonoBehaviour
     [SerializeField] private MMF_Player _showFeedback;
     [SerializeField] private MMF_Player _hideFeedback;
 
-    [field: SerializeField, Tooltip("Define the initial state of this window in the UI")]
-    public bool IsOpen { get; private set; } = false;
+    public bool IsOpen
+    {
+        get => gameObject.activeSelf;
+    }
     
     public void Show()
     {
         // Already open, no need to show again.
         if (IsOpen)
             return;
-        IsOpen = true;
+        
+        gameObject.SetActive(true);
         _showFeedback.PlayFeedbacks();
     }
 
@@ -23,7 +27,7 @@ public class WindowHandler : MonoBehaviour
     {
         if (!IsOpen)
             return;
-        IsOpen = false;
         _hideFeedback.PlayFeedbacks();
     }
+
 }
