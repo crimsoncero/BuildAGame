@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using float_oat.Desktop90;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UpgradeMenu : MonoBehaviour
 {
-    [SerializeField] private WindowController _windowController;
+    [FormerlySerializedAs("_windowController")] [SerializeField] private WindowHandler _windowHandler;
     [SerializeField] private List<UpgradePanel> _panelList;
-    [SerializeField] private MMF_Player _particlePlayer;
     
     public void ShowUpgradePanel()
     {
@@ -19,9 +19,8 @@ public class UpgradeMenu : MonoBehaviour
             _panelList[i].Initialize(upgradeList[i], this);
             _panelList[i].gameObject.SetActive(true);
         }
-
-        _windowController.Open();
-        _particlePlayer.PlayFeedbacks();
+        
+        _windowHandler.Show();
     }
 
     public void OnUpgradeClick()
@@ -32,6 +31,6 @@ public class UpgradeMenu : MonoBehaviour
         }
         
         GameManager.Instance.ResumeGame();
-        _windowController.Close();
+        _windowHandler.Hide();
     }
 }

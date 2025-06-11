@@ -1468,49 +1468,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1601411851241724307, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601411851241724307, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601411851241724307, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 213814523
-      objectReference: {fileID: 0}
-    - target: {fileID: 5410858189744429741, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5410858189744429741, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 5410858189744429741, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 213814523
-      objectReference: {fileID: 0}
     - target: {fileID: 6286399462456355980, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
       propertyPath: m_Name
       value: Game Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8689423237005496211, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8689423237005496211, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8689423237005496211, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8689423237005496211, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8870155501639277502, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
