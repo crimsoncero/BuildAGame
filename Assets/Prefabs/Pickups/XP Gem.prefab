@@ -161,7 +161,7 @@ MonoBehaviour:
   _innerCollider: {fileID: 7092061986949205684}
   _outerCollider: {fileID: 8421060295387293395}
   _pathfindingModule: {fileID: 5506494515581069405}
-  _basePickupRange: 1.5
+  _basePickupRange: 3
   _speed: 20
 --- !u!58 &7092061986949205684
 CircleCollider2D:
@@ -315,7 +315,7 @@ CircleCollider2D:
     m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 887
+    m_Bits: 1911
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
