@@ -44,6 +44,8 @@ MonoBehaviour:
   BossList:
   - Data: {fileID: 11400000, guid: ecad87ab21e984b4aba068e579499542, type: 2}
     SpawnTime: 60
+  - Data: {fileID: 11400000, guid: ecad87ab21e984b4aba068e579499542, type: 2}
+    SpawnTime: 120
   - Data: {fileID: 11400000, guid: 49789722d5acafd4f877915fc447d2f1, type: 2}
     SpawnTime: 180
   EventList:

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6d8e060f3852a4fac40cfd477fe1e0, type: 3}
-  m_Name: TestWave 4
+  m_Name: DevWave 5
   m_EditorClassIdentifier: 
-  SpawnTime: 4
-  SpawnGroups: 4
-  GroupSize: 9
+  SpawnTime: 3
+  SpawnGroups: 5
+  GroupSize: 11
   EnemyList:
   - Data: {fileID: 11400000, guid: 675166ff7fa18c64caed9f20f69b8e5c, type: 2}
-    Count: 7
+    Count: 8
   - Data: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
-    Count: 2
+    Count: 3
   _isValid: 1

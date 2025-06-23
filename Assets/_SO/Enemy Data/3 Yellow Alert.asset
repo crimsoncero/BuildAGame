@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aba35f2c959ab334cbd9d6a88976665f, type: 3}
-  m_Name: Stronger Alert
+  m_Name: 3 Yellow Alert
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Stronger Alert
-  _powerLevel: 1
+  <Name>k__BackingField: Yellow Alert
+  _powerLevel: 3
   <BaseMaxHealth>k__BackingField: 20
   <BaseMoveSpeed>k__BackingField: 5
   <BasePower>k__BackingField: 7
-  <BaseSpeed>k__BackingField: 2
+  <BaseSpeed>k__BackingField: 1
   <GemDropped>k__BackingField: 0
   <Prefab>k__BackingField: {fileID: 1231239660535065941, guid: 90590a9224c3c664994c621b883c1a19, type: 3}
   <ImmuneToKnockback>k__BackingField: 0
