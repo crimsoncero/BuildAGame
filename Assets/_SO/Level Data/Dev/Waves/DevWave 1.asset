@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnTime: 6
   SpawnGroups: 2
-  GroupSize: 4
+  GroupSize: 3
   EnemyList:
   - Data: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
-    Count: 4
+    Count: 3
   _isValid: 1
