@@ -19,16 +19,46 @@ MonoBehaviour:
     Power00: 10
     Count: 0
     Speed00: 10
-    Cooldown: 5
+    Cooldown: 2
     Pierce: 0
     RespawnReduction: 0
   _levelUpgrades:
-  - Description: 
-    Power00: 10
+  - Description: Heals the party for 3% of max health every 2 seconds
+    Power00: 30
     Count: 0
-    Speed00: 10
-    Cooldown: 5
+    Speed00: 0
+    Cooldown: 2
     Pierce: 0
-    RespawnReduction: 20
-  <HealMultiplier>k__BackingField: 0.2
+    RespawnReduction: 0
+  - Description: Heals the party for 6% of max health every 2 seconds
+    Power00: 60
+    Count: 0
+    Speed00: 0
+    Cooldown: 2
+    Pierce: 0
+    RespawnReduction: 0
+  - Description: Heals the party for 6% of max health every second and revives heroes
+      30% faster
+    Power00: 60
+    Count: 0
+    Speed00: 0
+    Cooldown: 1
+    Pierce: 0
+    RespawnReduction: 30
+  - Description: Heals the party for 9% of max health every second
+    Power00: 90
+    Count: 0
+    Speed00: 0
+    Cooldown: 1
+    Pierce: 0
+    RespawnReduction: 30
+  - Description: Heals the party for 10% of max health every second and revives heroes
+      50% faster
+    Power00: 100
+    Count: 0
+    Speed00: 0
+    Cooldown: 1
+    Pierce: 0
+    RespawnReduction: 50
+  <HealMultiplier>k__BackingField: 0.1
   <VFX>k__BackingField: {fileID: 7920440466125361460, guid: 326d58875e1f86d4e94f1bb523015843, type: 3}

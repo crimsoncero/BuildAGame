@@ -17,19 +17,47 @@ MonoBehaviour:
   _baseStats:
     Description: Channels collective feedback into an electric bolt that strikes
       the nearest enemy!
-    Power00: 20
-    Count: 2
+    Power00: 10
+    Count: 1
     Speed00: 10
-    Cooldown: 1
+    Cooldown: 2
     Pierce: 0
     Forks: 0
   _levelUpgrades:
-  - Description: 
+  - Description: Chain the attack to 1 more enemy
     Power00: 10
+    Count: 1
+    Speed00: 10
+    Cooldown: 2
+    Pierce: 1
+    Forks: 0
+  - Description: Fire 1 more bolt and adds to damage
+    Power00: 15
     Count: 2
     Speed00: 10
     Cooldown: 2
+    Pierce: 1
+    Forks: 0
+  - Description: Each chain hits 3 enemies and cooldown is faster
+    Power00: 15
+    Count: 2
+    Speed00: 10
+    Cooldown: 1.5
     Pierce: 2
+    Forks: 0
+  - Description: Fire 1 more chain and add more damage
+    Power00: 20
+    Count: 3
+    Speed00: 10
+    Cooldown: 1.5
+    Pierce: 2
+    Forks: 0
+  - Description: Fire 4 chains of 4 enemies and cooldown is faster
+    Power00: 20
+    Count: 4
+    Speed00: 10
+    Cooldown: 1
+    Pierce: 3
     Forks: 0
   <TargetBox>k__BackingField: {x: 53.5, y: 30}
   <LightningVFXPrefab>k__BackingField: {fileID: 4761536805520416798, guid: 1b4149e8c6f6f5348a633c6ff0202aa4, type: 3}
