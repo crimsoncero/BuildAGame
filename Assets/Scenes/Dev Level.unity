@@ -1059,6 +1059,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3641215403724380283, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
+      propertyPath: m_Size.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641215403724380283, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619042997398482858, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619042997398482858, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5901182706952395859, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
       propertyPath: m_Name
       value: Dev Level
