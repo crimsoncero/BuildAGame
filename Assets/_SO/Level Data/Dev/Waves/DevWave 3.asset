@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6d8e060f3852a4fac40cfd477fe1e0, type: 3}
   m_Name: DevWave 3
   m_EditorClassIdentifier: 
-  SpawnTime: 4
+  SpawnTime: 10
   SpawnGroups: 3
   GroupSize: 4
   EnemyList:
