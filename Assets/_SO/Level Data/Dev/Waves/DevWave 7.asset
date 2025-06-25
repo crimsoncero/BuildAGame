@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6d8e060f3852a4fac40cfd477fe1e0, type: 3}
   m_Name: DevWave 7
   m_EditorClassIdentifier: 
-  SpawnTime: 3
-  SpawnGroups: 6
-  GroupSize: 17
+  SpawnTime: 8
+  SpawnGroups: 2
+  GroupSize: 3
   EnemyList:
+  - Data: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
+    Count: 2
   - Data: {fileID: 11400000, guid: 4b9c26f582f16374e9caba47c5ce058e, type: 2}
-    Count: 12
-  - Data: {fileID: 11400000, guid: 7ea33dd2e67f1ea4eade7b561ec423d1, type: 2}
-    Count: 5
+    Count: 1
   _isValid: 1
