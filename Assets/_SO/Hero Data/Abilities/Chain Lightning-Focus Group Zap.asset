@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a3a7a19ca432684da7b00069140b69a, type: 3}
-  m_Name: Chain Lightning Data
+  m_Name: Chain Lightning-Focus Group Zap
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 'Bzzzz '
+  <Name>k__BackingField: Focus Group Zap
   <Icon>k__BackingField: {fileID: 636872743481278038, guid: b34c23e88d47d624cb5634033872a8cc, type: 3}
   _baseStats:
-    Description: Do the bzzzz
+    Description: Channels collective feedback into an electric bolt that strikes
+      the nearest enemy!
     Power00: 20
     Count: 2
     Speed00: 10

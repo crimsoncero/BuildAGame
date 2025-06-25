@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0223587285048040878da0be6c55391, type: 3}
-  m_Name: Multitool
+  m_Name: Orbs- Dev Tools
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Multitool
+  <Name>k__BackingField: Dev Tools
   <Icon>k__BackingField: {fileID: 945880233462451947, guid: 696e665b19ddfa94c912f45a78a64b16, type: 3}
   _baseStats:
-    Description: 
+    Description: Summons dev-tools that circle the party and damages enemies
     Power00: 10
     Count: 2
     Speed00: 10
