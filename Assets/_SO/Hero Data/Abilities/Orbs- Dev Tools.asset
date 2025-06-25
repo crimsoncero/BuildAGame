@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Dev Tools
   <Icon>k__BackingField: {fileID: 945880233462451947, guid: 696e665b19ddfa94c912f45a78a64b16, type: 3}
   _baseStats:
-    Description: Summons dev-tools that circle the party and damages enemies
+    Description: Summons dev-tools that circle the party and damages enemies!
     Power00: 10
     Count: 1
     Speed00: 10

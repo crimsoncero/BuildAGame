@@ -16,7 +16,7 @@ MonoBehaviour:
   _powerLevel: 3
   <BaseMaxHealth>k__BackingField: 20
   <BaseMoveSpeed>k__BackingField: 5
-  <BasePower>k__BackingField: 30
+  <BasePower>k__BackingField: 25
   <BaseSpeed>k__BackingField: 1
   <GemDropped>k__BackingField: 0
   <Prefab>k__BackingField: {fileID: 1231239660535065941, guid: 90590a9224c3c664994c621b883c1a19, type: 3}
