@@ -23,37 +23,35 @@ MonoBehaviour:
     Pierce: 0
     RespawnReduction: 0
   _levelUpgrades:
-  - Description: Heals the party for 3% of max health every 2 seconds
+  - Description: Increases the healing ability
     Power00: 30
     Count: 0
     Speed00: 0
     Cooldown: 2
     Pierce: 0
     RespawnReduction: 0
-  - Description: Heals the party for 6% of max health every 2 seconds
+  - Description: Increases the healing ability
     Power00: 60
     Count: 0
     Speed00: 0
     Cooldown: 2
     Pierce: 0
     RespawnReduction: 0
-  - Description: Heals the party for 6% of max health every second and revives heroes
-      30% faster
+  - Description: Healing is faster and team members return faster
     Power00: 60
     Count: 0
     Speed00: 0
     Cooldown: 1
     Pierce: 0
     RespawnReduction: 30
-  - Description: Heals the party for 9% of max health every second
+  - Description: Increases the healing ability
     Power00: 90
     Count: 0
     Speed00: 0
     Cooldown: 1
     Pierce: 0
     RespawnReduction: 30
-  - Description: Heals the party for 10% of max health every second and revives heroes
-      50% faster
+  - Description: Increases the healing ability and team members return faster
     Power00: 100
     Count: 0
     Speed00: 0

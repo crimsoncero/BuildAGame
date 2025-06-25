@@ -17,21 +17,57 @@ MonoBehaviour:
   _baseStats:
     Description: Summons dev-tools that circle the party and damages enemies
     Power00: 10
-    Count: 2
+    Count: 1
     Speed00: 10
     Cooldown: 1
     Pierce: 0
     Duration: 3
-    Radius: 4
+    Radius: 5.5
     IsRing: 0
   _levelUpgrades:
-  - Description: 
+  - Description: Summons 1 more dev-tool and both spin fater
     Power00: 10
     Count: 2
-    Speed00: 10
+    Speed00: 15
     Cooldown: 1
     Pierce: 0
-    Duration: 2
+    Duration: 3
+    Radius: 5.5
+    IsRing: 0
+  - Description: Summons 1 more dev-tool and cooldown is shorter
+    Power00: 10
+    Count: 3
+    Speed00: 15
+    Cooldown: 0.5
+    Pierce: 0
+    Duration: 3
+    Radius: 5.5
+    IsRing: 0
+  - Description: Summons 1 more dev-tool and more damage
+    Power00: 15
+    Count: 4
+    Speed00: 15
+    Cooldown: 0.5
+    Pierce: 0
+    Duration: 3
+    Radius: 5.5
+    IsRing: 0
+  - Description: Dev-tools spin faster and radius is bigger
+    Power00: 15
+    Count: 4
+    Speed00: 18
+    Cooldown: 0.5
+    Pierce: 0
+    Duration: 3
+    Radius: 6
+    IsRing: 0
+  - Description: Dev-tools ring surrounds the team with almost no cooldown
+    Power00: 15
+    Count: 4
+    Speed00: 18
+    Cooldown: 0.2
+    Pierce: 0
+    Duration: 3
     Radius: 6
     IsRing: 1
   <SpeedMultiplier>k__BackingField: 12
