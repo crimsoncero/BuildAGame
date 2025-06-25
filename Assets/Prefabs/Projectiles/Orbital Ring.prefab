@@ -9827,3 +9827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 2327923558493961608}
+  _particles:
+  - {fileID: 6578470163091656089}
+  - {fileID: 8448668240974229073}

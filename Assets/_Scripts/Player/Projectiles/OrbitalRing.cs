@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OrbitalRing : MonoBehaviour, IPausable
 {
     [SerializeField] private CircleCollider2D _collider;
-    
+    [SerializeField] private List<ParticleSystem> _particles;
     private int _damage;
     private float _duration;
     private float _tickRate;
@@ -25,7 +26,6 @@ public class OrbitalRing : MonoBehaviour, IPausable
         _tickRate = tickRate;
         _timeToNextTick = 0;
         gameObject.SetActive(true);
-        
         
     }
 
@@ -70,9 +70,11 @@ public class OrbitalRing : MonoBehaviour, IPausable
 
     public void Pause()
     {
+        _particles.ForEach(p => p.Pause());
     }
 
     public void Resume()
     {
+        _particles.ForEach(p => p.Play());
     }
 }
