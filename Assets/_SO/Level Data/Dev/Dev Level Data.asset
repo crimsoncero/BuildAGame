@@ -18,15 +18,19 @@ MonoBehaviour:
   - Wave: {fileID: 11400000, guid: 26fc9815be2b92b428ad07c6a02eedcc, type: 2}
     Duration: 15
   - Wave: {fileID: 11400000, guid: 2a6013de6a9d2da428f6f89bcac7137e, type: 2}
-    Duration: 15
+    Duration: 20
   - Wave: {fileID: 11400000, guid: 7f3ec0461c5835548879bc881d3ae063, type: 2}
-    Duration: 15
+    Duration: 25
   - Wave: {fileID: 11400000, guid: 9238a41ac193f2d4ea4570b775357aad, type: 2}
     Duration: 15
-  - Wave: {fileID: 11400000, guid: da642646c06ef27429b832df99db3061, type: 2}
-    Duration: 15
+  - Wave: {fileID: 0}
+    Duration: 0
   - Wave: {fileID: 11400000, guid: b0ef161e91df0984ebaac17c13509a71, type: 2}
-    Duration: 15
+    Duration: 25
+  - Wave: {fileID: 11400000, guid: 44cd8c126232d00439d0c883d98219a0, type: 2}
+    Duration: 20
+  - Wave: {fileID: 11400000, guid: 988f47209cfc80b40bf3e5e42e9dc020, type: 2}
+    Duration: 35
   - Wave: {fileID: 11400000, guid: 7b61c9885b472d94880f07a82ab5c8d3, type: 2}
     Duration: 50
   BossList:
