@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6d8e060f3852a4fac40cfd477fe1e0, type: 3}
-  m_Name: TestWave 2
+  m_Name: DevWave 8
   m_EditorClassIdentifier: 
-  SpawnTime: 5
-  SpawnGroups: 3
-  GroupSize: 5
+  SpawnTime: 8
+  SpawnGroups: 5
+  GroupSize: 4
   EnemyList:
   - Data: {fileID: 11400000, guid: 675166ff7fa18c64caed9f20f69b8e5c, type: 2}
-    Count: 5
+    Count: 1
+  - Data: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
+    Count: 1
+  - Data: {fileID: 11400000, guid: 4b9c26f582f16374e9caba47c5ce058e, type: 2}
+    Count: 1
+  - Data: {fileID: 11400000, guid: 7ea33dd2e67f1ea4eade7b561ec423d1, type: 2}
+    Count: 1
   _isValid: 1

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28aa6352bb05a2c47b9f6ddd30a0a0c3, type: 3}
+  m_Name: Heal-Bug Fix
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Bug Fix
+  <Icon>k__BackingField: {fileID: -9123998315749463643, guid: 44bd08dd673ad7a4da2bf202b1e529bb, type: 3}
+  _baseStats:
+    Description: Runs a health check and patches the compromised teammates!
+    Power00: 10
+    Count: 0
+    Speed00: 10
+    Cooldown: 2
+    Pierce: 0
+    RespawnReduction: 0
+  _levelUpgrades:
+  - Description: Increases the healing ability
+    Power00: 30
+    Count: 0
+    Speed00: 0
+    Cooldown: 2
+    Pierce: 0
+    RespawnReduction: 0
+  - Description: Increases the healing ability
+    Power00: 60
+    Count: 0
+    Speed00: 0
+    Cooldown: 2
+    Pierce: 0
+    RespawnReduction: 0
+  - Description: Healing is faster and team members return faster
+    Power00: 60
+    Count: 0
+    Speed00: 0
+    Cooldown: 1
+    Pierce: 0
+    RespawnReduction: 30
+  - Description: Increases the healing ability
+    Power00: 90
+    Count: 0
+    Speed00: 0
+    Cooldown: 1
+    Pierce: 0
+    RespawnReduction: 30
+  - Description: Increases the healing ability and team members return faster
+    Power00: 100
+    Count: 0
+    Speed00: 0
+    Cooldown: 1
+    Pierce: 0
+    RespawnReduction: 50
+  <HealMultiplier>k__BackingField: 0.1
+  <VFX>k__BackingField: {fileID: 7920440466125361460, guid: 326d58875e1f86d4e94f1bb523015843, type: 3}

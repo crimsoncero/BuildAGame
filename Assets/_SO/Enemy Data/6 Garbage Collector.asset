@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aba35f2c959ab334cbd9d6a88976665f, type: 3}
-  m_Name: Garbage Collector
+  m_Name: 6 Garbage Collector
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Garbage Collector
-  _powerLevel: 1000
-  <BaseMaxHealth>k__BackingField: 2147483647
+  _powerLevel: 6
+  <BaseMaxHealth>k__BackingField: 999999999
   <BaseMoveSpeed>k__BackingField: 300
   <BasePower>k__BackingField: 1000
   <BaseSpeed>k__BackingField: 0.5
-  <GemDropped>k__BackingField: 25
+  <GemDropped>k__BackingField: 50
   <Prefab>k__BackingField: {fileID: 3317569262086164977, guid: ae14fee8f9bf2ac4bbdb12aea95ee114, type: 3}
   <ImmuneToKnockback>k__BackingField: 1
   <Sprite>k__BackingField: {fileID: -1794213396928330210, guid: 02a39ad23826c414f97af1dc54f66862, type: 3}

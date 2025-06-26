@@ -10,10 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6d8e060f3852a4fac40cfd477fe1e0, type: 3}
-  m_Name: End Wave
+  m_Name: DevWave 5
   m_EditorClassIdentifier: 
-  SpawnTime: 0
-  SpawnGroups: 0
-  GroupSize: 0
-  EnemyList: []
+  SpawnTime: 6
+  SpawnGroups: 3
+  GroupSize: 4
+  EnemyList:
+  - Data: {fileID: 11400000, guid: d350da07a6ee52642b2c4312824b4ca5, type: 2}
+    Count: 2
+  - Data: {fileID: 11400000, guid: 4b9c26f582f16374e9caba47c5ce058e, type: 2}
+    Count: 2
   _isValid: 1

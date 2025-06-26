@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aba35f2c959ab334cbd9d6a88976665f, type: 3}
-  m_Name: Unity Error
+  m_Name: 5 Unity Error
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Unity Error
-  _powerLevel: 3
+  _powerLevel: 5
   <BaseMaxHealth>k__BackingField: 2000
-  <BaseMoveSpeed>k__BackingField: 3
-  <BasePower>k__BackingField: 50
+  <BaseMoveSpeed>k__BackingField: 4
+  <BasePower>k__BackingField: 70
   <BaseSpeed>k__BackingField: 1
-  <GemDropped>k__BackingField: 25
+  <GemDropped>k__BackingField: 50
   <Prefab>k__BackingField: {fileID: 3317569262086164977, guid: ae14fee8f9bf2ac4bbdb12aea95ee114, type: 3}
   <ImmuneToKnockback>k__BackingField: 0
   <Sprite>k__BackingField: {fileID: -7447190747043010810, guid: 654aaed5892df434ea2de828926901e9, type: 3}
