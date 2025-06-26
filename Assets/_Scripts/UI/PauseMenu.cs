@@ -1,31 +1,38 @@
-using float_oat.Desktop90;
+using MoreMountains.Tools;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private WindowController _windowController;
-
+    [FormerlySerializedAs("_windowController")] [SerializeField] private WindowHandler _windowHandler;
+    [SerializeField] private Slider _musicSlider;
+    [SerializeField] private Slider _sfxSlider;
+    
     public void Open()
     {
-        _windowController.Open();
+        _windowHandler.Show();
     }
     public void ResumeGame()
     {
-        _windowController.Close();
+        _windowHandler.Hide();
         GameManager.Instance.ResumeGame();
     }
-
-    public void OpenSettings()
-    {
-        
-    }
-    
     public void ReturnToMainMenu()
     {
-        _windowController.Close();
+        _windowHandler.Hide();
         GameManager.Instance.GameOver();
     }
 
+    public void UpdateMusicVolume(float volume)
+    {
+        MMSoundManagerTrackEvent.Trigger(MMSoundManagerTrackEventTypes.SetVolumeTrack, MMSoundManager.MMSoundManagerTracks.Music, volume);
+    }
+    public void UpdateSfxVolume(float volume)
+    {
+        MMSoundManagerTrackEvent.Trigger(MMSoundManagerTrackEventTypes.SetVolumeTrack, MMSoundManager.MMSoundManagerTracks.Sfx, volume);
+        MMSoundManagerTrackEvent.Trigger(MMSoundManagerTrackEventTypes.SetVolumeTrack, MMSoundManager.MMSoundManagerTracks.UI, volume);
+    }
     public void ExitGame()
     {
         #if UNITY_EDITOR

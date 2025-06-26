@@ -93,9 +93,12 @@ public class LevelManager : Singleton<LevelManager>
         // Play Event
         if(time == _eventTarget)
         {
-            EventList.Current.Data.Play();
-            EventList.MoveNext();
-            _eventTarget = EventList.Current.SpawnTime;
+            if (EventList.Current.Data != null)
+            {
+                EventList.Current.Data.Play();
+                EventList.MoveNext();
+                _eventTarget = EventList.Current.SpawnTime;
+            }
         }
 
     }
