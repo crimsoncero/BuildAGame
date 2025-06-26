@@ -1142,6 +1142,18 @@ PrefabInstance:
       propertyPath: m_MinValue
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6190011533503326823, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
+      propertyPath: managedReferences[5067820720456204364].Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190011533503326823, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
+      propertyPath: managedReferences[5067820720456204364].Active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190011533503326823, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
+      propertyPath: managedReferences[6218019987200147533].Active
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286399462456355980, guid: d672f21447a8ad84ca98b26a62f42fc4, type: 3}
       propertyPath: m_Name
       value: Game Canvas
