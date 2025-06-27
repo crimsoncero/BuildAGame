@@ -17,6 +17,7 @@ MonoBehaviour:
     guns: \u201CTrust the vision\u201D."
   <Role>k__BackingField: 1
   <AbilityData>k__BackingField: {fileID: 11400000, guid: 4a62a5bf7724d1445900d73714773532, type: 2}
+  <Messages>k__BackingField: {fileID: 11400000, guid: 3e6f51e346fa3ae478f9a11a273d23c6, type: 2}
   <BaseMaxHealth>k__BackingField: 90
   <VisualsPrefab>k__BackingField: {fileID: 1187020286621519832, guid: 7ad2e912c73fa4446bd12b89ea34ece8, type: 3}
   <MaterialPrefab>k__BackingField: {fileID: 2100000, guid: 3556c339093a11c4d97d6417b4d4815f, type: 2}

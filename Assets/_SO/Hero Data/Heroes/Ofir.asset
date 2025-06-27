@@ -18,6 +18,7 @@ MonoBehaviour:
     to get a lot longer."
   <Role>k__BackingField: 3
   <AbilityData>k__BackingField: {fileID: 11400000, guid: 4ca95a98ebd15c6438741cc033609feb, type: 2}
+  <Messages>k__BackingField: {fileID: 11400000, guid: e1c4cb173df35f042b8bc35d03b00bca, type: 2}
   <BaseMaxHealth>k__BackingField: 80
   <VisualsPrefab>k__BackingField: {fileID: -6670949450126340177, guid: 4c89f1edf07fb3345937ab2dc9016f17, type: 3}
   <MaterialPrefab>k__BackingField: {fileID: 2100000, guid: 3556c339093a11c4d97d6417b4d4815f, type: 2}
