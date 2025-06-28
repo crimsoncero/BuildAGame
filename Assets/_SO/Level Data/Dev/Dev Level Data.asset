@@ -23,7 +23,7 @@ MonoBehaviour:
     Duration: 25
   - Wave: {fileID: 11400000, guid: 9238a41ac193f2d4ea4570b775357aad, type: 2}
     Duration: 15
-  - Wave: {fileID: 0}
+  - Wave: {fileID: 11400000, guid: da642646c06ef27429b832df99db3061, type: 2}
     Duration: 20
   - Wave: {fileID: 11400000, guid: b0ef161e91df0984ebaac17c13509a71, type: 2}
     Duration: 25

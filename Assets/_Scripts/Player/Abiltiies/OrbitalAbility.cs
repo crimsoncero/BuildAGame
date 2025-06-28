@@ -32,8 +32,11 @@ public class OrbitalAbility : BaseAbility
             // Removes the projectiles if the player is still alive.
             if (!_isNotActive.Value)
             {
-                foreach(OrbitalProjectile projectile in _pool.ActiveList.Where((p) => p.IsActive))
-                    projectile.ReleaseOrbital();
+                foreach (var t in _pool.TotalList)
+                {
+                    if(t.IsActive)
+                        t.ReleaseOrbital();
+                }
             }
             
             return;

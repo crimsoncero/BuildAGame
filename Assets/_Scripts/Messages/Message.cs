@@ -20,12 +20,12 @@ public class Message : MonoBehaviour
         _canvasGroup.alpha = 0;
     }
 
-    public void PopRandomMessage(HeroData character, float duration)
+    public void PopRandomMessage(HeroData character, string message, float duration)
     {
         _nameText.text = character.Messages.Name;
         _characterSprite.sprite = character.CharacterSprite;
 
-        _messageText.text = character.Messages.GetRandomMessage();
+        _messageText.text = message;
         var pauseFB = _popFeedback.GetFeedbackOfType<MMF_Pause>();
         pauseFB.PauseDuration = duration;
         _popFeedback.PlayFeedbacks();
