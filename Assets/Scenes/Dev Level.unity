@@ -877,6 +877,10 @@ PrefabInstance:
       propertyPath: _message
       value: 
       objectReference: {fileID: 8015963784673204747}
+    - target: {fileID: 5197478398058726867, guid: 8b4bcd25f4dcfb24296a9aef2044423e, type: 3}
+      propertyPath: _messageTimer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5381795614456363207, guid: 8b4bcd25f4dcfb24296a9aef2044423e, type: 3}
       propertyPath: m_Name
       value: Message Manager

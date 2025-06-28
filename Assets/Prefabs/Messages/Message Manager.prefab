@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _message: {fileID: 0}
   _messageDuration: 2
-  _messageTimer: 3
-  _messageTimerVariance: 0.5
+  _messageTimer: 6
+  _messageTimerVariance: 2
   _timerLowerBound: 1
