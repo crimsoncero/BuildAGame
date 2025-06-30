@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class HeroVisuals : MonoBehaviour
@@ -9,6 +10,14 @@ public class HeroVisuals : MonoBehaviour
     private static readonly int DamagePropID = Shader.PropertyToID("_DamageSlider");
     
     [SerializeField] private Animator _animator;
+
+    [Header("Feedbacks")] 
+    [SerializeField] private MMF_Player _hitFeedback;
+    [SerializeField] private MMF_Player _spawnFeedback;
+    [SerializeField] private MMF_Player _deathFeedback;
+    [SerializeField] private MMF_Player _levelUpFeedback;
+    
+    
     [Header("Tween Settings")]
     [SerializeField] private float _deathDuration = 0.5f;
     [SerializeField] private float _hitDuration = 0.2f;
@@ -30,12 +39,16 @@ public class HeroVisuals : MonoBehaviour
         
         // Set a global material for all the renderers of the hero.
         _material = new Material(_hero.Data.MaterialPrefab);
-        foreach (SpriteRenderer ren in _rendererList)
-            ren.material = _material;
         
+        foreach (SpriteRenderer ren in _rendererList)
+        {
+            ren.material = _material;
+        }
         
         _material.SetFloat(DestroyPropID, 1f);
         _material.SetFloat(DamagePropID, 0f);
+
+        
         
         _animator.speed = 0;
         _position = transform.position;
@@ -49,7 +62,6 @@ public class HeroVisuals : MonoBehaviour
         HandleDirection();
         SetSpeed();
     }
-
     private void HandleDirection()
     {
         var scale = transform.localScale;
@@ -80,21 +92,24 @@ public class HeroVisuals : MonoBehaviour
 
     public void OnHit()
     {
+        _hitFeedback.PlayFeedbacks();
+        
         if (_hitTween.IsActive() && _hitTween.IsPlaying()) return;
         _hitTween = _material.DOFloat(1, DamagePropID, _hitDuration / 2f).SetEase(Ease.InOutBounce).SetLoops(2, LoopType.Yoyo);
     }
     
     public void OnDeath()
     { 
+        _deathFeedback.PlayFeedbacks();
         _deathTween = _material.DOFloat(0, DestroyPropID, _deathDuration).SetEase(Ease.OutSine).OnComplete(AfterDeathAnimation);      
         
     }
     
-    private void AfterDeathAnimation()
+    public void AfterDeathAnimation()
     {
         GameManager.Instance.OnGamePaused -= OnPause;
         GameManager.Instance.OnGameResumed -= OnResume;
-
+        
         gameObject.SetActive(false);
     }
 
@@ -102,9 +117,16 @@ public class HeroVisuals : MonoBehaviour
     {
         gameObject.SetActive(true);
         
+        _spawnFeedback.PlayFeedbacks();
+        
         _deathTween = _material.DOFloat(1, DestroyPropID, _deathDuration * 2f).SetEase(Ease.InQuad); 
         GameManager.Instance.OnGamePaused += OnPause;
         GameManager.Instance.OnGameResumed += OnResume;
+    }
+
+    public void OnLevelUp()
+    {
+        _levelUpFeedback.PlayFeedbacks();
     }
     
     private void OnPause()

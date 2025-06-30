@@ -161,6 +161,8 @@ MonoBehaviour:
   _innerCollider: {fileID: 7092061986949205684}
   _outerCollider: {fileID: 8421060295387293395}
   _pathfindingModule: {fileID: 5506494515581069405}
+  _glowVFX: {fileID: 8545941005661979504}
+  _trailVFX: {fileID: 3452667133093431384}
   _basePickupRange: 3
   _speed: 20
 --- !u!58 &7092061986949205684

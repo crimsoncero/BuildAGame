@@ -21,7 +21,9 @@ public class HealingAbility : BaseAbility
         HeroManager.Stats.RespawnTime.Multiplicative += ReduceRespawnTime;
         _castTimer = new BoolTimer(false, Cooldown);
         _castTimer.SetTimer(Cooldown);
+        
         _vfx = Instantiate(Data.VFX, transform);
+        _vfx.Init(hero);
         _vfx.Stop();
     }
 

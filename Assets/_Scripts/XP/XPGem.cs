@@ -10,7 +10,8 @@ public class XPGem : MonoBehaviour, IPoolable
     [SerializeField] private CircleCollider2D _innerCollider;
     [SerializeField] private CircleCollider2D _outerCollider;
     [SerializeField] private PathfindingModule _pathfindingModule;
-    
+    [SerializeField] private ParticleSystem _glowVFX;
+    [SerializeField] private TrailRenderer _trailVFX;
     [Header("General Settings")] 
     [SerializeField] private float _basePickupRange = 2f;
     [SerializeField] private float _speed = 10f;
@@ -19,6 +20,13 @@ public class XPGem : MonoBehaviour, IPoolable
     public XPGemData Data {  get; private set; }
     private ObjectPool<XPGem> _pool;
     private bool _isAbsorbed = false;
+
+    private void Awake()
+    {
+        Material mat = _spriteRenderer.material;
+        _spriteRenderer.material = new Material(mat);
+    }
+
     public void Init(XPGemData data, Vector3 position, ObjectPool<XPGem> pool, float pickupRange = 0f)
     {
         if (this == null)
@@ -31,7 +39,28 @@ public class XPGem : MonoBehaviour, IPoolable
         Data = data;
         transform.position = position;
         _pool = pool;
+        
         _spriteRenderer.sprite = Data.Sprite;
+        
+       
+        
+        
+        var col = _glowVFX.colorOverLifetime;
+        col.enabled = true;
+        Gradient grad = new Gradient();
+        grad.SetKeys(new GradientColorKey[]
+            {
+                new GradientColorKey(Data.Color, 0.0f), 
+                new GradientColorKey(new Color(1f,1f,1f,0f), 1.0f)
+            }, 
+            new GradientAlphaKey[]
+            {
+                new GradientAlphaKey(1.0f, 0.0f), 
+                new GradientAlphaKey(0.0f, 1.0f)
+            });
+        col.color = grad;
+        _trailVFX.colorGradient = grad;
+        
         _pathfindingModule.SetMaxSpeed(_speed);
         _pathfindingModule.IsEnabled = false;
         _isAbsorbed = false;
