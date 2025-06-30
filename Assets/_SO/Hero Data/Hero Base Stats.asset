@@ -19,5 +19,5 @@ MonoBehaviour:
   Cooldown: 0
   Pierce: 0
   RespawnTime: 15
-  MovementSpeed: 5
+  MovementSpeed: 6
   UpgradeCount: 3

@@ -4891,7 +4891,7 @@ MonoBehaviour:
   _healerVFX:
   - {fileID: 4214490073888441793}
   - {fileID: 483519621843987653}
-  _otherHeroesVFX: {fileID: 6528871523664606457, guid: 3412ef53132132145ae6f8a5ace13377, type: 3}
+  _otherHeroesVFX: {fileID: 2166650234029042862, guid: 3412ef53132132145ae6f8a5ace13377, type: 3}
   _isPlayingPaused: 0
 --- !u!1 &1549549343887237274
 GameObject:

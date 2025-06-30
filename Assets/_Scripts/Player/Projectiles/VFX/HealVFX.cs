@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class HealVFX : MonoBehaviour
 {
     [SerializeField] private List<ParticleSystem> _healerVFX;
-    [SerializeField] private ParticleSystem _otherHeroesVFX;
+    [SerializeField] private MMF_Player _otherHeroesVFX;
     [SerializeField] private bool _isPlayingPaused;
 
-    private List<ParticleSystem> _healingEffects = new List<ParticleSystem>();
+    private List<MMF_Player> _healingEffects = new List<MMF_Player>();
     private void Start()
     {
         GameManager.Instance.OnGamePaused += OnPause;
@@ -18,17 +19,22 @@ public class HealVFX : MonoBehaviour
 
     public void Init(HeroUnit thisHero)
     {
-        _healingEffects.AddRange(_healerVFX);
         foreach (var hero in HeroManager.Instance.Heroes)
         {
             var effect = Instantiate(_otherHeroesVFX, Vector3.zero, Quaternion.identity);
             effect.transform.SetParent(hero.transform);
+            effect.gameObject.transform.localPosition = Vector3.zero;
             _healingEffects.Add(effect);
         }
     }
     public void Play()
     {
         foreach (var effect in _healingEffects)
+        {
+            effect.PlayFeedbacks();
+        }
+
+        foreach (var effect in _healerVFX)
         {
             effect.Play();
         }
@@ -38,6 +44,11 @@ public class HealVFX : MonoBehaviour
     {
         foreach (var effect in _healingEffects)
         {
+            effect.StopFeedbacks();
+        }
+
+        foreach (var effect in _healerVFX)
+        {
             effect.Stop();
         }
     }
@@ -45,7 +56,13 @@ public class HealVFX : MonoBehaviour
     private void OnPause()
     {
         _isPlayingPaused = false;
-        foreach (var effect in _healingEffects.Where(effect => effect.isPlaying))
+        foreach (var effect in _healingEffects.Where(effect => effect.IsPlaying))
+        {
+            _isPlayingPaused = true;
+            effect.PauseFeedbacks();
+        }
+
+        foreach (var effect in _healerVFX.Where(effect => effect.isPlaying))
         {
             _isPlayingPaused = true;
             effect.Pause();
@@ -56,6 +73,10 @@ public class HealVFX : MonoBehaviour
     {
         if (_isPlayingPaused == false) return;
         foreach (var effect in _healingEffects)
+        {
+            effect.ResumeFeedbacks();
+        }
+        foreach (var effect in _healerVFX)
         {
             effect.Play();
         }

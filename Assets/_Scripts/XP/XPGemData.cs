@@ -9,5 +9,6 @@ public class XPGemData : ScriptableObject
     
     [Header("Visuals")]
     [field: SerializeField] public Sprite Sprite { get; private set; }
+    [field: SerializeField] public Color Color { get; private set; }
     
 }

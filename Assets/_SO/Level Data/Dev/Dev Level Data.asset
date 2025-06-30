@@ -41,10 +41,6 @@ MonoBehaviour:
   - Data: {fileID: 11400000, guid: 49789722d5acafd4f877915fc447d2f1, type: 2}
     SpawnTime: 179
   EventList:
-  - Data: {fileID: 0}
-    SpawnTime: 61
-  - Data: {fileID: 0}
-    SpawnTime: 121
   - Data: {fileID: 11400000, guid: da98b3f0268ed234ca534660ea76a8ca, type: 2}
     SpawnTime: 177
   BGM: {fileID: 11400000, guid: fff9fc3542e8caa429331f981e3a31e3, type: 2}
