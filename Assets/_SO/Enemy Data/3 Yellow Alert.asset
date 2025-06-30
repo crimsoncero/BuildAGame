@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba35f2c959ab334cbd9d6a88976665f, type: 3}
+  m_Name: 3 Yellow Alert
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Yellow Alert
+  _powerLevel: 3
+  <BaseMaxHealth>k__BackingField: 20
+  <BaseMoveSpeed>k__BackingField: 5
+  <BasePower>k__BackingField: 25
+  <BaseSpeed>k__BackingField: 1
+  <GemDropped>k__BackingField: 0
+  <Prefab>k__BackingField: {fileID: 1231239660535065941, guid: 90590a9224c3c664994c621b883c1a19, type: 3}
+  <ImmuneToKnockback>k__BackingField: 0
+  <Sprite>k__BackingField: {fileID: -1731037661818844545, guid: 1c1f8505355005241ac68ef16f1417f0, type: 3}
+  <IsBoss>k__BackingField: 0

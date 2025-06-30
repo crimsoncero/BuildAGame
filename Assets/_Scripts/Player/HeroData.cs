@@ -29,7 +29,9 @@ public class HeroData : ScriptableObject
     public RoleEnum Role { get; private set; }
     [field: SerializeField]
     public BaseAbilityData AbilityData { get; private set; }
-   
+    
+    [field: SerializeField]
+    public MessagesData Messages { get; private set; }
 
     [field:Header("Base Stats")]
     [field:SerializeField]

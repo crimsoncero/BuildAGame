@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fab9e9f345b6f48a34240fb9b3a634, type: 3}
+  m_Name: Emily Messages
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: <color=#544087>~Scope0verlord~</color>
+  _messages:
+  - "<i>\u2060If yall stopped taking 2 hour breaks maybe we could get somewhere...</i>"
+  - <b>fff fff ff feature creep!!</b>
+  - "<i>I guess I won\u2019t be making it to the Vipassana retreat\u2026</i>"
+  - Deadline was <b><i>yesterday</b></i> btw
+  - <i>Client won't be happy...</i>
+  - This is a tight delivery
+  - <i>I need more coffee...</i>
+  - Where are all these <b>BUGS</b> coming from?!

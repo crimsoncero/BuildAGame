@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using SeraphUtil.ObjectPool;
 
@@ -33,8 +34,6 @@ public class XPGem : MonoBehaviour, IPoolable
         _spriteRenderer.sprite = Data.Sprite;
         _pathfindingModule.SetMaxSpeed(_speed);
         _pathfindingModule.IsEnabled = false;
-        _innerCollider.enabled = false;
-        _outerCollider.enabled = true;
         _isAbsorbed = false;
         _outerCollider.radius = pickupRange <= _basePickupRange ? _basePickupRange : pickupRange;
         gameObject.SetActive(true);
@@ -49,12 +48,26 @@ public class XPGem : MonoBehaviour, IPoolable
         {
             return;
         }
-        _innerCollider.enabled = true;
-        _outerCollider.enabled = false;
         _isAbsorbed = true;
         _pathfindingModule.SetTarget(closestHero.transform);
         _pathfindingModule.IsEnabled = true;
 
+    }
+
+    private void Update()
+    {
+        if (_isAbsorbed)
+        {
+            if (_pathfindingModule.AIPath.hasPath && _pathfindingModule.AIPath.remainingDistance < 0.5f)
+            {
+                GameManager.Instance.OnGamePaused -= OnPause;
+                GameManager.Instance.OnGameResumed -= OnResume;
+                XPManager.Instance.AddXp(Data.Type);
+                
+                _pool.Return(this);
+            }
+           
+        }
     }
 
     private void OnPause()
@@ -69,18 +82,12 @@ public class XPGem : MonoBehaviour, IPoolable
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Collided With Gem ", gameObject);
         if (!_isAbsorbed)
         {
             AbsorbGem();
         }
-        else
-        {
-            GameManager.Instance.OnGamePaused -= OnPause;
-            GameManager.Instance.OnGameResumed -= OnResume;
-            XPManager.Instance.AddXp(Data.Type);
-            
-            _pool.Return(this);
-        }
+       
     }
 
 

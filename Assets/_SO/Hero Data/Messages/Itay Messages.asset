@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fab9e9f345b6f48a34240fb9b3a634, type: 3}
+  m_Name: Itay Messages
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: <color=#DF7131>Bugzilla42</color>
+  _messages:
+  - <b>Bugs! Bugs everywhere!!!!</b>
+  - "Just wait till you\u2019ll get my excel sheet!"
+  - "\u2060Oh, the devs will be hearing from me about this one!"
+  - Shit game! I clicked on a monster and nothing happened
+  - "Where's\_my\_ticket?"
+  - <i>One day I'll automate this...</i>
+  - I have an STD for this!
+  - <i>This bug is gaslighting me</i>

@@ -8,17 +8,20 @@ public class WindowHandler : MonoBehaviour
     [SerializeField] private MMF_Player _showFeedback;
     [SerializeField] private MMF_Player _hideFeedback;
 
-    public bool IsOpen
+    public bool IsOpen = false;
+
+    private void Start()
     {
-        get => gameObject.activeSelf;
+        IsOpen = gameObject.activeSelf;
     }
-    
+
     public void Show()
     {
         // Already open, no need to show again.
         if (IsOpen)
             return;
-        
+        IsOpen = true;
+        _hideFeedback.StopFeedbacks();
         gameObject.SetActive(true);
         _showFeedback.PlayFeedbacks();
     }
@@ -27,6 +30,8 @@ public class WindowHandler : MonoBehaviour
     {
         if (!IsOpen)
             return;
+        IsOpen = false;
+        _showFeedback.StopFeedbacks();
         _hideFeedback.PlayFeedbacks();
     }
 

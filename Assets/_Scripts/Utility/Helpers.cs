@@ -2,12 +2,19 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// A static class for general helpful methods
 /// </summary>
 public static class Helpers 
 {
+    public static T GetRandom<T>(this List<T> list)
+    {
+        return list[Random.Range(0, list.Count)];
+    }
+    
+    
     /// <summary>
     /// Destroy all child objects of this transform (Unintentionally evil sounding).
     /// Use it like so:

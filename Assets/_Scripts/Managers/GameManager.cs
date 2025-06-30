@@ -60,7 +60,7 @@ public class GameManager : Singleton<GameManager>
         IsPaused = false;
         Timer = 0;
         _timerSeconds = 0;
-        // Cursor.visible = false;
+        Cursor.visible = false;
 
         OnTimerTick?.Invoke(Timer);
         OnGameStart?.Invoke();

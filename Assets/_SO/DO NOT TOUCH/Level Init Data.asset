@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07d3e182ef7d214fbaf16ec41ee4b9a, type: 3}
   m_Name: Level Init Data
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 11400000, guid: 2a637ffef32ded84ebdfc2c4faeaf985, type: 2}
+  LevelData: {fileID: 11400000, guid: 6ad24a24c4dd4f741903714c79787b90, type: 2}
   HeroData:
   - {fileID: 11400000, guid: 9b61c84f832dee941b41c15e6e8d78f9, type: 2}
   - {fileID: 11400000, guid: f2822c74697cb8349a0f161e463daa7e, type: 2}

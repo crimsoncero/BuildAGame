@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
+  m_Name: Itay
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Itay
+  <Description>k__BackingField: "He doesn\u2019t hate your game- just the way it
+    behaves. If you hear \u201CI logged it yesterday,\u201D your day\u2019s about
+    to get a lot longer."
+  <Role>k__BackingField: 3
+  <AbilityData>k__BackingField: {fileID: 11400000, guid: 4ca95a98ebd15c6438741cc033609feb, type: 2}
+  <Messages>k__BackingField: {fileID: 11400000, guid: e1c4cb173df35f042b8bc35d03b00bca, type: 2}
+  <BaseMaxHealth>k__BackingField: 80
+  <VisualsPrefab>k__BackingField: {fileID: -6670949450126340177, guid: 4c89f1edf07fb3345937ab2dc9016f17, type: 3}
+  <MaterialPrefab>k__BackingField: {fileID: 2100000, guid: 3556c339093a11c4d97d6417b4d4815f, type: 2}
+  <CharacterSprite>k__BackingField: {fileID: -2096504589705292234, guid: c2ef0862d9d98124d8f9246f108774cd, type: 3}

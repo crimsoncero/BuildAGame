@@ -27,6 +27,9 @@ public class HeroMover : MonoBehaviour, IPausable
     }
     private void HandleDirectionChange(Vector2 direction)
     {
+        if (GameManager.Instance.IsPaused)
+            return;
+        
         if (direction == Vector2.zero) return;
         
         Vector2 centerPos = HeroManager.Instance.CenterPosition;
@@ -71,7 +74,7 @@ public class HeroMover : MonoBehaviour, IPausable
     }
     public void Pause()
     {
-        _rb2d.linearVelocity = Vector2.zero;
+        // _rb2d.linearVelocity = Vector2.zero;
     }
 
     public void Resume()

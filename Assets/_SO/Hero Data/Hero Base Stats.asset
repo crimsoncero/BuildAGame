@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b190376869ef324ead71ed0b28fd9a3, type: 3}
   m_Name: Hero Base Stats
   m_EditorClassIdentifier: 
+  MaxHealth: 0
+  Power: 0
+  Count: 0
+  Speed: 0
+  Cooldown: 0
+  Pierce: 0
+  RespawnTime: 15
+  MovementSpeed: 5
+  UpgradeCount: 3
