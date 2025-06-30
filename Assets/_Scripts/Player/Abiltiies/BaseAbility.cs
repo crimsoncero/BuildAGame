@@ -69,6 +69,7 @@ public abstract class BaseAbility : MonoBehaviour
     {
         if (CurrentLevel >= MaxLevel) return;
         CurrentLevel++;
+        _heroUnit.Visuals.OnLevelUp();
         OnLevelUp?.Invoke();
     }
 
