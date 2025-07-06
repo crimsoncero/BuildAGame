@@ -19,6 +19,7 @@ public class HeroUnit : MonoBehaviour, IPausable
     public PathfindingModule PathfindingModule;
 
     [SerializeField] private HeroVisuals _visuals;
+    public HeroVisuals Visuals => _visuals;
     private BaseAbility _ability;
     public BaseAbility Ability { get => _ability; private set => _ability = value; }
     public Rigidbody2D Rigidbody { get => _rb2d;}

@@ -23,7 +23,7 @@ MonoBehaviour:
     Duration: 25
   - Wave: {fileID: 11400000, guid: 9238a41ac193f2d4ea4570b775357aad, type: 2}
     Duration: 15
-  - Wave: {fileID: 0}
+  - Wave: {fileID: 11400000, guid: da642646c06ef27429b832df99db3061, type: 2}
     Duration: 20
   - Wave: {fileID: 11400000, guid: b0ef161e91df0984ebaac17c13509a71, type: 2}
     Duration: 25
@@ -41,10 +41,6 @@ MonoBehaviour:
   - Data: {fileID: 11400000, guid: 49789722d5acafd4f877915fc447d2f1, type: 2}
     SpawnTime: 179
   EventList:
-  - Data: {fileID: 0}
-    SpawnTime: 61
-  - Data: {fileID: 0}
-    SpawnTime: 121
   - Data: {fileID: 11400000, guid: da98b3f0268ed234ca534660ea76a8ca, type: 2}
     SpawnTime: 177
   BGM: {fileID: 11400000, guid: fff9fc3542e8caa429331f981e3a31e3, type: 2}
