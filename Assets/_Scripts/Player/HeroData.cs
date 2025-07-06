@@ -44,6 +44,9 @@ public class HeroData : ScriptableObject
     public Material MaterialPrefab  { get; private set; }
     [field: SerializeField]
     public Sprite CharacterSprite { get; private set; }
+    
+    [field: SerializeField]
+    public Sprite MugshotSprite { get; private set; }
    
 
 }
