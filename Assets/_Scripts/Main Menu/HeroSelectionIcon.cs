@@ -75,12 +75,10 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler
         if (isSelected)
         {
             _onSelect.PlayFeedbacks();
-            Debug.Log("Selected" + this);
         }
         else
         {
             _onDeselect.PlayFeedbacks();
-            Debug.Log("Deselected" + this);
         }
     }
 

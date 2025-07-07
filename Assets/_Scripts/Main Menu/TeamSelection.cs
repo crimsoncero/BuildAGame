@@ -61,6 +61,8 @@ public class TeamSelection : MonoBehaviour
     {
         foreach (var icon in _selectedTeamIcons)
         {
+            if (icon == null) continue;
+            
             icon.InitTeamIcon(this);
             icon.SetLockedTeamIcon();
         }
