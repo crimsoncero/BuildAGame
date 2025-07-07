@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Unity Error
   _powerLevel: 5
-  <BaseMaxHealth>k__BackingField: 2000
+  <BaseMaxHealth>k__BackingField: 300
   <BaseMoveSpeed>k__BackingField: 4
   <BasePower>k__BackingField: 70
   <BaseSpeed>k__BackingField: 1
