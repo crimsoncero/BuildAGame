@@ -15,6 +15,7 @@ public class HeroDataEditor : Editor
     private SerializedProperty _visualsPrefab;
     private SerializedProperty _materialPrefab;
     private SerializedProperty _sprite;
+    private SerializedProperty _mugshotSprite;
 
     private void OnEnable()
     {
@@ -27,6 +28,7 @@ public class HeroDataEditor : Editor
         _visualsPrefab = serializedObject.FindProperty("<VisualsPrefab>k__BackingField");
         _materialPrefab = serializedObject.FindProperty("<MaterialPrefab>k__BackingField");
         _sprite = serializedObject.FindProperty("<CharacterSprite>k__BackingField");
+        _mugshotSprite = serializedObject.FindProperty("<MugshotSprite>k__BackingField");
         
     }
 
@@ -42,6 +44,7 @@ public class HeroDataEditor : Editor
         EditorGUILayout.PropertyField(_visualsPrefab);
         EditorGUILayout.PropertyField(_materialPrefab);
         EditorGUILayout.PropertyField(_sprite);
+        EditorGUILayout.PropertyField(_mugshotSprite);
         serializedObject.ApplyModifiedProperties();
         GUILayout.Label((_sprite.objectReferenceValue as Sprite).texture);
     }
