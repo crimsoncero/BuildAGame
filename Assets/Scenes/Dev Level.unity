@@ -1090,13 +1090,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1372781153588396897, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
-      propertyPath: m_Size.x
-      value: 3.2
+    - target: {fileID: 5684614681487476741, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22
       objectReference: {fileID: 0}
-    - target: {fileID: 1372781153588396897, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.8
+    - target: {fileID: 5684614681487476741, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 5901182706952395859, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
       propertyPath: m_Name
@@ -1141,18 +1141,6 @@ PrefabInstance:
     - target: {fileID: 7943649788692201544, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025803507704187311, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
-      propertyPath: showGraphs
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025803507704187311, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
-      propertyPath: showNavGraphs
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025803507704187311, guid: 2b96d8f04f6684b478ac99db34c72c4c, type: 3}
-      propertyPath: data.dataString
-      value: UEsDBBQAAAgIAAAQIeyeFKg/WwIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMmS2jAQ/RVK5zBls2XILQGGyYGBGic1F1+E1bZVyJJLktmm+Pe0ZBs7pHKief26+/UifxIuTQmJVXqtOdsoBuTbgDibfBl0zlc400zJiF+h5XxwZnNHop7zTi1XiIcuzKgCrObJd5kJRw4QrCRPlS5WLIOFMtYgnFJhAF1aWRctEfockDP+DOcu5ILW6KuzrmjNg8ENzQSkBd1RW2JLq1mVTAQtSmBOckceBy0dLU+U2E7DCZ6mLr8SgptGDbGX0ncblTlocO0yTrE5ryB8GiOQA89y66T2o7dpasA2ujS9LLnGKdVpyQ9Vj66g5lCLO1JRuUKziVdV59z84x6G3p1qVby2ZUPfk815cninl4Qa2xttH172lPsRnag40L2Ajxzkm1prVUmGTqsrF1oZGC27v/fOFjkkhw6vpT6AVfn/Bbkebr7580LwYu8nP6mBSCg/b79+0LibnyjYH4dpUiDqVPw28ItmpivZ4C9cG4uepknp1O1VpR2TrPzIXDOVXSgtQfcSlCCpsJcdprGPC3zw9Qb84Hmh7rk0xRtf+woeQjzc8YPgwbVTp/uuTK5OGzD5trKCS+hEO8cbjmmhpKzvq/+w2rCo0ilNemFZxdnfl0UYG00CCGfTCTynz5AMQ4BRGMz36WyazPfjKfGnxyX2ScWuFtqMB5cmu+QSz6z9igzWmpb+1pmmpzW/Fqo3ci5TFSUaQG7rDHfhoLEIPku2YhwHFIG1XPp1k8+YCJUcgMX3RLHvdHW2msZdlpiU/KisQ2Ky8J+NmDj4fso7DUcOJ1e8TXYjtz9QSwMEFAAACAgAABAh7AicZEttAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFJKipGJQaqhmalJqkWaRWqyrmFqqpGhgWVSmplpsmWSsalSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABAh7J4UqD9bAgAAFQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABAh7AicZEttAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
