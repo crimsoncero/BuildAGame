@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Unity Error
   _powerLevel: 5
-  <BaseMaxHealth>k__BackingField: 2000
+  <BaseMaxHealth>k__BackingField: 800
   <BaseMoveSpeed>k__BackingField: 4
   <BasePower>k__BackingField: 70
-  <BaseSpeed>k__BackingField: 1
+  <BaseSpeed>k__BackingField: 0.8
   <GemDropped>k__BackingField: 50
   <Prefab>k__BackingField: {fileID: 3317569262086164977, guid: ae14fee8f9bf2ac4bbdb12aea95ee114, type: 3}
   <ImmuneToKnockback>k__BackingField: 0
