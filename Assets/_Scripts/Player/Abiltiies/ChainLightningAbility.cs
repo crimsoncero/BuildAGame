@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SeraphUtil.ObjectPool;
+using Unity.Profiling;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class ChainLightningAbility : BaseAbility
 {
+    
     private ChainLightningAbilityData Data { get { return _baseData as ChainLightningAbilityData; } }
     private ObjectPool<LightningVFX> _pool;
 
@@ -34,6 +36,7 @@ public class ChainLightningAbility : BaseAbility
 
         if (_attackTimer.Value)
         {
+            
             Cast();
             _attackTimer.SetTimer();
         }
@@ -42,6 +45,7 @@ public class ChainLightningAbility : BaseAbility
 
     private void Cast()
     {
+        
         var targetList = FindTargets(Count);
         if (targetList == null) return; // No targets found.
         

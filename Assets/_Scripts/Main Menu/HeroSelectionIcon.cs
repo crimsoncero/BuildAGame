@@ -1,9 +1,9 @@
-using System;
+using MoreMountains.Feedbacks;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HeroSelectionIcon : MonoBehaviour
+public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler
 {
     private static readonly int Saturate = Shader.PropertyToID("_Saturate");
     [field: SerializeField] public HeroData Hero { get; private set; }
@@ -14,13 +14,23 @@ public class HeroSelectionIcon : MonoBehaviour
     
     [SerializeField] private Sprite _openTeamSlotSprite;
     [SerializeField] private Sprite _lockedTeamSlotSprite;
+
+    [SerializeField] private MMF_Player _onSelect;
+    [SerializeField] private MMF_Player _onDeselect;
+    [SerializeField] private MMF_Player _onPointerEnter;
+    [SerializeField] private MMF_Player _onPointerExit;
+    
     private Material _imageMaterial;
     
     private bool _isTeamIcon;
     private bool _isLockedTeamIcon = false;
+
+    private TeamSelection _teamSelection;
+    private bool _isSelected = false;
     
-    public void InitGridIcon(HeroData hero, bool isUnlocked = false)
+    public void InitGridIcon( TeamSelection teamSelection, HeroData hero, bool isUnlocked = false)
     {
+        _teamSelection = teamSelection;
         _isTeamIcon = false;
         Hero = hero;
         IsUnlocked = isUnlocked;
@@ -35,6 +45,10 @@ public class HeroSelectionIcon : MonoBehaviour
       
     }
 
+    public void InitTeamIcon(TeamSelection teamSelection)
+    {
+        _teamSelection = teamSelection;
+    }
     public void SetTeamIcon(HeroData hero)
     {
         _isTeamIcon = true;
@@ -54,6 +68,37 @@ public class HeroSelectionIcon : MonoBehaviour
         _isLockedTeamIcon = true;
         _heroImage.sprite = _lockedTeamSlotSprite;
     }
-    
+
+    public void SetSelected(bool isSelected)
+    {
+        _isSelected = isSelected;
+        if (isSelected)
+        {
+            _onSelect.PlayFeedbacks();
+            Debug.Log("Selected" + this);
+        }
+        else
+        {
+            _onDeselect.PlayFeedbacks();
+            Debug.Log("Deselected" + this);
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!IsUnlocked) return;
+        
+        if (eventData.clickCount == 1)
+        {
+            if(!_isSelected)
+                _teamSelection.SelectHero(Hero);
+        }
+
+        if (eventData.clickCount == 2)
+        {
+            
+        }
+    }
+
     
 }
