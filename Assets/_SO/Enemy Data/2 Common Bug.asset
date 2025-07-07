@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Common Bug
   _powerLevel: 2
-  <BaseMaxHealth>k__BackingField: 15
+  <BaseMaxHealth>k__BackingField: 30
   <BaseMoveSpeed>k__BackingField: 3
   <BasePower>k__BackingField: 13
   <BaseSpeed>k__BackingField: 1

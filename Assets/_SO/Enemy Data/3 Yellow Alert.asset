@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Yellow Alert
   _powerLevel: 3
-  <BaseMaxHealth>k__BackingField: 20
+  <BaseMaxHealth>k__BackingField: 40
   <BaseMoveSpeed>k__BackingField: 5
   <BasePower>k__BackingField: 20
   <BaseSpeed>k__BackingField: 1
