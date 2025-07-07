@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba35f2c959ab334cbd9d6a88976665f, type: 3}
   m_Name: 4 Red Bug
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Stronger Bug
+  <Name>k__BackingField: Red Bug
   _powerLevel: 4
   <BaseMaxHealth>k__BackingField: 40
   <BaseMoveSpeed>k__BackingField: 5
