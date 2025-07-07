@@ -43,8 +43,8 @@ public class LevelData : ScriptableObject
 
     [Header("Art")]
     public MMSMPlaylist BGM;
-
     public Material UnitMaterial;
+    public Sprite PreviewImage;
 
 
 }
