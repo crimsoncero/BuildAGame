@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler
+public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private static readonly int Saturate = Shader.PropertyToID("_Saturate");
     [field: SerializeField] public HeroData Hero { get; private set; }
@@ -23,10 +23,11 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler
     private Material _imageMaterial;
     
     private bool _isTeamIcon;
-    private bool _isLockedTeamIcon = false;
-
+    private bool _isLockedTeamIcon;
+    
     private TeamSelection _teamSelection;
-    private bool _isSelected = false;
+    private bool _isSelected;
+    private bool _isHovered;
     
     public void InitGridIcon( TeamSelection teamSelection, HeroData hero, bool isUnlocked = false)
     {
@@ -53,6 +54,7 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler
     {
         _isTeamIcon = true;
         _isLockedTeamIcon = false;
+        Hero = hero;
         _heroImage.sprite = hero.MugshotSprite;
     }
 
@@ -60,6 +62,7 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler
     {
         _isTeamIcon = true;
         _isLockedTeamIcon = false;
+        Hero = null;
         _heroImage.sprite = _openTeamSlotSprite;
     }
     public void SetLockedTeamIcon()
@@ -74,6 +77,12 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler
         _isSelected = isSelected;
         if (isSelected)
         {
+            if (_isHovered)
+            {
+                _isHovered = false;
+                _onPointerExit.PlayFeedbacks();
+            }
+            
             _onSelect.PlayFeedbacks();
         }
         else
@@ -86,17 +95,36 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler
     {
         if (!IsUnlocked) return;
         
-        if (eventData.clickCount == 1)
+        if (eventData.clickCount == 1 && !_isSelected)
         {
-            if(!_isSelected)
-                _teamSelection.SelectHero(Hero);
+            _teamSelection.SelectHero(Hero);
         }
 
         if (eventData.clickCount == 2)
         {
-            
+            _teamSelection.AddHeroToTeam();
         }
     }
 
-    
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(!IsUnlocked || _isSelected) return;
+
+        if(_isHovered) return;
+        
+        _isHovered = true;
+        _onPointerEnter.PlayFeedbacks();        
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if(!IsUnlocked || _isSelected) return;
+        
+        if(!_isHovered) return;
+        
+        _isHovered = false;
+        _onPointerExit.PlayFeedbacks();  
+    }
 }
