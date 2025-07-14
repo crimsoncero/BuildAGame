@@ -9,6 +9,8 @@ public class MainMenuManager : Singleton<MainMenuManager>
     
     public void OpenLevelSelection()
     {
+        LevelInitData.HeroData.Clear();
+        LevelInitData.LevelData = null;
         _levelSelection.Show();
     }
 
