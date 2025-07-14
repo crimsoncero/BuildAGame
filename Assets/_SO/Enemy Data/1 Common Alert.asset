@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Common Alert
   _powerLevel: 1
-  <BaseMaxHealth>k__BackingField: 10
+  <BaseMaxHealth>k__BackingField: 20
   <BaseMoveSpeed>k__BackingField: 3
   <BasePower>k__BackingField: 7
   <BaseSpeed>k__BackingField: 1
