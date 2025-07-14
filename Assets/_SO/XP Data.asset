@@ -15,5 +15,5 @@ MonoBehaviour:
   <BaseGemAmount>k__BackingField: 200
   <RareGemMultiplier>k__BackingField: 5
   <EpicGemMultiplier>k__BackingField: 5
-  <BaseXpToLevelUp>k__BackingField: 1000
-  <XPAddedPerLevel>k__BackingField: 500
+  <BaseXpToLevelUp>k__BackingField: 800
+  <XPAddedPerLevel>k__BackingField: 300
