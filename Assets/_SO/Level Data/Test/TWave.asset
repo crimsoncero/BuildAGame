@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: TWave
   m_EditorClassIdentifier: 
   SpawnTime: 5
-  SpawnGroups: 10
-  GroupSize: 4
-  EnemyList:
-  - Data: {fileID: 11400000, guid: c6b6eacae29071f47acef424cdd411e6, type: 2}
-    Count: 2
-  - Data: {fileID: 11400000, guid: 830cb6aed0e7226418ab3a73d64acc35, type: 2}
-    Count: 2
+  SpawnGroups: 0
+  GroupSize: 0
+  EnemyList: []
   _isValid: 1

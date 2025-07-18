@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4224086028021276106}
   - component: {fileID: 6796043677986854566}
   - component: {fileID: 1521999397660355911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trello B Ob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,5 +132,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.17, y: 11.17}
+  m_Size: {x: 7, y: 11}
   m_EdgeRadius: 0
