@@ -18,7 +18,9 @@ MonoBehaviour:
   - Wave: {fileID: 11400000, guid: cc98fef1932c3eb4ca6bdb7a6c0faf1e, type: 2}
     Duration: 10000000
   BossList: []
-  EventList: []
+  EventList:
+  - Data: {fileID: 11400000, guid: e523503b3b10e9b48b92769eb86b90cf, type: 2}
+    SpawnTime: 5
   BGM: {fileID: 11400000, guid: fff9fc3542e8caa429331f981e3a31e3, type: 2}
   UnitMaterial: {fileID: 2100000, guid: d232d0aad69aa054cb77675894dc31b8, type: 2}
   PreviewImage: {fileID: 0}
