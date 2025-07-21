@@ -7,9 +7,9 @@ using UnityEngine;
 public class EnemyCircleEvent : EventData
 {
     [SerializeField] private float _radius;
+    [SerializeField] private float _duration;
     [SerializeField] private int _enemyCount;
     [SerializeField] private List<EnemyData> _enemyDatas;
-
     [SerializeField] private bool _spawnBoss;
     [SerializeField] private EnemyData _bossData;
     
