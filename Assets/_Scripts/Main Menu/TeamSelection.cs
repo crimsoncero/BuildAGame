@@ -63,7 +63,6 @@ public class TeamSelection : MonoBehaviour
     {
         if (MainMenuManager.Instance.LevelInitData.HeroData.Contains(CurrentSelectedHero))
             return;
-        
         var icon = _teamIcons.Find(p => p.Hero == null);
         icon.SetTeamIcon(CurrentSelectedHero);
         icon.SetSelected(true);
@@ -113,7 +112,7 @@ public class TeamSelection : MonoBehaviour
             icon.SetLockedTeamIcon();
         }
 
-        for (var i = _AllTeamIcons.Count - MaxTeamSize - 1; i <= MaxTeamSize; i++)
+        for (var i = 0; i < MaxTeamSize; i++)
         {
             _AllTeamIcons[i].SetOpenTeamIcon();
             _teamIcons.Add(_AllTeamIcons[i]);
