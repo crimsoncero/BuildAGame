@@ -13,7 +13,6 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler, IPointerEn
     [SerializeField] private Image _lockedHeroImageOverlay;
     
     [SerializeField] private Sprite _openTeamSlotSprite;
-    [SerializeField] private Sprite _lockedTeamSlotSprite;
 
     [SerializeField] private MMF_Player _onSelect;
     [SerializeField] private MMF_Player _onDeselect;
@@ -64,12 +63,14 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler, IPointerEn
         _isLockedTeamIcon = false;
         Hero = null;
         _heroImage.sprite = _openTeamSlotSprite;
+        _lockedHeroImageOverlay.enabled = false;
     }
     public void SetLockedTeamIcon()
     {
         _isTeamIcon = true;
         _isLockedTeamIcon = true;
-        _heroImage.sprite = _lockedTeamSlotSprite;
+        _lockedHeroImageOverlay.enabled = true;
+
     }
 
     public void SetSelected(bool isSelected)

@@ -282,10 +282,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5716624074875266496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -266.66666}
-  m_SizeDelta: {x: 300, y: 106.666664}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5010783949690392785
 CanvasRenderer:
@@ -820,10 +820,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5716624074875266496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -75.20333}
-  m_SizeDelta: {x: 300, y: 150.40666}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5484570899254216818
 CanvasRenderer:
@@ -956,10 +956,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5716624074875266496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -181.87}
-  m_SizeDelta: {x: 300, y: 62.926666}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8331221446001990531
 CanvasRenderer:
@@ -2042,7 +2042,7 @@ PrefabInstance:
     - target: {fileID: 6579435139571471655, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+      objectReference: {fileID: 21300000, guid: 997ef526c791b324a89c1db33d25fb2d, type: 3}
     - target: {fileID: 8206398455944632527, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Name
       value: Hero Selection Icon Prefab (1)
@@ -2159,7 +2159,7 @@ PrefabInstance:
     - target: {fileID: 6579435139571471655, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+      objectReference: {fileID: 21300000, guid: 997ef526c791b324a89c1db33d25fb2d, type: 3}
     - target: {fileID: 8206398455944632527, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Name
       value: Hero Selection Icon Prefab (3)
@@ -2276,7 +2276,7 @@ PrefabInstance:
     - target: {fileID: 6579435139571471655, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+      objectReference: {fileID: 21300000, guid: 997ef526c791b324a89c1db33d25fb2d, type: 3}
     - target: {fileID: 8206398455944632527, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Name
       value: Hero Selection Icon Prefab (2)
@@ -2390,10 +2390,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6077487807809766650, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6579435139571471655, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+      objectReference: {fileID: 21300000, guid: 997ef526c791b324a89c1db33d25fb2d, type: 3}
     - target: {fileID: 8206398455944632527, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Name
       value: Hero Selection Icon Prefab (4)
@@ -2662,7 +2666,7 @@ PrefabInstance:
     - target: {fileID: 6579435139571471655, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+      objectReference: {fileID: 21300000, guid: 997ef526c791b324a89c1db33d25fb2d, type: 3}
     - target: {fileID: 8206398455944632527, guid: ed9f9d9cd1b491548880dd54936a16c4, type: 3}
       propertyPath: m_Name
       value: Hero Selection Icon Prefab (5)
