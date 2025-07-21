@@ -24,3 +24,4 @@ MonoBehaviour:
   <MaterialPrefab>k__BackingField: {fileID: 2100000, guid: 3556c339093a11c4d97d6417b4d4815f, type: 2}
   <CharacterSprite>k__BackingField: {fileID: -2096504589705292234, guid: c2ef0862d9d98124d8f9246f108774cd, type: 3}
   <MugshotSprite>k__BackingField: {fileID: -9123998315749463643, guid: 44bd08dd673ad7a4da2bf202b1e529bb, type: 3}
+  <IconSprite>k__BackingField: {fileID: 7299352993012164020, guid: 4f4fd0b0d8881bf40b4e2fb937d811fb, type: 3}
