@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Transform _heroFrameContainter;
     [SerializeField] private TMP_Text _timer;
     [SerializeField] private UpgradeMenu _upgradeMenu;
-    [SerializeField] private GameObject _endScreen;
+    [SerializeField] private MMF_Player _endScreenPlayerShow;
     [SerializeField] private PauseMenu _pauseMenu;
     private void Start()
     {
@@ -34,7 +35,7 @@ public class UIManager : Singleton<UIManager>
 
     public void OpenEndScreen()
     {
-        _endScreen.SetActive(true);
+        _endScreenPlayerShow.PlayFeedbacks();
     }
 
     public void OpenPauseMenu()
