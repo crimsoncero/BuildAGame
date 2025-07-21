@@ -851,7 +851,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -7.8066, y: -9.6082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7812211024768027674
 CanvasRenderer:
@@ -881,8 +881,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 997ef526c791b324a89c1db33d25fb2d, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -926,7 +926,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3812967539797393589
 CanvasRenderer:
@@ -949,14 +949,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a14e6ee680df42f4c99bf69bc3d6b9ca, type: 3}
+  m_Sprite: {fileID: -7670485267309540912, guid: 688cb1639572ba44d8b79f531c61c38a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -6816211299187244939, guid: df105f34ab164414b9175e8d23a03aa8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1334,8 +1334,7 @@ MonoBehaviour:
   <IsUnlocked>k__BackingField: 0
   _heroImage: {fileID: 6579435139571471655}
   _lockedHeroImageOverlay: {fileID: 6512041086071975748}
-  _openTeamSlotSprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  _lockedTeamSlotSprite: {fileID: 21300000, guid: 0ca7172cb66034348a7e2629289a50c6, type: 3}
+  _openTeamSlotSprite: {fileID: 21300000, guid: 997ef526c791b324a89c1db33d25fb2d, type: 3}
   _onSelect: {fileID: 6486501737478806751}
   _onDeselect: {fileID: 2547009029875713297}
   _onPointerEnter: {fileID: 6693497816621676071}
