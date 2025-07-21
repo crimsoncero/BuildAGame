@@ -94,7 +94,8 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler, IPointerEn
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!IsUnlocked) return;
+        if (!IsUnlocked && !_isTeamIcon) return;
+        if (_isTeamIcon && _isLockedTeamIcon) return;
         
         if (eventData.clickCount == 1 && !_isSelected)
         {
@@ -103,7 +104,14 @@ public class HeroSelectionIcon : MonoBehaviour, IPointerClickHandler, IPointerEn
 
         if (eventData.clickCount == 2)
         {
-            _teamSelection.AddHeroToTeam();
+            if (MainMenuManager.Instance.LevelInitData.HeroData.Contains(Hero))
+            {
+                _teamSelection.RemoveHeroFromTeam();
+            }
+            else
+            {
+                _teamSelection.AddHeroToTeam();
+            }
         }
     }
 
