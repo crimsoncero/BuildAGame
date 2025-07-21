@@ -11,7 +11,7 @@ public class HeroFrame : MonoBehaviour
     [SerializeField] private TMP_Text _nameText;
     [SerializeField] private TMP_Text _levelText;
     [SerializeField] private TMP_Text _deadText;
-
+    [SerializeField] private Image _iconImage;
     
     private HeroUnit _hero;
     private bool _isDead;
@@ -20,6 +20,7 @@ public class HeroFrame : MonoBehaviour
     {
         _hero = hero;
         _nameText.text = hero.Data.name;
+        _iconImage.sprite = _hero.Data.IconSprite;
         UpdateLevelText();
         _hero.OnHealthChanged += UpdateHealthBar;
         _hero.Ability.OnLevelUp += UpdateLevelText;

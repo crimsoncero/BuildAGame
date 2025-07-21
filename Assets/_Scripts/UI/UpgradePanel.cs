@@ -1,20 +1,22 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UpgradePanel : MonoBehaviour
 {
-    [SerializeField] private Image _abilityIcon;
+    [FormerlySerializedAs("characterImage")] [FormerlySerializedAs("_abilityIcon")] [SerializeField] private Image _characterImage;
     [SerializeField] private TMP_Text _nameText;
     [SerializeField] private TMP_Text _upgradeText;
-    
+    [SerializeField] private Image _iconImage;
     private BaseAbility _ability;
     private UpgradeMenu _upgradeMenu;
     public void Initialize(BaseAbility ability, UpgradeMenu upgradeMenu)
     {
         _ability = ability;
         _upgradeMenu = upgradeMenu;
-        _abilityIcon.sprite = ability.BaseData.Icon;
+        _characterImage.sprite = ability.HeroData.MugshotSprite;
+        _iconImage.sprite = ability.HeroData.IconSprite;
         _nameText.text = _ability.BaseData.Name + " Lv. " + (_ability.CurrentLevel + 1);
         _upgradeText.text = _ability.GetNextLevelStats().Description;
 
