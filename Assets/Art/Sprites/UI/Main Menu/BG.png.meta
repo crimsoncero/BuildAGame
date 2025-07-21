@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b34c23e88d47d624cb5634033872a8cc
+guid: 514494bd4870f2149a7bfbeabc432281
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 636872743481278038
-    second: designer headshot_0
+      213: 78946120568432954
+    second: BG start 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: designer headshot_0
+      name: BG start 2_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 0
         y: 0
-        width: 156
-        height: 175
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 65e745ac260a6d800800000000000000
-      internalID: 636872743481278038
+      spriteID: a3960e01419781100800000000000000
+      internalID: 78946120568432954
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      designer headshot_0: 636872743481278038
+      BG start 2_0: 78946120568432954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
