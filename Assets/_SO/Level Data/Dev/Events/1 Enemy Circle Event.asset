@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b190376869ef324ead71ed0b28fd9a3, type: 3}
-  m_Name: Hero Base Stats
+  m_Script: {fileID: 11500000, guid: 3b3724195aec5244e9b74940abaabf06, type: 3}
+  m_Name: 1 Enemy Circle Event
   m_EditorClassIdentifier: 
-  MaxHealth: 0
-  Power: 0
-  Count: 0
-  Speed: 0
-  Cooldown: 0
-  Pierce: 0
-  RespawnTime: 15
-  MovementSpeed: 8
-  UpgradeCount: 3
+  <Name>k__BackingField: Event 1- circle of enemies
+  _radius: 50
+  _duration: 15
+  _enemyCount: 20
+  _enemyDatas: []
+  _spawnBoss: 0
+  _bossData: {fileID: 0}
