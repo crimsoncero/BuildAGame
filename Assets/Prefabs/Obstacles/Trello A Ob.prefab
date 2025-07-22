@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8329299589447172044}
   - component: {fileID: 8307390695427214895}
   - component: {fileID: 8999666228204952783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trello A Ob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
