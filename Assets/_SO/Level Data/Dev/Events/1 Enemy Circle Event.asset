@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: 1 Enemy Circle Event
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Event 1- circle of enemies
-  _radius: 50
+  _radius: 28
   _duration: 15
-  _enemyCount: 20
-  _enemyDatas: []
+  _enemyCount: 60
+  _enemyDatas:
+  - {fileID: 11400000, guid: 66155799c6b3afe4d827f2b90f5f15d3, type: 2}
   _spawnBoss: 0
   _bossData: {fileID: 0}
