@@ -47,6 +47,7 @@ public class HeroData : ScriptableObject
     
     [field: SerializeField]
     public Sprite MugshotSprite { get; private set; }
-   
+    [field: SerializeField]
+    public Sprite IconSprite { get; private set; }
 
 }

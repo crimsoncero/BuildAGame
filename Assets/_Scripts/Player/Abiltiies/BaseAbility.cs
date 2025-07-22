@@ -12,7 +12,7 @@ public abstract class BaseAbility : MonoBehaviour
     protected HeroUnit _heroUnit;
 
 
-    protected HeroData _heroData
+    public HeroData HeroData
     {
         get { return _heroUnit.Data; }
     }
