@@ -20,6 +20,7 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private List<(LevelData, bool)> _levelList;
     private int _currentLevelIndex;
     
+    public WindowHandler WindowHandler => _windowHandler;
     
     public void Show()
     {

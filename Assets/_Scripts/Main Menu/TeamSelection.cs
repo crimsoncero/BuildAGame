@@ -18,7 +18,7 @@ public class TeamSelection : MonoBehaviour
     [field: SerializeField] public List<HeroData> UnlockedHeroes { get; private set; }
     [field: SerializeField] public int MaxTeamSize { get; private set; }
 
-
+    public WindowHandler WindowHandler => _windowHandler;
     public HeroData CurrentSelectedHero { get; private set; }
     
     private List<HeroSelectionIcon> _heroGridList = new List<HeroSelectionIcon>();
