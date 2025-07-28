@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using MoreMountains.Feedbacks;
@@ -19,6 +20,14 @@ public class HealVFX : MonoBehaviour
 
     public void Init(HeroUnit thisHero)
     {
+        StartCoroutine(InitOtherHeroesVFX());
+    }
+
+    private IEnumerator InitOtherHeroesVFX()
+    {
+        yield return new WaitUntil(() => HeroManager.Instance.Heroes != null 
+                                         && HeroManager.Instance.Heroes.Count == GameManager.Instance.InitData.HeroData.Count);
+        
         foreach (var hero in HeroManager.Instance.Heroes)
         {
             var effect = Instantiate(_otherHeroesVFX, Vector3.zero, Quaternion.identity);
@@ -26,6 +35,8 @@ public class HealVFX : MonoBehaviour
             effect.gameObject.transform.localPosition = Vector3.zero;
             _healingEffects.Add(effect);
         }
+
+        Stop();
     }
     public void Play()
     {
@@ -46,7 +57,7 @@ public class HealVFX : MonoBehaviour
         {
             effect.StopFeedbacks();
         }
-
+        
         foreach (var effect in _healerVFX)
         {
             effect.Stop();
