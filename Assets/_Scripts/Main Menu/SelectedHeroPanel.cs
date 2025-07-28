@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -7,7 +8,12 @@ public class SelectedHeroPanel : MonoBehaviour
 {
     [SerializeField] private Button _addButton;
     [SerializeField] private Button _removeButton;
-    
+    [SerializeField] private TMP_Text _heroName;
+    [SerializeField] private TMP_Text _heroRole;
+    [SerializeField] private TMP_Text _heroDescription;
+    [SerializeField] private TMP_Text _abilityName;
+    [SerializeField] private TMP_Text _abilityDescription;
+    [SerializeField] private Image _abilityIcon;    
     
     private HeroData _selectedHero;
     private TeamSelection _teamSelection;
@@ -29,8 +35,13 @@ public class SelectedHeroPanel : MonoBehaviour
         _selectedHero = selectedHero;
         ToggleButtons();
         
-        // Add the data to set here.
-        
+        _heroName.text = selectedHero.Name;
+        _heroDescription.text = selectedHero.Description;
+        _heroRole.text = selectedHero.Role.ToString();
+        _abilityName.text = selectedHero.AbilityData.Name;
+        _abilityDescription.text = selectedHero.AbilityData.BaseAbilityStats.Description;
+        _abilityIcon.sprite = selectedHero.IconSprite;
+
     }
 
     public void ToggleButtons()
