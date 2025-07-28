@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Static Git Merge
   _powerLevel: 3
-  <BaseMaxHealth>k__BackingField: 50
+  <BaseMaxHealth>k__BackingField: 150
   <BaseMoveSpeed>k__BackingField: 0
   <BasePower>k__BackingField: 30
   <BaseSpeed>k__BackingField: 1
