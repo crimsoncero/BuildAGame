@@ -40,6 +40,8 @@ public class TeamSelection : MonoBehaviour
         SetStartButtonState();
         _windowHandler.Show();
         
+        SelectHero(_heroGridList[0].Hero);
+
     }
 
     public void SelectHero(HeroData selectedHero)

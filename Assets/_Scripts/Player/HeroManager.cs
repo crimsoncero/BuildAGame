@@ -11,7 +11,7 @@ public class HeroManager : Singleton<HeroManager>
     {
         get { return Instance._stats; }
     }
-    
+
     
     [Header("Hero Spawn")]
     [SerializeField] private HeroUnit _heroPrefab;
@@ -64,6 +64,8 @@ public class HeroManager : Singleton<HeroManager>
         hero.PathfindingModule.SetTarget(_heroMover.transform);
         AbilitiesDict.Add(AbilitiesDict.Count, hero.Ability);
         UIManager.Instance.AddHeroFrame(hero);
+
+
     }
     
     public bool DamageHero(Transform heroHit, int damage)
