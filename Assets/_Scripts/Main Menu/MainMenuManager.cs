@@ -7,12 +7,19 @@ public class MainMenuManager : Singleton<MainMenuManager>
     [SerializeField] private LevelSelection _levelSelection;
     [SerializeField] private TeamSelection _teamSelection;
     [SerializeField] private WindowHandler _creditsHandler;
+    [SerializeField] private WindowHandler _upgradesHandler;
+    [SerializeField] private WindowHandler _settingsHandler;
+    [SerializeField] private WindowHandler _achievmentsHandler;
+    
 
     public void CloseAll()
     {
         _levelSelection.WindowHandler.Hide();
         _teamSelection.WindowHandler.Hide();
         _creditsHandler.Hide();
+        _upgradesHandler.Hide();
+        _settingsHandler.Hide();
+        _achievmentsHandler.Hide();
     }
     
     public void OpenLevelSelection()
@@ -32,6 +39,25 @@ public class MainMenuManager : Singleton<MainMenuManager>
         CloseAll();
         _creditsHandler.Show();
     }
+
+    public void OpenUpgrades()
+    {
+        CloseAll();
+        _upgradesHandler.Show();
+    }
+
+    public void OpenSettings()
+    {
+        CloseAll();
+        _settingsHandler.Show();
+    }
+
+    public void OpenAchievements()
+    {
+        CloseAll();
+        _achievmentsHandler.Show();
+    }
+    
 
     public void ExitGame()
     {
