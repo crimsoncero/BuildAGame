@@ -135,7 +135,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
     public void SetDeathTimer(float time)
     {
         _deathTimer = time;
-        _isDead = true;
+        _isOnDeathTimer = true;
     }
     
     public void TakeDamage(int damage, Vector2 hitDireciton, bool isKnockback = false)
