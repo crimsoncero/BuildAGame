@@ -38,7 +38,7 @@ public class XPManager : Singleton<XPManager>
 
     private int _currentXP = 0;
     private int _targetXP = 0;
-    private int _currentLevel = 0;
+    private int _currentLevel = 1;
     private int _levelStart = 0;
 
     public float CurrentXP01 { get { return Mathf.InverseLerp(_levelStart, _targetXP, _currentXP); } }
@@ -46,7 +46,7 @@ public class XPManager : Singleton<XPManager>
     private void Start()
     {
         _gemPool = new ObjectPool<XPGem>(_gemPrefab, _gemParent, (uint)_maxInstanceAmount, true);
-        _targetXP = _xpData.BaseXpToLevelUp;
+        _targetXP = _xpData.CalculateXpNeededToLevelUp(_currentLevel);
         OnXPChanged?.Invoke();
     }
 
