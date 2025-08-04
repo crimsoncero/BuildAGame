@@ -53,8 +53,9 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
         _pool = pool;
         _isDead = false;
         Data = data;
-        gameObject.name = $"{Data.name}";
         _isOnDeathTimer = false;
+        gameObject.name = $"{Data.name}";
+        
         gameObject.transform.position = position;
 
         CurrentHealth = MaxHealth;
@@ -97,7 +98,6 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
                 KillUnit(false);
         }
 
-
     }
 
     private void UpdateLifeTime()
@@ -135,7 +135,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
     public void SetDeathTimer(float time)
     {
         _deathTimer = time;
-        _isOnDeathTimer = true;
+        _isDead = true;
     }
     
     public void TakeDamage(int damage, Vector2 hitDireciton, bool isKnockback = false)
