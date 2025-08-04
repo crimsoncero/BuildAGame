@@ -25,7 +25,8 @@ public class EnemyCircleEvent : EventData
             if(!CheckIfPointValid(relativePosition))
                 continue;
             
-            EnemySpawner.Instance.SpawnEnemy(enemyBag.Pick(), relativePosition);
+            var enemy = EnemySpawner.Instance.SpawnEnemy(enemyBag.Pick(), relativePosition);
+            enemy.SetDeathTimer(_duration);
         }
 
         if (_spawnBoss)

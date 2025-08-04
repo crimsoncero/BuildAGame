@@ -38,6 +38,8 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
     private Tween _knockbackTween;
     private float _lifeTimeCounter = 0;
     private bool _spawnGemOnDeath = true;
+
+    private float _deathTimer = 0;
     public bool IsAlive
     {
         get { return !_isDead; }
@@ -81,6 +83,11 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
             _canAttack.UpdateTimer();
             
             UpdateLifeTime();
+            
+            if(_deathTimer > 0)
+                _deathTimer -= Time.deltaTime;
+            else
+                KillUnit(false);
         }
         
         
@@ -116,6 +123,11 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
             }
         }
        
+    }
+
+    public void SetDeathTimer(float time)
+    {
+        _deathTimer = time;
     }
     
     public void TakeDamage(int damage, Vector2 hitDireciton, bool isKnockback = false)

@@ -62,10 +62,11 @@ public class EnemySpawner : Singleton<EnemySpawner>
     /// </summary>
     /// <param name="data"></param>
     /// <param name="position"></param>
-    public void SpawnEnemy(EnemyData data, Vector3 position)
+    public EnemyUnit SpawnEnemy(EnemyData data, Vector3 position)
     {
         EnemyUnit enemy = Pool.Take(data.Prefab);
         enemy.Initialize(data, position, Pool);
+        return enemy;
     }
     private List<EnemyData> SpawnGroup(List<EnemyData> enemiesToSpawn, int sector)
     {
