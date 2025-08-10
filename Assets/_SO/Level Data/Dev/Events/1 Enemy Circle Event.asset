@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b3724195aec5244e9b74940abaabf06, type: 3}
-  m_Name: Enemy Circle Event
+  m_Name: 1 Enemy Circle Event
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
-  _radius: 0
-  _enemyCount: 0
-  _enemyDatas: []
+  <Name>k__BackingField: Event 1- circle of enemies
+  _radius: 28
+  _duration: 15
+  _enemyCount: 80
+  _enemyDatas:
+  - {fileID: 11400000, guid: 66155799c6b3afe4d827f2b90f5f15d3, type: 2}
   _spawnBoss: 0
   _bossData: {fileID: 0}

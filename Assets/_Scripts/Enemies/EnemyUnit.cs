@@ -38,6 +38,9 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
     private Tween _knockbackTween;
     private float _lifeTimeCounter = 0;
     private bool _spawnGemOnDeath = true;
+
+    private float _deathTimer = 0;
+    private bool _isOnDeathTimer = false;
     public bool IsAlive
     {
         get { return !_isDead; }
@@ -50,6 +53,7 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
         _pool = pool;
         _isDead = false;
         Data = data;
+        _isOnDeathTimer = false;
         gameObject.name = $"{Data.name}";
         
         gameObject.transform.position = position;
@@ -76,14 +80,24 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
     }
     private void Update()
     {
-        if (!GameManager.Instance.IsPaused)
+        if (GameManager.Instance.IsPaused)
         {
-            _canAttack.UpdateTimer();
-            
-            UpdateLifeTime();
+            return;
         }
-        
-        
+
+        _canAttack.UpdateTimer();
+            
+        UpdateLifeTime();
+
+
+        if (_isOnDeathTimer)
+        {
+            if(_deathTimer > 0)
+                _deathTimer -= Time.deltaTime;
+            else
+                KillUnit(false);
+        }
+
     }
 
     private void UpdateLifeTime()
@@ -116,6 +130,12 @@ public class EnemyUnit : MonoBehaviour, IPoolable, IPausable
             }
         }
        
+    }
+
+    public void SetDeathTimer(float time)
+    {
+        _deathTimer = time;
+        _isDead = true;
     }
     
     public void TakeDamage(int damage, Vector2 hitDireciton, bool isKnockback = false)

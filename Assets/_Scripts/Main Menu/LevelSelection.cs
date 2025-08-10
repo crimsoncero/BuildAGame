@@ -57,7 +57,8 @@ public class LevelSelection : MonoBehaviour
         (LevelData level, bool unlocked) = _levelList[_currentLevelIndex];
         
         _levelName.text = level.Name;
-        var image = unlocked ? level.PreviewImage : _lockedPreviewImage;
+        // var image = unlocked ? level.PreviewImage : _lockedPreviewImage;
+        var image = level.PreviewImage;
         if(image != null)
             _levelPreviewImage.sprite = image;
 
