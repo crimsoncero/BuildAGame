@@ -11,9 +11,7 @@ public class XPData : ScriptableObject
 
     [field: Space]
     [field: Header("Levels Data")]
-    [field: SerializeField] public int BaseXpToLevelUp { get; private set; } = 1000;
-
-    [field: SerializeField] public int XPAddedPerLevel { get; private set; } = 500;
+    [field: SerializeField] public float GemsPerPoint  { get; private set; } = 2;
 
 
 
@@ -36,9 +34,12 @@ public class XPData : ScriptableObject
     
     public int CalculateXpNeededToLevelUp(int currentLevel)
     {
-        var xpNeeded = BaseXpToLevelUp + currentLevel * XPAddedPerLevel;
+        var level = currentLevel + 1;
+        var pointsNeeded = (Mathf.Pow(level, 2) - level) / 2f;
+        var baseGemsNeeded = pointsNeeded * GemsPerPoint;
+        var xpNeeded = baseGemsNeeded * BaseGemAmount;
         
-        return Mathf.FloorToInt(xpNeeded);
+        return Mathf.CeilToInt(xpNeeded);
     }
 
     
