@@ -33,7 +33,13 @@ public class EnemyCircleEvent : EventData
         {
             const float adjustment = 0.8f;
             var adjustedRadius = (_radius * adjustment);
-            Vector2 position = HeroManager.Instance.CenterPosition + Random.insideUnitCircle * adjustedRadius;
+            
+            Vector2 vector = Random.insideUnitCircle;
+           
+            if (vector.magnitude < 0.5f)
+                vector = vector.normalized * 0.5f;
+            
+            Vector2 position = HeroManager.Instance.CenterPosition + vector * adjustedRadius;
             
             var constraint = NNConstraint.None;
             constraint.constrainWalkability = true;
