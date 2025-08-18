@@ -21,7 +21,7 @@ public class PauseMenu : MonoBehaviour
     public void ReturnToMainMenu()
     {
         _windowHandler.Hide();
-        GameManager.Instance.GameOver();
+        GameManager.Instance.LoadMenu();
     }
 
     public void UpdateMusicVolume(float volume)

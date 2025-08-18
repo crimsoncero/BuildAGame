@@ -17,5 +17,7 @@ MonoBehaviour:
     InitialCount: 500
   - Prefab: {fileID: 3317569262086164977, guid: ae14fee8f9bf2ac4bbdb12aea95ee114, type: 3}
     InitialCount: 20
+  - Prefab: {fileID: 8800478114609750468, guid: aa10168569404a24db32a915434175d2, type: 3}
+    InitialCount: 50
   <InitPoolNow>k__BackingField: 1
   <Debug>k__BackingField: 1

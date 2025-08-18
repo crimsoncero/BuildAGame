@@ -1505,6 +1505,8 @@ MonoBehaviour:
   _levelPreviewImage: {fileID: 3173171977090066476}
   _levelName: {fileID: 1596303087285167452}
   _selectButton: {fileID: 1200064755171365993}
+  _backButton: {fileID: 3538694657786447620}
+  _forwardButton: {fileID: 863358462308999612}
   _lockedPreviewImage: {fileID: 0}
 --- !u!114 &5931974247772208558 stripped
 MonoBehaviour:

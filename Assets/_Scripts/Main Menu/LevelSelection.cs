@@ -11,6 +11,8 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private Image _levelPreviewImage;
     [SerializeField] private TMP_Text _levelName;
     [SerializeField] private Button _selectButton;
+    [SerializeField] private Button _backButton;
+    [SerializeField] private Button _forwardButton;
     
     
     [Header("Settings")] 
@@ -40,14 +42,17 @@ public class LevelSelection : MonoBehaviour
     
     public void ChangeLevel(bool forward)
     {
-        int change = forward ? -1 : 1;
+        int change = forward ? 1 : -1;
         _currentLevelIndex += change;
         
         if (_currentLevelIndex < 0)
-            _currentLevelIndex = _levelList.Count - 1;
+            _currentLevelIndex = 0;
         
         if (_currentLevelIndex >= _levelList.Count)
-            _currentLevelIndex = 0;
+            _currentLevelIndex = _levelList.Count - 1;
+        
+        _backButton.interactable = _currentLevelIndex > 0;
+        _forwardButton.interactable = _currentLevelIndex < _levelList.Count - 1;
         
         SetLevelImage();
     }
@@ -75,6 +80,7 @@ public class LevelSelection : MonoBehaviour
         }
         
         _currentLevelIndex = 0;
+        _backButton.interactable = false;
     }
     
 }
