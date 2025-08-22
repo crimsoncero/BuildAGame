@@ -20,7 +20,7 @@ MonoBehaviour:
     Power00: 10
     Count: 1
     Speed00: 10
-    Cooldown: 2
+    Cooldown: 1.5
     Pierce: 0
     Forks: 0
   _levelUpgrades:
@@ -28,35 +28,35 @@ MonoBehaviour:
     Power00: 10
     Count: 1
     Speed00: 10
-    Cooldown: 2
+    Cooldown: 1.5
     Pierce: 1
     Forks: 0
   - Description: Fire 1 more bolt and adds to damage
     Power00: 15
     Count: 2
     Speed00: 10
-    Cooldown: 2
+    Cooldown: 1.5
     Pierce: 1
     Forks: 0
-  - Description: Each chain hits 3 enemies and cooldown is faster
+  - Description: Each chain hits 3 enemies and less cooldown
     Power00: 15
     Count: 2
     Speed00: 10
-    Cooldown: 1.5
+    Cooldown: 1
     Pierce: 2
     Forks: 0
   - Description: Fire 1 more chain and add more damage
     Power00: 20
     Count: 3
     Speed00: 10
-    Cooldown: 1.5
+    Cooldown: 1
     Pierce: 2
     Forks: 0
-  - Description: Fire 4 chains of 4 enemies and cooldown is faster
+  - Description: Fire 4 chains of 4 enemies and less cooldown
     Power00: 20
     Count: 4
     Speed00: 10
-    Cooldown: 1
+    Cooldown: 0.5
     Pierce: 3
     Forks: 0
   <TargetBox>k__BackingField: {x: 53.5, y: 30}

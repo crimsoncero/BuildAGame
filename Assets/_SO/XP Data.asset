@@ -15,4 +15,4 @@ MonoBehaviour:
   <BaseGemAmount>k__BackingField: 200
   <RareGemMultiplier>k__BackingField: 2
   <EpicGemMultiplier>k__BackingField: 2
-  <GemsPerPoint>k__BackingField: 0.8
+  <GemsPerPoint>k__BackingField: 1

@@ -37,7 +37,7 @@ MonoBehaviour:
     Cooldown: 2
     Pierce: 0
     RespawnReduction: 0
-  - Description: Healing is faster and team members return faster
+  - Description: Healing faster and team members revive faster
     Power00: 60
     Count: 0
     Speed00: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
     Cooldown: 1
     Pierce: 0
     RespawnReduction: 30
-  - Description: Increases the healing ability and team members return faster
+  - Description: Healing faster and team members revive faster
     Power00: 100
     Count: 0
     Speed00: 0
