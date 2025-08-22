@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Event 2- circle of enemies with boss
   _radius: 28
-  _duration: 15
-  _enemyCount: 80
+  _duration: 20
+  _enemyCount: 150
   _enemyDatas:
   - {fileID: 11400000, guid: 66155799c6b3afe4d827f2b90f5f15d3, type: 2}
   _spawnBoss: 1
