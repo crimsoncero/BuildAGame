@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Dev Tools
   <Icon>k__BackingField: {fileID: 945880233462451947, guid: 696e665b19ddfa94c912f45a78a64b16, type: 3}
   _baseStats:
-    Description: Summons dev-tools that circle the party and damages enemies!
+    Description: Summons dev-tools that circle the party and damage enemies!
     Power00: 15
     Count: 2
     Speed00: 10
@@ -25,7 +25,7 @@ MonoBehaviour:
     Radius: 5.5
     IsRing: 0
   _levelUpgrades:
-  - Description: Summons 1 more dev-tool and both spin fater
+  - Description: Summons 1 more dev-tool and they spin faster
     Power00: 15
     Count: 3
     Speed00: 15
@@ -43,7 +43,7 @@ MonoBehaviour:
     Duration: 3
     Radius: 5.5
     IsRing: 0
-  - Description: Summons 1 more dev-tool and more damage
+  - Description: Summons 1 more dev-tool and add more to damage
     Power00: 20
     Count: 5
     Speed00: 15
@@ -52,7 +52,7 @@ MonoBehaviour:
     Duration: 3
     Radius: 5.5
     IsRing: 0
-  - Description: Dev-tools spin faster and radius is bigger
+  - Description: Dev-tools spin faster and their radius is bigger
     Power00: 20
     Count: 5
     Speed00: 18

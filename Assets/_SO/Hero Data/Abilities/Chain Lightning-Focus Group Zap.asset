@@ -38,7 +38,7 @@ MonoBehaviour:
     Cooldown: 1.5
     Pierce: 1
     Forks: 0
-  - Description: Each chain hits 3 enemies and cooldown is faster
+  - Description: Each chain hits 3 enemies and less cooldown
     Power00: 15
     Count: 2
     Speed00: 10
@@ -52,7 +52,7 @@ MonoBehaviour:
     Cooldown: 1
     Pierce: 2
     Forks: 0
-  - Description: Fire 4 chains of 4 enemies and cooldown is faster
+  - Description: Fire 4 chains of 4 enemies and less cooldown
     Power00: 20
     Count: 4
     Speed00: 10
