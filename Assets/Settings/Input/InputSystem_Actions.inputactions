@@ -31,6 +31,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Up",
+                    "type": "Button",
+                    "id": "17e1227c-efb4-4a7f-8c80-b5a632880349",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "8d8b7fd2-9188-42dd-9c4f-d1bf5ad10547",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -179,11 +197,33 @@
                 },
                 {
                     "name": "",
+                    "id": "caebab70-8bf0-4cc6-b9c5-47f72eca678e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b3f66d0b-7751-423f-908b-a11c5bd95930",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7f233bd-03ae-4347-9c27-b7bbac531a2d",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -220,6 +260,28 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7df880b-d510-424e-9ef6-f78f30bcd4b0",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa341dd8-fdef-4765-9be7-b4fafe567a6f",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -240,7 +302,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "7607c7b6-cd76-4816-beef-bd0341cfe950",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -10,8 +11,12 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Transform _heroFrameContainter;
     [SerializeField] private TMP_Text _timer;
     [SerializeField] private UpgradeMenu _upgradeMenu;
+    [SerializeField] private Image _endScreenImage;
     [SerializeField] private MMF_Player _endScreenPlayerShow;
     [SerializeField] private PauseMenu _pauseMenu;
+
+    [SerializeField] private Sprite _victoryImage;
+    [SerializeField] private Sprite _losingImage;
     private void Start()
     {
         GameManager.Instance.OnTimerTick += UpdateTimer;
@@ -35,6 +40,7 @@ public class UIManager : Singleton<UIManager>
 
     public void OpenEndScreen()
     {
+        _endScreenImage.sprite = GameManager.Instance.HasWon ? _victoryImage : _losingImage;
         _endScreenPlayerShow.PlayFeedbacks();
     }
 

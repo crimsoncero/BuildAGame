@@ -126,7 +126,7 @@ public class TeamSelection : MonoBehaviour
         if(CurrentTeamSize > MaxTeamSize)
             throw new ArgumentOutOfRangeException($"Team size can't be greater than max team size");
         
-        _startButton.interactable = CurrentTeamSize > 0;
+        _startButton.interactable = CurrentTeamSize >= 3;
         
     }
 }
