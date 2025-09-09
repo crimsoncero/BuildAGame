@@ -231,6 +231,7 @@ MonoBehaviour:
   _nameText: {fileID: 9191444651419270187}
   _upgradeText: {fileID: 8116135076308063752}
   _iconImage: {fileID: 2043004347275208452}
+  _upgradeButton: {fileID: 2628766340302526229}
 --- !u!114 &2628766340302526229
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,7 +31,9 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public bool IsPaused { get; private set; } = true;
     public bool IsGameActive { get; private set; } = false;
-
+    
+    public bool HasWon { get; private set; } = false;
+    
     private List<IPausable> _pausablesList = new List<IPausable>();
 
     private void Update()
@@ -123,6 +125,7 @@ public class GameManager : Singleton<GameManager>
     public void GameOver()
     {
         PauseGame();
+        HasWon = Timer >= LevelManager.Instance.Data.Duration;
         OnGameEnd?.Invoke();
         XPManager.Instance.OnLevelUp -= LevelUp;
         
@@ -160,5 +163,9 @@ public class GameManager : Singleton<GameManager>
         _sceneTransitionManager.LoadScene(LevelSceneEnum.Menu);
     }
 
+    public void RestartLevel()
+    {
+        _sceneTransitionManager.LoadScene(LevelSceneEnum.Dev);
+    }
     
 }

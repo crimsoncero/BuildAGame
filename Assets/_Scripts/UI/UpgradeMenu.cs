@@ -9,6 +9,7 @@ public class UpgradeMenu : MonoBehaviour
 {
     [FormerlySerializedAs("_windowController")] [SerializeField] private WindowHandler _windowHandler;
     [SerializeField] private List<UpgradePanel> _panelList;
+
     
     public void ShowUpgradePanel()
     {
@@ -22,7 +23,7 @@ public class UpgradeMenu : MonoBehaviour
         
         _windowHandler.Show();
     }
-
+    
     public void OnUpgradeClick()
     {
         foreach (var panel in _panelList)
@@ -33,4 +34,5 @@ public class UpgradeMenu : MonoBehaviour
         GameManager.Instance.ResumeGame();
         _windowHandler.Hide();
     }
+
 }

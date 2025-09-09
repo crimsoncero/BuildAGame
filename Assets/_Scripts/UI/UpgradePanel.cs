@@ -11,6 +11,7 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField] private Image _iconImage;
     private BaseAbility _ability;
     private UpgradeMenu _upgradeMenu;
+    
     public void Initialize(BaseAbility ability, UpgradeMenu upgradeMenu)
     {
         _ability = ability;
@@ -21,6 +22,7 @@ public class UpgradePanel : MonoBehaviour
         _upgradeText.text = _ability.GetNextLevelStats().Description;
 
     }
+
 
     public void OnClick()
     {

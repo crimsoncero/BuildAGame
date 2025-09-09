@@ -111,7 +111,6 @@ public class XPGem : MonoBehaviour, IPoolable
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collided With Gem ", gameObject);
         if (!_isAbsorbed)
         {
             AbsorbGem();
