@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
-  m_Name: _Limor
+  m_Name: Limor
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Limor
   <Description>k__BackingField: "When the room gets tense, she pulls out her big
