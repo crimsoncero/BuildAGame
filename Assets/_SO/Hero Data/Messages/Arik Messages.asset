@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fab9e9f345b6f48a34240fb9b3a634, type: 3}
   m_Name: Arik Messages
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: <color=#DF7131>Bugzilla42</color>
+  <Name>k__BackingField: <color=#7D3513>Bugzilla42</color>
   _messages:
   - <b>Bugs! Bugs everywhere!!!!</b>
   - "Just wait till you\u2019ll get my excel sheet!"
