@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1fab9e9f345b6f48a34240fb9b3a634, type: 3}
-  m_Name: Lee Messages
+  m_Name: Limor Messages
   m_EditorClassIdentifier: 
   <Name>k__BackingField: <color=#FEABB4>GDDQueen93</color>
   _messages:

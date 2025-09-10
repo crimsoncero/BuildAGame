@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
-  m_Name: Itay
+  m_Name: _Arik
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Itay
+  <Name>k__BackingField: Arik
   <Description>k__BackingField: "He doesn\u2019t hate your game- just the way it
     behaves. If you hear \u201CI logged it yesterday,\u201D your day\u2019s about
     to get a lot longer."
