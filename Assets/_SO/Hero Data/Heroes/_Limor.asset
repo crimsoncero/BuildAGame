@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 311de4f6fe1fb824a83c76d1046e0e32, type: 3}
-  m_Name: Lee
+  m_Name: _Limor
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Lee
-  <Description>k__BackingField: "When the room gets tense, she pulls out his big
+  <Name>k__BackingField: Limor
+  <Description>k__BackingField: "When the room gets tense, she pulls out her big
     guns: \u201CTrust the vision\u201D."
   <Role>k__BackingField: 1
   <AbilityData>k__BackingField: {fileID: 11400000, guid: 4a62a5bf7724d1445900d73714773532, type: 2}
