@@ -60,7 +60,7 @@ sysinfo.txt
 *.aab
 *.unitypackage
 *.app
-
+AllIn1VfxToolkit/
 # Crashlytics generated file
 crashlytics-build.properties
 
